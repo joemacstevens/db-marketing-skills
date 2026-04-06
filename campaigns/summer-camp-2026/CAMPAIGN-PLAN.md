@@ -54,7 +54,15 @@
 
 ## PRINT MATERIALS — PRIORITY (Due by April 13)
 
-### 1. MAIN FLYER — 8.5x11 (Landscape or Portrait)
+### 1. MAIN FLYER — Two Sizes: 8.5x11 + 5.5x4.25 (Half-Size)
+
+**Produce both sizes from the same design:**
+- **Full size:** 8.5x11 (portrait) — for posting on walls, bulletin boards, partner businesses
+- **Half size:** 5.5x4.25 (quarter-sheet / half of 8.5x5.5) — for handing out at front desk, stuffing in bags, leaving on counters
+
+The half-size should be a condensed version of the full flyer — same vibe, tighter layout, key info only.
+
+#### Full Size — 8.5x11 (Portrait)
 
 **Design Direction:**
 - **Background:** Black or very dark charcoal (#111111 or pure black)

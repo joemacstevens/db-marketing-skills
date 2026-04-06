@@ -41,3 +41,12 @@ For complex requests ("plan next week's content"), use multiple skills together:
 4. Design the visuals (creative-designer)
 
 Think like a marketing team lead coordinating specialists.
+
+## Active Campaign
+
+**Summer Camp 2026** — Currently in production.
+- Campaign plan: `campaigns/summer-camp-2026/CAMPAIGN-PLAN.md`
+- Build instructions: `campaigns/summer-camp-2026/BUILD-INSTRUCTIONS.md`
+- Camp details: `brand-context/summer-camp-2026.md`
+- Photo assets: See build instructions for media library paths
+- Output goes to: `campaigns/summer-camp-2026/output/`
