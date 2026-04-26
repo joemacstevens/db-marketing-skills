@@ -4,7 +4,7 @@ Raw .MP4 clips, `public/`, and `out/` have been staged for the Ajeo external dri
 
 ## Staged at (workspace, awaiting flush)
 ```
-/Users/joestevens/Projects/Different Breed/_archive/media-to-ajeo/db-marketing-skills-main/reels/fcp-projects/sparring/Reel-1-The-Team/
+/Users/joestevens/Projects/Different Breed/_archive/media-to-ajeo/reels/fcp-projects/sparring/Reel-1-The-Team/
 ├── *.MP4                  (raw camera files: C4754, C4755, C4756, C4757, C4758, C4760)
 ├── public/                (Remotion public/ — additional clips and assets)
 └── out/                   (rendered outputs)
@@ -12,7 +12,7 @@ Raw .MP4 clips, `public/`, and `out/` have been staged for the Ajeo external dri
 
 ## Final destination
 ```
-/Volumes/Ajeo/Projects/Different Breed/_archive/media-to-ajeo/db-marketing-skills-main/reels/fcp-projects/sparring/Reel-1-The-Team/
+/Volumes/Ajeo/Projects/Different Breed/_archive/media-to-ajeo/reels/fcp-projects/sparring/Reel-1-The-Team/
 ```
 
 ## To reopen this project

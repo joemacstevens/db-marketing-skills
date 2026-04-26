@@ -4,7 +4,7 @@ The raw clips and rendered .m4v outputs for this project have been staged for th
 
 ## Staged at (workspace, awaiting flush)
 ```
-/Users/joestevens/Projects/Different Breed/_archive/media-to-ajeo/db-marketing-skills-main/reels/fcp-projects/kids-boxing/
+/Users/joestevens/Projects/Different Breed/_archive/media-to-ajeo/reels/fcp-projects/kids-boxing/
 ├── raw-clips/                       (~5.5 GB, 9 source clips)
 ├── Kids Boxing Reel - 30s.m4v       (rendered v1)
 ├── Kids Boxing Reel - 30s-true.m4v  (rendered v2)
@@ -13,7 +13,7 @@ The raw clips and rendered .m4v outputs for this project have been staged for th
 
 ## Final destination (after Joey's flush)
 ```
-/Volumes/Ajeo/Projects/Different Breed/_archive/media-to-ajeo/db-marketing-skills-main/reels/fcp-projects/kids-boxing/
+/Volumes/Ajeo/Projects/Different Breed/_archive/media-to-ajeo/reels/fcp-projects/kids-boxing/
 ```
 
 ## To reopen this project in FCP

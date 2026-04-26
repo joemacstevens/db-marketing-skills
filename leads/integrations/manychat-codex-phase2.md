@@ -12,13 +12,13 @@
 Open Terminal on Joey's Mac and run:
 
 ```bash
-bash '/Users/joestevens/Projects/Different Breed/db-marketing-skills-main/leads/integrations/manychat-audit.sh'
+bash '/Users/joestevens/Projects/Different Breed/leads/integrations/manychat-audit.sh'
 ```
 
 This dumps the current Manychat structural state (flows, tags, custom fields, growth tools, OTN topics, widgets) to:
 
 ```
-/Users/joestevens/Projects/Different Breed/db-marketing-skills-main/leads/integrations/manychat-audit-raw/<timestamp>/
+/Users/joestevens/Projects/Different Breed/leads/integrations/manychat-audit-raw/<timestamp>/
 ```
 
 The folder is gitignored. Open `_INDEX.json` in that folder and confirm:
@@ -158,7 +158,7 @@ Set trigger: **Tag Applied** → fires when tag `human-handoff` is set.
 ### 3B. Steps
 
 1. **Action → Send Email** (this is the v1 interim notification — single email to Don who dispatches manually).
-   - **To:** Joey's `LEAD_NOTIFY_EMAIL` value. **Codex: get this value by reading `/Users/joestevens/Projects/Different Breed/db-marketing-skills-main/landing-page/.env.local` line that starts with `LEAD_NOTIFY_EMAIL=`.** Do not paste it into any other doc or tracked file.
+   - **To:** Joey's `LEAD_NOTIFY_EMAIL` value. **Codex: get this value by reading `/Users/joestevens/Projects/Different Breed/landing-page/.env.local` line that starts with `LEAD_NOTIFY_EMAIL=`.** Do not paste it into any other doc or tracked file.
    - **Subject:** `🥊 DM handoff — {{first_name}} ({{dm_origin_topic}}) — needs reply`
    - **Body** (paste verbatim, keep the mustache variables literal — Manychat will substitute):
      ```
@@ -291,7 +291,7 @@ Build all four. Save each as DRAFT (Manychat calls this "Inactive") until Joey a
 Open Terminal again and re-run:
 
 ```bash
-bash '/Users/joestevens/Projects/Different Breed/db-marketing-skills-main/leads/integrations/manychat-audit.sh'
+bash '/Users/joestevens/Projects/Different Breed/leads/integrations/manychat-audit.sh'
 ```
 
 A new timestamped folder appears. Open its `_INDEX.json` and confirm:
@@ -340,7 +340,7 @@ This is partially manual. Run after Step 6 succeeds.
 
 1. **Manychat → Audience → All Subscribers** → click **Export**.
 2. Choose CSV format. Include columns: subscriber_id, first_name, last_name, ig_username, phone, email, subscribed_at, last_interaction, all custom fields, all tags.
-3. Save the export to `/Users/joestevens/Projects/Different Breed/db-marketing-skills-main/leads/integrations/manychat-audit-raw/<timestamp>/subscribers-export.csv`.
+3. Save the export to `/Users/joestevens/Projects/Different Breed/leads/integrations/manychat-audit-raw/<timestamp>/subscribers-export.csv`.
 4. Tell Claude the file is ready. Claude will write a small script that reads the CSV and appends each subscriber to `leads/leads.json` with `source: "manychat"`, `status: "lost"`, `channel_ref: <subscriber_id>`. Each existing IG conversation that hasn't engaged in 30+ days = a cold lead worth re-engaging in a future campaign.
 
 ---
@@ -352,7 +352,7 @@ This is partially manual. Run after Step 6 succeeds.
 | "Flow trigger conflicts with another flow" when saving | A Phase 1 flow has overlapping triggers | Open the conflicting flow, change trigger from "Default Reply" to "Tag Applied: interest-camp" (or similar), then retry |
 | AI Step says "Pro feature required" | The account isn't on a tier with AI Step | Stop and tell Joey — may need to upgrade or use a Smart Reply block instead |
 | External Request returns 404 in Manychat logs | Webhook receiver not yet built | Expected — Claude builds it in step D.5. Manychat retries automatically. |
-| `manychat-audit.sh` returns HTTP 401 on every endpoint | Wrong API key | Re-check `/Users/joestevens/Projects/Different Breed/db-marketing-skills-main/.env.local` — `MANYCHAT_API_KEY=3501534:...` |
+| `manychat-audit.sh` returns HTTP 401 on every endpoint | Wrong API key | Re-check `/Users/joestevens/Projects/Different Breed/.env.local` — `MANYCHAT_API_KEY=3501534:...` |
 | Custom field "Type" picker doesn't show "Phone" or "Email" | Older Manychat UI variant | Pick "Text" and Joey can convert later — captures still work |
 
 ---

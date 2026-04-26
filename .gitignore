@@ -36,3 +36,9 @@ reels/**/*.MOV
 
 # Raw API dumps from integration audits — may contain message copy
 leads/integrations/*-audit-raw/
+
+# Workspace-level archive staging (flushed to Ajeo periodically)
+_archive/
+
+# Workspace-level helper docs that shouldn't be tracked
+hoist.sh

@@ -4,12 +4,12 @@ Same convention as Reel-1-The-Team. Raw `.MP4`, `public/`, and `out/` have been 
 
 ## Staged at (workspace, awaiting flush)
 ```
-/Users/joestevens/Projects/Different Breed/_archive/media-to-ajeo/db-marketing-skills-main/reels/fcp-projects/sparring/Reel-2-Work-Ethic/
+/Users/joestevens/Projects/Different Breed/_archive/media-to-ajeo/reels/fcp-projects/sparring/Reel-2-Work-Ethic/
 ```
 
 ## Final destination
 ```
-/Volumes/Ajeo/Projects/Different Breed/_archive/media-to-ajeo/db-marketing-skills-main/reels/fcp-projects/sparring/Reel-2-Work-Ethic/
+/Volumes/Ajeo/Projects/Different Breed/_archive/media-to-ajeo/reels/fcp-projects/sparring/Reel-2-Work-Ethic/
 ```
 
 ## To reopen

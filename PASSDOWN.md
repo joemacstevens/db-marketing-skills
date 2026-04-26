@@ -173,7 +173,7 @@ PASSDOWN.md               ← THIS FILE
 ## Vercel deploy commands
 
 ```bash
-export PATH="/opt/homebrew/bin:$PATH:/Users/joestevens/Projects/db-marketing-skills-main/node_modules/.bin"
+export PATH="/opt/homebrew/bin:$PATH:/Users/joestevens/Projects/node_modules/.bin"
 
 # Landing page
 cd landing-page && vercel --prod --yes --scope joemacstevens-projects

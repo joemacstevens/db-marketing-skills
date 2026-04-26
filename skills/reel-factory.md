@@ -10,7 +10,7 @@ This skill is the end-to-end runbook for producing Different Breed reels — thr
 
 The OS folder is for **recipes** (small, git-tracked, the "how"). The Ajeo external drive is for **bytes** (large, the "what").
 
-| Lives in OS (`db-marketing-skills-main/reels/`) | Lives on Ajeo (`/Volumes/Ajeo/.../Media Library/` or `_archive/media-to-ajeo/`) |
+| Lives in OS (`reels/`) | Lives on Ajeo (`/Volumes/Ajeo/.../Media Library/` or `_archive/media-to-ajeo/`) |
 |---|---|
 | `.fcpxml` project files | Raw `.MP4` / `.MOV` clips |
 | Remotion `src/` (`.tsx` compositions, components, BrandStyles) | Rendered finals (`out/*.mp4`, `*.m4v`) |

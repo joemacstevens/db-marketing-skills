@@ -14,7 +14,7 @@ Every conversation that crosses a lead-qualification threshold (asks about prici
 
 ## Secrets
 
-The Manychat Pro API key is stored as `MANYCHAT_API_KEY` in `db-marketing-skills-main/.env.local` (gitignored — confirmed via `git check-ignore`). Read it from the env, never hard-code or paste into a tracked file.
+The Manychat Pro API key is stored as `MANYCHAT_API_KEY` in `.env.local` (gitignored — confirmed via `git check-ignore`). Read it from the env, never hard-code or paste into a tracked file.
 
 ```js
 // usage shape

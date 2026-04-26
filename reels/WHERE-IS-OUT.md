@@ -4,7 +4,7 @@ All 33 rendered outputs from the unified `reels/` Remotion project have been sta
 
 ## Staged at (workspace, awaiting flush)
 ```
-/Users/joestevens/Projects/Different Breed/_archive/media-to-ajeo/db-marketing-skills-main/reels/out/
+/Users/joestevens/Projects/Different Breed/_archive/media-to-ajeo/reels/out/
 ├── danny-final-preview/
 ├── danny-preview/
 ├── jw-preview/
@@ -16,7 +16,7 @@ All 33 rendered outputs from the unified `reels/` Remotion project have been sta
 
 ## Final destination
 ```
-/Volumes/Ajeo/Projects/Different Breed/_archive/media-to-ajeo/db-marketing-skills-main/reels/out/
+/Volumes/Ajeo/Projects/Different Breed/_archive/media-to-ajeo/reels/out/
 ```
 
 Eventually these should be promoted into the **canonical media library** index at `/Volumes/Ajeo/Projects/Different Breed/Media Library/` so `skills/media-library.md` queries can find them by quality_score / activity_type / coaches_visible.

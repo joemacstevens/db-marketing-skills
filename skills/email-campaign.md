@@ -30,17 +30,17 @@ Always read ALL context files before writing a single word of copy. This avoids 
 
 SSH to Joey's MacBook (the mini does NOT have these files):
 ```bash
-ssh joestevens@100.68.252.34 "cat ~/Projects/db-marketing-skills-main/brand-context/voice-and-tone.md"
-ssh joestevens@100.68.252.34 "cat ~/Projects/db-marketing-skills-main/brand-context/summer-camp-2026.md"
-ssh joestevens@100.68.252.34 "cat ~/Projects/db-marketing-skills-main/brand-context/visual-style-guide.md"
-ssh joestevens@100.68.252.34 "cat ~/Projects/db-marketing-skills-main/brand-context/content-examples.md"
-ssh joestevens@100.68.252.34 "cat ~/Projects/db-marketing-skills-main/brand-context/target-audiences.md"
-ssh joestevens@100.68.252.34 "cat ~/Projects/db-marketing-skills-main/brand-context/coaches-and-staff.md"
+ssh joestevens@100.68.252.34 "cat ~/Projects/brand-context/voice-and-tone.md"
+ssh joestevens@100.68.252.34 "cat ~/Projects/brand-context/summer-camp-2026.md"
+ssh joestevens@100.68.252.34 "cat ~/Projects/brand-context/visual-style-guide.md"
+ssh joestevens@100.68.252.34 "cat ~/Projects/brand-context/content-examples.md"
+ssh joestevens@100.68.252.34 "cat ~/Projects/brand-context/target-audiences.md"
+ssh joestevens@100.68.252.34 "cat ~/Projects/brand-context/coaches-and-staff.md"
 ```
 
 Also read the relevant campaign plan:
 ```bash
-ssh joestevens@100.68.252.34 "cat ~/Projects/db-marketing-skills-main/campaigns/[campaign-folder]/CAMPAIGN-PLAN.md"
+ssh joestevens@100.68.252.34 "cat ~/Projects/campaigns/[campaign-folder]/CAMPAIGN-PLAN.md"
 ```
 
 ---
@@ -113,7 +113,7 @@ Plain text version of the email. Easier to review and approve than HTML.
 
 Run on the MacBook via SSH:
 ```bash
-ssh joestevens@100.68.252.34 'cd ~/Projects/db-marketing-skills-main/campaigns/[folder]/email-[name] && node -e "const fs=require(\"fs\");let t=fs.readFileSync(\"template.html\",\"utf8\");t=t.replace(/{{kidName}}/g,\"Jordan\").replace(/{{parentEmail}}/g,\"parent@example.com\");fs.writeFileSync(\"preview.html\",t);console.log(\"preview.html written\");"'
+ssh joestevens@100.68.252.34 'cd ~/Projects/campaigns/[folder]/email-[name] && node -e "const fs=require(\"fs\");let t=fs.readFileSync(\"template.html\",\"utf8\");t=t.replace(/{{kidName}}/g,\"Jordan\").replace(/{{parentEmail}}/g,\"parent@example.com\");fs.writeFileSync(\"preview.html\",t);console.log(\"preview.html written\");"'
 ```
 
 ---
@@ -121,7 +121,7 @@ ssh joestevens@100.68.252.34 'cd ~/Projects/db-marketing-skills-main/campaigns/[
 ## Step 6 — Screenshot (preview.png)
 
 ```bash
-ssh joestevens@100.68.252.34 '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --headless --disable-gpu --screenshot=/Users/joestevens/Projects/db-marketing-skills-main/campaigns/[folder]/email-[name]/preview.png --window-size=700,1600 --hide-scrollbars --force-device-scale-factor=2 "file:///Users/joestevens/Projects/db-marketing-skills-main/campaigns/[folder]/email-[name]/preview.html"'
+ssh joestevens@100.68.252.34 '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --headless --disable-gpu --screenshot=/Users/joestevens/Projects/campaigns/[folder]/email-[name]/preview.png --window-size=700,1600 --hide-scrollbars --force-device-scale-factor=2 "file:///Users/joestevens/Projects/campaigns/[folder]/email-[name]/preview.html"'
 ```
 
 Keychain errors in stderr are cosmetic — Chrome still renders and saves the PNG.
@@ -189,7 +189,7 @@ campaigns/summer-camp-2026/email-returning-parents/
 
 The first implementation of this pipeline was the Summer Camp 2026 returning-parents email (April 9, 2026). Files at:
 ```
-~/Projects/db-marketing-skills-main/campaigns/summer-camp-2026/email-returning-parents/
+~/Projects/campaigns/summer-camp-2026/email-returning-parents/
 ```
 
 Subject line used: `Coach Don wants {kidName} back at DB Summer Camp`

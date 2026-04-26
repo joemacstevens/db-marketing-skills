@@ -4,7 +4,7 @@
 **Owner:** Joey + Claude (Menukhah is the design subject / instructor for the women-only Sunday slot)
 **Class:** Core Control Pilates — sub-brand class within Different Breed (per `brand-context/coaches-and-staff.md`)
 **Booking URL:** https://pilates.differentbreedsportsacademy.com
-**Related landing page:** `db-marketing-skills-main/Corecontrollandingpage/` — its own nested git repo (gitignored at the OS level), tracked separately on GitHub. This campaign folder owns flyers, social copy, and class-specific marketing; the landing page repo owns the page itself.
+**Related landing page:** `Corecontrollandingpage/` — its own nested git repo (gitignored at the OS level), tracked separately on GitHub. This campaign folder owns flyers, social copy, and class-specific marketing; the landing page repo owns the page itself.
 **Class schedule** (from `brand-context/coaches-and-staff.md`):
 - Wed 9 AM (Nessa @ohsonessaa)
 - Wed 7:15 PM (CJ @cjbean122)
