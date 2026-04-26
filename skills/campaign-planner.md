@@ -5,6 +5,7 @@ Plan multi-day/week marketing campaigns, seasonal promotions, challenges, and co
 
 ## Before You Start
 Read ALL brand context files — campaigns touch everything.
+Also load the media library index (`skills/media-library.md`) so you can match real assets to each post in the calendar instead of generic "visual needed" placeholders.
 
 ## Campaign Types
 
@@ -52,7 +53,12 @@ Read ALL brand context files — campaigns touch everything.
 ### Post Copy (per day)
 [Use social-content skill format for each post]
 
-### Visual Assets Needed
+### Media Assets (from library index)
+[Query _index/photos.json and _index/videos.json for matching assets — see skills/media-library.md]
+[For each post, list the recommended photo/video with path, quality score, and why it fits]
+[Only flag "Visual Assets Needed" for content that requires NEW graphics not found in the library]
+
+### Visual Assets to Create (if needed)
 [List of graphics/designs needed — hand to creative-designer skill]
 
 ### Success Metrics

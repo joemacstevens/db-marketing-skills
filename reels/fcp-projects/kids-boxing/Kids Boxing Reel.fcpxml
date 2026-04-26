@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.11">
+  <resources>
+    <format id="r1" name="FFVideoFormat3840x2160p5994" frameDuration="1001/60000s" width="3840" height="2160"/>
+    <asset id="a1" name="C4633" start="0s" duration="16016/1000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4633.MP4"/>
+    </asset>
+    <asset id="a2" name="C4639" start="0s" duration="75075/1000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4639.MP4"/>
+    </asset>
+    <asset id="a3" name="C4635" start="0s" duration="29529500/1000000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4635.MP4"/>
+    </asset>
+    <asset id="a4" name="C4654" start="0s" duration="16516500/1000000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4654.MP4"/>
+    </asset>
+    <asset id="a5" name="C4646" start="0s" duration="29029/1000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4646.MP4"/>
+    </asset>
+    <asset id="a6" name="C4644" start="0s" duration="64064/1000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4644.MP4"/>
+    </asset>
+    <asset id="a7" name="C4649" start="0s" duration="33533500/1000000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4649.MP4"/>
+    </asset>
+    <asset id="a8" name="C4650" start="0s" duration="33533500/1000000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4650.MP4"/>
+    </asset>
+    <asset id="a9" name="C4648" start="0s" duration="33533500/1000000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4648.MP4"/>
+    </asset>
+    <asset id="a10" name="C4641" start="0s" duration="40540500/1000000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4641.MP4"/>
+    </asset>
+    <asset id="a11" name="C4637" start="0s" duration="15015/1000s" hasVideo="1" hasAudio="1" format="r1">
+      <media-rep kind="original-media" src="file:///Users/joestevens/Projects/Kids-Boxing/raw-clips/C4637.MP4"/>
+    </asset>
+  </resources>
+  <library>
+    <event name="Kids Boxing">
+      <project name="Kids Boxing Reel - 30s">
+        <sequence format="r1" tcStart="0s" tcFormat="NDF" duration="31031/1000s">
+          <spine>
+            <!-- 1. C4633: Kids warming up (0-3s) -->
+            <asset-clip ref="a1" name="C4633 - Warm Up" offset="0s" start="0s" duration="3003/1000s"/>
+
+            <!-- 2. C4639: Kids advancing in stances (3s) -->
+            <asset-clip ref="a2" name="C4639 - Boxing Stances" offset="3003/1000s" start="36036/1000s" duration="3003/1000s"/>
+
+            <!-- 3. C4635: Close-up overhead presses (3s) -->
+            <asset-clip ref="a3" name="C4635 - Strength" offset="6006/1000s" start="13013/1000s" duration="3003/1000s"/>
+
+            <!-- 4. C4654: BEST Glenda shot - intense coaching (4s) -->
+            <asset-clip ref="a4" name="C4654 - Coach Glenda" offset="9009/1000s" start="5005/1000s" duration="4004/1000s"/>
+
+            <!-- 5. C4646: Kids on heavy bags (3s) -->
+            <asset-clip ref="a5" name="C4646 - Bag Work" offset="13013/1000s" start="13013/1000s" duration="3003/1000s"/>
+
+            <!-- 6. C4644: Glenda holding bag for kid (3s) -->
+            <asset-clip ref="a6" name="C4644 - Glenda Bag Hold" offset="16016/1000s" start="30030/1000s" duration="3003/1000s"/>
+
+            <!-- 7. C4649: Kids sparring in ring (3s) -->
+            <asset-clip ref="a7" name="C4649 - Sparring" offset="19019/1000s" start="15015/1000s" duration="3003/1000s"/>
+
+            <!-- 8. C4650: Punch landing (2s) -->
+            <asset-clip ref="a8" name="C4650 - Punch" offset="22022/1000s" start="15015/1000s" duration="2002/1000s"/>
+
+            <!-- 9. C4648: Glenda talking to group (3s) -->
+            <asset-clip ref="a9" name="C4648 - Group Talk" offset="24024/1000s" start="15015/1000s" duration="3003/1000s"/>
+
+            <!-- 10. C4641: Kids practicing guards (2s) -->
+            <asset-clip ref="a10" name="C4641 - Guards" offset="27027/1000s" start="19019/1000s" duration="2002/1000s"/>
+
+            <!-- 11. C4637: Wide shot shadowboxing closer (2s) -->
+            <asset-clip ref="a11" name="C4637 - Closer" offset="29029/1000s" start="6006/1000s" duration="2002/1000s"/>
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>

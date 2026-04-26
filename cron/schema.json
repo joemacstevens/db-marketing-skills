@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Different Breed Cron Heartbeat",
+  "description": "Two file formats: heartbeat.json (current state map, overwritten) and heartbeat.jsonl (append-only history, one event per line).",
+  "definitions": {
+    "event": {
+      "type": "object",
+      "required": ["job", "started_at", "finished_at", "status"],
+      "properties": {
+        "job": {
+          "type": "string",
+          "description": "Stable identifier — e.g. daily-schedule-story, email-campaign, schedule-fetch"
+        },
+        "host": {
+          "type": "string",
+          "description": "Machine that ran the job — e.g. mac-mini-noah, joey-macbook"
+        },
+        "started_at": { "type": "string", "format": "date-time" },
+        "finished_at": { "type": "string", "format": "date-time" },
+        "status": {
+          "type": "string",
+          "enum": ["success", "failure", "partial"]
+        },
+        "duration_ms": { "type": "integer", "minimum": 0 },
+        "summary": {
+          "type": "string",
+          "description": "Human-readable one-liner — what happened, what got posted/sent, what failed."
+        },
+        "ref": {
+          "type": ["string", "null"],
+          "description": "URL to the artifact this run produced — Upload-Post job page, Resend message id, rendered MP4 path, etc."
+        },
+        "error": {
+          "type": ["string", "null"],
+          "description": "Error message if status != success."
+        }
+      }
+    },
+    "current_state_entry": {
+      "type": "object",
+      "description": "One entry per job in heartbeat.json. Reflects the latest run only.",
+      "required": ["last_at", "status"],
+      "properties": {
+        "last_at": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["success", "failure", "partial"] },
+        "last_summary": { "type": ["string", "null"] },
+        "last_ref": { "type": ["string", "null"] },
+        "last_error": { "type": ["string", "null"] },
+        "last_success_at": { "type": ["string", "null"], "format": "date-time", "description": "Most recent SUCCESSFUL run, even if the latest run failed." },
+        "host": { "type": ["string", "null"] }
+      }
+    }
+  },
+  "files": {
+    "heartbeat.json": {
+      "type": "object",
+      "description": "Map of job-id to current_state_entry. Overwritten on every cron run.",
+      "additionalProperties": { "$ref": "#/definitions/current_state_entry" }
+    },
+    "heartbeat.jsonl": {
+      "type": "string",
+      "description": "Newline-delimited JSON. One #/definitions/event object per line. Append-only. Truncate periodically (e.g. keep last 90 days)."
+    }
+  }
+}

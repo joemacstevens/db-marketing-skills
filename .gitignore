@@ -1,1 +1,38 @@
 output/
+
+# Nested independent repos (tracked in their own GitHub remotes)
+Corecontrollandingpage/
+node_modules
+
+# OS noise
+.DS_Store
+
+# Editor / agent local config
+.vscode/
+.claude/
+
+# Web-scrape cache (Firecrawl) — research, not source
+.firecrawl/
+
+# Reel project bytes — recipes (.fcpxml, src/, etc.) tracked; bytes go to Ajeo.
+# These patterns target the specific directories where bytes accumulate;
+# brand-kit/video-assets/ (hero loops, brand demos) is intentionally NOT excluded.
+reels/out/
+reels/**/out/
+reels/**/raw-clips/
+reels/**/client_videos/
+reels/**/InBody-assets/
+reels/**/public/clips/
+# Loose camera files at the root of any reel project (e.g. sparring sub-reels)
+reels/**/*.MP4
+reels/**/*.MOV
+
+# Secrets — never commit
+.env
+.env.local
+.env*.local
+**/.env.local
+**/.env*.local
+
+# Raw API dumps from integration audits — may contain message copy
+leads/integrations/*-audit-raw/

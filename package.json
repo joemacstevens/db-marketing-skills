@@ -1,0 +1,25 @@
+{
+  "name": "db-marketing-skills-main",
+  "version": "1.0.0",
+  "description": "Claude Code marketing skills project for [Different Breed Elite Fitness](https://differentbreedelitefitness.com) — a premium fitness brand built around the idea of becoming something greater than you were yesterday.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joemacstevens/db-marketing-skills.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joemacstevens/db-marketing-skills/issues"
+  },
+  "homepage": "https://github.com/joemacstevens/db-marketing-skills#readme",
+  "dependencies": {
+    "playwright": "^1.59.1",
+    "upload-post": "^2.1.0",
+    "vercel": "^50.40.0"
+  }
+}

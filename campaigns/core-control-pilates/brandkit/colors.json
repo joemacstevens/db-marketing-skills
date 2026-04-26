@@ -1,0 +1,26 @@
+{
+  "paletteName": "Pilates by Menukhah v1",
+  "source": "Extracted from seed flyers + studio photos",
+  "core": {
+    "background_cream": "#F0EEE6",
+    "surface_ivory": "#F7F4EE",
+    "charcoal_text": "#1A1714",
+    "warm_taupe": "#8B7768",
+    "studio_bronze": "#A07050",
+    "studio_cocoa": "#603020",
+    "soft_brown": "#705040"
+  },
+  "semantic": {
+    "headline": "#1A1714",
+    "body": "#3E332B",
+    "muted": "#8B7768",
+    "accent_primary": "#A07050",
+    "accent_secondary": "#705040",
+    "card_bg": "#F7F4EE",
+    "divider": "#D9D1C7"
+  },
+  "contrast": {
+    "light_mode_text_on_bg": "Use #1A1714 on #F0EEE6+",
+    "cta_on_dark": "Use #F7F4EE text on #603020"
+  }
+}

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japanese Passport Photo Cropper</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #fff;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  .workspace {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .canvas-container {
+    position: relative;
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+    cursor: grab;
+  }
+  .canvas-container:active { cursor: grabbing; }
+  canvas { display: block; }
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 260px;
+    max-width: 300px;
+  }
+  .control-group {
+    background: #16213e;
+    border-radius: 8px;
+    padding: 14px;
+  }
+  .control-group h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #667;
+    margin-bottom: 10px;
+  }
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #aab;
+  }
+  label span { font-weight: 600; color: #dde; }
+  input[type="range"] {
+    width: 100%;
+    accent-color: #4fc3f7;
+    margin-bottom: 8px;
+  }
+  .upload-area {
+    border: 2px dashed #335;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .upload-area:hover { border-color: #4fc3f7; }
+  .upload-area p { font-size: 14px; color: #99a; }
+  .upload-area .big { font-size: 32px; margin-bottom: 8px; }
+  input[type="file"] { display: none; }
+  button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-primary {
+    background: #4fc3f7;
+    color: #0a0a23;
+  }
+  .btn-primary:hover { background: #81d4fa; }
+  .btn-primary:disabled {
+    background: #334;
+    color: #667;
+    cursor: not-allowed;
+  }
+  .btn-secondary {
+    background: #2a2a4a;
+    color: #aab;
+  }
+  .btn-secondary:hover { background: #3a3a5a; }
+  .specs {
+    font-size: 12px;
+    color: #778;
+    line-height: 1.6;
+  }
+  .specs strong { color: #aab; }
+  .guide-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #99a;
+  }
+  .legend-swatch {
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .status-bar {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #4fc3f7;
+    min-height: 18px;
+  }
+  .photo-count {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .photo-tab {
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    background: #1a1a3e;
+    color: #778;
+    border: 1px solid #334;
+  }
+  .photo-tab.active {
+    background: #2a2a5e;
+    color: #4fc3f7;
+    border-color: #4fc3f7;
+  }
+  .export-options {
+    display: flex;
+    gap: 8px;
+  }
+  .export-options button { flex: 1; }
+</style>
+</head>
+<body>
+
+<h1>Japanese Passport Photo Cropper</h1>
+<p class="subtitle">35mm × 45mm — Drag to position, scroll to zoom</p>
+
+<div class="workspace">
+  <div>
+    <div class="photo-count" id="photoTabs"></div>
+    <div class="canvas-container" id="canvasContainer">
+      <canvas id="canvas" width="413" height="531"></canvas>
+    </div>
+    <div class="status-bar" id="status"></div>
+  </div>
+
+  <div class="controls">
+    <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+      <p class="big">+</p>
+      <p>Drop photo here or click to upload</p>
+      <input type="file" id="fileInput" accept="image/*" multiple>
+    </div>
+
+    <div class="control-group">
+      <h3>Adjust</h3>
+      <label>Zoom <span id="zoomVal">100%</span></label>
+      <input type="range" id="zoomSlider" min="10" max="400" value="100" step="1">
+      <label>Rotation <span id="rotVal">0°</span></label>
+      <input type="range" id="rotSlider" min="-10" max="10" value="0" step="0.1">
+    </div>
+
+    <div class="control-group">
+      <h3>Guide Lines</h3>
+      <div class="guide-legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:#4fc3f7"></div> Head top (4±2mm from top)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#ff7043"></div> Chin bottom (7±2mm from bottom)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#aed581"></div> Face center (17±2mm from left)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:rgba(255,255,255,0.25);border:1px dashed #999"></div> Tolerance zones</div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <h3>Specs</h3>
+      <div class="specs">
+        <strong>Output:</strong> 35×45mm @ 300 DPI (413×531px)<br>
+        <strong>Head top margin:</strong> 4mm (±2mm)<br>
+        <strong>Chin bottom margin:</strong> 7mm (±2mm)<br>
+        <strong>Face center from left:</strong> 17mm (±2mm)<br>
+        <strong>Face height:</strong> ~34mm<br>
+        <strong>Right edge gap:</strong> ≥2mm
+      </div>
+    </div>
+
+    <div class="export-options">
+      <button class="btn-primary" id="exportBtn" disabled onclick="exportPhoto()">Export PNG</button>
+      <button class="btn-secondary" id="export4upBtn" disabled onclick="export4up()">Export 4-Up</button>
+    </div>
+    <button class="btn-secondary" style="width:100%" id="exportAllBtn" disabled onclick="exportAll()">Export All Photos</button>
+  </div>
+</div>
+
+<script>
+// === Constants: Japanese passport spec at 300 DPI ===
+const DPI = 300;
+const MM_TO_PX = DPI / 25.4;
+const W_PX = Math.round(35 * MM_TO_PX);  // 413
+const H_PX = Math.round(45 * MM_TO_PX);  // 531
+const DISPLAY_SCALE = 1.4;
+const CW = Math.round(W_PX * DISPLAY_SCALE);
+const CH = Math.round(H_PX * DISPLAY_SCALE);
+
+// Guide positions in px (at output resolution)
+const HEAD_TOP = Math.round(4 * MM_TO_PX);       // 47px
+const HEAD_TOP_TOL = Math.round(2 * MM_TO_PX);    // ±24px
+const CHIN_BOTTOM = Math.round(7 * MM_TO_PX);     // 83px
+const CHIN_BOTTOM_TOL = Math.round(2 * MM_TO_PX);
+const FACE_CENTER_X = Math.round(17 * MM_TO_PX);  // 201px
+const FACE_CENTER_TOL = Math.round(2 * MM_TO_PX);
+
+const canvas = document.getElementById('canvas');
+canvas.width = CW;
+canvas.height = CH;
+const ctx = canvas.getContext('2d');
+
+// === State ===
+let photos = []; // [{img, x, y, zoom, rot}]
+let activeIdx = -1;
+
+function activePhoto() { return activeIdx >= 0 ? photos[activeIdx] : null; }
+
+// === File Loading ===
+document.getElementById('fileInput').addEventListener('change', e => {
+  for (const file of e.target.files) loadFile(file);
+  e.target.value = '';
+});
+
+const uploadArea = document.getElementById('uploadArea');
+uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.style.borderColor = '#4fc3f7'; });
+uploadArea.addEventListener('dragleave', () => { uploadArea.style.borderColor = '#335'; });
+uploadArea.addEventListener('drop', e => {
+  e.preventDefault();
+  uploadArea.style.borderColor = '#335';
+  for (const file of e.dataTransfer.files) {
+    if (file.type.startsWith('image/')) loadFile(file);
+  }
+});
+
+function loadFile(file) {
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const img = new Image();
+    img.onload = () => {
+      // Auto-fit: scale so face region fills ~70% of frame height
+      const fitScale = (H_PX * 0.85) / img.height;
+      const zoom = Math.max(fitScale, W_PX / img.width) * 100;
+      photos.push({
+        img,
+        name: file.name,
+        x: 0, y: 0,
+        zoom,
+        rot: 0
+      });
+      switchPhoto(photos.length - 1);
+      updateButtons();
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function switchPhoto(idx) {
+  activeIdx = idx;
+  const p = activePhoto();
+  if (p) {
+    document.getElementById('zoomSlider').value = p.zoom;
+    document.getElementById('zoomVal').textContent = Math.round(p.zoom) + '%';
+    document.getElementById('rotSlider').value = p.rot;
+    document.getElementById('rotVal').textContent = p.rot.toFixed(1) + '°';
+  }
+  renderTabs();
+  draw();
+}
+
+function renderTabs() {
+  const container = document.getElementById('photoTabs');
+  container.innerHTML = '';
+  photos.forEach((p, i) => {
+    const tab = document.createElement('div');
+    tab.className = 'photo-tab' + (i === activeIdx ? ' active' : '');
+    tab.textContent = 'Photo ' + (i + 1);
+    tab.onclick = () => switchPhoto(i);
+    container.appendChild(tab);
+  });
+}
+
+function updateButtons() {
+  const has = photos.length > 0;
+  document.getElementById('exportBtn').disabled = !has;
+  document.getElementById('export4upBtn').disabled = !has;
+  document.getElementById('exportAllBtn').disabled = photos.length < 2;
+}
+
+// === Drawing ===
+function draw() {
+  ctx.clearRect(0, 0, CW, CH);
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, CW, CH);
+
+  const p = activePhoto();
+  if (p) {
+    ctx.save();
+    const s = (p.zoom / 100) * DISPLAY_SCALE;
+    const cx = CW / 2 + p.x * DISPLAY_SCALE;
+    const cy = CH / 2 + p.y * DISPLAY_SCALE;
+    ctx.translate(cx, cy);
+    ctx.rotate(p.rot * Math.PI / 180);
+    ctx.drawImage(p.img, -p.img.width * s / 2, -p.img.height * s / 2, p.img.width * s, p.img.height * s);
+    ctx.restore();
+  }
+
+  drawGuides();
+
+  if (!p) {
+    ctx.fillStyle = 'rgba(0,0,0,0.5)';
+    ctx.fillRect(0, 0, CW, CH);
+    ctx.fillStyle = '#999';
+    ctx.font = '16px -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Upload a photo to begin', CW / 2, CH / 2);
+  }
+}
+
+function drawGuides() {
+  const s = DISPLAY_SCALE;
+
+  // Head top guide (cyan)
+  const htY = HEAD_TOP * s;
+  ctx.strokeStyle = '#4fc3f7';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([]);
+  ctx.beginPath(); ctx.moveTo(0, htY); ctx.lineTo(CW, htY); ctx.stroke();
+
+  // Head top tolerance
+  ctx.strokeStyle = 'rgba(79,195,247,0.25)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 4]);
+  ctx.beginPath(); ctx.moveTo(0, (HEAD_TOP - HEAD_TOP_TOL) * s); ctx.lineTo(CW, (HEAD_TOP - HEAD_TOP_TOL) * s); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(0, (HEAD_TOP + HEAD_TOP_TOL) * s); ctx.lineTo(CW, (HEAD_TOP + HEAD_TOP_TOL) * s); ctx.stroke();
+
+  // Chin bottom guide (orange) — measured from bottom
+  const cbY = CH - CHIN_BOTTOM * s;
+  ctx.strokeStyle = '#ff7043';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([]);
+  ctx.beginPath(); ctx.moveTo(0, cbY); ctx.lineTo(CW, cbY); ctx.stroke();
+
+  // Chin tolerance
+  ctx.strokeStyle = 'rgba(255,112,67,0.25)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 4]);
+  ctx.beginPath(); ctx.moveTo(0, CH - (CHIN_BOTTOM - CHIN_BOTTOM_TOL) * s); ctx.lineTo(CW, CH - (CHIN_BOTTOM - CHIN_BOTTOM_TOL) * s); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(0, CH - (CHIN_BOTTOM + CHIN_BOTTOM_TOL) * s); ctx.lineTo(CW, CH - (CHIN_BOTTOM + CHIN_BOTTOM_TOL) * s); ctx.stroke();
+
+  // Face center vertical (green)
+  const fcX = FACE_CENTER_X * s;
+  ctx.strokeStyle = '#aed581';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([]);
+  ctx.beginPath(); ctx.moveTo(fcX, 0); ctx.lineTo(fcX, CH); ctx.stroke();
+
+  // Center tolerance
+  ctx.strokeStyle = 'rgba(174,213,129,0.25)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 4]);
+  ctx.beginPath(); ctx.moveTo((FACE_CENTER_X - FACE_CENTER_TOL) * s, 0); ctx.lineTo((FACE_CENTER_X - FACE_CENTER_TOL) * s, CH); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo((FACE_CENTER_X + FACE_CENTER_TOL) * s, 0); ctx.lineTo((FACE_CENTER_X + FACE_CENTER_TOL) * s, CH); ctx.stroke();
+
+  ctx.setLineDash([]);
+
+  // Border
+  ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(1, 1, CW - 2, CH - 2);
+}
+
+// === Interaction ===
+let dragging = false, dragStartX, dragStartY, startX, startY;
+
+canvas.addEventListener('mousedown', e => {
+  if (!activePhoto()) return;
+  dragging = true;
+  dragStartX = e.clientX;
+  dragStartY = e.clientY;
+  startX = activePhoto().x;
+  startY = activePhoto().y;
+});
+
+window.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  const p = activePhoto();
+  p.x = startX + (e.clientX - dragStartX) / DISPLAY_SCALE;
+  p.y = startY + (e.clientY - dragStartY) / DISPLAY_SCALE;
+  draw();
+});
+
+window.addEventListener('mouseup', () => { dragging = false; });
+
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  const p = activePhoto();
+  if (!p) return;
+  const delta = e.deltaY > 0 ? -2 : 2;
+  p.zoom = Math.max(10, Math.min(400, p.zoom + delta));
+  document.getElementById('zoomSlider').value = p.zoom;
+  document.getElementById('zoomVal').textContent = Math.round(p.zoom) + '%';
+  draw();
+}, { passive: false });
+
+// Touch support
+let lastTouchDist = 0, lastTouchX = 0, lastTouchY = 0;
+canvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  const p = activePhoto();
+  if (!p) return;
+  if (e.touches.length === 1) {
+    dragging = true;
+    dragStartX = e.touches[0].clientX;
+    dragStartY = e.touches[0].clientY;
+    startX = p.x;
+    startY = p.y;
+  } else if (e.touches.length === 2) {
+    dragging = false;
+    const dx = e.touches[1].clientX - e.touches[0].clientX;
+    const dy = e.touches[1].clientY - e.touches[0].clientY;
+    lastTouchDist = Math.sqrt(dx * dx + dy * dy);
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  const p = activePhoto();
+  if (!p) return;
+  if (e.touches.length === 1 && dragging) {
+    p.x = startX + (e.touches[0].clientX - dragStartX) / DISPLAY_SCALE;
+    p.y = startY + (e.touches[0].clientY - dragStartY) / DISPLAY_SCALE;
+    draw();
+  } else if (e.touches.length === 2) {
+    const dx = e.touches[1].clientX - e.touches[0].clientX;
+    const dy = e.touches[1].clientY - e.touches[0].clientY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    const scale = dist / lastTouchDist;
+    p.zoom = Math.max(10, Math.min(400, p.zoom * scale));
+    lastTouchDist = dist;
+    document.getElementById('zoomSlider').value = p.zoom;
+    document.getElementById('zoomVal').textContent = Math.round(p.zoom) + '%';
+    draw();
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchend', () => { dragging = false; });
+
+// Sliders
+document.getElementById('zoomSlider').addEventListener('input', e => {
+  const p = activePhoto();
+  if (!p) return;
+  p.zoom = parseFloat(e.target.value);
+  document.getElementById('zoomVal').textContent = Math.round(p.zoom) + '%';
+  draw();
+});
+
+document.getElementById('rotSlider').addEventListener('input', e => {
+  const p = activePhoto();
+  if (!p) return;
+  p.rot = parseFloat(e.target.value);
+  document.getElementById('rotVal').textContent = p.rot.toFixed(1) + '°';
+  draw();
+});
+
+// === Export ===
+function renderToCanvas(photo) {
+  const offscreen = document.createElement('canvas');
+  offscreen.width = W_PX;
+  offscreen.height = H_PX;
+  const octx = offscreen.getContext('2d');
+  octx.fillStyle = '#fff';
+  octx.fillRect(0, 0, W_PX, H_PX);
+
+  const s = photo.zoom / 100;
+  const cx = W_PX / 2 + photo.x;
+  const cy = H_PX / 2 + photo.y;
+  octx.translate(cx, cy);
+  octx.rotate(photo.rot * Math.PI / 180);
+  octx.drawImage(photo.img,
+    -photo.img.width * s / 2,
+    -photo.img.height * s / 2,
+    photo.img.width * s,
+    photo.img.height * s
+  );
+  return offscreen;
+}
+
+function downloadCanvas(c, filename) {
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = c.toDataURL('image/png');
+  link.click();
+}
+
+function exportPhoto() {
+  const p = activePhoto();
+  if (!p) return;
+  const c = renderToCanvas(p);
+  downloadCanvas(c, 'passport_photo_' + (activeIdx + 1) + '.png');
+  document.getElementById('status').textContent = 'Exported Photo ' + (activeIdx + 1) + ' (413×531px @ 300 DPI)';
+}
+
+function export4up() {
+  const p = activePhoto();
+  if (!p) return;
+  // 4-up on 4×6 inch print (1200×1800px @ 300dpi)
+  const printW = 1200, printH = 1800;
+  const c = document.createElement('canvas');
+  c.width = printW;
+  c.height = printH;
+  const pctx = c.getContext('2d');
+  pctx.fillStyle = '#fff';
+  pctx.fillRect(0, 0, printW, printH);
+
+  const single = renderToCanvas(p);
+  const gapX = Math.round((printW - W_PX * 2) / 3);
+  const gapY = Math.round((printH - H_PX * 2) / 3);
+
+  for (let row = 0; row < 2; row++) {
+    for (let col = 0; col < 2; col++) {
+      const x = gapX + col * (W_PX + gapX);
+      const y = gapY + row * (H_PX + gapY);
+      pctx.strokeStyle = '#ccc';
+      pctx.lineWidth = 0.5;
+      pctx.strokeRect(x - 1, y - 1, W_PX + 2, H_PX + 2);
+      pctx.drawImage(single, x, y);
+    }
+  }
+
+  downloadCanvas(c, 'passport_4up_photo_' + (activeIdx + 1) + '.png');
+  document.getElementById('status').textContent = 'Exported 4-up on 4×6" print layout';
+}
+
+function exportAll() {
+  photos.forEach((p, i) => {
+    const c = renderToCanvas(p);
+    setTimeout(() => downloadCanvas(c, 'passport_photo_' + (i + 1) + '.png'), i * 200);
+  });
+  document.getElementById('status').textContent = 'Exported all ' + photos.length + ' photos';
+}
+
+// Initial draw
+draw();
+</script>
+</body>
+</html>

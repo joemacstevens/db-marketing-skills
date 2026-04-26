@@ -1,0 +1,15 @@
+{
+  "model": "veo-3.0-fast-generate-001",
+  "output_dir": "/Users/joestevens/Projects/db-marketing-skills-main/campaigns/the-coliseum/raw",
+  "default_params": {
+    "durationSeconds": 4,
+    "aspectRatio": "9:16",
+    "sampleCount": 1
+  },
+  "clips": [
+    {
+      "id": "phase-01-A-sand-drop",
+      "prompt": "Extreme close-up slow motion ground-level shot. A Roman gladiator's leather-sandaled foot steps down firmly onto the coarse golden sand of an ancient Coliseum arena floor. A cloud of fine dust puffs up around the sandal as the weight presses in. Shin wrap straps visible. Flickering warm torchlight from camera left creates strong shadows on the sand. Macro lens feel, shallow depth of field. Cinematic color grade — warm amber shadows, deep blacks, film grain, 24fps. Ancient Roman setting. No face, no modern detail, no text, no logos."
+    }
+  ]
+}

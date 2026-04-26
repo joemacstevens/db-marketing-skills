@@ -10,6 +10,14 @@ Read these brand context files:
 - `brand-context/posting-rules.md`
 - `brand-context/content-examples.md`
 
+## Media Selection
+Before writing any post, check the media library index for matching assets. See `skills/media-library.md` for how to query.
+
+- Load `_index/photos.json` and `_index/videos.json` from `/Volumes/Ajeo/Projects/Different Breed/Media Library/`
+- Find the best-scoring asset that matches the post topic (by `subject[]`, `scene_type`, `activity_type`, `coaches_visible[]`)
+- Include the specific file path in your output so the asset can be attached directly
+- Quality floor: `quality_score >= 6`, `approved: true`, `avoid: false`
+
 ## Input
 Provide any of:
 - **Topic/theme** ("motivational Monday", "kids boxing promo", "Pilates spotlight")
@@ -28,6 +36,11 @@ For EVERY post, generate:
 
 ### Facebook Caption (≤255 characters)
 [Shorter, punchier version of the same message]
+
+### Media Asset
+- File: [exact path from media library index]
+- Quality: [score]/10
+- Why: [why this asset fits the post]
 
 ### Notes
 - Suggested posting time

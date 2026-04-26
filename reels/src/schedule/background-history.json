@@ -1,0 +1,109 @@
+{
+  "runs": [
+    {
+      "date": "2026-04-25",
+      "clips": [
+        {
+          "slot": 1,
+          "source_path": "June 22, 2025/IMG_0379.mov"
+        },
+        {
+          "slot": 2,
+          "source_path": "Home, March 25, 2025/Full Body Igniter(1).mov"
+        },
+        {
+          "slot": 3,
+          "source_path": "2026/gym_3_30_26/Video/C4810.MP4"
+        },
+        {
+          "slot": 4,
+          "source_path": "2026/gym_4_15_26/Video/C4934.MP4"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "clips": [
+        {
+          "slot": 1,
+          "source_path": "June 16, 2025/IMG_3086.mov"
+        },
+        {
+          "slot": 2,
+          "source_path": "November 6, 2025/IMG_0738.mov"
+        },
+        {
+          "slot": 3,
+          "source_path": "Home, March 25, 2025/Full Body Igniter.mov"
+        },
+        {
+          "slot": 4,
+          "source_path": "Raw/C3759.MP4"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "clips": [
+        {
+          "slot": 1,
+          "source_path": "Raw/C3769.MP4"
+        },
+        {
+          "slot": 2,
+          "source_path": "August 15, 2025/IMG_5078.mov"
+        },
+        {
+          "slot": 3,
+          "source_path": "2026/gym_3_30_26/Video/C4846.MP4"
+        },
+        {
+          "slot": 4,
+          "source_path": "September 18, 2025/8C675208-F23A-4421-A574-527A336E9F61.mov"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "clips": [
+        {
+          "slot": 1,
+          "source_path": "Home, March 22, 2025/Motivation Monday.mov"
+        },
+        {
+          "slot": 2,
+          "source_path": "St. Patrick’s Day, March 17, 2025/b0cdbf7a-c3a6-42e4-9110-db9c351e3dbc.mov"
+        },
+        {
+          "slot": 3,
+          "source_path": "2026/gym_4_15_26/Video/C4933.MP4"
+        },
+        {
+          "slot": 4,
+          "source_path": "2026/gym_4_15_26/Video/C4926.MP4"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "clips": [
+        {
+          "slot": 1,
+          "source_path": "January 11, 2026/IMG_0411.mov"
+        },
+        {
+          "slot": 2,
+          "source_path": "June 8, 2025/IMG_2667.mov"
+        },
+        {
+          "slot": 3,
+          "source_path": "April 29, 2025/IMG_1362.mov"
+        },
+        {
+          "slot": 4,
+          "source_path": "September 18, 2025/IMG_6512.mov"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "model": "veo-3.0-fast-generate-001",
+  "output_dir": "/Users/joestevens/Projects/db-marketing-skills-main/campaigns/the-coliseum/raw",
+  "default_params": {
+    "durationSeconds": 8,
+    "aspectRatio": "9:16",
+    "sampleCount": 1
+  },
+  "clips": [
+    {
+      "id": "phase-01-B-iron-grip",
+      "prompt": "Extreme close-up slow dolly tracking shot of a muscular, calloused gladiator hand slowly wrapping tightly around the leather-bound iron handle of an ancient weapon. Veins, tendons and scars visible on the forearm. Flickering torchlight from camera left, creating deep contrast and moving highlights. 85mm lens look, very shallow depth of field. Cinematic color grade — warm amber shadows, deep blacks. Film grain, 24fps. No face visible, no modern detail, no text."
+    },
+    {
+      "id": "phase-01-D-backlit-walk",
+      "prompt": "Medium shot, slow motion 120fps. A muscular gladiator's sweat-soaked bare back and broad shoulders walks slowly away from camera toward a massive stone archway filled with bright golden backlight. Dust particles and volumetric light beams swirl behind his silhouette. His shoulders are framed against the glowing entrance. Anamorphic lens flares at the light source. Warm-cool contrast — cool blue shadows in the foreground, hot golden backlight. Cinematic color grade, film grain. Face never visible, back to camera entire shot. No modern details, no text, no logos."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Different Breed Leads",
+  "description": "Central state file for all DB leads. Mirrors content-calendar/calendar.json shape.",
+  "type": "object",
+  "required": ["version", "profile", "timezone", "last_updated", "leads"],
+  "properties": {
+    "version": { "type": "string" },
+    "profile": { "type": "string", "description": "e.g. dbelitefitness" },
+    "timezone": { "type": "string", "description": "IANA tz, e.g. America/New_York" },
+    "last_updated": { "type": "string", "format": "date-time" },
+    "leads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "captured_at", "status"],
+        "properties": {
+          "id": { "type": "string", "description": "yyyy-mm-dd-NNN format" },
+          "source": {
+            "type": "string",
+            "enum": ["form", "manychat", "ig-dm-manual", "fb-dm-manual", "walk-in", "referral", "phone", "other"]
+          },
+          "channel_ref": {
+            "type": ["string", "null"],
+            "description": "External ID (Manychat subscriber id, form submission id, etc.)"
+          },
+          "captured_at": { "type": "string", "format": "date-time" },
+          "campaign": {
+            "type": ["string", "null"],
+            "description": "Campaign folder slug, e.g. summer-camp-2026"
+          },
+          "interest": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["camp", "kids-boxing", "core-control-pilates", "adult-boxing", "general", "other"] }
+          },
+          "parent_name": { "type": ["string", "null"] },
+          "parent_email": { "type": ["string", "null"], "format": "email" },
+          "parent_phone": { "type": ["string", "null"] },
+          "athlete_name": { "type": ["string", "null"] },
+          "athlete_age": { "type": ["integer", "null"] },
+          "package": { "type": ["string", "null"] },
+          "status": {
+            "type": "string",
+            "enum": ["new", "contacted", "trial-booked", "enrolled", "lost"]
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "mindbody_client_id": { "type": ["string", "null"] },
+          "notes": { "type": "string" },
+          "history": {
+            "type": "array",
+            "description": "Append-only log of every interaction.",
+            "items": {
+              "type": "object",
+              "required": ["at", "kind"],
+              "properties": {
+                "at": { "type": "string", "format": "date-time" },
+                "kind": {
+                  "type": "string",
+                  "enum": ["captured", "email-sent", "email-opened", "email-clicked", "dm-sent", "dm-received", "status-change", "note", "mindbody-action"]
+                },
+                "summary": { "type": "string" },
+                "ref": { "type": ["string", "null"], "description": "Resend message id, Manychat msg id, etc." }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

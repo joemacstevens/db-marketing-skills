@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women-Only Pilates — Pilates by Menukhah (Draft v1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════════
+     Pilates by Menukhah — Brand Tokens
+     Source: brandkit/colors.json + type-system.md
+     ═══════════════════════════════════════════ */
+  :root {
+    --bg-cream:      #F0EEE6;
+    --surface-ivory: #F7F4EE;
+    --charcoal:      #1A1714;
+    --body-text:     #3E332B;
+    --warm-taupe:    #8B7768;
+    --bronze:        #A07050;
+    --cocoa:         #603020;
+    --soft-brown:    #705040;
+    --divider:       #D9D1C7;
+
+    --flyer-width: 540px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e5dd;
+    font-family: 'Lora', Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  /* ═══════════════════════════════════════════
+     FLYER FRAME — Double border + corner diamonds
+     Matches seed flyer gold frame treatment
+     ═══════════════════════════════════════════ */
+  .flyer-outer {
+    width: var(--flyer-width);
+    max-width: 100%;
+    /* Crosshatch texture matching seed flyers */
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 12px,
+        rgba(139, 119, 104, 0.045) 12px,
+        rgba(139, 119, 104, 0.045) 13px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 12px,
+        rgba(139, 119, 104, 0.045) 12px,
+        rgba(139, 119, 104, 0.045) 13px
+      ),
+      var(--bg-cream);
+    border: 1.5px solid var(--warm-taupe);
+    border-radius: 2px;
+    padding: 7px;
+    box-shadow: 0 6px 32px rgba(26, 23, 20, 0.10);
+  }
+
+  .flyer-inner {
+    border: 0.75px solid var(--warm-taupe);
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-cream);
+  }
+
+  /* Corner diamond ornaments */
+  .flyer-inner::before,
+  .flyer-inner::after {
+    content: '◆';
+    position: absolute;
+    font-size: 9px;
+    color: var(--bronze);
+    z-index: 10;
+  }
+  .flyer-inner::before { top: 4px; left: 7px; }
+  .flyer-inner::after  { top: 4px; right: 7px; }
+
+  .corner-bl, .corner-br {
+    position: absolute;
+    font-size: 9px;
+    color: var(--bronze);
+    z-index: 10;
+    bottom: 4px;
+  }
+  .corner-bl { left: 7px; }
+  .corner-br { right: 7px; }
+
+  /* ═══════════════════════════════════════════
+     HEADLINE ZONE
+     ═══════════════════════════════════════════ */
+  .headline-zone {
+    padding: 2rem 2rem 1.1rem;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+    margin-bottom: 0.5rem;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 3.1rem;
+    line-height: 1.06;
+    color: var(--charcoal);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
+  }
+
+  .subhead {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--warm-taupe);
+    margin-bottom: 0.85rem;
+  }
+
+  /* Diamond divider with flanking rules */
+  .diamond-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: var(--bronze);
+    font-size: 7px;
+    letter-spacing: 3px;
+  }
+
+  .diamond-divider .line {
+    display: inline-block;
+    width: 36px;
+    height: 0.5px;
+    background: var(--divider);
+  }
+
+  /* ═══════════════════════════════════════════
+     HERO STUDIO IMAGE
+     Dominant visual — ~35% of flyer height
+     ═══════════════════════════════════════════ */
+  .hero-zone {
+    padding: 0 1.4rem;
+    margin: 0.9rem 0 1rem;
+  }
+
+  .hero-frame {
+    border: 2px solid var(--bronze);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9.5;
+    background:
+      radial-gradient(ellipse at 25% 55%, rgba(160,112,80,0.3) 0%, transparent 65%),
+      radial-gradient(ellipse at 75% 45%, rgba(96,48,32,0.2) 0%, transparent 55%),
+      linear-gradient(175deg,
+        #3a2b1f 0%,
+        #4e3a2c 12%,
+        #5c4535 28%,
+        #6b5545 45%,
+        #7a6555 60%,
+        #5c4535 78%,
+        #4a3828 100%
+      );
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Warm LED strip lights + floor warmth */
+  .hero-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(0deg,
+        transparent 55%,
+        rgba(255,215,160,0.10) 56.5%,
+        rgba(255,215,160,0.06) 58%,
+        transparent 59%
+      ),
+      linear-gradient(0deg,
+        transparent 75%,
+        rgba(255,215,160,0.05) 76%,
+        transparent 77.5%
+      ),
+      linear-gradient(0deg, rgba(180,140,100,0.12) 0%, transparent 30%);
+  }
+
+  .hero-placeholder::after {
+    content: 'Replace with studio photo';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(247, 244, 238, 0.35);
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+  }
+
+  /* Simulated mat/equipment grid lines */
+  .studio-detail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 38%;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 78px,
+        rgba(0,0,0,0.05) 78px,
+        rgba(0,0,0,0.05) 80px
+      );
+    opacity: 0.45;
+  }
+
+  /* Replace placeholder: uncomment img and remove .hero-placeholder
+     <img class="hero-image" src="path/to/studio.jpg"
+       alt="Private Pilates studio with reformers and warm lighting">
+  */
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 9.5;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* ═══════════════════════════════════════════
+     VIBE POINTS — 2x2 diamond-bullet grid
+     ═══════════════════════════════════════════ */
+  .vibe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem 1.2rem;
+    max-width: 320px;
+    margin: 0 auto 0.9rem;
+    padding: 0 2.5rem;
+  }
+
+  .vibe-item {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .vibe-item::before {
+    content: '◇';
+    color: var(--bronze);
+    font-size: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════════════
+     CONTENT PANEL — body, pricing, schedule
+     ═══════════════════════════════════════════ */
+  .content-panel {
+    padding: 0 2rem 1.1rem;
+    text-align: center;
+  }
+
+  /* Inline divider with center diamond */
+  .line-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+  }
+
+  .line-divider .rule {
+    flex: 1;
+    max-width: 100px;
+    height: 0.5px;
+    background: var(--divider);
+  }
+
+  .line-divider .gem {
+    color: var(--bronze);
+    font-size: 6px;
+  }
+
+  .body-copy {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--body-text);
+    max-width: 370px;
+    margin: 0 auto 1.15rem;
+  }
+
+  /* ═══════════════════════════════════════════
+     PRICING CARD
+     ═══════════════════════════════════════════ */
+  .pricing-card {
+    background: var(--surface-ivory);
+    border-radius: 10px;
+    padding: 1rem 1.4rem 1rem;
+    margin: 0 auto 1rem;
+    max-width: 370px;
+    box-shadow: 0 1px 6px rgba(26, 23, 20, 0.04);
+  }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+    margin-bottom: 0.7rem;
+    text-align: center;
+  }
+
+  .section-label .label-gem {
+    color: var(--bronze);
+    font-size: 0.45rem;
+    margin: 0 4px;
+  }
+
+  .pricing-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .price-block {
+    flex: 1;
+    text-align: center;
+    padding: 0 0.4rem;
+  }
+
+  .price-amount {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.55rem;
+    color: var(--bronze);
+    line-height: 1.2;
+  }
+
+  .price-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: var(--charcoal);
+    margin-top: 0.1rem;
+  }
+
+  .price-sub {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.62rem;
+    color: var(--warm-taupe);
+    font-style: italic;
+    margin-top: 0.1rem;
+  }
+
+  .price-divider {
+    width: 1px;
+    height: 46px;
+    background: var(--divider);
+    flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════════════
+     SCHEDULE
+     ═══════════════════════════════════════════ */
+  .schedule-block {
+    margin-bottom: 1.1rem;
+  }
+
+  .schedule-times {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1rem;
+    margin-top: 0.35rem;
+  }
+
+  .schedule-item {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+  }
+
+  .schedule-item strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .schedule-dot {
+    color: var(--divider);
+    font-size: 0.5rem;
+  }
+
+  /* ═══════════════════════════════════════════
+     BRAND FOOTER
+     ═══════════════════════════════════════════ */
+  .brand-footer {
+    border-top: 1px solid var(--divider);
+    padding: 1rem 2rem 1.3rem;
+    text-align: center;
+    /* Same crosshatch as outer frame */
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 12px,
+        rgba(139, 119, 104, 0.035) 12px,
+        rgba(139, 119, 104, 0.035) 13px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 12px,
+        rgba(139, 119, 104, 0.035) 12px,
+        rgba(139, 119, 104, 0.035) 13px
+      ),
+      var(--bg-cream);
+  }
+
+  .brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-bottom: 0.25rem;
+  }
+
+  .brand-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--warm-taupe);
+    margin-bottom: 0.55rem;
+  }
+
+  .contact-line {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.78rem;
+    color: var(--body-text);
+    line-height: 1.55;
+    margin-bottom: 0.9rem;
+  }
+
+  .cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--surface-ivory);
+    background: var(--cocoa);
+    border: none;
+    border-radius: 28px;
+    padding: 0.7rem 1.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .cta:hover {
+    background: var(--soft-brown);
+  }
+
+  /* QR placeholder */
+  .qr-placeholder {
+    width: 52px;
+    height: 52px;
+    border: 1.5px solid var(--divider);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+  }
+
+  .qr-placeholder span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.42rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--divider);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .footer-note {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 0.68rem;
+    color: var(--warm-taupe);
+  }
+
+  /* ═══════════════════════════════════════════
+     DRAFT WATERMARK (remove for production)
+     ═══════════════════════════════════════════ */
+  .draft-watermark {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c0b8a8;
+    background: rgba(240, 238, 230, 0.92);
+    padding: 4px 10px;
+    border-radius: 3px;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+<div class="draft-watermark">Draft v1 — 2026-02-25</div>
+
+<div class="flyer-outer">
+  <div class="flyer-inner">
+
+    <!-- Corner ornaments (bottom pair via spans since ::before/after handle top) -->
+    <span class="corner-bl">◆</span>
+    <span class="corner-br">◆</span>
+
+    <!-- ── Headline Zone ── -->
+    <div class="headline-zone">
+      <p class="eyebrow">Pilates by Menukhah</p>
+      <h1 class="headline">Women-Only Pilates</h1>
+      <p class="subhead">Strength, Confidence &amp; Your Own Space</p>
+      <div class="diamond-divider">
+        <span class="line"></span>
+        <span>◆</span>
+        <span>◆</span>
+        <span>◆</span>
+        <span class="line"></span>
+      </div>
+    </div>
+
+    <!-- ── Hero Studio Image ── -->
+    <div class="hero-zone">
+      <div class="hero-frame">
+        <!--
+          TO USE ACTUAL PHOTO: remove .hero-placeholder div and uncomment:
+          <img class="hero-image" src="path/to/studio-photo.jpg"
+               alt="Private Pilates studio with reformers and warm lighting">
+        -->
+        <div class="hero-placeholder">
+          <div class="studio-detail"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Vibe Points ── -->
+    <div class="vibe-grid">
+      <div class="vibe-item">Women Only</div>
+      <div class="vibe-item">Beginner Friendly</div>
+      <div class="vibe-item">Private Studio</div>
+      <div class="vibe-item">Small Groups</div>
+    </div>
+
+    <!-- ── Content Panel ── -->
+    <div class="content-panel">
+
+      <!-- Divider -->
+      <div class="line-divider">
+        <span class="rule"></span>
+        <span class="gem">◆</span>
+        <span class="rule"></span>
+      </div>
+
+      <!-- Body Copy -->
+      <p class="body-copy">
+        Build strength, mobility, and confidence in a private boutique setting.
+      </p>
+
+      <!-- Pricing Card -->
+      <div class="pricing-card">
+        <p class="section-label">
+          <span class="label-gem">◆</span>
+          Class Packages
+          <span class="label-gem">◆</span>
+        </p>
+        <div class="pricing-row">
+          <div class="price-block">
+            <div class="price-amount">$100</div>
+            <div class="price-label">5 Classes</div>
+            <div class="price-sub">$20 / class</div>
+          </div>
+          <div class="price-divider"></div>
+          <div class="price-block">
+            <div class="price-amount">$180</div>
+            <div class="price-label">10 Classes</div>
+            <div class="price-sub">$18 / class</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule -->
+      <div class="schedule-block">
+        <p class="section-label">
+          <span class="label-gem">◆</span>
+          Class Dates
+          <span class="label-gem">◆</span>
+        </p>
+        <div class="schedule-times">
+          <div class="schedule-item"><strong>Sunday</strong> 8am</div>
+          <span class="schedule-dot">●</span>
+          <div class="schedule-item"><strong>Thursday</strong> 8pm</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Brand Footer ── -->
+    <div class="brand-footer">
+      <p class="brand-name">Pilates by Menukhah</p>
+      <p class="brand-tagline">Women Only · Private · Beginner Welcome</p>
+      <p class="contact-line">
+        (201) 250-6576<br>
+        The Core, 418 Cedar Lane, Teaneck, NJ
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="#">Book Your Spot</a>
+        <div class="qr-placeholder">
+          <span>QR<br>Code</span>
+        </div>
+      </div>
+      <p class="footer-note">Grip socks required — available for purchase</p>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

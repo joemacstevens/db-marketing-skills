@@ -1,0 +1,26 @@
+{
+  "name": "db-reels",
+  "version": "1.0.0",
+  "description": "Different Breed Elite Fitness — Remotion reels with cinematic effects",
+  "main": "index.js",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render:camp-story": "remotion render src/index.ts CampStoryApril14 out/camp-story-april14.mp4",
+    "build": "remotion render src/index.ts"
+  },
+  "keywords": [],
+  "author": "Different Breed Elite Fitness",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@remotion/cli": "^4.0.447",
+    "@remotion/google-fonts": "^4.0.447",
+    "@remotion/media": "^4.0.447",
+    "@remotion/transitions": "^4.0.447",
+    "@types/react": "^19.2.14",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "remotion": "^4.0.447",
+    "typescript": "^6.0.2"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-04-25",
+  "generated_at": "2026-04-25T04:01:03.430Z",
+  "clips": [
+    {
+      "slot": 1,
+      "filename": "sched-bg-1.mp4",
+      "source_path": "June 22, 2025/IMG_0379.mov",
+      "quality_score": 7,
+      "energy_level": "medium",
+      "activity_type": "training",
+      "duration_seconds": 85.36,
+      "people_count": 2,
+      "website_background": 0.5,
+      "key_moment": "Man starts walking with the farmer's carry, looking strong"
+    },
+    {
+      "slot": 2,
+      "filename": "sched-bg-2.mp4",
+      "source_path": "Home, March 25, 2025/Full Body Igniter(1).mov",
+      "quality_score": 7,
+      "energy_level": "high",
+      "activity_type": "training",
+      "duration_seconds": 15.47,
+      "people_count": 12,
+      "website_background": 0.6,
+      "key_moment": "Group working out together"
+    },
+    {
+      "slot": 3,
+      "filename": "sched-bg-3.mp4",
+      "source_path": "2026/gym_3_30_26/Video/C4810.MP4",
+      "quality_score": 7,
+      "energy_level": "medium",
+      "activity_type": "strength_conditioning",
+      "duration_seconds": 20.52,
+      "people_count": 20,
+      "website_background": 1,
+      "key_moment": "Class starts with lateral lunge/squat with punching motion."
+    },
+    {
+      "slot": 4,
+      "filename": "sched-bg-4.mp4",
+      "source_path": "2026/gym_4_15_26/Video/C4934.MP4",
+      "quality_score": 7,
+      "energy_level": "high",
+      "activity_type": "class",
+      "duration_seconds": 25.02,
+      "people_count": 12,
+      "website_background": 1,
+      "key_moment": "Women perform step aerobics with dumbbells."
+    }
+  ]
+}

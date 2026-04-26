@@ -1,0 +1,57 @@
+{
+  "name": "Different Breed Elite Fitness",
+  "handle": "@dbelitefitness",
+  "tagline": "Evolve Into Greatness",
+  "colors": {
+    "bg": "#0E0E0E",
+    "surface": "#1C1C1C",
+    "accent": "#C4161C",
+    "white": "#FFFFFF",
+    "muted": "#8E8E8E",
+    "secondary_accent_gold": "#C9A74A"
+  },
+  "fonts": {
+    "headline": {
+      "family": "Oswald",
+      "weights": [500, 600, 700],
+      "transform": "uppercase",
+      "source": "Google Fonts"
+    },
+    "body": {
+      "family": "Inter",
+      "weights": [400, 500, 600],
+      "source": "Google Fonts"
+    },
+    "display_alt": {
+      "family": "Nord Minimal Display Headline",
+      "file": "brand/fonts/nord-minimal-display-headline-logo-typeface.zip",
+      "usage": "premium / hero pieces only"
+    }
+  },
+  "logos": {
+    "primary": "brand/logos/DB-logo@3x.png",
+    "word": "brand/logos/DB-Word-logo-red+white@3x.png",
+    "end_card": "brand/logos/Evolve-into-greatness-DB-white-red@3x.png"
+  },
+  "video": {
+    "dimensions": "1080x1920",
+    "aspect": "9:16",
+    "fps": 30,
+    "codec": "H.264",
+    "typical_duration_seconds": [15, 30, 45]
+  },
+  "voice": {
+    "provider": "ElevenLabs",
+    "default_voice_id": "qVpGLzi5EhjW3WGVhOa9",
+    "music_duck_percent": 15,
+    "tone": "confident, direct, no-fluff, community-first"
+  },
+  "editorial_rules": [
+    "Bold magazine-cover energy: Oswald uppercase, dark bg, red accent tags",
+    "Captions are always burned-in and word-level timed (use Whisper)",
+    "Match photos to topic exactly — no mixed activities",
+    "Credit @veteranwithacamera when his footage is used",
+    "Hip-hop instrumentals only (no vocals, copyright-safe)",
+    "Always end with DB logo + 'Evolve Into Greatness' end card"
+  ]
+}

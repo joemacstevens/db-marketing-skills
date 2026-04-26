@@ -1,0 +1,634 @@
+{
+  "images_analyzed": 15,
+  "palette": [
+    {
+      "hex": "#F0F0E0",
+      "count": 68940
+    },
+    {
+      "hex": "#F0F0F0",
+      "count": 68034
+    },
+    {
+      "hex": "#F0E0E0",
+      "count": 38828
+    },
+    {
+      "hex": "#E0E0D0",
+      "count": 30377
+    },
+    {
+      "hex": "#000000",
+      "count": 23346
+    },
+    {
+      "hex": "#F0F0D0",
+      "count": 20101
+    },
+    {
+      "hex": "#705040",
+      "count": 13799
+    },
+    {
+      "hex": "#806050",
+      "count": 12330
+    },
+    {
+      "hex": "#E0D0C0",
+      "count": 11966
+    },
+    {
+      "hex": "#604030",
+      "count": 11366
+    },
+    {
+      "hex": "#603020",
+      "count": 11009
+    },
+    {
+      "hex": "#E0E0E0",
+      "count": 10528
+    },
+    {
+      "hex": "#906040",
+      "count": 9624
+    },
+    {
+      "hex": "#A07050",
+      "count": 9230
+    },
+    {
+      "hex": "#B08060",
+      "count": 8865
+    },
+    {
+      "hex": "#805030",
+      "count": 8794
+    },
+    {
+      "hex": "#907050",
+      "count": 8784
+    },
+    {
+      "hex": "#503020",
+      "count": 8670
+    }
+  ],
+  "per_image": [
+    {
+      "file": "brandkit-seed/menukhah/PNG image.png",
+      "top": [
+        {
+          "hex": "#F0F0F0",
+          "count": 10280
+        },
+        {
+          "hex": "#603030",
+          "count": 4161
+        },
+        {
+          "hex": "#503020",
+          "count": 1221
+        },
+        {
+          "hex": "#906040",
+          "count": 1209
+        },
+        {
+          "hex": "#704020",
+          "count": 1043
+        },
+        {
+          "hex": "#A07050",
+          "count": 900
+        },
+        {
+          "hex": "#805030",
+          "count": 877
+        },
+        {
+          "hex": "#907050",
+          "count": 824
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Flyer 1 - Find Your Flow - With Class Dates.png",
+      "top": [
+        {
+          "hex": "#E0E0D0",
+          "count": 14793
+        },
+        {
+          "hex": "#E0E0E0",
+          "count": 3080
+        },
+        {
+          "hex": "#E0D0D0",
+          "count": 1891
+        },
+        {
+          "hex": "#705040",
+          "count": 1834
+        },
+        {
+          "hex": "#E0D0C0",
+          "count": 1432
+        },
+        {
+          "hex": "#605040",
+          "count": 1186
+        },
+        {
+          "hex": "#806050",
+          "count": 1071
+        },
+        {
+          "hex": "#F0E0E0",
+          "count": 1033
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Pilates Flyer 2 - Your Private Studio Awaits Print Ready with QR.png",
+      "top": [
+        {
+          "hex": "#F0F0E0",
+          "count": 19993
+        },
+        {
+          "hex": "#F0F0F0",
+          "count": 4918
+        },
+        {
+          "hex": "#E0E0D0",
+          "count": 1956
+        },
+        {
+          "hex": "#E0D0C0",
+          "count": 1306
+        },
+        {
+          "hex": "#A07050",
+          "count": 1119
+        },
+        {
+          "hex": "#B08060",
+          "count": 946
+        },
+        {
+          "hex": "#A08060",
+          "count": 815
+        },
+        {
+          "hex": "#F0E0E0",
+          "count": 775
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Pilates Flyer 1 - Find Your Flow with QR Code.png",
+      "top": [
+        {
+          "hex": "#F0E0E0",
+          "count": 9361
+        },
+        {
+          "hex": "#F0F0E0",
+          "count": 5348
+        },
+        {
+          "hex": "#F0E0D0",
+          "count": 3194
+        },
+        {
+          "hex": "#E0E0D0",
+          "count": 3075
+        },
+        {
+          "hex": "#706050",
+          "count": 1463
+        },
+        {
+          "hex": "#806050",
+          "count": 1403
+        },
+        {
+          "hex": "#705040",
+          "count": 1400
+        },
+        {
+          "hex": "#E0D0C0",
+          "count": 1126
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/corecontrol_whatsapp_ad_studio.png",
+      "top": [
+        {
+          "hex": "#F0F0E0",
+          "count": 14568
+        },
+        {
+          "hex": "#F0F0F0",
+          "count": 2124
+        },
+        {
+          "hex": "#906040",
+          "count": 1179
+        },
+        {
+          "hex": "#805030",
+          "count": 1132
+        },
+        {
+          "hex": "#704020",
+          "count": 995
+        },
+        {
+          "hex": "#907050",
+          "count": 981
+        },
+        {
+          "hex": "#806040",
+          "count": 974
+        },
+        {
+          "hex": "#A07050",
+          "count": 901
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Flyer 2 - Your Private Studio Awaits - With Class Dates.png",
+      "top": [
+        {
+          "hex": "#F0E0E0",
+          "count": 15334
+        },
+        {
+          "hex": "#E0E0E0",
+          "count": 4358
+        },
+        {
+          "hex": "#E0D0C0",
+          "count": 2614
+        },
+        {
+          "hex": "#E0D0D0",
+          "count": 2492
+        },
+        {
+          "hex": "#D0C0C0",
+          "count": 1279
+        },
+        {
+          "hex": "#D0C0B0",
+          "count": 1205
+        },
+        {
+          "hex": "#E0E0D0",
+          "count": 952
+        },
+        {
+          "hex": "#D0D0C0",
+          "count": 799
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Flyer 2 - Your Private Studio Awaits - With QR Code.png",
+      "top": [
+        {
+          "hex": "#F0E0E0",
+          "count": 11112
+        },
+        {
+          "hex": "#F0F0E0",
+          "count": 8406
+        },
+        {
+          "hex": "#E0E0D0",
+          "count": 3985
+        },
+        {
+          "hex": "#E0D0C0",
+          "count": 2202
+        },
+        {
+          "hex": "#E0D0D0",
+          "count": 1646
+        },
+        {
+          "hex": "#F0F0F0",
+          "count": 1152
+        },
+        {
+          "hex": "#603020",
+          "count": 878
+        },
+        {
+          "hex": "#705040",
+          "count": 824
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Pilates Flyer 2 - Your Private Studio Awaits with QR Code.png",
+      "top": [
+        {
+          "hex": "#F0F0E0",
+          "count": 18677
+        },
+        {
+          "hex": "#E0E0D0",
+          "count": 4232
+        },
+        {
+          "hex": "#E0D0C0",
+          "count": 1888
+        },
+        {
+          "hex": "#F0E0D0",
+          "count": 1838
+        },
+        {
+          "hex": "#F0F0F0",
+          "count": 1677
+        },
+        {
+          "hex": "#603020",
+          "count": 978
+        },
+        {
+          "hex": "#705040",
+          "count": 776
+        },
+        {
+          "hex": "#604030",
+          "count": 711
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Whats App QR Code.png",
+      "top": [
+        {
+          "hex": "#F0F0F0",
+          "count": 21301
+        },
+        {
+          "hex": "#000000",
+          "count": 18019
+        },
+        {
+          "hex": "#E0E0E0",
+          "count": 1272
+        },
+        {
+          "hex": "#101010",
+          "count": 1152
+        },
+        {
+          "hex": "#303030",
+          "count": 1051
+        },
+        {
+          "hex": "#C0C0C0",
+          "count": 842
+        },
+        {
+          "hex": "#202020",
+          "count": 820
+        },
+        {
+          "hex": "#909090",
+          "count": 682
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Inspiration/PNG image-2.png",
+      "top": [
+        {
+          "hex": "#F0F0F0",
+          "count": 24500
+        },
+        {
+          "hex": "#907050",
+          "count": 1283
+        },
+        {
+          "hex": "#B09070",
+          "count": 1197
+        },
+        {
+          "hex": "#906040",
+          "count": 1034
+        },
+        {
+          "hex": "#806040",
+          "count": 925
+        },
+        {
+          "hex": "#A08060",
+          "count": 890
+        },
+        {
+          "hex": "#B09080",
+          "count": 889
+        },
+        {
+          "hex": "#705030",
+          "count": 823
+        }
+      ]
+    },
+    {
+      "file": "brandkit-seed/menukhah/Inspiration/PNG image-3.png",
+      "top": [
+        {
+          "hex": "#F0F0D0",
+          "count": 19978
+        },
+        {
+          "hex": "#808080",
+          "count": 2003
+        },
+        {
+          "hex": "#A09080",
+          "count": 1805
+        },
+        {
+          "hex": "#908070",
+          "count": 1781
+        },
+        {
+          "hex": "#F0F0F0",
+          "count": 1541
+        },
+        {
+          "hex": "#F0F0E0",
+          "count": 1285
+        },
+        {
+          "hex": "#603020",
+          "count": 998
+        },
+        {
+          "hex": "#807070",
+          "count": 878
+        }
+      ]
+    },
+    {
+      "file": "Studio/Copy of gym_1_14_26--4.jpg",
+      "top": [
+        {
+          "hex": "#805030",
+          "count": 3619
+        },
+        {
+          "hex": "#604030",
+          "count": 2138
+        },
+        {
+          "hex": "#705030",
+          "count": 2113
+        },
+        {
+          "hex": "#704030",
+          "count": 2042
+        },
+        {
+          "hex": "#704020",
+          "count": 1890
+        },
+        {
+          "hex": "#503020",
+          "count": 1800
+        },
+        {
+          "hex": "#907050",
+          "count": 1655
+        },
+        {
+          "hex": "#705040",
+          "count": 1626
+        }
+      ]
+    },
+    {
+      "file": "Studio/Image 1.jpg",
+      "top": [
+        {
+          "hex": "#603020",
+          "count": 2505
+        },
+        {
+          "hex": "#B08060",
+          "count": 2495
+        },
+        {
+          "hex": "#A07050",
+          "count": 1785
+        },
+        {
+          "hex": "#502010",
+          "count": 1751
+        },
+        {
+          "hex": "#302010",
+          "count": 1450
+        },
+        {
+          "hex": "#704030",
+          "count": 1255
+        },
+        {
+          "hex": "#907060",
+          "count": 1221
+        },
+        {
+          "hex": "#906040",
+          "count": 1203
+        }
+      ]
+    },
+    {
+      "file": "Studio/Image 2.png",
+      "top": [
+        {
+          "hex": "#B08060",
+          "count": 2494
+        },
+        {
+          "hex": "#603020",
+          "count": 2344
+        },
+        {
+          "hex": "#502010",
+          "count": 1878
+        },
+        {
+          "hex": "#A07050",
+          "count": 1830
+        },
+        {
+          "hex": "#302010",
+          "count": 1522
+        },
+        {
+          "hex": "#603010",
+          "count": 1245
+        },
+        {
+          "hex": "#704030",
+          "count": 1227
+        },
+        {
+          "hex": "#906040",
+          "count": 1218
+        }
+      ]
+    },
+    {
+      "file": "Studio/Image.png",
+      "top": [
+        {
+          "hex": "#806050",
+          "count": 3645
+        },
+        {
+          "hex": "#705040",
+          "count": 3416
+        },
+        {
+          "hex": "#101010",
+          "count": 2216
+        },
+        {
+          "hex": "#604030",
+          "count": 2089
+        },
+        {
+          "hex": "#101000",
+          "count": 1680
+        },
+        {
+          "hex": "#A08070",
+          "count": 1564
+        },
+        {
+          "hex": "#907060",
+          "count": 1527
+        },
+        {
+          "hex": "#303020",
+          "count": 1299
+        }
+      ]
+    }
+  ]
+}

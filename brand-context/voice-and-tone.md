@@ -1,7 +1,10 @@
 # Voice & Tone — Different Breed Elite Fitness
 
+## Location
+**Different Breed Elite Fitness** — Teaneck, NJ
+
 ## The Founder
-**Don Stevens** — Boxing background, Golden Gloves champion, built DB from the ground up. His philosophy drives everything.
+**Don Sommerville** — Boxing background, Golden Gloves champion, built DB from the ground up. His philosophy drives everything.
 
 ## Core Values
 - **Discipline. Desire. Dedication.** — This is the standard.

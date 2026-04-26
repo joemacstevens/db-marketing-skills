@@ -1,0 +1,127 @@
+[
+  {
+    "idx": 1,
+    "path": "Home, April 30, 2025/IMG_1377.mov",
+    "filename": "IMG_1377.mov",
+    "activity": "class",
+    "quality": 8,
+    "duration_seconds": 31.23,
+    "resolution": {
+      "w": 720,
+      "h": 1280
+    },
+    "peak": {
+      "timestamp_sec": 14,
+      "description": "Athlete in the blue tank throws medicine ball directly at the camera",
+      "hook_strength": 0.8,
+      "visual_anchor": "medicine ball at peak height, approaching the viewer"
+    },
+    "motion_direction": "up",
+    "hype_factor": 0.7,
+    "beat_drop_suitability": 0.8,
+    "cut_duration_sec": 2,
+    "window_start_sec": 13,
+    "window_end_sec": 15,
+    "compilation_notes": "Use as an upward motion cut. The blue tank throw is a hype moment to match a strong beat."
+  },
+  {
+    "idx": 2,
+    "path": "April 15, 2025/IMG_0877.mov",
+    "filename": "IMG_0877.mov",
+    "activity": "training",
+    "quality": 8,
+    "duration_seconds": 14.87,
+    "resolution": {
+      "w": 720,
+      "h": 1280
+    },
+    "peak": {
+      "timestamp_sec": 0.09,
+      "description": "Athlete powerfully pulls cable on rowing machine, back muscles engaged, determined expression.",
+      "hook_strength": 0.8,
+      "visual_anchor": "athlete's face mid-shout"
+    },
+    "motion_direction": "away_from_camera",
+    "hype_factor": 0.7,
+    "beat_drop_suitability": 0.8,
+    "cut_duration_sec": 0.69,
+    "window_start_sec": 0,
+    "window_end_sec": 0.69,
+    "compilation_notes": "Use the pull motion synced to a beat drop for a high impact moment. Pair with similar pulling motions to create a sense of rhythmic power."
+  },
+  {
+    "idx": 3,
+    "path": "April 2, 2025/IMG_0168.mov",
+    "filename": "IMG_0168.mov",
+    "activity": "training",
+    "quality": 8,
+    "duration_seconds": 18.23,
+    "resolution": {
+      "w": 720,
+      "h": 1280
+    },
+    "peak": {
+      "timestamp_sec": 10,
+      "description": "Athlete pivots and drives forward, showing determined focus while pushing the weighted sled.",
+      "hook_strength": 0.85,
+      "visual_anchor": "athlete's focused face and forward drive"
+    },
+    "motion_direction": "toward_camera",
+    "hype_factor": 0.8,
+    "beat_drop_suitability": 0.9,
+    "cut_duration_sec": 2.5,
+    "window_start_sec": 8.75,
+    "window_end_sec": 11.25,
+    "compilation_notes": "Use for intense forward drive segment in montage; good for syncing with music drops."
+  },
+  {
+    "idx": 4,
+    "path": "Raw/C3670.MP4",
+    "filename": "C3670.MP4",
+    "activity": "class",
+    "quality": 8,
+    "duration_seconds": 21.02,
+    "resolution": {
+      "w": 3840,
+      "h": 2160
+    },
+    "peak": {
+      "timestamp_sec": 11,
+      "description": "Athlete brings her weighted leg up and presses on the ball, face showing effort.",
+      "hook_strength": 0.8,
+      "visual_anchor": "athlete's face with leg raised"
+    },
+    "motion_direction": "up",
+    "hype_factor": 0.7,
+    "beat_drop_suitability": 0.8,
+    "cut_duration_sec": 2.5,
+    "window_start_sec": 9.75,
+    "window_end_sec": 12.25,
+    "compilation_notes": "Good for a montage focusing on lower-body strength. Cut on the upward thrust of the leg, possibly pairing with other vertical motions."
+  },
+  {
+    "idx": 5,
+    "path": "January 11, 2026/IMG_0405.mov",
+    "filename": "IMG_0405.mov",
+    "activity": "class",
+    "quality": 8,
+    "duration_seconds": 17.63,
+    "resolution": {
+      "w": 720,
+      "h": 1280
+    },
+    "peak": {
+      "timestamp_sec": 0.07,
+      "description": "Group of women intensely move Pilates rings above their heads in synchronized motion during an exercise class at Different Breed Elite Fitness. Faces are straining with effort.",
+      "hook_strength": 0.8,
+      "visual_anchor": "group synchronized motion"
+    },
+    "motion_direction": "up",
+    "hype_factor": 0.7,
+    "beat_drop_suitability": 0.9,
+    "cut_duration_sec": 1.07,
+    "window_start_sec": 0,
+    "window_end_sec": 1.07,
+    "compilation_notes": "Use in montage where the peak of movement hits on a beat, great for upward motion flow. Cut-out can show the ring being lowered for recovery or setup for the next movement."
+  }
+]

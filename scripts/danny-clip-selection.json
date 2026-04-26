@@ -1,0 +1,206 @@
+{
+  "open": {
+    "path": "2026/gym_3_30_26/Video/C4846.MP4",
+    "filename": "C4846.MP4",
+    "score": 26.2,
+    "quality_score": 7,
+    "energy_level": "high",
+    "framing": "mixed",
+    "camera_motion": "mixed",
+    "action": "A group is doing various exercises to improve their strength and condition their bodies.",
+    "coaches": [],
+    "best_clip_range": {
+      "start_sec": 37,
+      "end_sec": 41,
+      "description": "The woman is using a belt for support while doing hip thrusts."
+    },
+    "duration_seconds": 48.55,
+    "text_safe_zones": {
+      "top": true,
+      "center": true,
+      "bottom": true
+    }
+  },
+  "danny": {
+    "path": "2026/gym_3_30_26/Video/C4838.MP4",
+    "filename": "C4838.MP4",
+    "score": 27.8,
+    "quality_score": 7,
+    "energy_level": "medium",
+    "framing": "medium",
+    "camera_motion": "pan",
+    "action": "Woman pushing a sled on artificial turf while being coached.",
+    "coaches": [
+      "Danny"
+    ],
+    "best_clip_range": {
+      "start_sec": 3,
+      "end_sec": 7,
+      "description": "Clear shot of the trainee, coach giving instructions."
+    },
+    "duration_seconds": 8.01,
+    "text_safe_zones": {
+      "top": true,
+      "center": false,
+      "bottom": true
+    }
+  },
+  "power": {
+    "path": "2026/gym_3_30_26/Video/C4850.MP4",
+    "filename": "C4850.MP4",
+    "score": 25.2,
+    "quality_score": 7,
+    "energy_level": "high",
+    "framing": "medium",
+    "camera_motion": "pan",
+    "action": "Class participants perform dumbbell lunges on an indoor training field, intercut with jump rope exercise and sled pushes.",
+    "coaches": [
+      "Glenda"
+    ],
+    "best_clip_range": {
+      "start_sec": 22,
+      "end_sec": 26,
+      "description": "Athletes doing lunges with weights"
+    },
+    "duration_seconds": 56.06,
+    "text_safe_zones": {
+      "top": true,
+      "center": true,
+      "bottom": true
+    }
+  },
+  "discipline": {
+    "path": "2026/gym_3_30_26/Video/C4837.MP4",
+    "filename": "C4837.MP4",
+    "score": 22.8,
+    "quality_score": 7,
+    "energy_level": "medium",
+    "framing": "medium",
+    "camera_motion": "pan",
+    "action": "A group of people perform various strength training exercises, including band-resisted sled pushes and dumbbell rows, under the guidance of a trainer in a gym.",
+    "coaches": [],
+    "best_clip_range": {
+      "start_sec": 16,
+      "end_sec": 19,
+      "description": "Woman completes band-resisted sled push exercise"
+    },
+    "duration_seconds": 21.52,
+    "text_safe_zones": {
+      "top": true,
+      "center": true,
+      "bottom": true
+    }
+  },
+  "athletes": {
+    "path": "2026/gym_3_30_26/Video/C4815.MP4",
+    "filename": "C4815.MP4",
+    "score": 23.8,
+    "quality_score": 7,
+    "energy_level": "medium",
+    "framing": "mixed",
+    "camera_motion": "pan",
+    "action": "A group of people performs lunges in a gym setting on an artificial turf floor, led by an instructor.",
+    "coaches": [],
+    "best_clip_range": {
+      "start_sec": 7,
+      "end_sec": 11,
+      "description": "group performs lunges in unison"
+    },
+    "duration_seconds": 14.01,
+    "text_safe_zones": {
+      "top": true,
+      "center": true,
+      "bottom": true
+    }
+  },
+  "earned": {
+    "path": "2026/gym_3_30_26/Video/C4823.MP4",
+    "filename": "C4823.MP4",
+    "score": 28,
+    "quality_score": 7,
+    "energy_level": "high",
+    "framing": "medium",
+    "camera_motion": "handheld",
+    "action": "Group of people performs interval training, running and burpees in a parking lot",
+    "coaches": [],
+    "best_clip_range": {
+      "start_sec": 6,
+      "end_sec": 8,
+      "description": "High energy burpee with a shout of excitement"
+    },
+    "duration_seconds": 19.02,
+    "text_safe_zones": {
+      "top": false,
+      "center": true,
+      "bottom": true
+    }
+  },
+  "grind": {
+    "path": "2026/gym_3_30_26/Video/C4818.MP4",
+    "filename": "C4818.MP4",
+    "score": 22.8,
+    "quality_score": 7,
+    "energy_level": "medium",
+    "framing": "medium",
+    "camera_motion": "static",
+    "action": "A fitness group runs laps around a parking lot while the coach stands and observes.",
+    "coaches": [],
+    "best_clip_range": {
+      "start_sec": 7,
+      "end_sec": 9,
+      "description": "Coach smiles at the camera"
+    },
+    "duration_seconds": 15.02,
+    "text_safe_zones": {
+      "top": true,
+      "center": true,
+      "bottom": true
+    }
+  },
+  "door": {
+    "path": "2026/gym_3_30_26/Video/C4806.MP4",
+    "filename": "C4806.MP4",
+    "score": 22,
+    "quality_score": 7,
+    "energy_level": "medium",
+    "framing": "wide",
+    "camera_motion": "pan",
+    "action": "A group fitness class engages in dynamic lunges with torso twists led by a trainer.",
+    "coaches": [
+      "Danny"
+    ],
+    "best_clip_range": {
+      "start_sec": 7,
+      "end_sec": 10,
+      "description": "Dynamic lunge with twist"
+    },
+    "duration_seconds": 13.01,
+    "text_safe_zones": {
+      "top": true,
+      "center": true,
+      "bottom": true
+    }
+  },
+  "climax": {
+    "path": "2026/gym_3_30_26/Video/C4817.MP4",
+    "filename": "C4817.MP4",
+    "score": 26.4,
+    "quality_score": 7,
+    "energy_level": "medium",
+    "framing": "mixed",
+    "camera_motion": "mixed",
+    "action": "A fitness class is performing alternating lunges in a gym.",
+    "coaches": [],
+    "best_clip_range": {
+      "start_sec": 0,
+      "end_sec": 3,
+      "description": "Class performing alternating lunges."
+    },
+    "duration_seconds": 20.02,
+    "text_safe_zones": {
+      "top": true,
+      "center": true,
+      "bottom": true
+    }
+  }
+}

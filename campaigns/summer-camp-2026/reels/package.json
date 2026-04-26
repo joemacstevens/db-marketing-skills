@@ -1,0 +1,31 @@
+{
+  "name": "reels",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Post1Announcement out/post1-announcement.mp4",
+    "render:youth-fitness": "remotion render src/index.ts YouthFitnessPrimetime out/youth-fitness-primetime.mp4",
+    "render:built-different": "remotion render src/index.ts BuiltDifferent out/built-different.mp4",
+    "render:whole-family": "remotion render src/index.ts WholeFamilyTrains out/whole-family-trains.mp4",
+    "render:her-workout": "remotion render src/index.ts HerWorkout out/her-workout.mp4",
+    "render:review-reel": "remotion render src/index.ts ReviewReel out/review-reel.mp4",
+    "build": "remotion render src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@remotion/cli": "^4.0.447",
+    "@remotion/google-fonts": "^4.0.447",
+    "@remotion/media": "4.0.447",
+    "@remotion/transitions": "^4.0.447",
+    "@types/react": "^19.2.14",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "remotion": "^4.0.447",
+    "typescript": "^6.0.2"
+  }
+}

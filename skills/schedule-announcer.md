@@ -74,3 +74,10 @@ If API is unavailable, use the known schedule from `brand-context/schedule.md` a
 - [ ] Pilates booking link included where relevant?
 - [ ] Posted as STORY (not Reel) for daily schedule?
 - [ ] Both IG + FB versions?
+
+## Technical Pipeline Reference
+
+For the full technical implementation details (scripts, Remotion rendering, MindBody API, Upload-Post SDK, file paths, cron setup), see:
+→ **`skills/schedule-pipeline.md`**
+
+That doc covers everything needed to run the daily schedule story pipeline end to end.

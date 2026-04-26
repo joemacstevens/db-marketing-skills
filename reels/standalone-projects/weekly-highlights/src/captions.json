@@ -1,0 +1,422 @@
+[
+  {
+    "text": " This",
+    "startMs": 0,
+    "endMs": 300,
+    "timestampMs": 0,
+    "confidence": 1.0
+  },
+  {
+    "text": " class",
+    "startMs": 300,
+    "endMs": 600,
+    "timestampMs": 300,
+    "confidence": 1.0
+  },
+  {
+    "text": " doesn't",
+    "startMs": 600,
+    "endMs": 860,
+    "timestampMs": 600,
+    "confidence": 1.0
+  },
+  {
+    "text": " ease",
+    "startMs": 860,
+    "endMs": 1100,
+    "timestampMs": 860,
+    "confidence": 1.0
+  },
+  {
+    "text": " you",
+    "startMs": 1100,
+    "endMs": 1320,
+    "timestampMs": 1100,
+    "confidence": 1.0
+  },
+  {
+    "text": " in,",
+    "startMs": 1320,
+    "endMs": 1640,
+    "timestampMs": 1320,
+    "confidence": 1.0
+  },
+  {
+    "text": " full",
+    "startMs": 1980,
+    "endMs": 2120,
+    "timestampMs": 1980,
+    "confidence": 1.0
+  },
+  {
+    "text": " body",
+    "startMs": 2120,
+    "endMs": 2460,
+    "timestampMs": 2120,
+    "confidence": 1.0
+  },
+  {
+    "text": " from",
+    "startMs": 2460,
+    "endMs": 2880,
+    "timestampMs": 2460,
+    "confidence": 1.0
+  },
+  {
+    "text": " minute",
+    "startMs": 2880,
+    "endMs": 3160,
+    "timestampMs": 2880,
+    "confidence": 1.0
+  },
+  {
+    "text": " one.",
+    "startMs": 3160,
+    "endMs": 3840,
+    "timestampMs": 3160,
+    "confidence": 1.0
+  },
+  {
+    "text": " Glenda",
+    "startMs": 4500,
+    "endMs": 4680,
+    "timestampMs": 4500,
+    "confidence": 1.0
+  },
+  {
+    "text": " is",
+    "startMs": 4680,
+    "endMs": 4860,
+    "timestampMs": 4680,
+    "confidence": 1.0
+  },
+  {
+    "text": " a",
+    "startMs": 4860,
+    "endMs": 5060,
+    "timestampMs": 4860,
+    "confidence": 1.0
+  },
+  {
+    "text": " coach,",
+    "startMs": 5060,
+    "endMs": 5300,
+    "timestampMs": 5060,
+    "confidence": 1.0
+  },
+  {
+    "text": " and",
+    "startMs": 5600,
+    "endMs": 5680,
+    "timestampMs": 5600,
+    "confidence": 1.0
+  },
+  {
+    "text": " she's",
+    "startMs": 5680,
+    "endMs": 6020,
+    "timestampMs": 5680,
+    "confidence": 1.0
+  },
+  {
+    "text": " right",
+    "startMs": 6020,
+    "endMs": 6260,
+    "timestampMs": 6020,
+    "confidence": 1.0
+  },
+  {
+    "text": " here",
+    "startMs": 6260,
+    "endMs": 6520,
+    "timestampMs": 6260,
+    "confidence": 1.0
+  },
+  {
+    "text": " in",
+    "startMs": 6520,
+    "endMs": 6620,
+    "timestampMs": 6520,
+    "confidence": 1.0
+  },
+  {
+    "text": " it",
+    "startMs": 6620,
+    "endMs": 6720,
+    "timestampMs": 6620,
+    "confidence": 1.0
+  },
+  {
+    "text": " with",
+    "startMs": 6720,
+    "endMs": 6900,
+    "timestampMs": 6720,
+    "confidence": 1.0
+  },
+  {
+    "text": " everyone",
+    "startMs": 6900,
+    "endMs": 7220,
+    "timestampMs": 6900,
+    "confidence": 1.0
+  },
+  {
+    "text": " else.",
+    "startMs": 7220,
+    "endMs": 7740,
+    "timestampMs": 7220,
+    "confidence": 1.0
+  },
+  {
+    "text": " That",
+    "startMs": 7980,
+    "endMs": 8160,
+    "timestampMs": 7980,
+    "confidence": 1.0
+  },
+  {
+    "text": " says",
+    "startMs": 8160,
+    "endMs": 8340,
+    "timestampMs": 8160,
+    "confidence": 1.0
+  },
+  {
+    "text": " everything.",
+    "startMs": 8340,
+    "endMs": 8980,
+    "timestampMs": 8340,
+    "confidence": 1.0
+  },
+  {
+    "text": " Coach",
+    "startMs": 9980,
+    "endMs": 10120,
+    "timestampMs": 9980,
+    "confidence": 1.0
+  },
+  {
+    "text": " Carlos",
+    "startMs": 10120,
+    "endMs": 10480,
+    "timestampMs": 10120,
+    "confidence": 1.0
+  },
+  {
+    "text": " keeps",
+    "startMs": 10480,
+    "endMs": 10760,
+    "timestampMs": 10480,
+    "confidence": 1.0
+  },
+  {
+    "text": " it",
+    "startMs": 10760,
+    "endMs": 10940,
+    "timestampMs": 10760,
+    "confidence": 1.0
+  },
+  {
+    "text": " moving.",
+    "startMs": 10940,
+    "endMs": 11280,
+    "timestampMs": 10940,
+    "confidence": 1.0
+  },
+  {
+    "text": " Every",
+    "startMs": 11600,
+    "endMs": 11900,
+    "timestampMs": 11600,
+    "confidence": 1.0
+  },
+  {
+    "text": " station,",
+    "startMs": 11900,
+    "endMs": 12300,
+    "timestampMs": 11900,
+    "confidence": 1.0
+  },
+  {
+    "text": " every",
+    "startMs": 12560,
+    "endMs": 12860,
+    "timestampMs": 12560,
+    "confidence": 1.0
+  },
+  {
+    "text": " transition,",
+    "startMs": 12860,
+    "endMs": 13400,
+    "timestampMs": 12860,
+    "confidence": 1.0
+  },
+  {
+    "text": " intentional.",
+    "startMs": 13840,
+    "endMs": 14240,
+    "timestampMs": 13840,
+    "confidence": 1.0
+  },
+  {
+    "text": " By",
+    "startMs": 15120,
+    "endMs": 15260,
+    "timestampMs": 15120,
+    "confidence": 1.0
+  },
+  {
+    "text": " the",
+    "startMs": 15260,
+    "endMs": 15500,
+    "timestampMs": 15260,
+    "confidence": 1.0
+  },
+  {
+    "text": " end,",
+    "startMs": 15500,
+    "endMs": 15660,
+    "timestampMs": 15500,
+    "confidence": 1.0
+  },
+  {
+    "text": " you've",
+    "startMs": 15920,
+    "endMs": 16100,
+    "timestampMs": 15920,
+    "confidence": 1.0
+  },
+  {
+    "text": " touched",
+    "startMs": 16100,
+    "endMs": 16340,
+    "timestampMs": 16100,
+    "confidence": 1.0
+  },
+  {
+    "text": " every",
+    "startMs": 16340,
+    "endMs": 16860,
+    "timestampMs": 16340,
+    "confidence": 1.0
+  },
+  {
+    "text": " muscle.",
+    "startMs": 16860,
+    "endMs": 17340,
+    "timestampMs": 16860,
+    "confidence": 1.0
+  },
+  {
+    "text": " You'll",
+    "startMs": 17620,
+    "endMs": 17960,
+    "timestampMs": 17620,
+    "confidence": 1.0
+  },
+  {
+    "text": " feel",
+    "startMs": 17960,
+    "endMs": 18100,
+    "timestampMs": 17960,
+    "confidence": 1.0
+  },
+  {
+    "text": " it.",
+    "startMs": 18100,
+    "endMs": 18680,
+    "timestampMs": 18100,
+    "confidence": 1.0
+  },
+  {
+    "text": " That's",
+    "startMs": 18760,
+    "endMs": 19120,
+    "timestampMs": 18760,
+    "confidence": 1.0
+  },
+  {
+    "text": " the",
+    "startMs": 19120,
+    "endMs": 19220,
+    "timestampMs": 19120,
+    "confidence": 1.0
+  },
+  {
+    "text": " proof.",
+    "startMs": 19220,
+    "endMs": 19580,
+    "timestampMs": 19220,
+    "confidence": 1.0
+  },
+  {
+    "text": " Full",
+    "startMs": 20480,
+    "endMs": 20720,
+    "timestampMs": 20480,
+    "confidence": 1.0
+  },
+  {
+    "text": " body",
+    "startMs": 20720,
+    "endMs": 21040,
+    "timestampMs": 20720,
+    "confidence": 1.0
+  },
+  {
+    "text": " igniter.",
+    "startMs": 21040,
+    "endMs": 21600,
+    "timestampMs": 21040,
+    "confidence": 1.0
+  },
+  {
+    "text": " Tuesdays",
+    "startMs": 21600,
+    "endMs": 22380,
+    "timestampMs": 21600,
+    "confidence": 1.0
+  },
+  {
+    "text": " at",
+    "startMs": 22380,
+    "endMs": 22480,
+    "timestampMs": 22380,
+    "confidence": 1.0
+  },
+  {
+    "text": " 6",
+    "startMs": 22480,
+    "endMs": 22660,
+    "timestampMs": 22480,
+    "confidence": 1.0
+  },
+  {
+    "text": " .15,",
+    "startMs": 22660,
+    "endMs": 23060,
+    "timestampMs": 22660,
+    "confidence": 1.0
+  },
+  {
+    "text": " evolve",
+    "startMs": 23720,
+    "endMs": 24060,
+    "timestampMs": 23720,
+    "confidence": 1.0
+  },
+  {
+    "text": " into",
+    "startMs": 24060,
+    "endMs": 24380,
+    "timestampMs": 24060,
+    "confidence": 1.0
+  },
+  {
+    "text": " greatness.",
+    "startMs": 24380,
+    "endMs": 24700,
+    "timestampMs": 24380,
+    "confidence": 1.0
+  }
+]

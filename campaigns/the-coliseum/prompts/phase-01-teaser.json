@@ -1,0 +1,31 @@
+{
+  "model": "veo-3.0-fast-generate-001",
+  "output_dir": "/Users/joestevens/Projects/db-marketing-skills-main/campaigns/the-coliseum/raw",
+  "default_params": {
+    "durationSeconds": 8,
+    "aspectRatio": "9:16",
+    "sampleCount": 1
+  },
+  "clips": [
+    {
+      "id": "phase-01-A-sand-drop",
+      "prompt": "Extreme close-up ground-level shot of coarse golden sand on an ancient Roman Coliseum arena floor. A single large drop of sweat falls in ultra slow motion and hits the sand, sending a small puff of dust rising up through a shaft of golden warm light. Macro lens, shallow depth of field, anamorphic look. Cinematic color grade — warm amber shadows, desaturated overall. Subtle film grain, 24fps feel. No people, no faces, no modern objects, no text.",
+      "params": { "durationSeconds": 4 }
+    },
+    {
+      "id": "phase-01-B-iron-grip",
+      "prompt": "Extreme close-up slow dolly tracking shot of a muscular, calloused gladiator hand wrapping tightly around the leather-bound iron handle of an ancient weapon. Veins, tendons and scars visible on the forearm. Flickering torchlight from camera left, creating deep contrast and moving highlights. 85mm lens look, very shallow depth of field. Cinematic color grade — warm amber shadows, deep blacks. Film grain, 24fps. No face visible, no modern detail, no text.",
+      "params": { "durationSeconds": 5 }
+    },
+    {
+      "id": "phase-01-C-arena-pushin",
+      "prompt": "Cinematic slow push-in aerial shot across the empty sand floor of an ancient Roman Coliseum at dawn. Shafts of golden volumetric light cut diagonally through drifting dust motes from the tall stone arches. Long dramatic shadows on the sand. Stone seating tiers fade into shadow in the distance. Completely empty — no people anywhere. Anamorphic cinema lens, warm amber color grade with deep blacks. Subtle film grain, 24fps feel. No people, no animals, no modern elements, no text.",
+      "params": { "durationSeconds": 8 }
+    },
+    {
+      "id": "phase-01-D-backlit-walk",
+      "prompt": "Medium shot, slow motion 120fps. A muscular gladiator's sweat-soaked bare back and broad shoulders walks slowly away from camera toward a massive stone archway filled with bright golden backlight. Dust particles and volumetric light beams swirl behind his silhouette. His shoulders are framed against the glowing entrance. Anamorphic lens flares at the light source. Warm-cool contrast — cool blue shadows in the foreground, hot golden backlight. Cinematic color grade, film grain. Face never visible, back to camera entire shot. No modern details, no text, no logos.",
+      "params": { "durationSeconds": 5 }
+    }
+  ]
+}

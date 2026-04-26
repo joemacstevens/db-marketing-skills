@@ -1,0 +1,15 @@
+{
+  "model": "veo-3.0-fast-generate-001",
+  "output_dir": "/Users/joestevens/Projects/db-marketing-skills-main/campaigns/the-coliseum/raw",
+  "default_params": {
+    "durationSeconds": 8,
+    "aspectRatio": "9:16",
+    "sampleCount": 1
+  },
+  "clips": [
+    {
+      "id": "phase-01-D-backlit-walk",
+      "prompt": "Cinematic silhouette shot in slow motion. A lone armored warrior figure walks away from camera through a massive stone archway filled with bright golden sunrise backlight. The figure is entirely a dark silhouette against the glowing entrance — no detail visible, just the outline of armor and a cape. Dust particles and volumetric light beams fill the air around the silhouette. Anamorphic lens flares at the light source. Warm-cool contrast — cool blue stone interior in foreground, hot golden backlight beyond the arch. Cinematic color grade, film grain, 24fps. Ancient Roman setting, no modern details, no text, no logos."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schedule": [
+    {
+      "id": "2026-04-25-9-AM-The-Sweet-Science",
+      "iso": "2026-04-25T09:00:00",
+      "time": "9 AM",
+      "class": "The Sweet Science",
+      "coach": "Daniel Wilson",
+      "status": "active"
+    },
+    {
+      "id": "2026-04-25-10-AM-Strength-&-Conditioning",
+      "iso": "2026-04-25T10:00:00",
+      "time": "10 AM",
+      "class": "Strength & Conditioning",
+      "coach": "Daniel Wilson",
+      "status": "active"
+    },
+    {
+      "id": "2026-04-25-1-PM-Sports-Performance",
+      "iso": "2026-04-25T13:00:00",
+      "time": "1 PM",
+      "class": "Sports Performance",
+      "coach": "Chad Elliot",
+      "status": "active"
+    }
+  ],
+  "scheduleDate": "2026-04-25T04:00:00.000Z",
+  "timezone": "America/New_York",
+  "maxItems": 12
+}

@@ -1,0 +1,52 @@
+{
+  "rules": {
+    "instagram_max_per_post": 5,
+    "facebook_caption_max_chars": 255,
+    "note": "Meta limits IG to 5 hashtags per post. Always pick the most relevant 5."
+  },
+  "core_always_include": [
+    "#DifferentBreed",
+    "#EvolveIntoGreatness"
+  ],
+  "by_topic": {
+    "boxing_adult": [
+      "#Boxing",
+      "#SparringNight",
+      "#NJBoxing",
+      "#NorthBergen",
+      "#BoxingTraining"
+    ],
+    "kids_boxing": [
+      "#KidsBoxing",
+      "#YouthFitness",
+      "#NJKids",
+      "#BoxingForKids",
+      "#ConfidenceKids"
+    ],
+    "pilates": [
+      "#Pilates",
+      "#CoreControl",
+      "#NJPilates",
+      "#PilatesForMen",
+      "#Mobility"
+    ],
+    "community": [
+      "#GymLife",
+      "#NJFitness",
+      "#FitnessCommunity",
+      "#NorthBergen",
+      "#BergenCounty"
+    ],
+    "mindset": [
+      "#MentalToughness",
+      "#DisciplineOverMotivation",
+      "#NoShortcuts",
+      "#WorkEthic",
+      "#EvolveIntoGreatness"
+    ]
+  },
+  "always_tag": [
+    "@differentbreedsportsacademy"
+  ],
+  "tag_videographer_when_his_footage": "@veteranwithacamera"
+}

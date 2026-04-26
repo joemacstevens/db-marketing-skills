@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="theme-color" content="#0E0E0E">
+<title>DB Summer Camp 2026 — Different Breed Elite Fitness</title>
+<meta name="description" content="9 weeks of elite athlete development for ages 11–16. Sports performance, boxing, basketball, conditioning, yoga. Early bird pricing through June 12. New Milford, NJ.">
+<meta property="og:title" content="DB Summer Camp 2026 — Different Breed Elite Fitness">
+<meta property="og:description" content="9 weeks. 5 coaches. Real athlete development for ages 11–16. Early bird pricing through June 12.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/photos/02-mitts.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+<style>
+  :root {
+    --black: #0E0E0E;
+    --charcoal: #1C1C1C;
+    --charcoal-2: #232323;
+    --red: #C4161C;
+    --red-hover: #E01B22;
+    --white: #FFFFFF;
+    --gray-1: #E0E0E0;
+    --gray-2: #8E8E8E;
+    --gray-3: #555;
+    --border: #2A2A2A;
+    --container: 1180px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+  .h-display { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; line-height: 0.95; letter-spacing: -0.5px; }
+  .h-section { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 36px; line-height: 1.05; }
+  .eyebrow { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 16px; display: inline-block; }
+  .text-red { color: var(--red); }
+
+  /* === NAV === */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(14,14,14,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--container); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px;
+  }
+  .nav .logo { display: flex; align-items: center; gap: 12px; }
+  .nav .logo img { height: 36px; width: auto; }
+  .nav .logo .brand { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); }
+  .nav .nav-cta {
+    background: var(--red); color: var(--white);
+    padding: 10px 22px; border-radius: 4px;
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px;
+    letter-spacing: 2px; text-transform: uppercase;
+    transition: background 0.15s;
+  }
+  .nav .nav-cta:hover { background: var(--red-hover); }
+
+  /* === CURTAIN HERO === */
+  .curtain-section { position: relative; height: 220vh; }
+  .curtain-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+  .curtain-panel {
+    position: absolute; top: 0; bottom: 0; width: 50%;
+    background: var(--black);
+    z-index: 5;
+    display: flex; align-items: center;
+    border-bottom: 4px solid var(--red);
+  }
+  .curtain-panel.left { left: 0; justify-content: flex-end; padding-right: 5vw; border-right: 1px solid #2a2a2a; }
+  .curtain-panel.right { right: 0; justify-content: flex-start; padding-left: 5vw; border-left: 1px solid #2a2a2a; }
+  .curtain-panel h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(72px, 14vw, 220px);
+    line-height: 0.85;
+    letter-spacing: -3px;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .curtain-panel h2 .accent { color: var(--red); display: block; }
+  .curtain-scroll-hint {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    z-index: 6;
+    font-family: 'Oswald', sans-serif; font-size: 12px;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('photos/02-mitts.jpg');
+    background-size: cover; background-position: center;
+    filter: brightness(0.45) contrast(1.05);
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(14,14,14,0.5) 0%, rgba(14,14,14,0.7) 60%, var(--black) 100%);
+    z-index: 1;
+  }
+  .hero .container { position: relative; z-index: 2; }
+  .hero h1 {
+    font-size: clamp(48px, 9vw, 112px);
+    margin-bottom: 24px;
+  }
+  .hero h1 .accent { color: var(--red); display: block; }
+  .hero .hook {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(24px, 3.4vw, 42px);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 28px;
+    max-width: 720px;
+  }
+  .hero .hook .accent { color: var(--red); }
+  .hero .lede {
+    font-size: clamp(18px, 2.4vw, 26px);
+    color: var(--gray-1);
+    max-width: 620px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .hero .meta {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(16px, 2vw, 22px);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-2);
+    margin-bottom: 40px;
+  }
+  .hero .meta strong { color: var(--white); font-weight: 600; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 36px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700; font-size: 16px;
+    letter-spacing: 3px; text-transform: uppercase;
+    border-radius: 4px; border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .btn-primary { background: var(--red); color: var(--white); border-color: var(--red); }
+  .btn-primary:hover { background: var(--red-hover); border-color: var(--red-hover); transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.4); }
+  .btn-secondary:hover { background: var(--white); color: var(--black); }
+
+  /* === EARLY BIRD STRIP === */
+  .strip {
+    background: var(--red);
+    padding: 18px 0;
+    text-align: center;
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 16px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--white);
+  }
+  .strip .pulse { display: inline-block; width: 8px; height: 8px; background: white; border-radius: 50%; margin-right: 12px; vertical-align: middle; animation: pulse 1.6s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  /* === SECTION === */
+  section { padding: 100px 0; position: relative; }
+  section.alt { background: var(--charcoal); }
+
+  /* === ODOMETER PROOF BAR === */
+  .proof-bar { background: var(--black); padding: 70px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .proof-item { padding: 16px 8px; }
+  .odometer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: -2px;
+    overflow: hidden;
+    height: 1.05em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.05;
+  }
+  .odo-digit { display: inline-block; overflow: hidden; height: 1.05em; position: relative; }
+  .odo-strip { display: flex; flex-direction: column; transition: transform 1.6s cubic-bezier(.16,1,.3,1); }
+  .odo-strip span { display: block; height: 1.05em; line-height: 1.05; }
+  .odometer .stat-suffix { font-family: 'JetBrains Mono', monospace; font-size: 0.7em; color: var(--red); margin-left: 4px; }
+  .proof-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-2);
+    margin-top: 12px;
+  }
+  @media (max-width: 720px) {
+    .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  }
+
+  /* === HORIZONTAL SCROLL: 5 SPORTS === */
+  .h-scroll-section { overflow: hidden; background: var(--black); padding: 0; }
+  .h-scroll-intro { padding: 100px 24px 60px; max-width: var(--container); margin: 0 auto; text-align: center; }
+  .h-scroll-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; overflow: hidden; }
+  .h-scroll-track {
+    display: flex;
+    gap: 28px;
+    padding: 0 max(48px, 6vw);
+    will-change: transform;
+  }
+  .h-card {
+    flex-shrink: 0;
+    width: clamp(320px, 38vw, 520px);
+    height: 70vh;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 36px;
+  }
+  .h-card-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-size: cover; background-position: center;
+    transition: transform 0.6s ease;
+    filter: brightness(0.85) contrast(1.05);
+  }
+  .h-card:hover .h-card-bg { transform: scale(1.04); }
+  .h-card-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(to top, rgba(14,14,14,0.95) 0%, rgba(14,14,14,0.5) 40%, transparent 70%);
+  }
+  .h-card-content { position: relative; z-index: 2; }
+  .h-card-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .h-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+  .h-card p {
+    font-size: 16px;
+    color: var(--gray-1);
+    line-height: 1.5;
+    max-width: 38ch;
+  }
+  .h-progress {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    z-index: 50; display: flex; align-items: center; gap: 14px;
+    opacity: 0; transition: opacity .3s;
+    background: rgba(14,14,14,0.85); backdrop-filter: blur(8px);
+    padding: 10px 18px; border-radius: 100px; border: 1px solid var(--border);
+  }
+  .h-progress.visible { opacity: 1; }
+  .h-progress-bar { width: 140px; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .h-progress-fill { height: 100%; background: var(--red); width: 0%; transition: width 0.1s; }
+  .h-progress-label { font-family: 'Oswald', sans-serif; font-size: 12px; color: var(--gray-1); letter-spacing: 2px; }
+  @media (max-width: 800px) {
+    .h-scroll-section { display: none; }
+    .h-scroll-fallback { display: block !important; }
+  }
+  .h-scroll-fallback { display: none; }
+
+  /* === CONFIDENCE CURRICULUM === */
+  .curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+  }
+  .curr-step {
+    background: var(--black);
+    border-left: 4px solid var(--red);
+    padding: 40px 32px;
+    border-radius: 4px;
+    position: relative;
+  }
+  .curr-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.85;
+  }
+  .curr-step h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .curr-step p {
+    color: var(--gray-1);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  @media (max-width: 800px) {
+    .curriculum-grid { grid-template-columns: 1fr; gap: 20px; }
+    .curr-num { font-size: 56px; }
+  }
+
+  /* === WHY DB === */
+  .why .container { max-width: 900px; text-align: center; }
+  .why h2 { font-size: clamp(40px, 6vw, 72px); margin-bottom: 24px; }
+  .why h2 .accent { color: var(--red); }
+  .why .lede { font-size: 22px; color: var(--gray-1); max-width: 720px; margin: 0 auto 40px; }
+  .why .pull { font-family: 'Oswald', sans-serif; font-size: 28px; line-height: 1.4; color: var(--white); padding: 32px; border-left: 4px solid var(--red); text-align: left; max-width: 720px; margin: 0 auto; background: var(--charcoal); }
+
+  /* === ACTIVITIES GRID === */
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .activity-card {
+    background: var(--charcoal-2);
+    padding: 36px 28px;
+    border-radius: 4px;
+    border-top: 4px solid var(--red);
+    transition: transform 0.2s;
+  }
+  .activity-card:hover { transform: translateY(-4px); }
+  .activity-card .num {
+    font-family: 'Oswald', sans-serif;
+    color: var(--red); font-size: 14px;
+    letter-spacing: 3px; font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .activity-card h3 {
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 22px; text-transform: uppercase;
+    letter-spacing: 1.5px; margin-bottom: 12px;
+  }
+  .activity-card p { color: var(--gray-1); font-size: 15px; }
+
+  .section-header { text-align: center; margin-bottom: 20px; }
+  .section-header.left { text-align: left; }
+  .section-header h2 { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; margin-bottom: 16px; }
+  .section-header h2 .accent { color: var(--red); }
+  .section-header p { color: var(--gray-1); font-size: 18px; max-width: 640px; margin: 0 auto; }
+
+  /* === GALLERY === */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 12px;
+    margin-top: 50px;
+  }
+  .gallery .photo { overflow: hidden; border-radius: 4px; background: var(--charcoal); }
+  .gallery .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .gallery .photo:hover img { transform: scale(1.05); }
+  .gallery .photo:nth-child(1) { grid-column: span 6; grid-row: span 2; min-height: 480px; }
+  .gallery .photo:nth-child(2) { grid-column: span 6; min-height: 234px; }
+  .gallery .photo:nth-child(3) { grid-column: span 3; min-height: 234px; }
+  .gallery .photo:nth-child(4) { grid-column: span 3; min-height: 234px; }
+  .gallery .photo:nth-child(5) { grid-column: span 4; min-height: 280px; }
+  .gallery .photo:nth-child(6) { grid-column: span 4; min-height: 280px; }
+  .gallery .photo:nth-child(7) { grid-column: span 4; min-height: 280px; }
+
+  /* === PERKS === */
+  .perks-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin-top: 50px;
+  }
+  .perk { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px; border-left: 3px solid var(--red); }
+  .perk .icon { font-size: 28px; }
+  .perk h4 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .perk p { color: var(--gray-1); font-size: 14px; line-height: 1.5; }
+
+  /* === PRICING === */
+  .pricing-wrap {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .price-card {
+    background: var(--charcoal-2);
+    padding: 36px 28px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .price-card.featured {
+    background: linear-gradient(180deg, rgba(196,22,28,0.18) 0%, var(--charcoal-2) 100%);
+    border-color: var(--red);
+    transform: scale(1.02);
+  }
+  .price-card .badge {
+    position: absolute; top: -12px; right: 20px;
+    background: var(--red); color: var(--white);
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 3px;
+  }
+  .price-card .tier {
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 14px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gray-2); margin-bottom: 16px;
+  }
+  .price-card .price {
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 56px; line-height: 1; margin-bottom: 8px;
+  }
+  .price-card .price .cents { font-size: 22px; color: var(--gray-2); margin-left: 4px; }
+  .price-card .per { color: var(--gray-2); font-size: 14px; margin-bottom: 24px; font-weight: 500; }
+  .price-card .feat-list { list-style: none; padding: 0; margin-top: auto; }
+  .price-card .feat-list li {
+    color: var(--gray-1); font-size: 14px;
+    padding: 8px 0; border-top: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .price-card .feat-list li::before { content: '✓'; color: var(--red); font-weight: 700; }
+  .deadline-banner {
+    margin-top: 40px;
+    background: var(--charcoal);
+    padding: 24px 32px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    text-align: center;
+    color: var(--gray-1);
+    font-size: 16px;
+  }
+  .deadline-banner strong { color: var(--red); font-weight: 700; }
+
+  /* === STEP INDICATOR === */
+  .step-indicator {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gray-2); margin-bottom: 30px;
+  }
+  .step-indicator .step {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #1a1a1a; color: var(--gray-2);
+    border: 1px solid #333; font-weight: 700; margin-right: 6px;
+  }
+  .step-indicator .step.active { background: var(--red); color: #fff; border-color: var(--red); }
+  .step-indicator .step-arrow { color: #444; margin: 0 10px; }
+
+  /* === PAYMENT STEP === */
+  .payment-step { margin-top: 10px; }
+  .payment-header { text-align: center; margin-bottom: 30px; }
+  .payment-header h3 {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 32px;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+  }
+  .payment-header p { color: var(--gray-2); max-width: 560px; margin: 0 auto; }
+  .payment-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px; margin-bottom: 24px;
+  }
+  .payment-card {
+    background: #131313; border: 1px solid #262626; border-radius: 8px;
+    padding: 24px 20px; text-align: center; position: relative;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .payment-card:hover { transform: translateY(-3px); border-color: #3a3a3a; }
+  .payment-card.featured { border-color: var(--red); background: rgba(196,22,28,0.06); }
+  .payment-label {
+    font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--red); margin-bottom: 8px;
+  }
+  .payment-label.muted { color: var(--gray-2); }
+  .payment-card h4 {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+  }
+  .payment-amount {
+    font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 600; color: #fff;
+    margin-bottom: 16px;
+  }
+  .payment-amount span { font-size: 14px; color: var(--gray-2); font-weight: 400; }
+  .payment-action :global(a),
+  .payment-action .healcode-pricing-option-text-link,
+  .payment-action a {
+    display: inline-block; background: var(--red); color: #fff !important;
+    padding: 12px 22px; border-radius: 4px; font-family: 'Oswald', sans-serif;
+    font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none !important; transition: background 0.2s;
+  }
+  .payment-action a:hover { background: var(--red-hover); }
+  .payment-note {
+    text-align: center; color: var(--gray-2); font-size: 13px; margin-top: 10px;
+  }
+
+  /* === FORM === */
+  .form-wrap {
+    max-width: 760px; margin: 0 auto;
+    background: var(--charcoal-2);
+    padding: 50px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    margin-top: 50px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .form-field { display: flex; flex-direction: column; }
+  .form-field.full { grid-column: span 2; }
+  .form-field label {
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gray-2); margin-bottom: 8px;
+  }
+  .form-field label .req { color: var(--red); }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: var(--black);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 14px 16px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.15s;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--red);
+  }
+  .form-field textarea { resize: vertical; min-height: 100px; }
+  .form-field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%238E8E8E' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+  .form-submit-row { margin-top: 30px; }
+  .form-submit-row .btn { width: 100%; justify-content: center; }
+  .form-disclaimer { color: var(--gray-2); font-size: 13px; text-align: center; margin-top: 16px; line-height: 1.5; }
+
+  .form-status { padding: 16px; border-radius: 4px; margin-bottom: 24px; font-size: 15px; display: none; }
+  .form-status.success { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.4); color: #4ade80; }
+  .form-status.error { background: rgba(196,22,28,0.12); border: 1px solid var(--red); color: #f87171; }
+
+  /* === FAQ === */
+  .faq-list { max-width: 800px; margin: 60px auto 0; }
+  .faq-item {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 22px; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+  .faq-a { color: var(--gray-1); font-size: 16px; line-height: 1.6; }
+
+  /* === FOOTER === */
+  .footer { background: #050505; padding: 60px 0 40px; border-top: 1px solid var(--border); }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer h5 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; color: var(--gray-2); }
+  .footer p, .footer a { color: var(--gray-1); font-size: 14px; line-height: 1.7; }
+  .footer a:hover { color: var(--red); }
+  .footer .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .footer .brand img { height: 48px; }
+  .footer .brand .name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    text-align: center;
+    color: var(--gray-3); font-size: 13px;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 800px) {
+    .hero { padding: 100px 0 60px; min-height: auto; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .btn { justify-content: center; }
+    section { padding: 60px 0; }
+    .form-wrap { padding: 28px 20px; }
+    .form-row { grid-template-columns: 1fr; gap: 16px; }
+    .form-field.full { grid-column: span 1; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .gallery .photo { grid-column: span 1 !important; min-height: 200px !important; grid-row: auto !important; }
+    .gallery .photo:nth-child(1) { grid-column: span 2 !important; min-height: 280px !important; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .price-card.featured { transform: none; }
+    .nav .logo .brand { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="assets/db-logo-white.png" alt="DB Elite Fitness">
+      <span class="brand">DB Summer Camp '26</span>
+    </a>
+    <a href="#register" class="nav-cta">Register Now</a>
+  </div>
+</nav>
+
+<!-- ============ CURTAIN HERO ============ -->
+<section class="curtain-section" id="curtainSection">
+  <div class="curtain-sticky">
+    <header class="hero" style="position:absolute; inset:0; min-height:100vh;">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <span class="eyebrow">Summer 2026 · Ages 11–16</span>
+        <h1 class="h-display">
+          DB Summer<br>
+          Camp <span class="accent">is Back.</span>
+        </h1>
+        <p class="hook">Where Skills Turn to <span class="accent">Confidence.</span></p>
+        <p class="lede">Nine weeks of real coaching in boxing, sports performance, basketball, conditioning, and yoga — taught by certified trainers who actually compete. We don't babysit. We build.</p>
+        <div class="meta"><strong>9 Weeks</strong> &nbsp;·&nbsp; <strong>5 Sports</strong> &nbsp;·&nbsp; <strong>5 Coaches</strong> &nbsp;·&nbsp; <strong>1 Standard</strong></div>
+        <div class="hero-ctas">
+          <a href="#register" class="btn btn-primary">Register Now →</a>
+          <a href="#what-included" class="btn btn-secondary">What's Included</a>
+        </div>
+      </div>
+    </header>
+    <div class="curtain-panel left" id="cLeft"><h2>Different<span class="accent">Breed</span></h2></div>
+    <div class="curtain-panel right" id="cRight"><h2>Summer<span class="accent">2026</span></h2></div>
+    <div class="curtain-scroll-hint" id="curtainHint">Scroll to Enter ↓</div>
+  </div>
+</section>
+
+<!-- ============ EARLY BIRD STRIP ============ -->
+<div class="strip">
+  <span class="pulse"></span> Early Bird Pricing Through June 12 — Lock In Your Spot
+</div>
+
+<!-- ============ ODOMETER PROOF BAR ============ -->
+<section class="proof-bar">
+  <div class="proof-grid">
+    <div class="proof-item">
+      <div class="odometer" data-value="9"></div>
+      <div class="proof-label">Weeks of Camp</div>
+    </div>
+    <div class="proof-item">
+      <div class="odometer" data-value="5"></div>
+      <div class="proof-label">Sports Trained</div>
+    </div>
+    <div class="proof-item">
+      <div class="odometer" data-value="5"></div>
+      <div class="proof-label">Coaches on Staff</div>
+    </div>
+    <div class="proof-item">
+      <div class="odometer" data-value="20" data-suffix="+"></div>
+      <div class="proof-label">Yrs Coaching XP</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY DB ============ -->
+<section class="why">
+  <div class="container">
+    <span class="eyebrow">The Difference</span>
+    <h2 class="h-display">This isn't <span class="accent">summer babysitting.</span></h2>
+    <p class="lede">It's elite athlete development. Other camps keep your kid moving. DB Camp builds real athletes — with real coaches, real programming, and real accountability. Skills are taught. Confidence is built.</p>
+    <div class="pull">
+      "Your kid will come home tired. They'll be back the next day. That's the whole point."
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE CONFIDENCE CURRICULUM ============ -->
+<section class="curriculum alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">How It Works</span>
+      <h2>The Confidence <span class="accent">Curriculum.</span></h2>
+      <p>Confidence isn't a personality trait — it's a byproduct of doing hard things and getting better at them. Here's how nine weeks at DB get your athlete there.</p>
+    </div>
+    <div class="curriculum-grid">
+      <div class="curr-step">
+        <div class="curr-num">01</div>
+        <h3>Build the Skill</h3>
+        <p>Real coaching in five sports, every day. Boxing footwork, sports performance drills, basketball IQ, yoga flexibility, conditioning. We teach the fundamentals — not the highlight reel.</p>
+      </div>
+      <div class="curr-step">
+        <div class="curr-num">02</div>
+        <h3>Trust the Work</h3>
+        <p>Reps, accountability, progression. Your athlete learns that effort pays — and that the standard is the standard, every day. Camper of the Week recognizes the kids who show up and grind.</p>
+      </div>
+      <div class="curr-step">
+        <div class="curr-num">03</div>
+        <h3>Walk Different</h3>
+        <p>Nine weeks in, your athlete walks out knowing what they're capable of. That's confidence — earned, not handed out. They'll carry it into school, sports, and life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S INCLUDED — Horizontal scroll hijack ============ -->
+<section id="what-included" class="h-scroll-section">
+  <div class="h-scroll-intro">
+    <span class="eyebrow">What Your Athlete Gets</span>
+    <h2 class="h-section">Five Programs. <span class="text-red">One Standard.</span></h2>
+    <p style="color:var(--gray-1);font-size:18px;max-width:640px;margin:16px auto 0;">Every camper trains across all five disciplines. Scroll to move through the program ↓</p>
+  </div>
+  <div class="h-scroll-sticky">
+    <div class="h-scroll-track" id="hTrack">
+      <div class="h-card">
+        <div class="h-card-bg" style="background-image:url('photos/07-drills.jpg');"></div>
+        <div class="h-card-overlay"></div>
+        <div class="h-card-content">
+          <div class="h-card-num">01 / Core</div>
+          <h3>Sports Performance</h3>
+          <p>Speed, agility, strength, mental toughness. The real fundamentals that separate good from great.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-bg" style="background-image:url('photos/02-mitts.jpg');"></div>
+        <div class="h-card-overlay"></div>
+        <div class="h-card-content">
+          <div class="h-card-num">02 / Core</div>
+          <h3>Boxing</h3>
+          <p>Technique, footwork, control. Coached by Don, a Golden Gloves Champion. This is the real thing.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-bg" style="background-image:url('photos/03-basketball.jpg');"></div>
+        <div class="h-card-overlay"></div>
+        <div class="h-card-content">
+          <div class="h-card-num">03 / Core</div>
+          <h3>Basketball &amp; Rec</h3>
+          <p>Compete, cooperate, have fun. Build team skills and let off steam — the right way.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-bg" style="background-image:url('photos/06-gym.jpg');"></div>
+        <div class="h-card-overlay"></div>
+        <div class="h-card-content">
+          <div class="h-card-num">04 / Core</div>
+          <h3>Yoga / Pilates</h3>
+          <p>Flexibility, core strength, focus, recovery. Train the whole athlete — not just the showy stuff.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-bg" style="background-image:url('photos/04-pushups.jpg');"></div>
+        <div class="h-card-overlay"></div>
+        <div class="h-card-content">
+          <div class="h-card-num">05 / Core</div>
+          <h3>Conditioning</h3>
+          <p>Push the limits. Real conditioning work that builds the engine every athlete needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="h-progress" id="hProgress">
+  <div class="h-progress-bar"><div class="h-progress-fill" id="hFill"></div></div>
+  <div class="h-progress-label" id="hLabel">1 / 5</div>
+</div>
+
+<!-- ============ PERKS (kept from original What's Included) ============ -->
+<section class="alt">
+  <div class="container">
+
+    <!-- Perks row -->
+    <div class="perks-row">
+      <div class="perk">
+        <span class="icon">🏆</span>
+        <h4>Camper of the Week</h4>
+        <p>Real recognition for effort, attitude, and improvement. Not a participation trophy.</p>
+      </div>
+      <div class="perk">
+        <span class="icon">🍕</span>
+        <h4>Pizza Fridays</h4>
+        <p>Pizza is on us every Friday. Sit down, break bread, build the DB family. (Mon–Thu: pack a real lunch.)</p>
+      </div>
+      <div class="perk">
+        <span class="icon">💧</span>
+        <h4>Hydration &amp; Fuel</h4>
+        <p>Water, Gatorade, and fresh fruit (bananas, apples, oranges) provided every single day.</p>
+      </div>
+      <div class="perk">
+        <span class="icon">👥</span>
+        <h4>Real Coach Ratio</h4>
+        <p>Five coaches on staff. Tight ratio, real attention. Nobody gets lost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Last Summer at DB Camp</span>
+      <h2>The Photos <span class="accent">Don't Lie.</span></h2>
+      <p>This is what nine weeks of real work looks like. Every kid earned their spot.</p>
+    </div>
+    <div class="gallery">
+      <div class="photo"><img src="photos/02-mitts.jpg" alt="Strength circuit" loading="lazy"></div>
+      <div class="photo"><img src="photos/01-pizza.jpg" alt="Slam ball power work" loading="lazy"></div>
+      <div class="photo"><img src="photos/03-basketball.jpg" alt="Basketball drive" loading="lazy"></div>
+      <div class="photo"><img src="photos/06-gym.jpg" alt="Coaches on the floor" loading="lazy"></div>
+      <div class="photo"><img src="photos/04-pushups.jpg" alt="Conditioning circuit" loading="lazy"></div>
+      <div class="photo"><img src="photos/07-drills.jpg" alt="Agility drills" loading="lazy"></div>
+      <div class="photo"><img src="photos/05-park.jpg" alt="Basketball jump shot" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Early Bird Pricing</span>
+      <h2>Lock In <span class="accent">Before June 12.</span></h2>
+      <p>Pricing increases after the early bird deadline. Pick the option that fits your athlete.</p>
+    </div>
+    <div class="pricing-wrap">
+      <div class="price-card featured">
+        <span class="badge">Best Value</span>
+        <div class="tier">Full Camp</div>
+        <div class="price">$3,015</div>
+        <div class="per">9 weeks · $335 / week</div>
+        <ul class="feat-list">
+          <li>All 5 program tracks</li>
+          <li>Pizza Fridays + fresh fruit daily</li>
+          <li>Camper of the Week eligible</li>
+          <li>Best per-week rate</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tier">4-Week Block</div>
+        <div class="price">$1,460</div>
+        <div class="per">4 weeks · $365 / week</div>
+        <ul class="feat-list">
+          <li>All 5 program tracks</li>
+          <li>Pizza Fridays + fresh fruit daily</li>
+          <li>Pick consecutive weeks</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tier">Weekly</div>
+        <div class="price">$420</div>
+        <div class="per">per week</div>
+        <ul class="feat-list">
+          <li>All 5 program tracks</li>
+          <li>Pizza Fridays + fresh fruit daily</li>
+          <li>Flexible scheduling</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="tier">Daily Drop-In</div>
+        <div class="price">$110<span class="cents">/day</span></div>
+        <div class="per">single day at a time</div>
+        <ul class="feat-list">
+          <li>Try it out</li>
+          <li>One day, all 5 programs</li>
+          <li>No commitment</li>
+        </ul>
+      </div>
+    </div>
+    <div class="deadline-banner">
+      ⏰ Early bird pricing ends <strong>June 12, 2026</strong>. After that, prices increase. No extensions.
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGISTRATION FORM ============ -->
+<section id="register">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Reserve Your Spot</span>
+      <h2>Register Your <span class="accent">Athlete.</span></h2>
+      <p>Fill out the form below and we'll be in touch within 24 hours to confirm your spot and finalize details.</p>
+    </div>
+
+    <div class="form-wrap">
+      <div id="form-status" class="form-status"></div>
+
+      <!-- Step indicator -->
+      <div class="step-indicator" id="step-indicator">
+        <span class="step active">1</span> Athlete Profile
+        <span class="step-arrow">→</span>
+        <span class="step">2</span> Payment
+      </div>
+
+      <form id="register-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="parent_name">Parent / Guardian Name <span class="req">*</span></label>
+            <input type="text" id="parent_name" name="parent_name" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="parent_phone">Phone <span class="req">*</span></label>
+            <input type="tel" id="parent_phone" name="parent_phone" required autocomplete="tel" placeholder="(201) 555-0100">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="parent_email">Email <span class="req">*</span></label>
+            <input type="email" id="parent_email" name="parent_email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="athlete_name">Athlete's Name <span class="req">*</span></label>
+            <input type="text" id="athlete_name" name="athlete_name" required>
+          </div>
+          <div class="form-field">
+            <label for="athlete_age">Athlete's Age <span class="req">*</span></label>
+            <select id="athlete_age" name="athlete_age" required>
+              <option value="">Select age…</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="package">Which Package? <span class="req">*</span></label>
+            <select id="package" name="package" required>
+              <option value="">Select a package…</option>
+              <option value="full">Full Camp (9 Weeks) — $3,015</option>
+              <option value="block">4-Week Block — $1,460</option>
+              <option value="weekly">Weekly — $420/wk</option>
+              <option value="dropin">Daily Drop-In — $110/day</option>
+              <option value="undecided">Not sure yet — talk it through</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="notes">Notes / Questions</label>
+            <textarea id="notes" name="notes" placeholder="Allergies, sports background, questions about the program — anything you'd like us to know."></textarea>
+          </div>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+            <span class="btn-text">Reserve My Spot →</span>
+          </button>
+          <p class="form-disclaimer">By submitting, you agree to be contacted by Different Breed Elite Fitness about Summer Camp 2026. We won't share your info.</p>
+        </div>
+      </form>
+
+      <!-- ============ STEP 2: PAYMENT (hidden until form submit) ============ -->
+      <div id="payment-step" class="payment-step" style="display:none;">
+        <div class="payment-header">
+          <h3>Step 2 — Complete Your Payment</h3>
+          <p>Your info is in. Pick your package below to finish registration and payment through MindBody's secure checkout.</p>
+        </div>
+        <div class="payment-grid">
+          <div class="payment-card featured">
+            <div class="payment-label">Best Value</div>
+            <h4>Full Camp</h4>
+            <p class="payment-amount">$3,015 <span>· 9 Weeks</span></p>
+            <div class="payment-action">
+              <!-- TODO: replace data-site-id / data-mb-site-id / data-service-id with DB's MindBody IDs -->
+              <healcode-widget data-version="0.2" data-link-class="healcode-pricing-option-text-link"
+                data-site-id="86860" data-mb-site-id="706438"
+                data-service-id="102214" data-bw-identity-site="true"
+                data-type="pricing-link" data-inner-html="Pay &amp; Enroll"></healcode-widget>
+            </div>
+          </div>
+          <div class="payment-card">
+            <div class="payment-label muted">Flexible</div>
+            <h4>4-Week Block</h4>
+            <p class="payment-amount">$1,460 <span>· 4 Weeks</span></p>
+            <div class="payment-action">
+              <healcode-widget data-version="0.2" data-link-class="healcode-pricing-option-text-link"
+                data-site-id="86860" data-mb-site-id="706438"
+                data-service-id="102235" data-bw-identity-site="true"
+                data-type="pricing-link" data-inner-html="Pay &amp; Enroll"></healcode-widget>
+            </div>
+          </div>
+          <div class="payment-card">
+            <div class="payment-label muted">Week by Week</div>
+            <h4>Weekly</h4>
+            <p class="payment-amount">$420 <span>/ week</span></p>
+            <div class="payment-action">
+              <healcode-widget data-version="0.2" data-link-class="healcode-pricing-option-text-link"
+                data-site-id="86860" data-mb-site-id="706438"
+                data-service-id="102215" data-bw-identity-site="true"
+                data-type="pricing-link" data-inner-html="Pay &amp; Enroll"></healcode-widget>
+            </div>
+          </div>
+          <div class="payment-card">
+            <div class="payment-label muted">Drop-In</div>
+            <h4>Daily</h4>
+            <p class="payment-amount">$110 <span>/ day</span></p>
+            <div class="payment-action">
+              <healcode-widget data-version="0.2" data-link-class="healcode-pricing-option-text-link"
+                data-site-id="86860" data-mb-site-id="706438"
+                data-service-id="102236" data-bw-identity-site="true"
+                data-type="pricing-link" data-inner-html="Pay &amp; Enroll"></healcode-widget>
+            </div>
+          </div>
+        </div>
+        <p class="payment-note">Payment processes securely through MindBody. Questions? Text Don at (201) 665-3665.</p>
+        <p class="payment-note"><a href="#" id="back-to-form" style="color:var(--red);text-decoration:underline;">← Change package or edit info</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Things Parents <span class="accent">Ask.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What ages is camp for?</div>
+        <div class="faq-a">DB Summer Camp is open to athletes ages 11–16. The program is built for this age range — too young and the conditioning won't fit, too old and they should be in our adult programs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does my kid need experience?</div>
+        <div class="faq-a">No experience required. Beginners are welcome. Our coaches meet kids where they are and push them from there. What we do require: a willingness to work and respect for the standard.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does a typical day look like?</div>
+        <div class="faq-a">Mornings are sports performance and conditioning. Afternoons rotate through boxing, basketball, and yoga/Pilates. Friday includes pizza on us and Camper of the Week recognition. Every week is structured but every day brings something different.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What should they bring?</div>
+        <div class="faq-a">Athletic clothes and sneakers. A water bottle (we'll keep it filled). A change of clothes for outdoor sessions. We provide hand wraps and gloves for boxing — no need to buy your own.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What about lunch?</div>
+        <div class="faq-a">Pack a real lunch Monday through Thursday. We provide water, Gatorade, and fresh fruit (bananas, apples, oranges) every day. Friday is pizza on us — community lunch with the whole camp. (No more Uber Eats orders mid-camp, please.)</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I tour the gym before signing up?</div>
+        <div class="faq-a">Absolutely. Reach out to schedule a visit. We'd rather you see what we do in person than guess from a website.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens after I register?</div>
+        <div class="faq-a">We'll reach out within 24 hours to confirm your athlete's spot, walk you through what to expect, and finalize payment. Spots are limited — first come, first served.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">
+          <img src="assets/db-logo-white.png" alt="DB">
+          <div>
+            <div class="name">Different Breed</div>
+            <div style="font-size: 11px; letter-spacing: 2px; color: var(--gray-2); text-transform: uppercase;">Elite Fitness</div>
+          </div>
+        </div>
+        <p>Discipline. Desire. Dedication.<br>
+        Where Skills Turn to Confidence.<br>
+        Boxing &amp; elite fitness in New Milford, NJ since 2020.</p>
+      </div>
+      <div>
+        <h5>Camp</h5>
+        <p>
+          <a href="#what-included">What's Included</a><br>
+          <a href="#register">Register</a><br>
+          <a href="#register">Pricing</a>
+        </p>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <p>
+          <a href="https://instagram.com/dbelitefitness" target="_blank" rel="noopener">@dbelitefitness</a><br>
+          <a href="https://differentbreedsportsacademy.com" target="_blank" rel="noopener">differentbreedsportsacademy.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Different Breed Elite Fitness · New Milford, NJ · All rights reserved
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CINEMATIC MODULES INIT ============ -->
+<script>
+window.addEventListener('load', function() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* === Curtain Reveal === */
+  var curtainSec = document.getElementById('curtainSection');
+  if (curtainSec) {
+    gsap.to('#cLeft', { xPercent: -100, ease: 'power2.inOut',
+      scrollTrigger: { trigger: curtainSec, start: 'top top', end: '70% top', scrub: 0.5 } });
+    gsap.to('#cRight', { xPercent: 100, ease: 'power2.inOut',
+      scrollTrigger: { trigger: curtainSec, start: 'top top', end: '70% top', scrub: 0.5 } });
+    gsap.to('#curtainHint', { opacity: 0, ease: 'none',
+      scrollTrigger: { trigger: curtainSec, start: 'top top', end: '20% top', scrub: true } });
+  }
+
+  /* === Odometer === */
+  document.querySelectorAll('.odometer').forEach(function(odo) {
+    var val = String(odo.dataset.value || '0');
+    var suffix = odo.dataset.suffix || '';
+    var digits = val.split('');
+    odo.innerHTML = '';
+    digits.forEach(function(d) {
+      var digit = document.createElement('div'); digit.className = 'odo-digit';
+      var strip = document.createElement('div'); strip.className = 'odo-strip';
+      for (var i = 0; i <= 9; i++) { var s = document.createElement('span'); s.textContent = i; strip.appendChild(s); }
+      digit.appendChild(strip); odo.appendChild(digit);
+    });
+    if (suffix) { var sx = document.createElement('span'); sx.className = 'stat-suffix'; sx.textContent = suffix; odo.appendChild(sx); }
+    ScrollTrigger.create({ trigger: odo, start: 'top 85%', once: true, onEnter: function() {
+      var strips = odo.querySelectorAll('.odo-strip');
+      strips.forEach(function(strip, i) {
+        var target = parseInt(digits[i]);
+        var h = strip.children[0].offsetHeight;
+        strip.style.transform = 'translateY(-' + (target * h) + 'px)';
+        strip.style.transitionDelay = (i * 0.12) + 's';
+      });
+    }});
+  });
+
+  /* === Horizontal Scroll Hijack === */
+  var hSection = document.querySelector('.h-scroll-section');
+  var track = document.getElementById('hTrack');
+  if (hSection && track && window.innerWidth > 800) {
+    var cards = track.querySelectorAll('.h-card');
+    var fill = document.getElementById('hFill');
+    var label = document.getElementById('hLabel');
+    var progress = document.getElementById('hProgress');
+    var totalCards = cards.length;
+    function getDist() { return track.scrollWidth - window.innerWidth; }
+    function setHeight() {
+      // Slow the pan: ~1.7px vertical = 1px horizontal. No trailing buffer so it
+      // unpins the moment the last card hits the edge (no dead whitespace below).
+      hSection.style.height = Math.round(getDist() * 1.7 + window.innerHeight) + 'px';
+    }
+    setHeight();
+    window.addEventListener('resize', function() { setHeight(); ScrollTrigger.refresh(); });
+    gsap.to(track, {
+      x: function() { return -getDist(); },
+      ease: 'none',
+      scrollTrigger: {
+        trigger: hSection, start: 'top top', end: 'bottom bottom',
+        scrub: 0.4, invalidateOnRefresh: true,
+        onUpdate: function(self) {
+          var p = self.progress;
+          fill.style.width = (p * 100) + '%';
+          label.textContent = Math.min(Math.ceil(p * totalCards + 0.5), totalCards) + ' / ' + totalCards;
+        },
+        onEnter: function() { progress.classList.add('visible'); },
+        onLeave: function() { progress.classList.remove('visible'); },
+        onEnterBack: function() { progress.classList.add('visible'); },
+        onLeaveBack: function() { progress.classList.remove('visible'); }
+      }
+    });
+  }
+});
+</script>
+
+<script>
+  // === REGISTRATION: Formspree capture → MindBody Healcode payment ===
+  // TODO: replace with DB's actual Formspree form ID (https://formspree.io → New Form)
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/maqlzwdd';
+
+  const form = document.getElementById('register-form');
+  const status = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const stepIndicator = document.getElementById('step-indicator');
+  const paymentStep = document.getElementById('payment-step');
+
+  function showStatus(msg, type) {
+    status.textContent = msg;
+    status.className = 'form-status ' + type;
+    status.style.display = 'block';
+  }
+
+  function loadHealcode() {
+    if (document.querySelector('script[src*="healcode.js"]')) return;
+    const s = document.createElement('script');
+    s.src = 'https://widgets.mindbodyonline.com/javascripts/healcode.js';
+    s.async = true;
+    document.body.appendChild(s);
+  }
+
+  function revealPayment() {
+    form.style.display = 'none';
+    // Flip step indicator to step 2
+    const steps = stepIndicator.querySelectorAll('.step');
+    steps[0].classList.remove('active');
+    steps[1].classList.add('active');
+    paymentStep.style.display = 'block';
+    loadHealcode();
+    requestAnimationFrame(() => {
+      paymentStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  document.getElementById('back-to-form').addEventListener('click', (e) => {
+    e.preventDefault();
+    paymentStep.style.display = 'none';
+    form.style.display = '';
+    const steps = stepIndicator.querySelectorAll('.step');
+    steps[1].classList.remove('active');
+    steps[0].classList.add('active');
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.style.display = 'none';
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(form);
+    formData.append('_subject', 'New DB Summer Camp 2026 Registration');
+    submitBtn.disabled = true;
+    btnText.textContent = 'Submitting…';
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!res.ok) throw new Error('Submission failed');
+
+      // "Undecided" picks the talk-it-through path — no payment step
+      if (formData.get('package') === 'undecided') {
+        showStatus("✓ Got it. Don will reach out within 24 hours to walk you through options.", 'success');
+        form.reset();
+      } else {
+        revealPayment();
+      }
+    } catch (err) {
+      showStatus("Something went wrong. Please try again or text Don directly at (201) 665-3665.", 'error');
+    } finally {
+      submitBtn.disabled = false;
+      btnText.textContent = 'Reserve My Spot →';
+    }
+  });
+</script>
+
+</body>
+</html>

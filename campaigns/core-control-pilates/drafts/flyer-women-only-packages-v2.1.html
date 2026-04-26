@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Women-Only Pilates — Pilates by Menukhah (Print v2.1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════════
+     Pilates by Menukhah — PRINT-FIRST v2.1
+     Target: 8.5 × 11 in  |  0.125 in bleed
+     Layout: 3 zones — Hero / Info / CTA
+     Source: brandkit/colors.json + type-system.md
+     ═══════════════════════════════════════════ */
+  :root {
+    --bg-cream:      #F0EEE6;
+    --surface-ivory: #F7F4EE;
+    --charcoal:      #1A1714;
+    --body-text:     #3E332B;
+    --warm-taupe:    #8B7768;
+    --bronze:        #A07050;
+    --cocoa:         #603020;
+    --soft-brown:    #705040;
+    --divider:       #D9D1C7;
+
+    /* 8.5 × 11 in at 96 DPI for screen preview */
+    --page-w: 816px;
+    --page-h: 1056px;
+    --bleed: 12px;
+    --safe-margin: 36px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: 8.75in 11.25in;
+    margin: 0;
+  }
+
+  body {
+    background: #ddd9d0;
+    font-family: 'Lora', Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  @media print {
+    body {
+      background: none;
+      padding: 0;
+      min-height: auto;
+    }
+    .page {
+      box-shadow: none;
+      width: 8.75in;
+      height: 11.25in;
+    }
+    .page::before { display: none; }
+    .draft-watermark { display: none !important; }
+  }
+
+  /* ═══════════════════════════════════════════
+     PAGE
+     ═══════════════════════════════════════════ */
+  .page {
+    width: calc(var(--page-w) + var(--bleed) * 2);
+    height: calc(var(--page-h) + var(--bleed) * 2);
+    background: var(--bg-cream);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 40px rgba(26, 23, 20, 0.12);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Trim marks (screen only) */
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: var(--bleed);
+    border: 0.5px dashed rgba(139, 119, 104, 0.18);
+    z-index: 50;
+    pointer-events: none;
+  }
+
+  /* ═══════════════════════════════════════════
+     DECORATIVE FRAME — single restrained rule
+     ═══════════════════════════════════════════ */
+  .frame-rule {
+    position: absolute;
+    top: calc(var(--bleed) + 10px);
+    left: calc(var(--bleed) + 10px);
+    right: calc(var(--bleed) + 10px);
+    bottom: calc(var(--bleed) + 10px);
+    border: 0.5px solid rgba(139, 119, 104, 0.3);
+    z-index: 40;
+    pointer-events: none;
+  }
+
+  /* ═══════════════════════════════════════════
+     ZONE 1 — HERO + HEADLINE  (~48%)
+     Full-bleed photograph, headline emerging
+     from a long cream gradient fade
+     ═══════════════════════════════════════════ */
+  .hero {
+    width: 100%;
+    height: 505px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+
+  /* Long dissolve — photo fades into cream background */
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(240, 238, 230, 0.06) 18%,
+      rgba(240, 238, 230, 0.30) 40%,
+      rgba(240, 238, 230, 0.68) 60%,
+      rgba(240, 238, 230, 0.92) 78%,
+      var(--bg-cream) 100%
+    );
+    pointer-events: none;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    text-align: center;
+    padding: 0 var(--safe-margin) 6px;
+  }
+
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 8px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+    margin-bottom: 10px;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 68px;
+    line-height: 0.94;
+    color: var(--charcoal);
+    letter-spacing: 0.005em;
+    margin-bottom: 14px;
+  }
+
+  .subhead {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--warm-taupe);
+    letter-spacing: 0.02em;
+  }
+
+  /* ═══════════════════════════════════════════
+     ZONE 2 — INFORMATION  (~37%)
+     Body copy, pricing, schedule
+     Centered with generous vertical whitespace
+     ═══════════════════════════════════════════ */
+  .info-zone {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--safe-margin);
+    text-align: center;
+  }
+
+  /* Thin rule transition from hero zone */
+  .zone-rule {
+    width: 52px;
+    height: 0;
+    border-top: 0.5px solid var(--divider);
+    margin-bottom: 26px;
+  }
+
+  .body-copy {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--body-text);
+    max-width: 380px;
+    margin-bottom: 30px;
+  }
+
+  /* Pricing — pure typographic, no cards */
+  .pricing-section {
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 7.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+    margin-bottom: 16px;
+  }
+
+  .pricing-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .price-block {
+    width: 160px;
+    text-align: center;
+  }
+
+  .price-amount {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    color: var(--bronze);
+    line-height: 1.1;
+  }
+
+  .price-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--charcoal);
+    margin-top: 4px;
+  }
+
+  .price-sub {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 10px;
+    color: var(--warm-taupe);
+    font-style: italic;
+    margin-top: 3px;
+  }
+
+  .price-divider {
+    width: 1px;
+    height: 50px;
+    background: var(--divider);
+    flex-shrink: 0;
+    margin: 0 24px;
+  }
+
+  /* Schedule */
+  .schedule {
+    margin-bottom: 0;
+  }
+
+  .schedule-times {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 28px;
+    margin-top: 8px;
+  }
+
+  .schedule-item .day {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12.5px;
+    color: var(--charcoal);
+  }
+
+  .schedule-item .time {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 12.5px;
+    color: var(--body-text);
+    margin-left: 5px;
+  }
+
+  .schedule-dot {
+    color: var(--divider);
+    font-size: 4px;
+    vertical-align: middle;
+  }
+
+  /* ═══════════════════════════════════════════
+     ZONE 3 — CTA + FOOTER  (~15%)
+     One clear action, quiet brand close
+     ═══════════════════════════════════════════ */
+  .cta-zone {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0 var(--safe-margin) calc(var(--bleed) + 22px);
+  }
+
+  .cta-rule {
+    width: 36px;
+    height: 0;
+    border-top: 0.5px solid var(--divider);
+    margin: 0 auto 20px;
+  }
+
+  .cta-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cocoa);
+    margin-bottom: 10px;
+  }
+
+  .contact-line {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--body-text);
+    margin-bottom: 16px;
+  }
+
+  .brand-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .brand-close .rule {
+    width: 24px;
+    height: 0;
+    border-top: 0.5px solid var(--divider);
+  }
+
+  .brand-name-footer {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 7px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+  }
+
+  .footer-note {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 9px;
+    color: var(--warm-taupe);
+    margin-top: 6px;
+  }
+
+  /* ═══════════════════════════════════════════
+     DRAFT WATERMARK (screen only)
+     ═══════════════════════════════════════════ */
+  .draft-watermark {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c0b8a8;
+    background: rgba(240, 238, 230, 0.92);
+    padding: 4px 10px;
+    border-radius: 3px;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+<div class="draft-watermark">Print v2.1 — 2026-02-25</div>
+
+<div class="page">
+
+  <!-- Decorative frame rule -->
+  <div class="frame-rule"></div>
+
+  <!-- ══════════════════════════════════════
+       ZONE 1 — Hero photograph + headline
+       ══════════════════════════════════════ -->
+  <div class="hero">
+    <img src="../Studio/Image 1.jpg"
+         alt="Private Pilates studio — warm lighting, mats and rings set for class">
+    <div class="hero-overlay">
+      <p class="eyebrow">Pilates by Menukhah</p>
+      <h1 class="headline">Women-Only<br>Pilates</h1>
+      <p class="subhead">Strength, confidence &amp; your own space</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       ZONE 2 — Copy, pricing, schedule
+       ══════════════════════════════════════ -->
+  <div class="info-zone">
+
+    <div class="zone-rule"></div>
+
+    <p class="body-copy">
+      Build strength, mobility, and confidence in a
+      private boutique setting — small groups,
+      beginner friendly, women only.
+    </p>
+
+    <div class="pricing-section">
+      <p class="section-label">Class Packages</p>
+      <div class="pricing-row">
+        <div class="price-block">
+          <div class="price-amount">$100</div>
+          <div class="price-desc">5 Classes</div>
+          <div class="price-sub">$20 per class</div>
+        </div>
+        <div class="price-divider"></div>
+        <div class="price-block">
+          <div class="price-amount">$180</div>
+          <div class="price-desc">10 Classes</div>
+          <div class="price-sub">$18 per class</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule">
+      <p class="section-label">Class Schedule</p>
+      <div class="schedule-times">
+        <span class="schedule-item"><span class="day">Sunday</span><span class="time">8 am</span></span>
+        <span class="schedule-dot">·</span>
+        <span class="schedule-item"><span class="day">Thursday</span><span class="time">8 pm</span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════
+       ZONE 3 — CTA + brand footer
+       ══════════════════════════════════════ -->
+  <div class="cta-zone">
+
+    <div class="cta-rule"></div>
+
+    <p class="cta-text">Book Your Spot</p>
+
+    <p class="contact-line">
+      (201) 250-6576<br>
+      The Core, 418 Cedar Lane, Teaneck, NJ
+    </p>
+
+    <div class="brand-close">
+      <span class="rule"></span>
+      <span class="brand-name-footer">Pilates by Menukhah</span>
+      <span class="rule"></span>
+    </div>
+    <p class="footer-note">Grip socks required — available for purchase</p>
+
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,2060 @@
+{
+  "version": "1.0",
+  "profile": "dbelitefitness",
+  "timezone": "America/New_York",
+  "last_updated": "2026-04-25T04:05:07.525Z",
+  "posts": [
+    {
+      "id": "2026-04-14-001",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "educational_carousel",
+      "post_date": "2026-04-14",
+      "post_time": "18:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Recovery isn't weakness. It's strategy.\n\nThe work doesn't finish when you leave the gym.\nIt finishes when you sleep.\nWhen you hydrate.\nWhen you take that rest day you keep skipping.\n\n5 rules. Save this one.\n\n🥊 Free Day Pass → link in bio\n\n#DifferentBreed #EvolveIntoGreatness #TrainDifferent #RecoveryIsWork #NJFitness",
+      "fb_caption": "Recovery isn't weakness — it's strategy. Work doesn't end in the gym. It ends in your sleep, hydration, rest day. 5 rules worth saving. 🥊 Free Day Pass → link in bio",
+      "hashtags": [
+        "#DifferentBreed",
+        "#EvolveIntoGreatness",
+        "#TrainDifferent",
+        "#RecoveryIsWork",
+        "#NJFitness"
+      ],
+      "media_type": "carousel",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-01-cover.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-02-rule-01-sleep.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-03-rule-02-hydrate.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-04-rule-03-refuel.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-05-rule-04-active-rest.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-06-rule-05-day-off.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-07-outro.png"
+      ],
+      "media_query": "action shots qs>=7, variety across boxing/pilates/strength, with DB branding",
+      "instagram_options": {
+        "media_type": "CAROUSEL",
+        "first_comment": null
+      },
+      "facebook_options": {},
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Recovery Is The Work — 7-slide educational carousel. 5 tips on sleep, hydration, refueling, active rest, and weekly rest day. Could seed a recurring DB Rules series.",
+      "created_at": "2026-04-14T16:03:01.672Z",
+      "approved_at": "2026-04-14T16:06:16.033Z",
+      "posted_at": "2026-04-14T16:23:42.777Z",
+      "post_result": {
+        "request_id": "2aaf16fab57247e798f98a2e34b1e603",
+        "job_id": "a2d00fed83b243f0923f53eaab4498a6",
+        "status": "processing",
+        "scheduler_status": "running",
+        "completed": 1,
+        "failed": 0,
+        "retryable": 0,
+        "total": 2,
+        "results": [
+          {
+            "platform": "instagram",
+            "status": "processing",
+            "attempts": 1,
+            "success": false
+          },
+          {
+            "success": true,
+            "post_id": "1052817101240650_122108574783278074",
+            "url": "https://www.facebook.com/1052817101240650_122108574783278074",
+            "media_type": "POSTS",
+            "photos_were_processed": null,
+            "changes_per_image": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ],
+            "platform": "facebook",
+            "status": "completed",
+            "attempts": 1
+          }
+        ],
+        "last_update": "Tue, 14 Apr 2026 16:23:35 GMT",
+        "message": "Upload is currently being processed"
+      }
+    },
+    {
+      "id": "2026-04-14-002",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "educational_carousel",
+      "post_date": "2026-04-14",
+      "post_time": "18:00",
+      "platforms": [
+        "facebook"
+      ],
+      "ig_caption": "Recovery isn't weakness. It's strategy.\n\nThe work doesn't finish when you leave the gym.\nIt finishes when you sleep.\nWhen you hydrate.\nWhen you take that rest day you keep skipping.\n\n5 rules. Save this one.\n\n🥊 Free Day Pass → link in bio\n\n#DifferentBreed #EvolveIntoGreatness #TrainDifferent #RecoveryIsWork #NJFitness",
+      "fb_caption": "Recovery isn't weakness — it's strategy. Work doesn't end in the gym. It ends in your sleep, hydration, rest day. 5 rules worth saving. 🥊 Free Day Pass → link in bio",
+      "hashtags": [
+        "#DifferentBreed",
+        "#EvolveIntoGreatness",
+        "#TrainDifferent",
+        "#RecoveryIsWork",
+        "#NJFitness"
+      ],
+      "media_type": "carousel",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-01-cover.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-02-rule-01-sleep.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-03-rule-02-hydrate.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-04-rule-03-refuel.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-05-rule-04-active-rest.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-06-rule-05-day-off.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-14-recovery-carousel/slides/slide-07-outro.png"
+      ],
+      "media_query": "action shots qs>=7, variety across boxing/pilates/strength, with DB branding",
+      "instagram_options": {
+        "media_type": "CAROUSEL",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "facebookPageId": "100873874674621"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "FB-only re-post of 2026-04-14-001. Original mistakenly landed on Exit 163 page due to first-page-default bug; this one explicitly targets Different Breed Elite Fitness & Sports (100873874674621). IG was correct on the first run and is not re-posted.",
+      "created_at": "2026-04-14T19:10:49.479Z",
+      "approved_at": "2026-04-14T19:10:49.473Z",
+      "posted_at": "2026-04-14T19:12:28.946Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 1,
+        "total": 1,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "photo",
+            "upload_timestamp": {
+              "$date": "2026-04-14T19:12:24.332Z"
+            },
+            "success": true,
+            "platform_post_id": "100873874674621_1538902171579025",
+            "post_url": "https://www.facebook.com/100873874674621_1538902171579025",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 5526106,
+            "post_title": "Recovery isn't weakness — it's strategy. Work doesn't end in the gym. It ends in your sleep, hydration, rest day. 5 rules worth saving. 🥊 Free Day Pass → link in bio",
+            "post_caption": "Recovery isn't weakness. It's strategy.\n\nThe work doesn't finish when you leave the gym.\nIt finishes when you sleep.\nWhen you hydrate.\nWhen you take that rest day you keep skipping.\n\n5 rules. Save this one.\n\n🥊 Free Day Pass → link in bio\n\n#DifferentBreed #EvolveIntoGreatness #TrainDifferent #RecoveryIsWork #NJFitness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": null,
+            "changes": null,
+            "prevalidation_metadata": null,
+            "target_linkedin_page_id": null,
+            "request_id": "1563458ddb244d42ad25d0820aa97e81",
+            "request_id_logs": "1563458ddb244d42ad25d0820aa97e81",
+            "job_id": "c5e481213fdb4d1e9cbcc207ae9a67e2",
+            "request_total_platforms": 1
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-14T19:12:24.332Z"
+        },
+        "request_id": "1563458ddb244d42ad25d0820aa97e81"
+      }
+    },
+    {
+      "id": "2026-04-15-001",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "educational_carousel",
+      "post_date": "2026-04-15",
+      "post_time": "18:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Creatine isn't a steroid. It's the most-studied supplement on the planet.\n\nThe \"weight gain\" is water — pulled into your muscles, not your gut.\nMore reps. Heavier lifts.\n3–5g daily. No loading phase needed.\nCutting? Still take it. Protect the muscle you earned.\n\n5 truths. Save this one. Share it with the person who's still scared.\n\n🥊 Free Day Pass → link in bio\n\n#DifferentBreed #EvolveIntoGreatness #TrainDifferent #CreatineFacts #NJFitness",
+      "fb_caption": "Creatine isn't a steroid — it's the most-studied supplement on earth. The 'weight gain' is water in your muscles. 3–5g daily. Still take it while cutting. 5 truths → link in bio",
+      "hashtags": [
+        "#DifferentBreed",
+        "#EvolveIntoGreatness",
+        "#TrainDifferent",
+        "#CreatineFacts",
+        "#NJFitness"
+      ],
+      "media_type": "carousel",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-15-creatine-carousel/slides/slide-01-cover.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-15-creatine-carousel/slides/slide-02-truth-01-not-a-steroid.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-15-creatine-carousel/slides/slide-03-truth-02-water-weight.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-15-creatine-carousel/slides/slide-04-truth-03-more-reps.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-15-creatine-carousel/slides/slide-05-truth-04-dosage.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-15-creatine-carousel/slides/slide-06-truth-05-cutting.png",
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-15-creatine-carousel/slides/slide-07-outro.png"
+      ],
+      "media_query": "strength/lifting/action shots qs>=7, all distinct from Recovery carousel (2026-04-14)",
+      "instagram_options": {
+        "media_type": "CAROUSEL",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "facebookPageId": "100873874674621"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Creatine: Decoded — 7-slide educational carousel. Busts the steroid/bloat myth, explains dosage and role during a cut. Builds on Recovery (DB Field Notes series cadence). Approved by Joey Apr 15 ~4:30pm ET.",
+      "created_at": "2026-04-14T20:43:53.874Z",
+      "approved_at": "2026-04-15T16:30:00.000Z",
+      "posted_at": "2026-04-16T14:35:59.369Z",
+      "post_result": {
+        "request_id": "b00945b35ee84adb9b98ca95b505e30a",
+        "job_id": "7a0aab043a73442b8583d3666fa2846d",
+        "status": "completed",
+        "scheduler_status": "running",
+        "completed": 2,
+        "failed": 0,
+        "retryable": 0,
+        "total": 2,
+        "results": [
+          {
+            "success": true,
+            "post_id": "17895111504442410",
+            "url": "https://www.instagram.com/p/DXMjQG5jIpz/",
+            "media_type": "CAROUSEL",
+            "photos_were_processed": null,
+            "changes_per_image": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ],
+            "platform": "instagram",
+            "status": "completed",
+            "attempts": 1
+          },
+          {
+            "success": true,
+            "post_id": "100873874674621_1540580464744529",
+            "url": "https://www.facebook.com/100873874674621_1540580464744529",
+            "media_type": "POSTS",
+            "photos_were_processed": null,
+            "changes_per_image": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ],
+            "platform": "facebook",
+            "status": "completed",
+            "attempts": 1
+          }
+        ],
+        "last_update": "Thu, 16 Apr 2026 14:35:55 GMT"
+      }
+    },
+    {
+      "id": "2026-04-16-001",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "class_promo",
+      "post_date": "2026-04-16",
+      "post_time": "18:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Due to popular demand.\n\nCore Control Pilates is now on Saturdays. 8:15 AM. Starting May 2.\n\nLed by Coach Nessa (@ohsonessaa) — who's been bringing the heat every class she teaches.\n\nYou asked. We listened. No more excuses.\n\nFull Pilates schedule:\nWed 9 AM · Wed 7:15 PM · Fri 5:30 AM\nNEW Sat 8:15 AM · Sun 8 AM (Women Only) · Sun 10:30 AM\n\nThis isn't your average Pilates. This is Different Breed.\n\n📲 Book → pilates.differentbreedsportsacademy.com\n\n#CoreControl #DifferentBreed #PilatesStrength #EvolveIntoGreatness #NJFitness",
+      "fb_caption": "Due to popular demand: Core Control Pilates is now on Saturdays @ 8:15 AM, led by Coach Nessa. Starting May 2. You asked, we listened — no more excuses. Book → pilates.differentbreedsportsacademy.com 🥊",
+      "hashtags": [
+        "#CoreControl",
+        "#DifferentBreed",
+        "#PilatesStrength",
+        "#EvolveIntoGreatness",
+        "#NJFitness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/core-control-saturday-apr16.mp4"
+      ],
+      "media_query": "Remotion reel — 15s compilation of 7 Pilates shots from yellow-tagged directories (Gym_12_31_25 + 5 × 2026 folders). VO by 'Energetic Tonya' ElevenLabs voice. Beats: empty studio → POPULAR DEMAND scramble → NEW CLASS typewriter → 8:15 spring-in → MAY 2 → COACH NESSA → DB closer + marquee.",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "facebookPageId": "100873874674621"
+      },
+      "coach_tags": [
+        "@ohsonessaa"
+      ],
+      "credit_videographer": false,
+      "notes": "Core Control Saturday launch announcement (May 2 start). Source: Apr 15 meeting w/ Don — class added due to popular demand. Confirmed: Nessa (@ohsonessaa) coaching the Sat 8:15 slot. FINAL FORMAT: 15s Remotion reel with Tonya VO, music bed at 0.14. Caption rewritten Apr 16 to explicitly feature Coach Nessa and expand Pilates schedule grid. Approved by Joey Apr 16. IG initial attempt failed with 'Unknown media type' (sent REEL, Upload-Post needs REELS) — republished successfully. Fixed instagram_options.media_type in calendar so future reels auto-resolve.",
+      "created_at": "2026-04-15T16:00:00.000Z",
+      "approved_at": "2026-04-16T15:00:00.000Z",
+      "posted_at": "2026-04-16T15:56:15.242Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-16T15:55:13.272Z"
+            },
+            "success": true,
+            "platform_post_id": "18044764337768706",
+            "post_url": "https://www.instagram.com/reel/DXMsSGKChyQ/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 12760623,
+            "is_async": true,
+            "source": "api",
+            "video_was_transcoded": false,
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "request_id": "6ecc8cfec66c477cbfd6f451f56fb8a1",
+            "job_id": "5a3c7d79aff840cbb34793ea75d386ff",
+            "note": "Republished IG-only after first attempt failed with wrong media_type (REEL -> REELS). FB was already successful on first attempt."
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-16T15:52:05.504Z"
+            },
+            "success": true,
+            "platform_post_id": "2845281029151406",
+            "post_url": "https://www.facebook.com/reel/2845281029151406",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 12760623,
+            "post_title": "Due to popular demand: Core Control Pilates is now on Saturdays @ 8:15 AM, led by Coach Nessa. Starting May 2. You asked, we listened — no more excuses. Book → pilates.differentbreedsportsacademy.com 🥊",
+            "post_caption": "Due to popular demand.\n\nCore Control Pilates is now on Saturdays. 8:15 AM. Starting May 2.\n\nLed by Coach Nessa (@ohsonessaa) — who's been bringing the heat every class she teaches.\n\nYou asked. We listened. No more excuses.\n\nFull Pilates schedule:\nWed 9 AM · Wed 7:15 PM · Fri 5:30 AM\nNEW Sat 8:15 AM · Sun 8 AM (Women Only) · Sun 10:30 AM\n\nThis isn't your average Pilates. This is Different Breed.\n\n📲 Book → pilates.differentbreedsportsacademy.com\n\n#CoreControl #DifferentBreed #PilatesStrength #EvolveIntoGreatness #NJFitness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "8be46434bd994239a3139419d5c360db",
+            "request_id_logs": "8be46434bd994239a3139419d5c360db",
+            "job_id": "cb093caefa3246b9b38a3b58239ada85",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-16T15:56:15.241Z"
+        },
+        "request_id": "8be46434bd994239a3139419d5c360db"
+      }
+    },
+    {
+      "id": "2026-04-19-001",
+      "status": "scheduled",
+      "campaign": "the-coliseum",
+      "content_type": "teaser",
+      "post_date": "2026-04-17",
+      "post_time": "18:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Something different is coming. 👀\n\nTHE COLISEUM — a new functional training ground at Different Breed.\n\nKettlebells. Battle ropes. Rogue sled. Dip bar. Chin-up bar. Resistance bands.\n\nNo machines. No mirrors. Just work.\n\nTrain like a gladiator. Welcome to the Coliseum.\n\nComing soon. Stay tuned. 🥊\n\n#DifferentBreed #TheColiseum #TrainLikeAGladiator #EvolveIntoGreatness #NJFitness",
+      "fb_caption": "Something different is coming. 👀 THE COLISEUM — a new functional training ground at Different Breed. Kettlebells, ropes, sled, dip bar. No machines. No mirrors. Just work. Train like a gladiator. Coming soon. 🥊",
+      "hashtags": [
+        "#DifferentBreed",
+        "#TheColiseum",
+        "#TrainLikeAGladiator",
+        "#EvolveIntoGreatness",
+        "#NJFitness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/coliseum-phase-01.mp4"
+      ],
+      "media_query": "AI-GENERATED Veo 3 Fast footage — 4 clips composited in Remotion. Beats: sandaled foot on arena sand (A, 4s) → iron grip close-up (B, 8s) → slow aerial arena push-in (C, 8s) → backlit silhouette walk through archway (D, 8s). Custom ElevenLabs cinematic music track (music-coliseum-teaser.mp3). 22s total.",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "facebookPageId": "100873874674621"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Coliseum Phase 1 teaser — approved by Joey Apr 16, scheduled for Fri Apr 17 @ 6pm ET. Source: Apr 15 meeting w/ Don. AI-generated Veo 3 Fast footage (~$3 total), composited in Remotion with centered text overlays per IG Reel safe-zone spec (v3 render), custom ElevenLabs Music generated trailer track. Message arc (Option B, user-selected): 'A new training ground is rising' → 'Raw iron / Real work / No machines' → 'The Coliseum · A Different Breed Experience' → 'Train like a gladiator / Welcome to the Coliseum / Coming soon'. No videographer credit — 100% synthetic. First of a phased campaign; Phase 2 (cross-cut AI + DB archive) planned for following week. Hashtag #TheColiseum seeded here for campaign tracking. Note: id remains '2026-04-19-001' for traceability to the original Apr 19 plan even though post_date moved up to 2026-04-17.",
+      "created_at": "2026-04-15T16:00:00.000Z",
+      "approved_at": "2026-04-16T18:45:00.000Z",
+      "posted_at": null,
+      "post_result": {
+        "status": "queued",
+        "scheduled_for": "2026-04-17T18:00:00",
+        "timezone": "America/New_York",
+        "request_id": "a640c733c7e54b53969c929d58711b54",
+        "note": "Upload initiated as scheduled post via Upload-Post --schedule flag. Will transition to 'completed' when it fires on Friday Apr 17 at 6pm ET. Polling was terminated early because scheduled posts stay in 'queued' until scheduled time, which would otherwise timeout the publisher loop.",
+        "last_update": "2026-04-16T18:55:48.176Z"
+      }
+    },
+    {
+      "id": "2026-04-17-001",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "class_promo",
+      "post_date": "2026-04-17",
+      "post_time": "17:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "This isn't a class. It's a standard.\n\nStrength & Conditioning with Coach Danny (@danielwilson78) — where every rep, every round, is earned.\n\nNo fluff. No shortcuts. Just work.\n\n🗓 Thursdays · 6:00 PM\n🗓 Saturdays · 10:00 AM\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 Book: differentbreedsportsacademy.com\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #StrengthAndConditioning #TrainDifferent #NJFitness #EvolveIntoGreatness",
+      "fb_caption": "Strength & Conditioning with Coach Danny (@danielwilson78). No fluff. No shortcuts. Just work. Thursdays 6PM · Saturdays 10AM. Teaneck, NJ. Walk through the door — train different. 🎥 @veteranwithacamera",
+      "hashtags": [
+        "#DifferentBreed",
+        "#StrengthAndConditioning",
+        "#TrainDifferent",
+        "#NJFitness",
+        "#EvolveIntoGreatness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-17-danny-sc-reel/danny-sc-30.mp4"
+      ],
+      "media_query": "gym_3_30_26 Danny S&C clips — Gemini best_clip_range selection; 9-beat cinematic reel with VO + We Major instrumental",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {},
+      "coach_tags": [
+        "@danielwilson78"
+      ],
+      "credit_videographer": true,
+      "notes": "Strength & Conditioning — Coach Danny reel. 30s cinematic w/ ElevenLabs VO + Kanye 'We Major' instrumental. Schedule sourced from MindBody API (Thu 6PM, Sat 10AM). Source footage: 2026/gym_3_30_26/Video.",
+      "created_at": "2026-04-17T17:30:27.182Z",
+      "approved_at": "2026-04-17T17:30:27.182Z",
+      "posted_at": "2026-04-17T17:34:17.422Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-17T17:33:49.249Z"
+            },
+            "success": true,
+            "platform_post_id": "2295828277609610",
+            "post_url": "https://www.facebook.com/reel/2295828277609610",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 52199577,
+            "post_title": "Strength & Conditioning with Coach Danny (@danielwilson78). No fluff. No shortcuts. Just work. Thursdays 6PM · Saturdays 10AM. Teaneck, NJ. Walk through the door — train different. 🎥 @veteranwithacamera",
+            "post_caption": "This isn't a class. It's a standard.\n\nStrength & Conditioning with Coach Danny (@danielwilson78) — where every rep, every round, is earned.\n\nNo fluff. No shortcuts. Just work.\n\n🗓 Thursdays · 6:00 PM\n🗓 Saturdays · 10:00 AM\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 Book: differentbreedsportsacademy.com\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #StrengthAndConditioning #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 30.059,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "6b64701188e8485082404a5cf8ba601b",
+            "request_id_logs": "6b64701188e8485082404a5cf8ba601b",
+            "job_id": "16c5e812d0cd476f93ae3ef050597700",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-17T17:34:12.941Z"
+            },
+            "success": true,
+            "platform_post_id": "17959299162088460",
+            "post_url": "https://www.instagram.com/reel/DXPcarsDlQ3/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 52199577,
+            "post_title": "This isn't a class. It's a standard.\n\nStrength & Conditioning with Coach Danny (@danielwilson78) — where every rep, every round, is earned.\n\nNo fluff. No shortcuts. Just work.\n\n🗓 Thursdays · 6:00 PM\n🗓 Saturdays · 10:00 AM\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 Book: differentbreedsportsacademy.com\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #StrengthAndConditioning #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "post_caption": "This isn't a class. It's a standard.\n\nStrength & Conditioning with Coach Danny (@danielwilson78) — where every rep, every round, is earned.\n\nNo fluff. No shortcuts. Just work.\n\n🗓 Thursdays · 6:00 PM\n🗓 Saturdays · 10:00 AM\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 Book: differentbreedsportsacademy.com\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #StrengthAndConditioning #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 30.059,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "6b64701188e8485082404a5cf8ba601b",
+            "request_id_logs": "6b64701188e8485082404a5cf8ba601b",
+            "job_id": "16c5e812d0cd476f93ae3ef050597700",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-17T17:34:12.941Z"
+        },
+        "request_id": "6b64701188e8485082404a5cf8ba601b"
+      }
+    },
+    {
+      "id": "2026-04-18-001",
+      "status": "removed",
+      "campaign": null,
+      "content_type": "motivational",
+      "post_date": "2026-04-18",
+      "post_time": "12:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "No fluff. No shortcuts. Just work.\n\nFrom the kids to the coaches, 5 AM Pilates to Saturday strength — this is what Different Breed looks like on any given day.\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+      "fb_caption": "No fluff. No shortcuts. Just work. This is Different Breed. Teaneck, NJ — walk through the door, train different. 🎥 @veteranwithacamera",
+      "hashtags": [
+        "#DifferentBreed",
+        "#JustWork",
+        "#TrainDifferent",
+        "#NJFitness",
+        "#EvolveIntoGreatness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-18-just-work-reel/just-work-15.mp4"
+      ],
+      "media_query": "top-40 q8+ clips library-wide, deep compilation_analysis (peak_impact_moment, hype_factor, beat_drop_suitability), filtered to raw source footage, 5 diverse clips",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {},
+      "coach_tags": [],
+      "credit_videographer": true,
+      "notes": "Just Work — 15s compilation reel. Seven Nation Army instrumental. 5 top-scored q8+ clips: kid burst (Apr 11), athlete jump, sled drive, pilates leg press, pilates rings group. Typography verified via still-frame pass before render. [REMOVED by Joey: used kid clip already shown this week + duplicated subject across jw-2/jw-3 + flat-cut transitions too plain]",
+      "created_at": "2026-04-18T20:31:19.527Z",
+      "approved_at": "2026-04-18T20:31:19.527Z",
+      "posted_at": "2026-04-18T20:32:46.438Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T20:31:46.626Z"
+            },
+            "success": true,
+            "platform_post_id": "2026740498245831",
+            "post_url": "https://www.facebook.com/reel/2026740498245831",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 19548971,
+            "post_title": "No fluff. No shortcuts. Just work. This is Different Breed. Teaneck, NJ — walk through the door, train different. 🎥 @veteranwithacamera",
+            "post_caption": "No fluff. No shortcuts. Just work.\n\nFrom the kids to the coaches, 5 AM Pilates to Saturday strength — this is what Different Breed looks like on any given day.\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "c75f82d533034870a9bfa8f65ab045d7",
+            "request_id_logs": "c75f82d533034870a9bfa8f65ab045d7",
+            "job_id": "82bbb8ae9c704bb3af7dd5734a4e763a",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T20:32:44.021Z"
+            },
+            "success": true,
+            "platform_post_id": "17952655139964574",
+            "post_url": "https://www.instagram.com/reel/DXSVopsiv-U/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 19548971,
+            "post_title": "No fluff. No shortcuts. Just work.\n\nFrom the kids to the coaches, 5 AM Pilates to Saturday strength — this is what Different Breed looks like on any given day.\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "post_caption": "No fluff. No shortcuts. Just work.\n\nFrom the kids to the coaches, 5 AM Pilates to Saturday strength — this is what Different Breed looks like on any given day.\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "c75f82d533034870a9bfa8f65ab045d7",
+            "request_id_logs": "c75f82d533034870a9bfa8f65ab045d7",
+            "job_id": "82bbb8ae9c704bb3af7dd5734a4e763a",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-18T20:32:44.021Z"
+        },
+        "request_id": "c75f82d533034870a9bfa8f65ab045d7"
+      }
+    },
+    {
+      "id": "2026-04-18-002",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "motivational",
+      "post_date": "2026-04-18",
+      "post_time": "17:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "No fluff. No shortcuts. Just work.\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+      "fb_caption": "No fluff. No shortcuts. Just work. 🎥 @veteranwithacamera",
+      "hashtags": [
+        "#DifferentBreed",
+        "#JustWork",
+        "#TrainDifferent",
+        "#NJFitness",
+        "#EvolveIntoGreatness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/output/2026-04-18-just-work-reel/just-work-15-v2.mp4"
+      ],
+      "media_query": "top-40 q8+ library clips, compilation_analysis deep pass; 5 diverse subjects: medicine ball throw, rowing pull, sled drive, pilates leg press, pilates rings group",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {},
+      "coach_tags": [],
+      "credit_videographer": true,
+      "notes": "Just Work v2 — 15s template reel. Seven Nation Army instrumental. Cinematic transitions: 2-frame white impact flash + 8-frame GlitchEffect on each cut. Slate + EndCard typography locked as template for future Just Work reels.",
+      "created_at": "2026-04-18T20:54:34.924Z",
+      "approved_at": "2026-04-18T20:54:34.924Z",
+      "posted_at": "2026-04-18T20:55:35.566Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T20:55:08.725Z"
+            },
+            "success": true,
+            "platform_post_id": "934593112690393",
+            "post_url": "https://www.facebook.com/reel/934593112690393",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 18399497,
+            "post_title": "No fluff. No shortcuts. Just work. 🎥 @veteranwithacamera",
+            "post_caption": "No fluff. No shortcuts. Just work.\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "61def781708642d1bb7e01a64a2a06ac",
+            "request_id_logs": "61def781708642d1bb7e01a64a2a06ac",
+            "job_id": "4250ae9124414ab59c5baeb34ae89987",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T20:55:32.797Z"
+            },
+            "success": true,
+            "platform_post_id": "18114155593781455",
+            "post_url": "https://www.instagram.com/reel/DXSYQcKgayM/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 18399497,
+            "post_title": "No fluff. No shortcuts. Just work.\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "post_caption": "No fluff. No shortcuts. Just work.\n\n🎥 @veteranwithacamera\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "61def781708642d1bb7e01a64a2a06ac",
+            "request_id_logs": "61def781708642d1bb7e01a64a2a06ac",
+            "job_id": "4250ae9124414ab59c5baeb34ae89987",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-18T20:55:32.797Z"
+        },
+        "request_id": "61def781708642d1bb7e01a64a2a06ac"
+      }
+    },
+    {
+      "id": "2026-04-18-003",
+      "status": "posted",
+      "campaign": "jack-jill-2026-04-18",
+      "content_type": "event_recap",
+      "post_date": "2026-04-18",
+      "post_time": "19:30",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "One day. One family. One standard.\n\nJack & Jill of America — Bergen-Passaic Chapter brought their families to Different Breed for a wellness Saturday. Kids in the ring. Parents on the straps. Everybody moved.\n\nDedication isn't a word. It's what we do.\n\n🙏 Jack & Jill Bergen-Passaic · Coach Tara · @joebutta25 · @sun_of_yah\n\n#DifferentBreed #JackAndJill #EvolveIntoGreatness #FamilyFitness #TeaneckNJ",
+      "fb_caption": "One day. One family. One standard. Jack & Jill of America — Bergen-Passaic Chapter brought their families to Different Breed for a wellness Saturday. Kids in the ring. Parents on the straps. Everybody moved. 🙏",
+      "hashtags": [
+        "#DifferentBreed",
+        "#JackAndJill",
+        "#EvolveIntoGreatness",
+        "#FamilyFitness",
+        "#TeaneckNJ"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/campaigns/jack-jill-2026-04-18/output/jj-day-of-dedication-25s.mp4"
+      ],
+      "media_query": null,
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "facebookPageId": "100873874674621"
+      },
+      "coach_tags": [
+        "@joebutta25",
+        "@sun_of_yah"
+      ],
+      "credit_videographer": false,
+      "notes": "Jack & Jill × DB wellness Saturday recap. 26s dual-VO reel (Berto + Tonya). Music: We Major instrumental. Closes on native 'Dedication!' group cheer audio + scramble title.",
+      "created_at": "2026-04-18T22:46:11.765Z",
+      "approved_at": "2026-04-18T22:46:11.765Z",
+      "posted_at": "2026-04-18T22:47:12.002Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T22:46:48.084Z"
+            },
+            "success": true,
+            "platform_post_id": "1404692741687607",
+            "post_url": "https://www.facebook.com/reel/1404692741687607",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 38853621,
+            "post_title": "One day. One family. One standard. Jack & Jill of America — Bergen-Passaic Chapter brought their families to Different Breed for a wellness Saturday. Kids in the ring. Parents on the straps. Everybody moved. 🙏",
+            "post_caption": "One day. One family. One standard.\n\nJack & Jill of America — Bergen-Passaic Chapter brought their families to Different Breed for a wellness Saturday. Kids in the ring. Parents on the straps. Everybody moved.\n\nDedication isn't a word. It's what we do.\n\n🙏 Jack & Jill Bergen-Passaic · Coach Tara · @joebutta25 · @sun_of_yah\n\n#DifferentBreed #JackAndJill #EvolveIntoGreatness #FamilyFitness #TeaneckNJ",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 26.048,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "e0038973219a4bb299882d64b08b16dd",
+            "request_id_logs": "e0038973219a4bb299882d64b08b16dd",
+            "job_id": "9c719c8eac18438481d3152a4484c690",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T22:47:10.099Z"
+            },
+            "success": true,
+            "platform_post_id": "18078526301447444",
+            "post_url": "https://www.instagram.com/reel/DXSlB3LAWR1/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 38853621,
+            "post_title": "One day. One family. One standard.\n\nJack & Jill of America — Bergen-Passaic Chapter brought their families to Different Breed for a wellness Saturday. Kids in the ring. Parents on the straps. Everybody moved.\n\nDedication isn't a word. It's what we do.\n\n🙏 Jack & Jill Bergen-Passaic · Coach Tara · @joebutta25 · @sun_of_yah\n\n#DifferentBreed #JackAndJill #EvolveIntoGreatness #FamilyFitness #TeaneckNJ",
+            "post_caption": "One day. One family. One standard.\n\nJack & Jill of America — Bergen-Passaic Chapter brought their families to Different Breed for a wellness Saturday. Kids in the ring. Parents on the straps. Everybody moved.\n\nDedication isn't a word. It's what we do.\n\n🙏 Jack & Jill Bergen-Passaic · Coach Tara · @joebutta25 · @sun_of_yah\n\n#DifferentBreed #JackAndJill #EvolveIntoGreatness #FamilyFitness #TeaneckNJ",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 26.048,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "e0038973219a4bb299882d64b08b16dd",
+            "request_id_logs": "e0038973219a4bb299882d64b08b16dd",
+            "job_id": "9c719c8eac18438481d3152a4484c690",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-18T22:47:10.099Z"
+        },
+        "request_id": "e0038973219a4bb299882d64b08b16dd"
+      }
+    },
+    {
+      "id": "2026-04-18-004",
+      "status": "posted",
+      "campaign": "jack-jill-2026-04-18",
+      "content_type": "kids_boxing",
+      "post_date": "2026-04-18",
+      "post_time": "19:45",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Raised different.\n\nJack & Jill kids picked up the gloves today. Hands up. Feet moving. No excuses.\n\nFuture's in good hands. 👊\n\n@joebutta25 · @sun_of_yah · Jack & Jill Bergen-Passaic\n\n#KidsBoxing #DifferentBreed #NextGen #RaisedDifferent #TeaneckNJ",
+      "fb_caption": "Raised different. Jack & Jill kids picked up the gloves today. Hands up. Feet moving. No excuses. Future's in good hands. 👊",
+      "hashtags": [
+        "#KidsBoxing",
+        "#DifferentBreed",
+        "#NextGen",
+        "#RaisedDifferent",
+        "#TeaneckNJ"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/campaigns/jack-jill-2026-04-18/output/jj-kids-next-gen-15s.mp4"
+      ],
+      "media_query": null,
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "facebookPageId": "100873874674621"
+      },
+      "coach_tags": [
+        "@joebutta25",
+        "@sun_of_yah"
+      ],
+      "credit_videographer": false,
+      "notes": "Jack & Jill kids-focused compilation reel. JustWork15-template-locked: slate + 5 clips + end card. Music: Touch It instrumental. 5 cuts: boy jab on DB logo → ring combos → sprint leap → girl power-punch → explosive class sprint.",
+      "created_at": "2026-04-18T22:46:11.765Z",
+      "approved_at": "2026-04-18T22:46:11.765Z",
+      "posted_at": "2026-04-18T22:48:01.351Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T22:47:42.821Z"
+            },
+            "success": true,
+            "platform_post_id": "4595685003996711",
+            "post_url": "https://www.facebook.com/reel/4595685003996711",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 23038090,
+            "post_title": "Raised different. Jack & Jill kids picked up the gloves today. Hands up. Feet moving. No excuses. Future's in good hands. 👊",
+            "post_caption": "Raised different.\n\nJack & Jill kids picked up the gloves today. Hands up. Feet moving. No excuses.\n\nFuture's in good hands. 👊\n\n@joebutta25 · @sun_of_yah · Jack & Jill Bergen-Passaic\n\n#KidsBoxing #DifferentBreed #NextGen #RaisedDifferent #TeaneckNJ",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "6b17b594660b454baf37c9f5c7603d5b",
+            "request_id_logs": "6b17b594660b454baf37c9f5c7603d5b",
+            "job_id": "977b7e83a033426da48c2fb95c25f8f0",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T22:47:57.112Z"
+            },
+            "success": true,
+            "platform_post_id": "18113022040772166",
+            "post_url": "https://www.instagram.com/reel/DXSlI9sFYpO/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 23038090,
+            "post_title": "Raised different.\n\nJack & Jill kids picked up the gloves today. Hands up. Feet moving. No excuses.\n\nFuture's in good hands. 👊\n\n@joebutta25 · @sun_of_yah · Jack & Jill Bergen-Passaic\n\n#KidsBoxing #DifferentBreed #NextGen #RaisedDifferent #TeaneckNJ",
+            "post_caption": "Raised different.\n\nJack & Jill kids picked up the gloves today. Hands up. Feet moving. No excuses.\n\nFuture's in good hands. 👊\n\n@joebutta25 · @sun_of_yah · Jack & Jill Bergen-Passaic\n\n#KidsBoxing #DifferentBreed #NextGen #RaisedDifferent #TeaneckNJ",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "6b17b594660b454baf37c9f5c7603d5b",
+            "request_id_logs": "6b17b594660b454baf37c9f5c7603d5b",
+            "job_id": "977b7e83a033426da48c2fb95c25f8f0",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-18T22:47:57.112Z"
+        },
+        "request_id": "6b17b594660b454baf37c9f5c7603d5b"
+      }
+    },
+    {
+      "id": "2026-04-18-005",
+      "status": "posted",
+      "campaign": "jack-jill-2026-04-18",
+      "content_type": "adult_class",
+      "post_date": "2026-04-18",
+      "post_time": "20:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "That's what different looks like.\n\nWhile the kids trained on the floor, the parents hit the straps in Pulse. TRX. Zumba. Real work, together.\n\nDifferent Breed isn't just for the athletes — it's for the people raising them.\n\n🙏 Jack & Jill Bergen-Passaic\n\n#PulseStudio #DifferentBreed #TRX #Zumba #JackAndJill #FamilyFitness",
+      "fb_caption": "That's what different looks like. While the kids trained on the floor, the parents hit the straps in Pulse — TRX, Zumba, real work, together.",
+      "hashtags": [
+        "#PulseStudio",
+        "#DifferentBreed",
+        "#TRX",
+        "#Zumba",
+        "#JackAndJill",
+        "#FamilyFitness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/campaigns/jack-jill-2026-04-18/output/jj-train-together-22s.mp4"
+      ],
+      "media_query": null,
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "facebookPageId": "100873874674621"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Jack & Jill × DB Pulse studio (adult) reel. 22s Tonya VO. Music: Seven Nation Army instrumental. Beat flow: Pulse slate → TRX leopard → TRX tricep → 'They trained.' (red emphasis) → J&J shirt 'Together.' → Zumba joy → coach arms-up swell → group photo closer.",
+      "created_at": "2026-04-18T22:46:11.765Z",
+      "approved_at": "2026-04-18T22:46:11.765Z",
+      "posted_at": "2026-04-18T22:51:13.052Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T22:50:13.989Z"
+            },
+            "success": true,
+            "platform_post_id": "933117576255474",
+            "post_url": "https://www.facebook.com/reel/933117576255474",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 31682826,
+            "post_title": "That's what different looks like. While the kids trained on the floor, the parents hit the straps in Pulse — TRX, Zumba, real work, together.",
+            "post_caption": "That's what different looks like.\n\nWhile the kids trained on the floor, the parents hit the straps in Pulse. TRX. Zumba. Real work, together.\n\nDifferent Breed isn't just for the athletes — it's for the people raising them.\n\n🙏 Jack & Jill Bergen-Passaic\n\n#PulseStudio #DifferentBreed #TRX #Zumba #JackAndJill #FamilyFitness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 22.379,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "c2787989c3d84ef28a8c829df79efa89",
+            "request_id_logs": "c2787989c3d84ef28a8c829df79efa89",
+            "job_id": "1b80b45acd954d82ad81195555831530",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-18T22:51:09.330Z"
+            },
+            "success": true,
+            "platform_post_id": "17861731998566917",
+            "post_url": "https://www.instagram.com/reel/DXSle-jjiJz/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 31682826,
+            "post_title": "That's what different looks like.\n\nWhile the kids trained on the floor, the parents hit the straps in Pulse. TRX. Zumba. Real work, together.\n\nDifferent Breed isn't just for the athletes — it's for the people raising them.\n\n🙏 Jack & Jill Bergen-Passaic\n\n#PulseStudio #DifferentBreed #TRX #Zumba #JackAndJill #FamilyFitness",
+            "post_caption": "That's what different looks like.\n\nWhile the kids trained on the floor, the parents hit the straps in Pulse. TRX. Zumba. Real work, together.\n\nDifferent Breed isn't just for the athletes — it's for the people raising them.\n\n🙏 Jack & Jill Bergen-Passaic\n\n#PulseStudio #DifferentBreed #TRX #Zumba #JackAndJill #FamilyFitness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 22.379,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "c2787989c3d84ef28a8c829df79efa89",
+            "request_id_logs": "c2787989c3d84ef28a8c829df79efa89",
+            "job_id": "1b80b45acd954d82ad81195555831530",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-18T22:51:09.330Z"
+        },
+        "request_id": "c2787989c3d84ef28a8c829df79efa89"
+      }
+    },
+    {
+      "id": "2026-04-21-001",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "member_spotlight",
+      "post_date": "2026-04-21",
+      "post_time": null,
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Don’t take our word for it.\n\n★★★★★\n\nReal reviews. Real members. Real work.\n\nFrom first class to fight team — this is what people are saying about Different Breed.\n\nCome see for yourself. First class on us.\n\n📍 401 Water St, Teaneck\n🔗 link in bio\n\n#DifferentBreed #EvolveIntoGreatness #TrainDifferent #NJFitness #TeaneckGym",
+      "fb_caption": "Don’t take our word for it. ★★★★★ Real reviews. Real members. Real work. This is what people are saying about Different Breed. First class on us. 📍 401 Water St, Teaneck — link in bio for a free day pass.",
+      "hashtags": [
+        "#DifferentBreed",
+        "#EvolveIntoGreatness",
+        "#TrainDifferent",
+        "#NJFitness",
+        "#TeaneckGym"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/what-people-say-30.mp4"
+      ],
+      "media_query": "Remotion render WhatPeopleSay30 — 30s reviews compilation. Source reviews: Mindbody + Google Reviews Apr 2026. B-roll from media library qs>=7.",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "REELS"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "5 real reviews (Izzy E. Oct 2025, Oren R., Christopher R., Sean-Paul G., Bill C.) over varied b-roll (pads, spar, coach+member, facility, member smiling). Music: We Major.",
+      "created_at": "2026-04-21T12:18:11.517Z",
+      "approved_at": "2026-04-21T12:18:11.517Z",
+      "posted_at": "2026-04-21T12:20:36.733Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-21T12:20:05.794Z"
+            },
+            "success": true,
+            "platform_post_id": "2111974962911294",
+            "post_url": "https://www.facebook.com/reel/2111974962911294",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 45139679,
+            "post_title": "Don’t take our word for it. ★★★★★ Real reviews. Real members. Real work. This is what people are saying about Different Breed. First class on us. 📍 401 Water St, Teaneck — link in bio for a free day pass.",
+            "post_caption": "Don’t take our word for it.\n\n★★★★★\n\nReal reviews. Real members. Real work.\n\nFrom first class to fight team — this is what people are saying about Different Breed.\n\nCome see for yourself. First class on us.\n\n📍 401 Water St, Teaneck\n🔗 link in bio\n\n#DifferentBreed #EvolveIntoGreatness #TrainDifferent #NJFitness #TeaneckGym",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 30.059,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "054b57b6fccc4e24be8c68a585a7adc3",
+            "request_id_logs": "054b57b6fccc4e24be8c68a585a7adc3",
+            "job_id": "9a7678210b33402bb4571f825025705e",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-21T12:20:34.405Z"
+            },
+            "success": true,
+            "platform_post_id": "18400183789146362",
+            "post_url": "https://www.instagram.com/reel/DXZLrmxgbkB/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 45139679,
+            "post_title": "Don’t take our word for it.\n\n★★★★★\n\nReal reviews. Real members. Real work.\n\nFrom first class to fight team — this is what people are saying about Different Breed.\n\nCome see for yourself. First class on us.\n\n📍 401 Water St, Teaneck\n🔗 link in bio\n\n#DifferentBreed #EvolveIntoGreatness #TrainDifferent #NJFitness #TeaneckGym",
+            "post_caption": "Don’t take our word for it.\n\n★★★★★\n\nReal reviews. Real members. Real work.\n\nFrom first class to fight team — this is what people are saying about Different Breed.\n\nCome see for yourself. First class on us.\n\n📍 401 Water St, Teaneck\n🔗 link in bio\n\n#DifferentBreed #EvolveIntoGreatness #TrainDifferent #NJFitness #TeaneckGym",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 30.059,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "054b57b6fccc4e24be8c68a585a7adc3",
+            "request_id_logs": "054b57b6fccc4e24be8c68a585a7adc3",
+            "job_id": "9a7678210b33402bb4571f825025705e",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-21T12:20:34.405Z"
+        },
+        "request_id": "054b57b6fccc4e24be8c68a585a7adc3"
+      }
+    },
+    {
+      "id": "2026-04-21-schedule",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "schedule",
+      "post_date": "2026-04-21",
+      "post_time": null,
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Today at DB — Tuesday.\n\n• 5:30 AM — Wake Up & Work (Ricardo Castro)\n• 4 PM — Jr. Boxing & Fitness (Joe Butta)\n• 5 PM — Advance Youth Boxing and Fitness  (Aadam Ali)\n• 6 PM — Full Body Igniter (Carlos Acevedo)\n• 7 PM — The Sweet Science (Joe Butta)\n• 7 PM — Pulse Cardio Dance (Janell Robinson)\n\nBook via link in bio.",
+      "fb_caption": "Today at DB — Tuesday. 6 classes on the board. Book via link in bio.",
+      "hashtags": [],
+      "media_type": "story",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/schedule-2026-04-21.mp4"
+      ],
+      "media_query": "ScheduleReel automated render — 4 b-roll clips from media library, date-seeded shuffle",
+      "instagram_options": {
+        "media_type": "STORIES",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "STORIES"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Auto-posted by scripts/run-daily-schedule.mjs. 6 classes. B-roll manifest: reels/src/schedule/background-manifest.json",
+      "created_at": "2026-04-21T17:19:02.082Z",
+      "approved_at": "2026-04-21T17:19:02.082Z",
+      "posted_at": "2026-04-21T17:19:02.082Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-21T17:18:41.289Z"
+            },
+            "success": true,
+            "platform_post_id": "880598078332277",
+            "post_url": null,
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 8916071,
+            "post_title": "Today at DB — Tuesday",
+            "post_caption": "Today at DB — Tuesday",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "79b272e6a33441e6be1bbef0282ebcc9",
+            "request_id_logs": "79b272e6a33441e6be1bbef0282ebcc9",
+            "job_id": "505ea0386be040a98884f26eac5aae1f",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-21T17:18:57.968Z"
+            },
+            "success": true,
+            "platform_post_id": "18100694557795819",
+            "post_url": "https://www.instagram.com/stories/dbelitefitness/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 8916071,
+            "post_title": "Today at DB — Tuesday",
+            "post_caption": "Today at DB — Tuesday",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "79b272e6a33441e6be1bbef0282ebcc9",
+            "request_id_logs": "79b272e6a33441e6be1bbef0282ebcc9",
+            "job_id": "505ea0386be040a98884f26eac5aae1f",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-21T17:18:57.968Z"
+        },
+        "request_id": "79b272e6a33441e6be1bbef0282ebcc9"
+      }
+    },
+    {
+      "id": "2026-04-22-schedule",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "schedule",
+      "post_date": "2026-04-22",
+      "post_time": null,
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Today at DB — Wednesday.\n\n• 5:30 AM — Sunrise Strength (Michelle Buttafuoco)\n• 9 AM — Core Control (Vanessa Kelley)\n• 4 PM — Jr. Boxing & Fitness (Glenda Ortiz)\n• 4:30 PM — Sports Performance (Chad Elliot)\n• 5 PM — Advance Youth Boxing and Fitness  (Aadam Ali)\n• 6 PM — Women Lace Up Too (Pablo Gary)\n\nBook via link in bio.",
+      "fb_caption": "Today at DB — Wednesday. 9 classes on the board. Book via link in bio.",
+      "hashtags": [],
+      "media_type": "story",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/schedule-2026-04-22.mp4"
+      ],
+      "media_query": "ScheduleReel automated render — 4 b-roll clips from media library, date-seeded shuffle",
+      "instagram_options": {
+        "media_type": "STORIES",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "STORIES"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Auto-posted by scripts/run-daily-schedule.mjs. 9 classes. B-roll manifest: reels/src/schedule/background-manifest.json",
+      "created_at": "2026-04-22T04:05:43.320Z",
+      "approved_at": "2026-04-22T04:05:43.320Z",
+      "posted_at": "2026-04-22T04:05:43.320Z",
+      "post_result": {
+        "request_id": "dbdb23290af04edb9e076bc7148a7a59",
+        "job_id": "a1de77fe941c4f4e89a811967d2293f3",
+        "status": "completed",
+        "scheduler_status": "running",
+        "completed": 2,
+        "failed": 0,
+        "retryable": 0,
+        "total": 2,
+        "results": [
+          {
+            "success": true,
+            "post_id": "17986910084970530",
+            "url": "https://www.instagram.com/stories/dbelitefitness/",
+            "media_type": "STORIES",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "platform": "instagram",
+            "status": "completed",
+            "attempts": 1
+          },
+          {
+            "success": true,
+            "post_id": "1467018491533632",
+            "url": null,
+            "content_type": "STORIES",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "platform": "facebook",
+            "status": "completed",
+            "attempts": 1
+          }
+        ],
+        "last_update": "Wed, 22 Apr 2026 04:05:29 GMT"
+      }
+    },
+    {
+      "id": "2026-04-22-001",
+      "status": "scheduled",
+      "campaign": null,
+      "content_type": "motivational",
+      "post_date": "2026-04-22",
+      "post_time": "18:30",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "No fluff. No shortcuts. Just work.\n\nPlates overhead. Planks deep. Down-dogs in formation. Push-ups with the ring behind us.\n\nThis is what Different Breed looks like on any given day.\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+      "fb_caption": "No fluff. No shortcuts. Just work. This is what Different Breed looks like on any given day. Walk through the door. Train different. Teaneck, NJ.",
+      "hashtags": [
+        "#DifferentBreed",
+        "#JustWork",
+        "#TrainDifferent",
+        "#NJFitness",
+        "#EvolveIntoGreatness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/JustWork15Vol2.mp4"
+      ],
+      "media_query": "Remotion reel — 15s compilation (Vol. 2) from April 20 iPhone drop. 5 clips: plate press overhead, group plank, down-dog row, stretch transition, side-plank push-ups. Seven Nation Army instrumental (5s silence trimmed from head).",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "REELS"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Owner-shot iPhone footage (Don @the_4_corners). No @veteranwithacamera credit per videographer rule.",
+      "created_at": "2026-04-22T22:26:56.953Z",
+      "approved_at": "2026-04-22T22:26:56.953Z",
+      "posted_at": "2026-04-22T22:31:03.135Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-22T22:30:45.705Z"
+            },
+            "success": true,
+            "platform_post_id": "1887094691984414",
+            "post_url": "https://www.facebook.com/reel/1887094691984414",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 41942781,
+            "post_title": "No fluff. No shortcuts. Just work. This is what Different Breed looks like on any given day. Walk through the door. Train different. Teaneck, NJ.",
+            "post_caption": "No fluff. No shortcuts. Just work.\n\nPlates overhead. Planks deep. Down-dogs in formation. Push-ups with the ring behind us.\n\nThis is what Different Breed looks like on any given day.\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "is_async": false,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "f0b19b78458c4b85b2b597f1fbb37b30",
+            "request_id_logs": "f0b19b78458c4b85b2b597f1fbb37b30",
+            "job_id": "470b45b6b4f74ef0b9937ebf8a41304b",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-22T22:31:01.359Z"
+            },
+            "success": true,
+            "platform_post_id": "17944187304178261",
+            "post_url": "https://www.instagram.com/reel/DXc2W73koYi/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 41942781,
+            "post_title": "No fluff. No shortcuts. Just work.\n\nPlates overhead. Planks deep. Down-dogs in formation. Push-ups with the ring behind us.\n\nThis is what Different Breed looks like on any given day.\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "post_caption": "No fluff. No shortcuts. Just work.\n\nPlates overhead. Planks deep. Down-dogs in formation. Push-ups with the ring behind us.\n\nThis is what Different Breed looks like on any given day.\n\nWalk through the door. Train different.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n#DifferentBreed #JustWork #TrainDifferent #NJFitness #EvolveIntoGreatness",
+            "is_async": false,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "f0b19b78458c4b85b2b597f1fbb37b30",
+            "request_id_logs": "f0b19b78458c4b85b2b597f1fbb37b30",
+            "job_id": "470b45b6b4f74ef0b9937ebf8a41304b",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-22T22:31:01.359Z"
+        },
+        "request_id": "f0b19b78458c4b85b2b597f1fbb37b30"
+      }
+    },
+    {
+      "id": "2026-04-22-002",
+      "status": "scheduled",
+      "campaign": null,
+      "content_type": "class_promo",
+      "post_date": "2026-04-22",
+      "post_time": "19:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Tuesdays. 6 PM. No machines. Just work.\n\nCoach Carlos takes you through 45 minutes of sleds, ropes, ladders, and plates — every muscle, every round.\n\nFull Body Igniter. This is how we condition.\n\nTag someone who needs this class in their week.\n\n📍 Teaneck, NJ\n🔗 Book via link in bio\n\n#DifferentBreed #FullBodyIgniter #TrainDifferent #NJFitness #EvolveIntoGreatness",
+      "fb_caption": "Tuesdays · 6 PM · Full Body Igniter with Coach Carlos (@cphysiquetraining). 45 minutes. Sleds, ropes, ladders, plates — every muscle, every round. No machines. Just work. Book via link in bio. Teaneck, NJ.",
+      "hashtags": [
+        "#DifferentBreed",
+        "#FullBodyIgniter",
+        "#TrainDifferent",
+        "#NJFitness",
+        "#EvolveIntoGreatness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/FullBodyIgniter20.mp4"
+      ],
+      "media_query": "Remotion reel — 20s class promo from April 21 iPhone drop. Opens with \"FULL BODY IGNITER\" title overlay on first clip (per no-black-screen feedback). 4 circuit beats (sled, turf circuit, sled-front, ladder). Two-stage end card: class tag (Tuesdays 6 PM, Carlos) → BIG DB lockup. Music: RIRI by Sllash & Doppe (0:32-0:54 clip).",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "REELS"
+      },
+      "coach_tags": [
+        "@cphysiquetraining"
+      ],
+      "credit_videographer": false,
+      "notes": "Tag Carlos (@cphysiquetraining). Owner-shot iPhone footage from Don @the_4_corners.",
+      "created_at": "2026-04-22T22:26:56.953Z",
+      "approved_at": "2026-04-22T22:26:56.953Z",
+      "posted_at": "2026-04-22T22:37:06.481Z",
+      "post_result": {
+        "request_id": "dbfa98d14cc44240a3bc700a96fb7f06",
+        "job_id": "98b7e15167934fa7b7ec5a0a6c598950",
+        "status": "queued",
+        "scheduler_status": "pending",
+        "completed": 0,
+        "failed": 0,
+        "retryable": 0,
+        "total": 2,
+        "results": [
+          {
+            "platform": "instagram",
+            "status": "queued",
+            "attempts": 0,
+            "success": false
+          },
+          {
+            "platform": "facebook",
+            "status": "queued",
+            "attempts": 0,
+            "success": false
+          }
+        ],
+        "last_update": "Wed, 22 Apr 2026 22:31:44 GMT",
+        "message": "Upload queued and waiting for worker execution"
+      }
+    },
+    {
+      "id": "2026-04-22-003",
+      "status": "scheduled",
+      "campaign": "the-colosseum",
+      "content_type": "announcement",
+      "post_date": "2026-04-22",
+      "post_time": "19:30",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Something new is rising at Different Breed.\n\nWe're building the Colosseum — a raw, functional training space. Sleds. Iron. A cold plunge. A heat tub in the back. Partly outdoors. No machines. Just movement.\n\nSecond new addition this year. First was the Pilates studio. Now this.\n\nComing soon. 2026.\n\n📍 Teaneck, NJ\n🔗 differentbreedsportsacademy.com\n\n#DifferentBreed #TheColosseum #FunctionalTraining #NJFitness #EvolveIntoGreatness",
+      "fb_caption": "Something new is rising at Different Breed. The Colosseum — raw, functional training. Sleds, iron, cold plunge, heat tub, partly outdoors. Coming soon 2026. Teaneck, NJ.",
+      "hashtags": [
+        "#DifferentBreed",
+        "#TheColosseum",
+        "#FunctionalTraining",
+        "#NJFitness",
+        "#EvolveIntoGreatness"
+      ],
+      "media_type": "video",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/ColosseumPhase02.mp4"
+      ],
+      "media_query": "Remotion reel — 19s Coming Soon teaser from April 22 iPhone drop (BTS demolition). Don Sommerville opens as hook (\"A DIFFERENT BREED\" title over him). Berto VO narrates the vision (cold plunge + heat tub reveal). TikTok-style word-synced captions. \"THE COLOSSEUM\" title card reveal before end card. New rhythmic cinematic music track (ElevenLabs).",
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "REELS"
+      },
+      "coach_tags": [
+        "@the_4_corners"
+      ],
+      "credit_videographer": false,
+      "notes": "Big announcement reel. Owner Don (@the_4_corners) shot this AND stars in it. VO by Berto (DB signature ElevenLabs voice). Heat tub is a new reveal not previously announced publicly.",
+      "created_at": "2026-04-22T22:26:56.953Z",
+      "approved_at": "2026-04-22T22:26:56.953Z",
+      "posted_at": "2026-04-22T22:42:54.964Z",
+      "post_result": {
+        "request_id": "2ffdc0f08e99479f879ad772074afbb2",
+        "job_id": "0facb2e33e3749da83653593e63e0658",
+        "status": "queued",
+        "scheduler_status": "pending",
+        "completed": 0,
+        "failed": 0,
+        "retryable": 0,
+        "total": 2,
+        "results": [
+          {
+            "platform": "instagram",
+            "status": "queued",
+            "attempts": 0,
+            "success": false
+          },
+          {
+            "platform": "facebook",
+            "status": "queued",
+            "attempts": 0,
+            "success": false
+          }
+        ],
+        "last_update": "Wed, 22 Apr 2026 22:37:32 GMT",
+        "message": "Upload queued and waiting for worker execution"
+      }
+    },
+    {
+      "id": "2026-04-23-schedule",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "schedule",
+      "post_date": "2026-04-23",
+      "post_time": null,
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Today at DB — Thursday.\n\n• 5:30 AM — Wake Up & Work (Ricardo Castro)\n• 5 PM — Advance Youth Boxing and Fitness  (Aadam Ali)\n• 6 PM — Strength & Conditioning (Daniel Wilson)\n• 7 PM — The Sweet Science (Joe Butta)\n• 8 PM — Women only Core Control (Menukhah Yaghoubzar)\n\nBook via link in bio.",
+      "fb_caption": "Today at DB — Thursday. 5 classes on the board. Book via link in bio.",
+      "hashtags": [],
+      "media_type": "story",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/schedule-2026-04-23.mp4"
+      ],
+      "media_query": "ScheduleReel automated render — 4 b-roll clips from media library, date-seeded shuffle",
+      "instagram_options": {
+        "media_type": "STORIES",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "STORIES"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Auto-posted by scripts/run-daily-schedule.mjs. 5 classes. B-roll manifest: reels/src/schedule/background-manifest.json",
+      "created_at": "2026-04-23T13:54:52.763Z",
+      "approved_at": "2026-04-23T13:54:52.763Z",
+      "posted_at": "2026-04-23T13:54:52.763Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-23T13:54:21.130Z"
+            },
+            "success": true,
+            "platform_post_id": "968660708993249",
+            "post_url": null,
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 9781101,
+            "post_title": "Today at DB — Thursday",
+            "post_caption": "Today at DB — Thursday",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "3dc6d3f42238465ab7162324c2820a5c",
+            "request_id_logs": "3dc6d3f42238465ab7162324c2820a5c",
+            "job_id": "2176d07909bd469b92e398be0f3cd10a",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-04-23T13:54:48.226Z"
+            },
+            "success": true,
+            "platform_post_id": "18114184126706257",
+            "post_url": "https://www.instagram.com/stories/dbelitefitness/",
+            "error_message": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 9781101,
+            "post_title": "Today at DB — Thursday",
+            "post_caption": "Today at DB — Thursday",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "3dc6d3f42238465ab7162324c2820a5c",
+            "request_id_logs": "3dc6d3f42238465ab7162324c2820a5c",
+            "job_id": "2176d07909bd469b92e398be0f3cd10a",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-04-23T13:54:48.226Z"
+        },
+        "request_id": "3dc6d3f42238465ab7162324c2820a5c"
+      }
+    },
+    {
+      "id": "2026-04-24-schedule",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "schedule",
+      "post_date": "2026-04-24",
+      "post_time": null,
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Today at DB — Friday.\n\n• 5:30 AM — Core Control (Christine Jimenez Johnson)\n• 6 AM — The Sweet Science (Don Somerville)\n• 4 PM — Sports Performance (Chad Elliot)\n• 5 PM — Advance Youth Boxing and Fitness  (Aadam Ali)\n• 7 PM — The Sweet Science (Daniel Wilson)\n\nBook via link in bio.",
+      "fb_caption": "Today at DB — Friday. 5 classes on the board. Book via link in bio.",
+      "hashtags": [],
+      "media_type": "story",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/schedule-2026-04-24.mp4"
+      ],
+      "media_query": "ScheduleReel automated render — 4 b-roll clips from media library, date-seeded shuffle",
+      "instagram_options": {
+        "media_type": "STORIES",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "STORIES"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Auto-posted by scripts/run-daily-schedule.mjs. 5 classes. B-roll manifest: reels/src/schedule/background-manifest.json",
+      "created_at": "2026-04-24T04:05:05.695Z",
+      "approved_at": "2026-04-24T04:05:05.695Z",
+      "posted_at": "2026-04-24T04:05:05.695Z",
+      "post_result": {
+        "request_id": "60be34d6c6e5494893b8bd36119696d7",
+        "job_id": "e1ab7162b084430183bb4f627d103351",
+        "status": "completed",
+        "scheduler_status": "running",
+        "completed": 2,
+        "failed": 0,
+        "retryable": 0,
+        "total": 2,
+        "results": [
+          {
+            "success": true,
+            "post_id": "18109224331859831",
+            "url": "https://www.instagram.com/stories/dbelitefitness/",
+            "media_type": "STORIES",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "platform": "instagram",
+            "status": "completed",
+            "attempts": 1
+          },
+          {
+            "success": true,
+            "post_id": "923042993893146",
+            "url": null,
+            "content_type": "STORIES",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "platform": "facebook",
+            "status": "completed",
+            "attempts": 1
+          }
+        ],
+        "last_update": "Fri, 24 Apr 2026 04:04:54 GMT"
+      }
+    },
+    {
+      "id": "2026-04-25-schedule",
+      "status": "posted",
+      "campaign": null,
+      "content_type": "schedule",
+      "post_date": "2026-04-25",
+      "post_time": null,
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "ig_caption": "Today at DB — Saturday.\n\n• 9 AM — The Sweet Science (Daniel Wilson)\n• 10 AM — Strength & Conditioning (Daniel Wilson)\n• 1 PM — Sports Performance (Chad Elliot)\n\nBook via link in bio.",
+      "fb_caption": "Today at DB — Saturday. 3 classes on the board. Book via link in bio.",
+      "hashtags": [],
+      "media_type": "story",
+      "media_paths": [
+        "/Users/joestevens/Projects/db-marketing-skills-main/reels/out/schedule-2026-04-25.mp4"
+      ],
+      "media_query": "ScheduleReel automated render — 4 b-roll clips from media library, date-seeded shuffle",
+      "instagram_options": {
+        "media_type": "STORIES",
+        "first_comment": null
+      },
+      "facebook_options": {
+        "media_type": "STORIES"
+      },
+      "coach_tags": [],
+      "credit_videographer": false,
+      "notes": "Auto-posted by scripts/run-daily-schedule.mjs. 3 classes. B-roll manifest: reels/src/schedule/background-manifest.json",
+      "created_at": "2026-04-25T04:05:07.525Z",
+      "approved_at": "2026-04-25T04:05:07.525Z",
+      "posted_at": "2026-04-25T04:05:07.525Z",
+      "post_result": {
+        "request_id": "5879cac0a2904d5a8b7894e66e77691e",
+        "job_id": "98c35c9beae54de3935f77521091b6d0",
+        "status": "completed",
+        "scheduler_status": "running",
+        "completed": 2,
+        "failed": 0,
+        "retryable": 0,
+        "total": 2,
+        "results": [
+          {
+            "success": true,
+            "post_id": "17858930478687201",
+            "url": "https://www.instagram.com/stories/dbelitefitness/",
+            "media_type": "STORIES",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "platform": "instagram",
+            "status": "completed",
+            "attempts": 1
+          },
+          {
+            "success": true,
+            "post_id": "976356335048484",
+            "url": null,
+            "content_type": "STORIES",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 15.062,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "platform": "facebook",
+            "status": "completed",
+            "attempts": 1
+          }
+        ],
+        "last_update": "Sat, 25 Apr 2026 04:04:56 GMT"
+      }
+    }
+  ]
+}
