@@ -7,7 +7,7 @@
 - **File checked:** `content-calendar/calendar.json`
 - **Status:** FILE MISSING — `calendar.json` does not exist in this repo
 - **Expected entry:** `id: "2026-05-08-schedule"`, `content_type: "schedule"`
-- **Result:** ❌ MISSING
+- **Result:** MISSING
 
 ## Instagram Verification
 
@@ -17,7 +17,7 @@
 
 ## Verdict
 
-**🚨 ACTION_NEEDED**
+**ACTION_NEEDED**
 
 `calendar.json` does not exist and the cron has been failing silently. No posted status can be confirmed. Joey must fire the schedule story manually from his Mac.
 
