@@ -26,6 +26,10 @@ reels/**/public/clips/
 # Loose camera files at the root of any reel project (e.g. sparring sub-reels)
 reels/**/*.MP4
 reels/**/*.MOV
+# Exception: the daily ScheduleReel background clips are small (~4 MB each) and
+# the nightly cron needs them, so they ride along in git for a clean mini deploy.
+!reels/public/youth-invest/yi-open.mp4
+!reels/public/youth-invest/yi-confidence.mp4
 
 # Secrets — never commit
 .env

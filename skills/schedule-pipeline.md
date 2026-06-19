@@ -96,11 +96,25 @@ npx remotion render src/index.ts ScheduleReel "out/next-24-hours-$(date +%F).mp4
 
 **Video specs:**
 - Resolution: 1080 × 1920 (9:16 vertical Story format)
-- Duration: 360 frames / 12 seconds @ 30fps
+- Duration: 300 frames / 10 seconds @ 30fps (fits one IG/FB Story segment)
 - Codec: H.264 (default)
-- Phases: Logo + title + date + inspirational quote → Schedule grid → End tag
-- Layout auto-adjusts for 4 vs 10+ classes (dynamic font size, padding)
-- 30 rotating inspirational quotes, deterministic daily selection via date hash
+- **Design: Stamp/Poster system** (redesigned 2026-06-18). Black/red/bone, NORD
+  Black Italic display, Barlow body, hard 4px offset shadow, red skew-mark,
+  knockout seal — matches the main gym site (`main-site/`) and the 2026 reel
+  slate. Replaces the legacy Oswald/`#C4161C` look.
+- Beats (built for Stories — lead with the value, close on the brand):
+  - **0–6s** pinned **bone schedule card** over real action b-roll (kids sparring
+    + combos from the YouthInvest reel). Echoes the site's ScheduleStrip: "Today's
+    **Rounds**", red NORD-italic times, ink class names, uppercase coach tags.
+  - **6–10s** animated end tag that mirrors the site's `HeroHeadline`: "Evolve
+    Into Greatness" mask-wipes up, then swaps to "Become A Different Breed"
+    (red skew-mark on line 2), knockout seal + @dbelitefitness.
+- Layout auto-adjusts for 4 vs 6+ classes (small mode at ≥5 rows). Caps at 6
+  visible rows; extras roll up into a "+N More" stamp.
+- Background b-roll: `reels/public/youth-invest/yi-open.mp4` (ring sparring) +
+  `yi-confidence.mp4` (combos), alternating with a cross-dissolve. Daily music
+  still rotates deterministically by date hash. (The "Today's Word" quote beat
+  was removed when the cut went to 10s.)
 
 **Props schema:**
 ```typescript
@@ -185,6 +199,35 @@ This single script runs the full pipeline:
 **Output file:** `next-24-hours-YYYY-MM-DD.mp4` in `remotion/out/`
 
 ---
+
+## Deploying a render-code change to the mini
+
+**Source of truth for the composition is this repo: `reels/src/ScheduleReel.tsx`.**
+That's where the design work + previews happen (`reels/out/preview/`). The nightly
+cron renders from the mini's own copy of the Remotion project, so a code change here
+does **not** reach the cron until the mini's project is updated.
+
+The redesigned `ScheduleReel.tsx` depends on the new design system + its assets. If
+the mini's Remotion project is a separate checkout (per the paths above), these all
+need to land there together:
+
+| What | Path in `reels/` |
+|------|------------------|
+| Composition | `src/ScheduleReel.tsx` |
+| Design system (tokens, components, font loader) | `src/design-system/` (whole dir) |
+| Legacy tokens it re-exports dimensions from | `src/components/BrandStyles.ts` |
+| Schedule support (props, dates, quotes, tracks) | `src/schedule/` |
+| NORD display font (5 cuts) | `public/fonts/NORD-*.otf` |
+| Knockout seal | `public/design-system/seal-black.png`, `seal-white.png` |
+| Background b-roll | `public/sched-bg-1..4.mp4` |
+| Music pool | `public/tracks/` |
+
+Dependency: `@remotion/google-fonts` must be installed on the mini (Barlow).
+
+**Recommended:** point the mini's cron at this repo's `reels/` directly (single
+Remotion project, per `CLAUDE.md`) and `git pull` to deploy. Either way, after
+syncing, smoke-test on the mini with:
+`cd reels && npx remotion render src/index.ts ScheduleReel out/smoke.mp4`
 
 ## Current Cron Schedule (OpenClaw)
 

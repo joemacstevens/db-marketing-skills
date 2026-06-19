@@ -8,50 +8,71 @@ import {
   useVideoConfig,
   interpolate,
   spring,
-  Img,
   staticFile,
+  Easing,
 } from "remotion";
-import { COLORS, FONTS } from "./components/BrandStyles";
-import { EndTagScene } from "./components/EndTagScene";
+import {
+  DBS_COLORS,
+  DBS_FONTS,
+  DBS_SHADOW_PRESS,
+  DBS_SHADOW_PRESS_RED,
+  DBS_TRACKING,
+  SkewHighlight,
+  KnockoutSeal,
+  useDBSFonts,
+} from "./design-system";
 import {
   DEFAULT_SCHEDULE_PROPS,
   ScheduleProps,
   ScheduleEntry,
 } from "./schedule/defaultProps";
 import { formatTime, scheduleDateFromProps } from "./schedule/dateUtils";
-import { quoteForDate } from "./schedule/quotes";
 import { trackForDate } from "./schedule/tracks";
 
 /*
- * ─── ScheduleReel — 15s Daily Story (video-backed, bolder) ────────
+ * ─── ScheduleReel — Daily "Today's Card" Story (Stamp/Poster) ─────────
  *
- * Replaces the flat-black schedule story with action b-roll behind
- * a pinned magazine-cover schedule card. Accepts the same MindBody
- * props the Mac-mini pipeline already produces:
+ * Built on the Stamp/Poster design system (`reels/src/design-system/`) so the
+ * daily schedule story matches the main gym site and the 2026 reel slate.
+ * Black/red/bone, NORD Black Italic, Barlow body, hard 4px offset shadows,
+ * the red skew-mark, knockout seal. The schedule card echoes the website's
+ * ScheduleStrip ("Today's Rounds.", red NORD-italic times, ink class names).
+ *
+ * Accepts the same MindBody props the Mac-mini pipeline already produces:
  *   { schedule: [{id, iso, class, coach, status}], timezone, maxItems }
  *
- * Duration: 450 frames @ 30fps = 15.0s
+ * Duration: 300 frames @ 30fps = 10.0s (fits one IG/FB Story segment, punchy).
  *
- * Beat timeline:
- *   1.   0–90   (3.0s)  Motivational quote — leads the reel so it actually
- *                       gets seen (deterministic daily pick, DB board voice)
- *   2.  90–420 (11.0s)  Pinned schedule card over cycling b-roll
- *                       (4 clips × 97f each, 15f cross-dissolve)
- *   3. 420–450  (1.0s)  End tag: DB logo + book-via-link-in-bio
+ * Beat timeline — built for Stories: lead with the value so you stop the scroll,
+ * then close on the brand sign-off.
+ *   1.   0–180  (6.0s)  Pinned bone schedule card over action b-roll — the hook
+ *   2. 180–300  (4.0s)  Animated end tag — "Evolve Into Greatness" mask-wipes to
+ *                       "Become A Different Breed" (same motion as the site hero)
  */
 
-export const SCHEDULE_REEL_DURATION = 450;
+export const SCHEDULE_REEL_DURATION = 300;
 
-// ─── Background cycle ─────────────────────────────────────────────
-const BG_CLIPS = [
-  "sched-bg-1.mp4",
-  "sched-bg-2.mp4",
-  "sched-bg-3.mp4",
-  "sched-bg-4.mp4",
+// ─── Timeline constants ───────────────────────────────────────────
+const CARD_FROM = 0;
+const CARD_DUR = 180; // 0–180 (6.0s) — schedule leads; grab them in the first beat
+const END_FROM = 180;
+const END_DUR = 120; // 180–300 (4.0s) — animated sign-off, room to breathe
+const VIDEO_OUT = END_FROM; // action footage runs under the schedule, then bone end tag
+
+// ─── Background cycle — real action b-roll from today's Youth Sports reel ──
+// Two on-brand boxing clips (ring sparring + sharp combos) from `YouthInvest`,
+// alternating with a cross-dissolve so the background reads as live motion, not
+// a static photo. Clips are 1080×1920 / 4s; the ~3.9s slot keeps each one moving
+// with no freeze frame before the dissolve. yi-open (sparring) leads the reel.
+const ACTION_CLIPS = [
+  "/youth-invest/yi-open.mp4", // two young boxers sparring in the DB ring
+  "/youth-invest/yi-confidence.mp4", // group shadow-box, sharp combos
 ];
-const BG_START = 30;
-const BG_CYCLE = 97;      // frames per clip slot (~3.23s)
-const BG_TRANSITION = 15; // cross-dissolve frames
+const BG_START = 0; // footage from frame 0 (behind the leading schedule card)
+const BG_CYCLE = 116; // ~3.87s slot — clips are 4s, so no freeze before the dissolve
+const BG_TRANSITION = 16; // cross-dissolve frames
+const BG_CLIP_START_SEC = 0.1; // skip the first-frame settle
+const BG_SLOT_COUNT = Math.ceil(VIDEO_OUT / BG_CYCLE) + 1; // enough slots to cover 0..VIDEO_OUT
 
 // ─── One background slot: darkened, Ken-Burns, cross-fading clip ──
 const BgClip: React.FC<{ src: string; index: number }> = ({ src, index }) => {
@@ -59,50 +80,49 @@ const BgClip: React.FC<{ src: string; index: number }> = ({ src, index }) => {
   const localStart = BG_START + index * BG_CYCLE;
   const local = frame - localStart;
 
-  // Fade-in on entry (except the first, which bleeds from the intro)
   const fadeIn =
     index === 0
-      ? interpolate(frame, [0, 20], [0, 1], { extrapolateRight: "clamp" })
+      ? 1
       : interpolate(local, [0, BG_TRANSITION], [0, 1], {
           extrapolateLeft: "clamp",
           extrapolateRight: "clamp",
         });
 
-  // Fade-out at end (last clip also fades for end-tag)
+  // Last slot fades into the bone end tag; others cross-dissolve out.
   const fadeOut =
-    index === BG_CLIPS.length - 1
-      ? interpolate(
-          frame,
-          [BG_START + BG_CLIPS.length * BG_CYCLE - 20, 420],
-          [1, 0.25],
-          { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-        )
-      : interpolate(
-          local,
-          [BG_CYCLE - BG_TRANSITION, BG_CYCLE],
-          [1, 0],
-          { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-        );
+    index === BG_SLOT_COUNT - 1
+      ? interpolate(frame, [VIDEO_OUT - 24, VIDEO_OUT], [1, 0], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        })
+      : interpolate(local, [BG_CYCLE - BG_TRANSITION, BG_CYCLE], [1, 0], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        });
 
-  // Don't render if way out of range
   if (local < -BG_TRANSITION || local > BG_CYCLE + BG_TRANSITION) return null;
 
   const opacity = Math.min(fadeIn, fadeOut);
-  const scale = interpolate(local, [0, BG_CYCLE], [1.06, 1.14], {
+  const scale = interpolate(local, [0, BG_CYCLE], [1.04, 1.12], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
   return (
     <AbsoluteFill style={{ opacity }}>
-      <div style={{ width: "100%", height: "100%", transform: `scale(${scale})` }}>
+      <div
+        style={{ width: "100%", height: "100%", transform: `scale(${scale})` }}
+      >
         <OffthreadVideo
           src={staticFile(src)}
+          startFrom={Math.round(BG_CLIP_START_SEC * 30)}
           style={{
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            filter: "brightness(0.42) contrast(1.22) saturate(0.88)",
+            // Lighter than the old bg so the action actually reads; the card +
+            // scrims still carry legibility.
+            filter: "brightness(0.56) contrast(1.12) saturate(0.92)",
           }}
           muted
         />
@@ -111,118 +131,32 @@ const BgClip: React.FC<{ src: string; index: number }> = ({ src, index }) => {
   );
 };
 
-// ─── Background stack: 4 cycling clips + overlays for legibility ──
+// ─── Background stack: alternating action clips + legibility overlays ────
 const ScheduleBackground: React.FC = () => (
-  <AbsoluteFill style={{ backgroundColor: COLORS.black }}>
-    {BG_CLIPS.map((src, i) => (
-      <BgClip key={src} src={src} index={i} />
+  <AbsoluteFill style={{ backgroundColor: DBS_COLORS.black }}>
+    {Array.from({ length: BG_SLOT_COUNT }, (_, i) => (
+      <BgClip key={i} src={ACTION_CLIPS[i % ACTION_CLIPS.length]} index={i} />
     ))}
-    {/* Radial vignette */}
+    {/* Radial vignette focuses the center */}
     <AbsoluteFill
       style={{
         background:
-          "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.6) 100%)",
+          "radial-gradient(ellipse at center, transparent 38%, rgba(10,10,10,0.55) 100%)",
         pointerEvents: "none",
       }}
     />
-    {/* Top + bottom darken for label row + footer */}
+    {/* Top + bottom darken for header row + footer legibility */}
     <AbsoluteFill
       style={{
         background:
-          "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 18%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.4) 82%, rgba(0,0,0,0.92) 100%)",
+          "linear-gradient(180deg, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.25) 16%, rgba(10,10,10,0) 38%, rgba(10,10,10,0) 64%, rgba(10,10,10,0.45) 84%, rgba(10,10,10,0.9) 100%)",
         pointerEvents: "none",
       }}
     />
   </AbsoluteFill>
 );
 
-// ─── Intro card (0–30) ────────────────────────────────────────────
-const IntroCard: React.FC<{ dow: string; dateLabel: string }> = ({
-  dow,
-  dateLabel,
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const entry = spring({
-    frame: frame - 2,
-    fps,
-    config: { damping: 180, mass: 0.7 },
-    durationInFrames: 16,
-  });
-  const op = interpolate(entry, [0, 1], [0, 1]);
-  const sc = interpolate(entry, [0, 1], [1.15, 1]);
-  const exit = interpolate(frame, [22, 30], [1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-
-  return (
-    <AbsoluteFill
-      style={{
-        justifyContent: "center",
-        alignItems: "center",
-        opacity: exit,
-      }}
-    >
-      <div
-        style={{
-          opacity: op,
-          transform: `scale(${sc})`,
-          textAlign: "center",
-          paddingLeft: 120,
-          paddingRight: 120,
-        }}
-      >
-        <div
-          style={{
-            fontFamily: FONTS.body,
-            fontSize: 30,
-            fontWeight: 600,
-            color: COLORS.gray,
-            letterSpacing: 8,
-            textTransform: "uppercase",
-            marginBottom: 20,
-          }}
-        >
-          Today at DB
-        </div>
-        <div
-          style={{
-            fontFamily: FONTS.headline,
-            fontSize: 200,
-            fontWeight: 700,
-            color: COLORS.white,
-            letterSpacing: -4,
-            lineHeight: 0.9,
-            textTransform: "uppercase",
-            textShadow: "0 6px 40px rgba(0,0,0,0.95)",
-          }}
-        >
-          {dow}
-          <span style={{ color: COLORS.red }}>.</span>
-        </div>
-        <div
-          style={{
-            marginTop: 24,
-            display: "inline-block",
-            padding: "10px 28px",
-            backgroundColor: COLORS.red,
-            fontFamily: FONTS.headline,
-            fontSize: 40,
-            fontWeight: 700,
-            color: COLORS.white,
-            letterSpacing: 4,
-            textTransform: "uppercase",
-          }}
-        >
-          {dateLabel}
-        </div>
-      </div>
-    </AbsoluteFill>
-  );
-};
-
-// ─── Schedule row ─────────────────────────────────────────────────
+// ─── Schedule row — echoes the website ScheduleStrip ──────────────
 const Row: React.FC<{ entry: ScheduleEntry; index: number; small: boolean }> = ({
   entry,
   index,
@@ -230,41 +164,42 @@ const Row: React.FC<{ entry: ScheduleEntry; index: number; small: boolean }> = (
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const delay = 4 + index * 4;
+  const delay = 8 + index * 4;
   const s = spring({
     frame: frame - delay,
     fps,
     config: { damping: 200, mass: 0.8 },
-    durationInFrames: 20,
+    durationInFrames: 18,
   });
   const op = interpolate(s, [0, 1], [0, 1]);
-  const y = interpolate(s, [0, 1], [18, 0]);
+  const x = interpolate(s, [0, 1], [-16, 0]);
 
-  const timeFont = small ? 38 : 52;
-  const classFont = small ? 32 : 42;
-  const coachFont = small ? 18 : 24;
+  const timeFont = small ? 40 : 52;
+  const classFont = small ? 32 : 40;
+  const coachFont = small ? 17 : 20;
 
   return (
     <div
       style={{
         opacity: op,
-        transform: `translateY(${y}px)`,
+        transform: `translateX(${x}px)`,
         display: "flex",
         alignItems: "center",
-        padding: small ? "14px 0" : "18px 0",
-        borderBottom: `2px solid rgba(255,255,255,0.08)`,
-        gap: 20,
+        padding: small ? "13px 0" : "17px 0",
+        borderBottom: `1px solid rgba(20,20,20,0.12)`,
+        gap: 22,
       }}
     >
+      {/* Time — NORD Black Italic, brand red (the strong element) */}
       <div
         style={{
-          fontFamily: FONTS.headline,
+          fontFamily: DBS_FONTS.display,
+          fontWeight: 900,
+          fontStyle: "italic",
           fontSize: timeFont,
-          fontWeight: 700,
-          color: COLORS.red,
-          letterSpacing: -1,
-          textTransform: "uppercase",
-          minWidth: small ? 150 : 200,
+          color: DBS_COLORS.red600,
+          letterSpacing: "-0.01em",
+          minWidth: small ? 158 : 200,
           lineHeight: 1,
         }}
       >
@@ -273,13 +208,14 @@ const Row: React.FC<{ entry: ScheduleEntry; index: number; small: boolean }> = (
       <div style={{ flex: 1, minWidth: 0 }}>
         <div
           style={{
-            fontFamily: FONTS.headline,
+            fontFamily: DBS_FONTS.display,
+            fontWeight: 900,
+            fontStyle: "italic",
             fontSize: classFont,
-            fontWeight: 700,
-            color: COLORS.white,
-            letterSpacing: -0.5,
+            color: DBS_COLORS.ink,
+            letterSpacing: "-0.01em",
             textTransform: "uppercase",
-            lineHeight: 1.05,
+            lineHeight: 1.02,
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
@@ -289,11 +225,11 @@ const Row: React.FC<{ entry: ScheduleEntry; index: number; small: boolean }> = (
         </div>
         <div
           style={{
-            fontFamily: FONTS.body,
+            fontFamily: DBS_FONTS.utility,
+            fontWeight: 700,
             fontSize: coachFont,
-            fontWeight: 500,
-            color: COLORS.gray,
-            letterSpacing: 2,
+            color: DBS_COLORS.graphite,
+            letterSpacing: DBS_TRACKING.wider,
             textTransform: "uppercase",
             marginTop: 4,
             whiteSpace: "nowrap",
@@ -308,7 +244,7 @@ const Row: React.FC<{ entry: ScheduleEntry; index: number; small: boolean }> = (
   );
 };
 
-// ─── Pinned schedule card (30–420) ────────────────────────────────
+// ─── Pinned bone schedule card (0–180) ────────────────────────────
 const ScheduleCard: React.FC<{
   schedule: ScheduleEntry[];
   dow: string;
@@ -316,35 +252,22 @@ const ScheduleCard: React.FC<{
   maxItems: number;
 }> = ({ schedule, dow, dateLabel, maxItems }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const ease = Easing.bezier(0.2, 0.9, 0.1, 1.05);
 
-  // Card entrance (sequence starts at frame 0 inside Sequence)
-  const cardS = spring({
-    frame,
-    fps,
-    config: { damping: 180, mass: 0.8 },
-    durationInFrames: 24,
+  // Card entrance — slide + fade (PressTile-style)
+  const slide = interpolate(frame, [0, 16], [22, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: ease,
   });
-  const cardOp = interpolate(cardS, [0, 1], [0, 1]);
-  const cardY = interpolate(cardS, [0, 1], [28, 0]);
-
-  // Card exit (sequence is 330f long; exit last 10 frames)
-  const cardExit = interpolate(frame, [320, 330], [1, 0], {
+  const cardOp = interpolate(frame, [0, 10], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-
-  // Red rule animates
-  const rule = interpolate(
-    spring({
-      frame: frame - 6,
-      fps,
-      config: { damping: 200 },
-      durationInFrames: 18,
-    }),
-    [0, 1],
-    [0, 640]
-  );
+  const cardExit = interpolate(frame, [CARD_DUR - 12, CARD_DUR], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   const items = schedule.slice(0, Math.min(schedule.length, maxItems));
   const visibleRows = items.slice(0, 6);
@@ -356,255 +279,359 @@ const ScheduleCard: React.FC<{
       style={{
         justifyContent: "center",
         alignItems: "center",
-        paddingLeft: 60,
-        paddingRight: 60,
+        padding: "0 60px",
         opacity: cardOp * cardExit,
       }}
     >
       <div
         style={{
-          transform: `translateY(${cardY}px)`,
+          transform: `translateY(${slide}px)`,
           width: "100%",
           maxWidth: 960,
-          backgroundColor: "rgba(28,28,28,0.92)",
-          borderTop: `4px solid ${COLORS.red}`,
-          padding: "44px 48px 36px",
-          boxShadow: "0 30px 80px rgba(0,0,0,0.55)",
+          background: DBS_COLORS.bone,
+          border: `3px solid ${DBS_COLORS.ink}`,
+          boxShadow: DBS_SHADOW_PRESS,
         }}
       >
-        {/* Label row */}
+        {/* Red header band — "live from MindBody" kicker */}
         <div
           style={{
+            background: DBS_COLORS.red500,
+            padding: "16px 40px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            fontFamily: FONTS.body,
-            fontSize: 22,
-            fontWeight: 600,
-            letterSpacing: 6,
-            textTransform: "uppercase",
-            color: COLORS.gray,
-            marginBottom: 18,
-          }}
-        >
-          <span>Today at DB</span>
-          <span style={{ color: COLORS.white }}>
-            {dow} · {dateLabel}
-          </span>
-        </div>
-
-        {/* Headline */}
-        <div
-          style={{
-            fontFamily: FONTS.headline,
-            fontSize: 110,
+            fontFamily: DBS_FONTS.utility,
             fontWeight: 700,
-            color: COLORS.white,
-            letterSpacing: -3,
-            lineHeight: 0.92,
+            fontSize: 22,
+            letterSpacing: DBS_TRACKING.widest,
             textTransform: "uppercase",
-            marginBottom: 12,
+            color: DBS_COLORS.paper,
           }}
         >
-          What&rsquo;s On<span style={{ color: COLORS.red }}>.</span>
+          <span>Today&rsquo;s Card</span>
+          <span>Live from MindBody</span>
         </div>
 
-        {/* Red rule */}
-        <div
-          style={{
-            width: rule,
-            height: 4,
-            backgroundColor: COLORS.red,
-            marginBottom: 26,
-          }}
-        />
-
-        {/* Rows */}
-        {visibleRows.map((e, i) => (
-          <Row key={e.id} entry={e} index={i} small={small} />
-        ))}
-
-        {overflow > 0 && (
+        <div style={{ padding: "36px 44px 32px" }}>
+          {/* Date line */}
           <div
             style={{
-              marginTop: 16,
-              display: "inline-block",
-              padding: "6px 16px",
-              backgroundColor: COLORS.red,
-              fontFamily: FONTS.headline,
-              fontSize: 26,
+              fontFamily: DBS_FONTS.utility,
               fontWeight: 700,
-              color: COLORS.white,
-              letterSpacing: 3,
+              fontSize: 24,
+              letterSpacing: DBS_TRACKING.wider,
+              textTransform: "uppercase",
+              color: DBS_COLORS.graphite,
+              marginBottom: 6,
+            }}
+          >
+            {dow} · {dateLabel}
+          </div>
+
+          {/* Headline — mirrors the site's "This week's rounds." */}
+          <div
+            style={{
+              fontFamily: DBS_FONTS.display,
+              fontWeight: 900,
+              fontStyle: "italic",
+              fontSize: 104,
+              lineHeight: 0.9,
+              letterSpacing: "-0.02em",
+              textTransform: "uppercase",
+              color: DBS_COLORS.ink,
+              marginBottom: 26,
+            }}
+          >
+            Today&rsquo;s{" "}
+            <SkewHighlight startFrame={6} durationFrames={10}>
+              Rounds
+            </SkewHighlight>
+          </div>
+
+          {/* Rows */}
+          {visibleRows.map((e, i) => (
+            <Row key={e.id} entry={e} index={i} small={small} />
+          ))}
+
+          {overflow > 0 && (
+            <div
+              style={{
+                marginTop: 18,
+                display: "inline-block",
+                padding: "8px 18px",
+                background: DBS_COLORS.ink,
+                fontFamily: DBS_FONTS.display,
+                fontWeight: 900,
+                fontStyle: "italic",
+                fontSize: 28,
+                color: DBS_COLORS.bone,
+                letterSpacing: "-0.01em",
+                textTransform: "uppercase",
+                boxShadow: DBS_SHADOW_PRESS_RED,
+              }}
+            >
+              + {overflow} More
+            </div>
+          )}
+
+          {/* Footer */}
+          <div
+            style={{
+              marginTop: 30,
+              paddingTop: 18,
+              borderTop: `2px solid ${DBS_COLORS.ink}`,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              fontFamily: DBS_FONTS.utility,
+              fontWeight: 700,
+              fontSize: 20,
+              color: DBS_COLORS.coal,
+              letterSpacing: DBS_TRACKING.wide,
               textTransform: "uppercase",
             }}
           >
-            + {overflow} More
+            <span>@dbelitefitness</span>
+            <span style={{ color: DBS_COLORS.red600 }}>Book · link in bio</span>
           </div>
-        )}
-
-        {/* Footer */}
-        <div
-          style={{
-            marginTop: 28,
-            paddingTop: 18,
-            borderTop: `2px solid rgba(255,255,255,0.08)`,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontFamily: FONTS.body,
-            fontSize: 20,
-            fontWeight: 500,
-            color: COLORS.gray,
-            letterSpacing: 2,
-            textTransform: "uppercase",
-          }}
-        >
-          <span>@dbelitefitness</span>
-          <span>Book · link in bio</span>
         </div>
       </div>
     </AbsoluteFill>
   );
 };
 
-// ─── Empty-schedule state (rare but handle it) ────────────────────
-const EmptyCard: React.FC = () => (
-  <AbsoluteFill
-    style={{ justifyContent: "center", alignItems: "center", padding: 80 }}
-  >
-    <div
-      style={{
-        fontFamily: FONTS.headline,
-        fontSize: 110,
-        fontWeight: 700,
-        color: COLORS.white,
-        letterSpacing: -2,
-        lineHeight: 0.95,
-        textTransform: "uppercase",
-        textAlign: "center",
-        textShadow: "0 6px 40px rgba(0,0,0,0.95)",
-      }}
-    >
-      Rest Day<span style={{ color: COLORS.red }}>.</span>
-      <div
-        style={{
-          marginTop: 24,
-          fontSize: 44,
-          color: COLORS.gray,
-          letterSpacing: 2,
-        }}
-      >
-        Back at it tomorrow.
-      </div>
-    </div>
-  </AbsoluteFill>
-);
-
-// ─── Quote card (0–90) ────────────────────────────────────────────
-const QuoteCard: React.FC<{ text: string; label: string }> = ({ text, label }) => {
+// ─── Empty-schedule state (rare — gym closed) ─────────────────────
+const EmptyCard: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
-  const s = spring({
-    frame: frame - 4,
-    fps,
-    config: { damping: 180, mass: 0.8 },
-    durationInFrames: 26,
-  });
-  const op = interpolate(s, [0, 1], [0, 1]);
-  const y = interpolate(s, [0, 1], [28, 0]);
-
-  const rule = interpolate(
-    spring({ frame: frame - 10, fps, config: { damping: 200 }, durationInFrames: 20 }),
-    [0, 1],
-    [0, 220]
-  );
-
-  // Label entry (small kicker above quote)
-  const labelS = spring({
-    frame: frame - 2,
-    fps,
-    config: { damping: 200 },
-    durationInFrames: 16,
-  });
-  const labelOp = interpolate(labelS, [0, 1], [0, 1]);
-
-  // Sequence is 90f; exit last 10 frames so schedule card can enter clean
-  const exit = interpolate(frame, [80, 90], [1, 0], {
+  const op = interpolate(frame, [0, 12], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-
   return (
     <AbsoluteFill
       style={{
         justifyContent: "center",
         alignItems: "center",
-        paddingLeft: 120,
-        paddingRight: 120,
-        backgroundColor: "rgba(0,0,0,0.35)",
-        opacity: exit,
+        padding: 90,
+        opacity: op,
       }}
     >
+      <div style={{ textAlign: "center" }}>
+        <div
+          style={{
+            fontFamily: DBS_FONTS.display,
+            fontWeight: 900,
+            fontStyle: "italic",
+            fontSize: 150,
+            lineHeight: 0.9,
+            letterSpacing: "-0.02em",
+            textTransform: "uppercase",
+            color: DBS_COLORS.bone,
+            textShadow: "0 6px 30px rgba(0,0,0,0.8)",
+          }}
+        >
+          Rest{" "}
+          <SkewHighlight startFrame={10} durationFrames={10}>
+            Day
+          </SkewHighlight>
+        </div>
+        <div
+          style={{
+            marginTop: 28,
+            fontFamily: DBS_FONTS.utility,
+            fontWeight: 700,
+            fontSize: 36,
+            letterSpacing: DBS_TRACKING.wider,
+            textTransform: "uppercase",
+            color: DBS_COLORS.steel,
+          }}
+        >
+          Back at it tomorrow.
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// ─── End tag (180–300) — homepage-style animated sign-off ─────────
+// Mirrors the site's HeroHeadline: "Evolve Into Greatness" rises up from behind
+// a mask, holds, then mask-wipes to "Become A Different Breed" in the same spot.
+// Red skew-mark on the 2nd line, knockout seal above, handle fades in last.
+const ET_REVEAL = 20; // rise / wipe duration (frames)
+const ET_P1_IN = 4; // phrase 1 begins rising
+const ET_P1_OUT = 54; // phrase 1 wipes out
+const ET_P2_IN = 68; // phrase 2 rises in (after p1 is most of the way gone)
+const ET_LN2_LAG = 3; // 2nd line lags the 1st (matches the site's .ln2 delay)
+const ET_EASE = Easing.bezier(0.62, 0, 0.15, 1);
+
+// Reveal progress for one line: rises in at inStart; if outStart is set, wipes
+// back out there (for the outgoing phrase). 0 = hidden (clipped), 1 = revealed.
+const lineReveal = (
+  frame: number,
+  inStart: number,
+  outStart: number | null,
+): number => {
+  const rise = interpolate(frame, [inStart, inStart + ET_REVEAL], [0, 1], {
+    easing: ET_EASE,
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  if (outStart === null) return rise;
+  const fall = interpolate(frame, [outStart, outStart + ET_REVEAL], [0, 1], {
+    easing: ET_EASE,
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  return rise * (1 - fall);
+};
+
+// Static red skew-mark box (the site's .db-mark): red box, slight skew, hard
+// offset shadow, type un-skewed inside so it stays upright.
+const RedMark: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span
+    style={{
+      background: DBS_COLORS.red500,
+      color: DBS_COLORS.paper,
+      padding: "0.02em 0.16em 0.08em",
+      boxShadow: DBS_SHADOW_PRESS,
+      transform: "skewX(-5deg)",
+      display: "inline-block",
+    }}
+  >
+    <span
+      style={{
+        display: "inline-block",
+        transform: "skewX(5deg)",
+        textAlign: "center",
+      }}
+    >
+      {children}
+    </span>
+  </span>
+);
+
+// A single line masked by a horizontal clip that the text rises up through.
+const RevealLine: React.FC<{ progress: number; children: React.ReactNode }> = ({
+  progress,
+  children,
+}) => {
+  const top = interpolate(progress, [0, 1], [120, -10]); // % — clipped above → revealed
+  const ty = interpolate(progress, [0, 1], [0.34, 0]); // em — rises into place
+  return (
+    <div
+      style={{
+        // sides/bottom extended so the skewed red box + offset shadow aren't cropped
+        clipPath: `inset(${top}% -0.5em -0.22em -0.5em)`,
+        transform: `translateY(${ty}em)`,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+const EndPhrase: React.FC<{
+  lead: string;
+  mark: string;
+  ln1: number;
+  ln2: number;
+}> = ({ lead, mark, ln1, ln2 }) => (
+  <div
+    style={{
+      gridArea: "1 / 1", // overlap both phrases in one cell so they swap in place
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: 16,
+    }}
+  >
+    <RevealLine progress={ln1}>
       <div
         style={{
-          textAlign: "center",
-          maxWidth: 900,
+          fontFamily: DBS_FONTS.display,
+          fontWeight: 900,
+          fontStyle: "italic",
+          fontSize: 72,
+          lineHeight: 1,
+          letterSpacing: "-0.01em",
+          textTransform: "uppercase",
+          color: DBS_COLORS.ink,
         }}
       >
-        <div
-          style={{
-            opacity: labelOp,
-            fontFamily: FONTS.body,
-            fontSize: 26,
-            fontWeight: 600,
-            color: COLORS.gray,
-            letterSpacing: 8,
-            textTransform: "uppercase",
-            marginBottom: 18,
-          }}
-        >
-          Today&rsquo;s Word
-        </div>
-        <div
-          style={{
-            width: rule,
-            height: 4,
-            backgroundColor: COLORS.red,
-            margin: "0 auto 32px",
-          }}
+        {lead}
+      </div>
+    </RevealLine>
+    <RevealLine progress={ln2}>
+      <div
+        style={{
+          fontFamily: DBS_FONTS.display,
+          fontWeight: 900,
+          fontStyle: "italic",
+          fontSize: 96,
+          lineHeight: 1,
+          letterSpacing: "-0.01em",
+          textTransform: "uppercase",
+        }}
+      >
+        <RedMark>{mark}</RedMark>
+      </div>
+    </RevealLine>
+  </div>
+);
+
+const EndTag: React.FC = () => {
+  const frame = useCurrentFrame();
+  const fadeIn = interpolate(frame, [0, 8], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const handleOp = interpolate(
+    frame,
+    [ET_P2_IN + ET_REVEAL, ET_P2_IN + ET_REVEAL + 12],
+    [0, 1],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
+  const p1l1 = lineReveal(frame, ET_P1_IN, ET_P1_OUT);
+  const p1l2 = lineReveal(frame, ET_P1_IN + ET_LN2_LAG, ET_P1_OUT);
+  const p2l1 = lineReveal(frame, ET_P2_IN, null);
+  const p2l2 = lineReveal(frame, ET_P2_IN + ET_LN2_LAG, null);
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: DBS_COLORS.bone,
+        opacity: fadeIn,
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        padding: "110px 70px",
+        gap: 52,
+      }}
+    >
+      <KnockoutSeal size={200} variant="black" startFrame={4} />
+      <div style={{ display: "grid", placeItems: "center" }}>
+        <EndPhrase lead="Evolve Into" mark="Greatness" ln1={p1l1} ln2={p1l2} />
+        <EndPhrase
+          lead="Become A"
+          mark="Different Breed"
+          ln1={p2l1}
+          ln2={p2l2}
         />
-        <div
-          style={{
-            opacity: op,
-            transform: `translateY(${y}px)`,
-            fontFamily: FONTS.headline,
-            fontSize: 96,
-            fontWeight: 700,
-            color: COLORS.white,
-            letterSpacing: -2,
-            lineHeight: 1.0,
-            textTransform: "uppercase",
-            textShadow: "0 6px 40px rgba(0,0,0,0.95)",
-          }}
-        >
-          {text}
-        </div>
-        <div
-          style={{
-            opacity: labelOp,
-            fontFamily: FONTS.body,
-            fontSize: 22,
-            fontWeight: 500,
-            color: COLORS.gray,
-            letterSpacing: 6,
-            textTransform: "uppercase",
-            marginTop: 32,
-          }}
-        >
-          {label}
-        </div>
+      </div>
+      <div
+        style={{
+          opacity: handleOp,
+          fontFamily: DBS_FONTS.utility,
+          fontWeight: 700,
+          fontSize: 30,
+          letterSpacing: DBS_TRACKING.widest,
+          textTransform: "uppercase",
+          color: DBS_COLORS.red600,
+        }}
+      >
+        @dbelitefitness
       </div>
     </AbsoluteFill>
   );
@@ -612,42 +639,39 @@ const QuoteCard: React.FC<{ text: string; label: string }> = ({ text, label }) =
 
 // ─── Main composition ─────────────────────────────────────────────
 export const ScheduleReel: React.FC<ScheduleProps> = (props) => {
+  useDBSFonts();
+
   const { schedule, maxItems } = {
     ...DEFAULT_SCHEDULE_PROPS,
     ...(props || {}),
   };
   const { dow, label: dateLabel } = scheduleDateFromProps(schedule);
-  const quoteKey = schedule[0]?.iso ?? new Date().toISOString();
-  const quoteText = quoteForDate(quoteKey);
-  const quoteLabel = `${dow} · ${dateLabel}`;
-  const track = trackForDate(quoteKey);
+  const dateKey = schedule[0]?.iso ?? new Date().toISOString();
+  const track = trackForDate(dateKey);
 
   return (
-    <AbsoluteFill style={{ backgroundColor: COLORS.black }}>
-      {/* Music bed — rotating daily track, fades in on quote, out under end tag */}
+    <AbsoluteFill style={{ backgroundColor: DBS_COLORS.black }}>
+      {/* Music bed — rotating daily track, fades in at the top, out under the end tag. */}
       <Audio
         src={staticFile(track.file)}
         startFrom={Math.round(track.startSec * 30)}
         volume={(f) =>
           interpolate(
             f,
-            [0, 20, 420, 450],
+            [0, 18, END_FROM, SCHEDULE_REEL_DURATION],
             [0, 0.85, 0.85, 0],
             { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
           )
         }
       />
 
-      {/* Background runs the full reel */}
-      <ScheduleBackground />
-
-      {/* Motivational quote — leads the reel */}
-      <Sequence from={0} durationInFrames={90}>
-        <QuoteCard text={quoteText} label={quoteLabel} />
+      {/* Action b-roll runs under the schedule, then hands off to the bone end tag */}
+      <Sequence from={0} durationInFrames={VIDEO_OUT + BG_TRANSITION}>
+        <ScheduleBackground />
       </Sequence>
 
-      {/* Schedule card */}
-      <Sequence from={90} durationInFrames={330}>
+      {/* 1. Schedule card LEADS — first thing on screen (grab them fast) */}
+      <Sequence from={CARD_FROM} durationInFrames={CARD_DUR}>
         {schedule.length === 0 ? (
           <EmptyCard />
         ) : (
@@ -660,9 +684,9 @@ export const ScheduleReel: React.FC<ScheduleProps> = (props) => {
         )}
       </Sequence>
 
-      {/* End tag — shared DB sign-off, Evolve Into Greatness as hero */}
-      <Sequence from={420} durationInFrames={30}>
-        <EndTagScene cta="Book · link in bio" />
+      {/* 2. Animated end tag — Evolve Into Greatness → Become A Different Breed */}
+      <Sequence from={END_FROM} durationInFrames={END_DUR}>
+        <EndTag />
       </Sequence>
     </AbsoluteFill>
   );
