@@ -64,7 +64,7 @@ import { SlashLabel, Ribbon, Slam, FlashWipe } from "./celebrate/kit";
  *                       WOMEN / 30 SEC + draining timer bar      (bars 4–5)
  *   258–361 MEN         men.mp4, MEN / 40 SEC + draining bar     (bars 6–7)
  *   361–438 SLAM        push.mp4, FURTHEST / DISTANCE / WINS.    (bars 8–8.5)
- *   438–567 PRIZE       graphic card, $150 Visa gift card        (bars 9–11)
+ *   438–567 PRIZE       graphic card, SVG prize wheel spins in   (bars 9–11)
  *   567–644 TEASE       women.mp4 later segment, YOUR NAME       (bars 12–12.5)
  *   644–750 END CARD    PUSH HARD / GO FURTHER / BE DIFFERENT    (bars 13–14.5)
  *
@@ -469,118 +469,104 @@ const SlamBeat: React.FC<{ dur: number }> = ({ dur }) => (
   </VideoBeat>
 );
 
-// ─── Code-drawn $150 Visa gift card: slams in, then a slow bob ───────────
-// Mirrors the lobby panel's card (PanelUbeChallenge frame C) so the prize
-// reads identically on the TV and in the reel.
-const GiftCard: React.FC<{ startFrame: number; width?: number }> = ({
+// ─── Code-drawn prize wheel: 8 wedges, spring deceleration ───────────────
+const PrizeWheel: React.FC<{ startFrame: number; size?: number }> = ({
   startFrame,
-  width = 560,
+  size = 440,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const s = spring({
     frame: frame - startFrame,
     fps,
-    config: { damping: 16, mass: 0.8, stiffness: 150 },
-    durationInFrames: 24,
+    config: { damping: 26, mass: 1.6, stiffness: 70 },
+    durationInFrames: 78,
   });
-  const pop = interpolate(s, [0, 1], [0.8, 1]);
-  const o = interpolate(frame - startFrame, [0, 7], [0, 1], {
+  // Spins ~2.4 turns then eases to rest, plus a slow continuous drift.
+  const spin = s * 866 + Math.max(0, frame - startFrame) * 0.35;
+  const pop = interpolate(s, [0, 0.35], [0.72, 1], { extrapolateRight: "clamp" });
+  const o = interpolate(frame - startFrame, [0, 8], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  // Gentle bob after landing — transform only, ±5px on a slow sine.
-  const bob = Math.sin((Math.max(0, frame - startFrame - 24) / fps) * 1.6) * 5;
-  const height = Math.round(width / 1.586); // credit-card ratio
+
+  // R < 50 leaves a band at the top of the viewBox for the fixed pointer.
+  const R = 44;
+  const wedges = 8;
+  const colors = [RED, INK, BONE, GOLD, RED, INK, BONE, GOLD];
+  const paths = Array.from({ length: wedges }, (_, i) => {
+    const a0 = (i * 360) / wedges - 90;
+    const a1 = ((i + 1) * 360) / wedges - 90;
+    const r0 = (a0 * Math.PI) / 180;
+    const r1 = (a1 * Math.PI) / 180;
+    const x0 = 50 + R * Math.cos(r0);
+    const y0 = 50 + R * Math.sin(r0);
+    const x1 = 50 + R * Math.cos(r1);
+    const y1 = 50 + R * Math.sin(r1);
+    return (
+      <path
+        key={i}
+        d={`M50,50 L${x0},${y0} A${R},${R} 0 0,1 ${x1},${y1} Z`}
+        fill={colors[i]}
+      />
+    );
+  });
 
   return (
-    <div
-      style={{
-        width,
-        height,
-        opacity: o,
-        transform: `rotate(-6deg) scale(${pop}) translateY(${bob}px)`,
-        background: "linear-gradient(135deg, #C91414, #E81D1D)",
-        border: `4px solid ${BLACK}`,
-        boxShadow: "14px 14px 0 rgba(0,0,0,0.75)",
-        padding: "30px 38px 26px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        textAlign: "left",
-      }}
-    >
+    <div style={{ position: "relative", width: size, height: size, opacity: o }}>
       <div
         style={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginBottom: 12,
+          width: size,
+          height: size,
+          transform: `rotate(${spin}deg) scale(${pop})`,
+          filter: "drop-shadow(8px 8px 0 rgba(0,0,0,0.85))",
         }}
       >
-        <span
-          style={{
-            fontFamily: DBS_FONTS.utility,
-            fontWeight: 700,
-            fontSize: 21,
-            letterSpacing: DBS_TRACKING.widest,
-            color: "rgba(246,242,236,0.85)",
-            textTransform: "uppercase",
-          }}
-        >
-          Different Breed
-        </span>
-        <span
-          style={{
-            width: 58,
-            height: 42,
-            background: GOLD,
-            border: `3px solid ${BLACK}`,
-            borderRadius: 7,
-          }}
+        <svg viewBox="0 0 100 100" width={size} height={size}>
+          <circle cx="50" cy="50" r={R} fill={BLACK} />
+          {paths}
+          <circle
+            cx="50"
+            cy="50"
+            r={R}
+            fill="none"
+            stroke={BLACK}
+            strokeWidth="4"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r={R - 3}
+            fill="none"
+            stroke={BONE}
+            strokeWidth="1.6"
+          />
+          <circle cx="50" cy="50" r="10" fill={BLACK} />
+          <circle
+            cx="50"
+            cy="50"
+            r="10"
+            fill="none"
+            stroke={BONE}
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+      {/* fixed pointer at 12 o'clock — sits above the rim, does not rotate */}
+      <svg
+        viewBox="0 0 100 100"
+        width={size}
+        height={size}
+        style={{ position: "absolute", inset: 0 }}
+      >
+        <path
+          d="M50,12 L42,0 L58,0 Z"
+          fill={RED}
+          stroke={BLACK}
+          strokeWidth="1.6"
+          strokeLinejoin="round"
         />
-      </div>
-      <div
-        style={{
-          fontFamily: DBS_FONTS.display,
-          fontWeight: 900,
-          fontStyle: "italic",
-          fontSize: 122,
-          lineHeight: 1,
-          color: BONE,
-          textShadow: "6px 6px 0 #140000",
-        }}
-      >
-        $150
-      </div>
-      <div
-        style={{
-          marginTop: 6,
-          fontFamily: DBS_FONTS.display,
-          fontWeight: 900,
-          fontStyle: "italic",
-          fontSize: 38,
-          letterSpacing: "0.04em",
-          color: BLACK,
-          textTransform: "uppercase",
-        }}
-      >
-        Visa Gift Card
-      </div>
-      <div
-        style={{
-          marginTop: "auto",
-          fontFamily: DBS_FONTS.utility,
-          fontWeight: 700,
-          fontSize: 19,
-          letterSpacing: DBS_TRACKING.widest,
-          color: "rgba(246,242,236,0.78)",
-          textTransform: "uppercase",
-        }}
-      >
-        One per division winner
-      </div>
+      </svg>
     </div>
   );
 };
@@ -676,7 +662,7 @@ const PrizeCard: React.FC<{ dur: number }> = ({ dur }) => {
             }),
           }}
         >
-          Take your division
+          Win your division
         </div>
 
         <div style={{ marginTop: 14 }}>
@@ -696,15 +682,15 @@ const PrizeCard: React.FC<{ dur: number }> = ({ dur }) => {
               }}
             >
               <div>
-                WIN A <span style={{ color: RED }}>$150</span>
+                SPIN THE <span style={{ color: RED }}>WHEEL</span>
               </div>
-              <div>VISA GIFT CARD</div>
+              <div>FOR YOUR PRIZE</div>
             </div>
           </Slam>
         </div>
 
-        <div style={{ marginTop: 34 }}>
-          <GiftCard startFrame={16} width={560} />
+        <div style={{ marginTop: 30 }}>
+          <PrizeWheel startFrame={16} size={450} />
         </div>
 
         <div style={{ marginTop: 30, display: "flex", gap: 26 }}>
@@ -920,7 +906,7 @@ export const UbeChallenge: React.FC = () => {
         <SlamBeat dur={T_PRIZE - T_SLAM} />
       </Sequence>
 
-      {/* 6. prize card — $150 Visa gift card */}
+      {/* 6. prize wheel card */}
       <Sequence from={T_PRIZE} durationInFrames={T_TEASE - T_PRIZE}>
         <PrizeCard dur={T_TEASE - T_PRIZE} />
       </Sequence>
