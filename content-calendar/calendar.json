@@ -2,7 +2,7 @@
   "version": "1.0",
   "profile": "dbelitefitness",
   "timezone": "America/New_York",
-  "last_updated": "2026-08-03T15:41:30.771Z",
+  "last_updated": "2026-08-03T16:14:46.008Z",
   "posts": [
     {
       "id": "2026-04-14-001",
@@ -12669,7 +12669,7 @@
     },
     {
       "id": "2026-08-02-ube-challenge-launch-v2",
-      "status": "posted",
+      "status": "removed",
       "campaign": "ube-challenge",
       "content_type": "reel",
       "post_date": "2026-08-02",
@@ -12701,7 +12701,7 @@
       "coach_tags": [],
       "member_tags": [],
       "credit_videographer": false,
-      "notes": "v2: prize corrected to $150 Visa gift card per division winner (video prize beat re-rendered, captions fixed). Publish ONLY after Joey confirms the v1 IG + FB posts are deleted in-app. Arnold approved by Joey in chat 2026-08-02. Consent note: the man in the MEN 40 SEC beat (source August 26, 2025/IMG_5391.mov) appears to be Arnold (89) — OK obtained. Footage: June 11, 2025/IMG_2752.mov (cold open + title), January 8, 2026/IMG_2704.mov (women rules + tease, natural trainer audio kept), 5-13-Bundle IMG_6195.mov (slam). Music: ElevenLabs trap bed (phase-locked loop of beat-final.mp3 from the 6.88s drop), no DB anthem. If posted after 8/2, shift post_date/post_time forward.",
+      "notes": "TO BE DELETED in-app (prize reverted to spin-the-wheel; superseded by -v3). v2: prize corrected to $150 Visa gift card per division winner (video prize beat re-rendered, captions fixed). Publish ONLY after Joey confirms the v1 IG + FB posts are deleted in-app. Arnold approved by Joey in chat 2026-08-02. Consent note: the man in the MEN 40 SEC beat (source August 26, 2025/IMG_5391.mov) appears to be Arnold (89) — OK obtained. Footage: June 11, 2025/IMG_2752.mov (cold open + title), January 8, 2026/IMG_2704.mov (women rules + tease, natural trainer audio kept), 5-13-Bundle IMG_6195.mov (slam). Music: ElevenLabs trap bed (phase-locked loop of beat-final.mp3 from the 6.88s drop), no DB anthem. If posted after 8/2, shift post_date/post_time forward.",
       "created_at": "2026-08-02T22:09:06.729Z",
       "created_by": "claude-orchestrator",
       "approved_at": "2026-08-02T22:09:06.729Z",
@@ -12794,7 +12794,8 @@
           "$date": "2026-08-02T22:22:24.089Z"
         },
         "request_id": "75d36bf0307444df951797cecb78d5f5"
-      }
+      },
+      "publish_notes": "Deleted in-app by Joey 2026-08-03 (prize reverted to spin-the-wheel); superseded by -v3."
     },
     {
       "id": "2026-08-03-ringside-riddle-002",
@@ -13097,7 +13098,136 @@
         "last_update": "Mon, 03 Aug 2026 15:36:09 GMT",
         "message": "Upload queued and waiting for worker execution"
       }
+    },
+    {
+      "id": "2026-08-03-ube-challenge-launch-v3",
+      "status": "posted",
+      "campaign": "ube-challenge",
+      "content_type": "reel",
+      "post_date": "2026-08-03",
+      "post_time": "13:30",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "media_type": "video",
+      "ig_caption": "August challenge is live, and this one is pure output. The UBE test. You get one sprint on the upper body ergometer, 30 seconds for women, 40 for men, and the only number that counts is how far the meter reads when time runs out. Furthest distance in each division takes the month, and both winners spin the wheel for their prize.\n\nIt runs August 1 through 31, it's open to every member, and you can retry all month, so warm up those shoulders and come put a number up.\n\n#differentbreed #ubechallenge #augustchallenge #teaneck #njfitness",
+      "fb_caption": "August challenge is the UBE test. Women sprint 30 seconds, men 40, furthest distance wins your division and the winner spins the prize wheel. Runs August 1 through 31, open to all members. Come put a number up.",
+      "hashtags": [
+        "#differentbreed",
+        "#ubechallenge",
+        "#augustchallenge",
+        "#teaneck",
+        "#njfitness"
+      ],
+      "media_paths": [
+        "/Users/joestevens/Projects/Different Breed/output/2026-08-02-ube-challenge/ube-challenge-launch-v1.mp4"
+      ],
+      "instagram_options": {
+        "media_type": "REELS",
+        "first_comment": "One winner per category, top distance men and top distance women. Log your attempt at the front desk."
+      },
+      "facebook_options": {
+        "reel": true
+      },
+      "coach_tags": [],
+      "member_tags": [],
+      "credit_videographer": false,
+      "notes": "v3 = the ORIGINAL wheel version (prize confirmed as spin-the-wheel after all; v1 mp4 reused, no re-render). Publish ONLY after Joey confirms the v2 IG + FB posts are deleted in-app. Arnold approved 8/2.",
+      "created_at": "2026-08-03T15:52:08.802Z",
+      "created_by": "claude-orchestrator",
+      "approved_at": "2026-08-03T15:52:08.802Z",
+      "approved_by": "Joey (chat, 2026-08-03 — wheel restoration)",
+      "supersedes": "2026-08-02-ube-challenge-launch-v2",
+      "posted_at": "2026-08-03T16:14:46.008Z",
+      "post_result": {
+        "status": "completed",
+        "completed": 2,
+        "total": 2,
+        "results": [
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "facebook",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-08-03T16:14:11.612Z"
+            },
+            "success": true,
+            "platform_post_id": "1028933953236328",
+            "post_url": "https://www.facebook.com/reel/1028933953236328",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 22742359,
+            "post_title": "August challenge is the UBE test. Women sprint 30 seconds, men 40, furthest distance wins your division and the winner spins the prize wheel. Runs August 1 through 31, open to all members. Come put a number up.",
+            "post_caption": "August challenge is live, and this one is pure output. The UBE test. You get one sprint on the upper body ergometer, 30 seconds for women, 40 for men, and the only number that counts is how far the meter reads when time runs out. Furthest distance in each division takes the month, and both winners spin the wheel for their prize.\n\nIt runs August 1 through 31, it's open to every member, and you can retry all month, so warm up those shoulders and come put a number up.\n\n#differentbreed #ubechallenge #augustchallenge #teaneck #njfitness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 25.046,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "84a1de482eac4eeda075f96169009c3e",
+            "request_id_logs": "84a1de482eac4eeda075f96169009c3e",
+            "job_id": "bc5b166318844dcfb39eaab344d84f59",
+            "request_total_platforms": 2
+          },
+          {
+            "user_email": "joemac79@gmail.com",
+            "profile_username": "dbelitefitness",
+            "platform": "instagram",
+            "media_type": "video",
+            "upload_timestamp": {
+              "$date": "2026-08-03T16:14:44.808Z"
+            },
+            "success": true,
+            "platform_post_id": "18105817873893541",
+            "post_url": "https://www.instagram.com/reel/DblZKdoj61Y/",
+            "error_message": null,
+            "error_signature": null,
+            "error_code": null,
+            "failure_stage": null,
+            "media_size_bytes": 22742359,
+            "post_title": "August challenge is live, and this one is pure output. The UBE test. You get one sprint on the upper body ergometer, 30 seconds for women, 40 for men, and the only number that counts is how far the meter reads when time runs out. Furthest distance in each division takes the month, and both winners spin the wheel for their prize.\n\nIt runs August 1 through 31, it's open to every member, and you can retry all month, so warm up those shoulders and come put a number up.\n\n#differentbreed #ubechallenge #augustchallenge #teaneck #njfitness",
+            "post_caption": "August challenge is live, and this one is pure output. The UBE test. You get one sprint on the upper body ergometer, 30 seconds for women, 40 for men, and the only number that counts is how far the meter reads when time runs out. Furthest distance in each division takes the month, and both winners spin the wheel for their prize.\n\nIt runs August 1 through 31, it's open to every member, and you can retry all month, so warm up those shoulders and come put a number up.\n\n#differentbreed #ubechallenge #augustchallenge #teaneck #njfitness",
+            "is_async": true,
+            "dashboard": false,
+            "source": "api",
+            "video_was_transcoded": false,
+            "changes": [],
+            "prevalidation_metadata": {
+              "width": 1080,
+              "height": 1920,
+              "fps": 30,
+              "duration": 25.046,
+              "container": "mov,mp4,m4a,3gp,3g2,mj2",
+              "video_codec": "h264",
+              "audio_codec": "aac"
+            },
+            "target_linkedin_page_id": null,
+            "request_id": "84a1de482eac4eeda075f96169009c3e",
+            "request_id_logs": "84a1de482eac4eeda075f96169009c3e",
+            "job_id": "bc5b166318844dcfb39eaab344d84f59",
+            "request_total_platforms": 2
+          }
+        ],
+        "last_update": {
+          "$date": "2026-08-03T16:14:44.808Z"
+        },
+        "request_id": "84a1de482eac4eeda075f96169009c3e"
+      }
     }
   ],
-  "count": 120
+  "count": 124
 }
