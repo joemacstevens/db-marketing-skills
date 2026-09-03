@@ -242,11 +242,22 @@ import { CampLifeMarchCut, CAMP_LIFE_MARCH_DURATION } from "./CampLifeMarchCut";
 import { CampLifeSongCut, CAMP_LIFE_SONG_DURATION } from "./CampLifeSongCut";
 import { ItsJustWork, ITS_JUST_WORK_DURATION } from "./ItsJustWork";
 import { BBQCookoutReel, BBQ_COOKOUT_DURATION } from "./BBQCookoutReel";
+import { DontFallOffSpecial, DFO_DURATION } from "./DontFallOffSpecial";
 import { REEL_WIDTH, REEL_HEIGHT, FPS } from "./components/BrandStyles";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Folder name="Dont-Fall-Off-Special">
+        <Composition
+          id="DontFallOffSpecial"
+          component={DontFallOffSpecial}
+          durationInFrames={DFO_DURATION}
+          fps={FPS}
+          width={REEL_WIDTH}
+          height={REEL_HEIGHT}
+        />
+      </Folder>
       <Folder name="BBQ-Cookout-2026">
         <Composition
           id="BBQCookoutReel"

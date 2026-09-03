@@ -1,0 +1,41 @@
+[
+  {
+    "created_at": "2026-09-01T14:29:27.521147Z",
+    "display_name": "Seedance 2.0",
+    "id": "ee811c7d-5b1a-4fcf-a7f0-3eebee883fb9",
+    "job_type": "seedance_2_0",
+    "min_result_url": null,
+    "params": {
+      "aspect_ratio": "9:16",
+      "bitrate_mode": "standard",
+      "duration": 5,
+      "generate_audio": true,
+      "genre": "action",
+      "height": 1920,
+      "medias": [
+        {
+          "data": {
+            "id": "2609da08-10a2-4b81-bc55-fd6ae21a5661",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/2609da08-10a2-4b81-bc55-fd6ae21a5661_resize.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "mode": "std",
+      "model": "seedance_2_0",
+      "multi_prompt": [],
+      "multi_shot_mode": "custom",
+      "multi_shots": false,
+      "prompt": "1990s boxing-manga anime, same ink linework, halftone screentone texture and color palette as the reference image, set on the turf strip of a performance training gym. A strong athlete drives a weighted sled forward in a low explosive push, plates stacked, legs firing like pistons, turf chewing under their shoes, halftone speed lines trailing the sled, gritted determined face, powerful and unstoppable. Dynamic low anime camera tracking alongside, vertical 9:16 framing, no text anywhere, no dialogue, gym ambience only.",
+      "prompt_language": "en",
+      "reference_elements": [],
+      "resolution": "1080p",
+      "speedramp": "auto",
+      "width": 1080
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/hf_20260901_142927_ee811c7d-5b1a-4fcf-a7f0-3eebee883fb9.mp4",
+    "status": "completed",
+    "thumbnail_url": "https://cdn.higgsfield.ai/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/hf_20260901_142927_ee811c7d-5b1a-4fcf-a7f0-3eebee883fb9_thumbnail.webp"
+  }
+]

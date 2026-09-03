@@ -1,0 +1,41 @@
+[
+  {
+    "created_at": "2026-09-01T14:47:40.712501Z",
+    "display_name": "Seedance 2.0",
+    "id": "dcf2693d-b94c-4110-98ab-5757d9718b72",
+    "job_type": "seedance_2_0",
+    "min_result_url": null,
+    "params": {
+      "aspect_ratio": "9:16",
+      "bitrate_mode": "standard",
+      "duration": 5,
+      "generate_audio": true,
+      "genre": "action",
+      "height": 1920,
+      "medias": [
+        {
+          "data": {
+            "id": "f8e34150-6a6a-412b-9e3e-881fce6af871",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/f8e34150-6a6a-412b-9e3e-881fce6af871_resize.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "mode": "std",
+      "model": "seedance_2_0",
+      "multi_prompt": [],
+      "multi_shot_mode": "custom",
+      "multi_shots": false,
+      "prompt": "1990s boxing-manga anime, same ink linework, halftone screentone texture and color palette as the reference image, set in a performance training gym. A strong athletic Black woman with her hair in a ponytail, wearing a black tank top and leggings, performs a heavy barbell back squat inside a black steel squat rack, plates loaded on the bar. Shown in three-quarter side profile: she rises out of a deep squat and drives powerfully up to standing, bar steady, chest proud, determined confident face, sweat flying, halftone speed lines on the drive up. Strong and victorious, the rep is completed cleanly, nothing failed, slight low anime camera angle with a slow push in, vertical 9:16 framing, no text anywhere, no dialogue, gym ambience only.",
+      "prompt_language": "en",
+      "reference_elements": [],
+      "resolution": "1080p",
+      "speedramp": "auto",
+      "width": 1080
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/hf_20260901_144740_dcf2693d-b94c-4110-98ab-5757d9718b72.mp4",
+    "status": "completed",
+    "thumbnail_url": "https://cdn.higgsfield.ai/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/hf_20260901_144740_dcf2693d-b94c-4110-98ab-5757d9718b72_thumbnail.webp"
+  }
+]

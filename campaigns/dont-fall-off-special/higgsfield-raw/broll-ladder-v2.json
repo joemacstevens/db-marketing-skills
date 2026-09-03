@@ -1,0 +1,41 @@
+[
+  {
+    "created_at": "2026-09-01T14:40:58.697555Z",
+    "display_name": "Seedance 2.0",
+    "id": "06ebd814-0a23-4b71-8e6c-98b0c7794f12",
+    "job_type": "seedance_2_0",
+    "min_result_url": null,
+    "params": {
+      "aspect_ratio": "9:16",
+      "bitrate_mode": "standard",
+      "duration": 5,
+      "generate_audio": true,
+      "genre": "action",
+      "height": 1920,
+      "medias": [
+        {
+          "data": {
+            "id": "c64263ac-e374-4d8f-8d43-28db0cb48496",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/c64263ac-e374-4d8f-8d43-28db0cb48496_resize.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "mode": "std",
+      "model": "seedance_2_0",
+      "multi_prompt": [],
+      "multi_shot_mode": "custom",
+      "multi_shots": false,
+      "prompt": "1990s boxing-manga anime, same ink linework, halftone screentone texture and color palette as the reference image, set in a performance training gym. A Jacob's Ladder climbing machine shown in side profile: a ladder treadmill angled at 40 degrees, one continuous loop of horizontal wooden rungs that rotates downward as the athlete climbs, like a treadmill belt made of ladder rungs, held in a black steel frame. There are no overhead bars and nothing above the athlete, this is not monkey bars and not a jungle gym. A young athletic Black man in a black tee climbs the incline on all fours, hands gripping rung after rung, feet driving off the rungs below, body leaned forward along the 40 degree slope, climbing hard while the rungs cycle down beneath him, sweat flying, halftone speed lines. Strong and relentless, side profile anime camera with a slow push in, vertical 9:16 framing, no text anywhere, no dialogue, gym ambience only.",
+      "prompt_language": "en",
+      "reference_elements": [],
+      "resolution": "1080p",
+      "speedramp": "auto",
+      "width": 1080
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/hf_20260901_144058_06ebd814-0a23-4b71-8e6c-98b0c7794f12.mp4",
+    "status": "completed",
+    "thumbnail_url": "https://cdn.higgsfield.ai/user_3BU6FFgZhBH6TLhaYOFyJtFvLQ4/hf_20260901_144058_06ebd814-0a23-4b71-8e6c-98b0c7794f12_thumbnail.webp"
+  }
+]
