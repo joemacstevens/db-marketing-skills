@@ -1,0 +1,27 @@
+{
+  "_comment": "Per-campaign default IG tagging, merged into a post's instagram_options at PUBLISH time by publish.mjs. A post opts in via post.campaign === <key> OR instagram_options.tag_set === <key>. Post-level collaborators / location_id override the default; user_tags are UNIONED with the campaign set (deduped, @ stripped, capped at 20 by the publisher). Fill location_id once the numeric IG location ID is resolved — empty string = no location tag (safe).",
+  "because-of-boxing": {
+    "_note": "Co-author: @the_4_corners (Don) only. NO auto people-tags — API tagging is unreliable: one un-taggable handle rejects the whole IG post, and taggability is invisible externally. A COACH handle (not a member) is the culprit that broke the launch tags 2026-07-17; @ryneebrazen (Elaine) is fine. Joey tags coaches MANUALLY in the IG app after posting (IG flags who can't be tagged, so he skips them). Publishes to IG + FB + Threads. location_id pending for 401 Water Street, Teaneck NJ.",
+    "hashtags": [
+      "#becauseofboxing",
+      "#bobstories",
+      "#differentbreedboxing",
+      "#boxingchangedme",
+      "#teaneck"
+    ],
+    "platforms": [
+      "instagram",
+      "facebook",
+      "threads",
+      "tiktok"
+    ],
+    "_platforms": "tiktok added 2026-09-08 (Joey: \"lets also post to TikTok\"). TikTok is connected on the dbelitefitness Upload-Post profile; B.O.B posts carry a short `tiktok_caption` and publish.mjs maps `tiktok_options` (privacy_level etc.) onto the SDK's tiktok* fields. The linked TikTok shows handle `donsomerville6` with a default-letter avatar while the live account is @dbelitefitness — most likely the pre-rename handle cached at connect time; confirm the first B.O.B TikTok lands on @dbelitefitness.",
+    "collaborators": [
+      "the_4_corners"
+    ],
+    "user_tags": [],
+    "location_id": "",
+    "first_comment": "Members, we want to hear yours. Post your own because of boxing story and tag it #bobstories, and we might feature it.",
+    "_hashtags": "Standard IG set (5 max) — the machine-readable copy is the `hashtags` array above; this note is the rationale only, do not edit one without the other. Dropped generic #boxing to make room. #bobstories doubles as the member-story UGC tag. run-spotlight-week.mjs reads `hashtags` and refuses to run if it is missing, longer than 5, or not lowercase. NOTE: publish.mjs does NOT read this — it builds captions from each post's ig_caption, so a generator has to bake the tags into that string. Weeks 1 (Shimrit) and 2 (Gene) shipped before this was wired up and carry the old #bob/#boxing set."
+  }
+}

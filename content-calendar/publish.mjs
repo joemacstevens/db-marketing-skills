@@ -17,9 +17,11 @@ import { readFileSync, writeFileSync } from 'fs';
 import { UploadPost } from 'upload-post/index.js';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { amplifyPost } from './amplify.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CAL_PATH = resolve(__dirname, 'calendar.json');
+const CAMPAIGN_TAGS_PATH = resolve(__dirname, 'campaign-tags.json');
 const PROFILE = 'dbelitefitness';
 const TIMEZONE = 'America/New_York';
 // Facebook: multiple pages can be connected under this profile.
@@ -59,6 +61,55 @@ function loadCalendar() {
 function saveCalendar(cal) {
   cal.last_updated = new Date().toISOString();
   writeFileSync(CAL_PATH, JSON.stringify(cal, null, 2));
+}
+
+// ── Campaign tag defaults ──
+// Every post that belongs to a campaign in campaign-tags.json (matched by
+// post.campaign, or an explicit instagram_options.tag_set) inherits that
+// campaign's collaborators / user_tags / location. Post-level values win;
+// user_tags are UNIONED so a post can add its own on top of the campaign set.
+let CAMPAIGN_TAGS = {};
+try {
+  CAMPAIGN_TAGS = JSON.parse(readFileSync(CAMPAIGN_TAGS_PATH, 'utf8'));
+} catch {
+  CAMPAIGN_TAGS = {}; // optional file — absence just means no campaign defaults
+}
+
+function normHandles(v) {
+  return (Array.isArray(v) ? v : String(v || '').split(','))
+    .map(s => s.replace(/^@/, '').trim())
+    .filter(Boolean);
+}
+
+// Resolve the effective platforms for a post: the post's own platforms UNIONed
+// with any campaign default (so e.g. every because-of-boxing post also hits Threads).
+function effectivePlatforms(post) {
+  const out = Array.isArray(post.platforms) ? [...post.platforms] : [];
+  const key = post.instagram_options?.tag_set || post.campaign;
+  const def = key && CAMPAIGN_TAGS[key];
+  if (def && Array.isArray(def.platforms)) {
+    for (const p of def.platforms) if (!out.includes(p)) out.push(p);
+  }
+  return out;
+}
+
+// Resolve the effective instagram_options for a post (post values + campaign defaults).
+function effectiveIg(post) {
+  const ig = { ...(post.instagram_options || {}) };
+  const key = post.instagram_options?.tag_set || post.campaign;
+  const def = key && CAMPAIGN_TAGS[key];
+  if (!def) return ig;
+
+  // collaborators / location / first_comment: campaign default only fills a gap.
+  if (ig.collaborators == null && def.collaborators) ig.collaborators = def.collaborators;
+  if ((ig.location_id == null || ig.location_id === '') && def.location_id) ig.location_id = def.location_id;
+  if (ig.first_comment == null && def.first_comment) ig.first_comment = def.first_comment;
+
+  // user_tags: union post + campaign, deduped.
+  if (def.user_tags) {
+    ig.user_tags = [...new Set([...normHandles(ig.user_tags), ...normHandles(def.user_tags)])];
+  }
+  return ig;
 }
 
 // ── Review mode ──
@@ -105,12 +156,30 @@ function showReview(cal) {
 async function publishPost(post) {
   console.log(`\n→ Publishing ${post.id}: ${post.content_type} (${post.media_type})`);
 
+  // Resolve tagging + platforms (post + campaign defaults) up front so the
+  // dry-run preview and the real upload use exactly the same values.
+  const platforms = effectivePlatforms(post);
+  const ig = effectiveIg(post);
+  const igCollabs = ig.collaborators ? normHandles(ig.collaborators) : [];
+  const igTags = ig.user_tags ? normHandles(ig.user_tags).slice(0, 20) : [];
+
   if (DRY_RUN) {
     console.log('  [DRY RUN] Would post:');
-    console.log(`    Platforms: ${post.platforms.join(', ')}`);
+    console.log(`    Platforms: ${platforms.join(', ')}`);
     console.log(`    IG: ${post.ig_caption.slice(0, 100)}...`);
     console.log(`    FB: ${(post.fb_caption || '(auto)').slice(0, 100)}`);
+    if (platforms.includes('threads')) {
+      console.log(`    Threads: ${(post.threads_caption || '(same as IG)').slice(0, 100)}`);
+    }
+    if (platforms.includes('tiktok')) {
+      console.log(`    TikTok: ${(post.tiktok_caption || '(same as IG)').slice(0, 100)}  [${post.tiktok_options?.privacy_level || 'PUBLIC_TO_EVERYONE'}]`);
+    }
     console.log(`    Media: ${post.media_paths?.[0] || '(none)'}`);
+    if (igCollabs.length) console.log(`    Collab (co-author): @${igCollabs.join(', @')}`);
+    if (igTags.length) console.log(`    Tags (${igTags.length}): @${igTags.join(', @')}`);
+    if (ig.location_id) console.log(`    Location: ${ig.location_id}`);
+    else if ((post.instagram_options?.tag_set || post.campaign) && CAMPAIGN_TAGS[post.instagram_options?.tag_set || post.campaign]) console.log('    Location: (none set)');
+    if (ig.first_comment) console.log(`    First comment: ${ig.first_comment}`);
     if (SCHEDULE_MODE && post.post_date && post.post_time) {
       console.log(`    Scheduled for: ${post.post_date} ${post.post_time} ET`);
     }
@@ -120,7 +189,7 @@ async function publishPost(post) {
   try {
     const baseOpts = {
       user: PROFILE,
-      platforms: post.platforms,
+      platforms,
     };
 
     // Captions — use platform-specific if FB caption differs
@@ -131,19 +200,62 @@ async function publishPost(post) {
     } else {
       baseOpts.title = post.ig_caption;
     }
+    // Threads gets its OWN copy when provided. Threads renders links in the post
+    // body as clickable, so a landing-page URL belongs here (not in the IG
+    // caption, where links are never clickable). Falls back to `title` if unset.
+    if (post.threads_caption) baseOpts.threadsTitle = post.threads_caption;
+    if (post.threads_options?.topic_tag) {
+      baseOpts.threadsTopicTag = String(post.threads_options.topic_tag).replace(/^#/, '');
+    }
+    // TikTok (connected on the dbelitefitness profile 2026-09) gets its OWN
+    // caption when provided — the IG copy is long and paragraph-shaped, and the
+    // TikTok card wants one or two lines plus tags. Falls back to `title`.
+    // Options map 1:1 onto the SDK's tiktok* fields; privacy defaults to public
+    // because an unset level posts as a draft on some TikTok accounts.
+    if (platforms.includes('tiktok')) {
+      // Both fields: on the first live run (2026-09-08-bob-julian) Upload-Post
+      // recorded tiktokTitle as post_title but TikTok displayed the IG caption,
+      // so the description field is set too until one of them is proven to win.
+      if (post.tiktok_caption) {
+        baseOpts.tiktokTitle = post.tiktok_caption;
+        baseOpts.tiktokDescription = post.tiktok_caption;
+      }
+      const tt = post.tiktok_options || {};
+      baseOpts.tiktokPrivacyLevel = tt.privacy_level || 'PUBLIC_TO_EVERYONE';
+      if (tt.disable_duet != null) baseOpts.tiktokDisableDuet = Boolean(tt.disable_duet);
+      if (tt.disable_stitch != null) baseOpts.tiktokDisableStitch = Boolean(tt.disable_stitch);
+      if (tt.disable_comment != null) baseOpts.tiktokDisableComment = Boolean(tt.disable_comment);
+      if (tt.cover_timestamp != null) baseOpts.tiktokCoverTimestamp = Number(tt.cover_timestamp);
+      if (tt.post_mode) baseOpts.tiktokPostMode = tt.post_mode;
+      if (tt.is_aigc != null) baseOpts.tiktokIsAigc = Boolean(tt.is_aigc);
+    }
 
-    // IG options
-    if (post.instagram_options?.media_type) {
+    // IG options — all resolved through `ig` (post values + campaign defaults).
+    if (ig.media_type) {
       // Normalize common shortenings — Upload-Post wants plural forms for video types
-      const mt = String(post.instagram_options.media_type).toUpperCase();
+      const mt = String(ig.media_type).toUpperCase();
       baseOpts.instagramMediaType =
         mt === 'REEL' ? 'REELS' : mt === 'STORY' ? 'STORIES' : mt;
     }
-    if (post.instagram_options?.first_comment) {
-      baseOpts.instagramFirstComment = post.instagram_options.first_comment;
+    if (ig.first_comment) {
+      baseOpts.instagramFirstComment = ig.first_comment;
     }
-    if (post.instagram_options?.collaborators) {
-      baseOpts.instagramCollaborators = post.instagram_options.collaborators;
+    // Collaborators (co-author) — Upload-Post wants a comma-separated string.
+    if (igCollabs.length) {
+      baseOpts.instagramCollaborators = igCollabs.join(',');
+    }
+    // User tags — the native "tag people" (Tagged tab + notification + reach to
+    // their followers). Separate from collaborators. IG caps tags at 20/post.
+    if (ig.user_tags) {
+      const all = normHandles(ig.user_tags);
+      if (all.length > 20) {
+        console.warn(`  ⚠ ${all.length} user_tags — IG allows 20 max; keeping the first 20.`);
+      }
+      baseOpts.instagramUserTags = all.slice(0, 20).join(',');
+    }
+    // Location tag (optional) — surfaces the post on the location page.
+    if (ig.location_id) {
+      baseOpts.instagramLocationId = String(ig.location_id);
     }
 
     // FB options
@@ -151,14 +263,34 @@ async function publishPost(post) {
       baseOpts.facebookMediaType = post.facebook_options.media_type;
     }
     // Always explicitly target an FB page (never rely on Upload-Post's default order).
-    if (post.platforms?.includes('facebook')) {
+    if (platforms.includes('facebook')) {
       baseOpts.facebookPageId = post.facebook_options?.facebookPageId || DEFAULT_FB_PAGE_ID;
     }
 
     // Scheduling
+    // Upload-Post wants `scheduled_date` as a properly anchored ISO 8601
+    // string. Send UTC with an explicit Z; if you send "YYYY-MM-DDTHH:MM:00"
+    // without an offset, the API silently drops it into the FIFO queue with
+    // scheduled_for=null (this bit us 2026-04-26 — see plan file). post_date
+    // and post_time are ET wall-clock; convert to UTC here. Also log the
+    // resolved UTC so a malformed input never silently fails again.
     if (SCHEDULE_MODE && post.post_date && post.post_time) {
-      baseOpts.scheduledDate = `${post.post_date}T${post.post_time}:00`;
-      baseOpts.timezone = TIMEZONE;
+      // Use the IANA-aware Date constructor with explicit ET offset. EDT is
+      // UTC-04:00 (Mar–Nov), EST is UTC-05:00 (Nov–Mar). Picking the right
+      // offset based on the date keeps DST transitions correct.
+      const month = parseInt(post.post_date.split('-')[1], 10);
+      const day = parseInt(post.post_date.split('-')[2], 10);
+      const isEdt =
+        (month > 3 && month < 11) ||
+        (month === 3 && day >= 8) ||  // approx 2nd Sunday of March
+        (month === 11 && day < 1);    // never true; EST starts 1st Sun Nov
+      const offset = isEdt ? '-04:00' : '-05:00';
+      const local = new Date(`${post.post_date}T${post.post_time}:00${offset}`);
+      baseOpts.scheduledDate = local.toISOString(); // → "...Z"
+      // Drop the redundant `timezone` field — Z already encodes UTC.
+      console.log(
+        `    Resolved schedule: ${post.post_date} ${post.post_time} ET (${offset}) → ${baseOpts.scheduledDate}`
+      );
     }
 
     let response;
@@ -257,19 +389,59 @@ async function main() {
 
   console.log(`\n${DRY_RUN ? '[DRY RUN] ' : ''}Publishing ${toPublish.length} post(s)...`);
 
-  let success = 0, failed = 0;
+  let success = 0, scheduled = 0, failed = 0;
 
   for (const post of toPublish) {
     try {
       const result = await publishPost(post);
 
+      // Upload-Post marks the job "completed" even when individual platforms
+      // fail, so inspect per-platform success — never blanket-mark "posted".
+      // Not meaningful in SCHEDULE_MODE: a queued job reports every platform as
+      // { status: "queued", success: false } because the worker hasn't run yet,
+      // so treating that as failure would flag a perfectly good schedule.
+      const platResults = Array.isArray(result?.results) ? result.results : [];
+      const failedPlats = platResults.filter(r => r.success === false).map(r => r.platform);
+      const fullyFailed = platResults.length > 0 && failedPlats.length === platResults.length;
+
       if (!DRY_RUN) {
-        post.status = SCHEDULE_MODE ? 'scheduled' : 'posted';
+        if (SCHEDULE_MODE) {
+          post.status = 'scheduled';
+        } else if (fullyFailed) {
+          post.status = 'failed';
+        } else if (failedPlats.length) {
+          post.status = 'partial';
+          post.failed_platforms = failedPlats;
+          console.log(`  ⚠ Partial: failed on ${failedPlats.join(', ')} (see post_result for errors)`);
+        } else {
+          post.status = 'posted';
+        }
         post.posted_at = new Date().toISOString();
         post.post_result = result;
         saveCalendar(cal);
       }
-      success++;
+      // Counters mirror the status written above, so the tally can never
+      // disagree with what landed in the calendar.
+      if (SCHEDULE_MODE) scheduled++;
+      else if (fullyFailed) failed++;
+      else success++;
+
+      // ── Amplifier fan-out ──
+      // Fires only for immediate publishes that actually went live (a scheduled
+      // or fully-failed post has nothing to amplify).
+      // Fail-soft: an amplifier error must never fail a post that already went
+      // live. Stays inert until amplifiers.json has enabled:true.
+      if (!SCHEDULE_MODE && !fullyFailed) {
+        try {
+          const amp = await amplifyPost(post, { dryRun: DRY_RUN, client });
+          if (!DRY_RUN && amp && !amp.skipped) {
+            post.amplify_result = amp;
+            saveCalendar(cal);
+          }
+        } catch (ampErr) {
+          console.error(`  ⚠ Amplify failed (post is still live): ${ampErr.message}`);
+        }
+      }
     } catch (err) {
       if (!DRY_RUN) {
         post.status = 'failed';
@@ -280,7 +452,7 @@ async function main() {
     }
   }
 
-  console.log(`\nDone: ${success} published, ${failed} failed.`);
+  console.log(`\nDone: ${success} published, ${scheduled} scheduled, ${failed} failed.`);
 }
 
 main().catch(err => {
