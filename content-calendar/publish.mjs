@@ -13,9 +13,10 @@
  *   node publish.mjs --review           # Show all posts pending approval
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, statSync } from 'fs';
+import { execFileSync } from 'child_process';
 import { UploadPost } from 'upload-post/index.js';
-import { resolve, dirname } from 'path';
+import { resolve, dirname, basename, extname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -25,6 +26,29 @@ const TIMEZONE = 'America/New_York';
 // Facebook: multiple pages can be connected under this profile.
 // Always target Different Breed Elite Fitness & Sports unless a post overrides it.
 const DEFAULT_FB_PAGE_ID = '100873874674621';
+// IG photo stories cap at ~5s and PNGs on the video path transcode to 0s,
+// so still images for stories are wrapped into an MP4 of this length.
+const DEFAULT_STORY_SECONDS = 12;
+const STILL_IMAGE_RE = /\.(png|jpe?g|webp)$/i;
+
+function wrapStillAsVideo(imagePath, seconds) {
+  const out = resolve(dirname(imagePath), `${basename(imagePath, extname(imagePath))}-${seconds}s.mp4`);
+  if (existsSync(out) && statSync(out).mtimeMs >= statSync(imagePath).mtimeMs) {
+    console.log(`  Using existing ${seconds}s story video: ${out}`);
+    return out;
+  }
+  console.log(`  Wrapping still image into ${seconds}s story video...`);
+  execFileSync('ffmpeg', [
+    '-nostdin', '-loglevel', 'error', '-y',
+    '-loop', '1', '-i', imagePath,
+    '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100',
+    '-t', String(seconds), '-r', '30',
+    '-vf', 'scale=1080:1920:force_original_aspect_ratio=decrease:flags=lanczos,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,setsar=1',
+    '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-shortest',
+    '-movflags', '+faststart', out,
+  ], { stdio: ['ignore', 'inherit', 'inherit'] });
+  return out;
+}
 
 // ── Load secrets ──
 let apiKey;
@@ -179,8 +203,15 @@ async function publishPost(post) {
         });
       }
     } else if (post.media_type === 'video' || post.media_type === 'story') {
-      const path = post.media_paths?.[0];
+      let path = post.media_paths?.[0];
       if (!path) throw new Error('No media_paths specified for video post');
+
+      // A still image sent down the video/story path gets a 0s duration from
+      // Upload-Post's transcode and flashes by in under a second. Wrap it in
+      // an MP4 so the story holds (default 12s, override with story_duration).
+      if (STILL_IMAGE_RE.test(path)) {
+        path = wrapStillAsVideo(path, post.story_duration || DEFAULT_STORY_SECONDS);
+      }
 
       if (post.media_type === 'story') {
         baseOpts.instagramMediaType = 'STORIES';
