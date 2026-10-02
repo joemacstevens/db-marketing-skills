@@ -1,0 +1,25 @@
+{
+  "_comment": "Amplifier layer for Different Breed. After a DB post publishes to @dbelitefitness, these accounts amplify it — legit reach, no fake-engagement/ban risk. See skills/amplifier.md. Nothing fires until enabled:true AND at least one target has enabled:true with a connected Upload-Post profile.",
+  "enabled": false,
+  "primary_profile": "dbelitefitness",
+  "stagger_minutes": 6,
+  "collab_coaches": {
+    "_comment": "Reference map of coach → IG handle for IG Collab posts (the single biggest legit amplifier — shared engagement pool, both grids). To co-author a post, add e.g. \"collaborators\": [\"dbdonsomerville\"] to that post's instagram_options in calendar.json. Handles live in brand-context/coaches-and-staff.md — fill these in as you confirm them.",
+    "don": "the_4_corners",
+    "menukhah": "",
+    "carlos": ""
+  },
+  "targets": [
+    {
+      "_comment": "One entry per amplifier IG account. `profile` is the Upload-Post profile name (created + connected via `node amplify.mjs --connect`). `handle` is just for logging. `reshare` = which formats to push: \"story\" (recommended), \"feed\", or both. `first_comment` only applies to feed reshares (stories have no comments). `owner_imessage` powers the rally draft (phone number of whoever owns the account). Set enabled:true once connected.",
+      "profile": "",
+      "handle": "",
+      "owner_imessage": "",
+      "reshare": [
+        "story"
+      ],
+      "first_comment": "",
+      "enabled": false
+    }
+  ]
+}
