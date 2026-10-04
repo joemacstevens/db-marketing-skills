@@ -1,6 +1,6 @@
 # Motivational Monday: weekly runbook
 
-Goal: a new ~30s reel (29-31s) every Monday at 7 AM, built in about 20 minutes of hands-on time. Week 1 (`hyperframes/2026-10-05-motivational-monday/`) is the template. Its `BRIEF.md` is the worked example, and every week-specific value lives in its `build/week.json`.
+Goal: a new ~30s reel (29-31s) every Monday at 4:30 AM ET (the gym opens at 4, so it lands for the early crew), built in about 20 minutes of hands-on time. Week 1 (`hyperframes/2026-10-05-motivational-monday/`) is the template. Its `BRIEF.md` is the worked example, and every week-specific value lives in its `build/week.json`.
 
 The shape stays the same every week, so people recognize it. The beat runs from frame 0. The opener shot plays 0-1.5s, the title slams on a beat around 1.5s, and the VO starts under the title at about 1.8s. Captions run word by word on a dark plate, with 2-3 hit words slammed big. The music's breakdown sits under the turn and closer, the drop hits right after the last VO word, and a 2s sparring montage follows. Then the house end tag (DB logo, "absolutely different" lockup, @DBELITEFITNESS) plays with the "We are Different Breed" hook.
 

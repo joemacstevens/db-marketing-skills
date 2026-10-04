@@ -1,6 +1,6 @@
 # Motivational Monday, Week 1: The Morning Person
 
-Posts Mon 10/5/2026, ~7 AM. Vertical reel, ~30s total:
+Posts Mon 10/5/2026, 4:30 AM. Vertical reel, ~30s total:
 1.5s footage open, 1.5s title card, VO bed ~22–26s, ~3s DB end tag (logo + "what we do is absolutely different").
 
 Notation:

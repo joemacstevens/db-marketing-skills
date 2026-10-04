@@ -12,7 +12,7 @@ angle: footage-remix
 
 ## Intent
 
-First episode of the weekly Motivational Monday series (posts Mon 10/5/2026, 7 AM) and the template for every week after it. Classic workout-motivation format: a deep trailer-narrator voice over our hardest training and sparring, cut to a trending trap beat. Joey locked the script (Option A "The Alarm"), the voice and the music. Weekly runbook: `campaigns/motivational-monday/TEMPLATE.md`. Everything week-specific lives in `build/week.json`.
+First episode of the weekly Motivational Monday series (posts Mon 10/5/2026, 4:30 AM) and the template for every week after it. Classic workout-motivation format: a deep trailer-narrator voice over our hardest training and sparring, cut to a trending trap beat. Joey locked the script (Option A "The Alarm"), the voice and the music. Weekly runbook: `campaigns/motivational-monday/TEMPLATE.md`. Everything week-specific lives in `build/week.json`.
 
 ## Music
 

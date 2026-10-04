@@ -1,6 +1,6 @@
 # Motivational Monday: The Weekly Formula
 
-One reel every Monday morning (~7 AM). A deep cinematic voice over our hardest training and sparring footage, set to a trap beat. One theme per week, written by us, in DB's voice. Week 1 (10/5/2026, "The Morning Person") is the template: `week-01-options.md`.
+One reel every Monday morning (4:30 AM, the gym opens at 4). A deep cinematic voice over our hardest training and sparring footage, set to a trap beat. One theme per week, written by us, in DB's voice. Week 1 (10/5/2026, "The Morning Person") is the template: `week-01-options.md`.
 
 Read `brand-context/writing-rules.md` before every script. Short lines are the genre here, but every line still has to sound like a coach said it out loud, and the footage carries the literal facts (never narrate what's on screen).
 
