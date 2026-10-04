@@ -1,0 +1,5 @@
+The alarm goes off at four forty-five, and the house is still dark. <break time="0.9s"/>
+You could roll over, and nobody would know. <break time="0.9s"/>
+You lace up anyway... because over in Teaneck, the lights are on, and your crew is waiting on you. <break time="0.9s"/>
+Cold air. <break time="0.4s"/> Heavy legs. <break time="0.4s"/> Round one. <break time="0.9s"/>
+By the time this town wakes up, <break time="0.3s"/> you've already won Monday.

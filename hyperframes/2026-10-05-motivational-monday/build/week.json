@@ -1,0 +1,102 @@
+{
+  "_doc": "Clip frame: fill (default, full-bleed 9:16) or window45 (unrotated landscape sources: 4:5 window over a blurred fill, light push; cx frames the action, pan keys in proxy-local seconds). Everything week-specific for a Motivational Monday reel. Times are reel seconds unless noted. Shot/hit times accept a number, 'b:N' (beat N of the music grid, reel 0 = beat 0), or 'w:I' (onset of VO word I, minus 0.03s so the new shot carries the word). See campaigns/motivational-monday/TEMPLATE.md.",
+  "week": 1,
+  "date": "2026-10-05",
+  "theme": "The Morning Person",
+
+  "title": {
+    "at": "b:3",
+    "kicker": "Week 01",
+    "line1": "Motivational",
+    "line2": "Monday",
+    "sub": "The morning person"
+  },
+
+  "vo": {
+    "file": "assets/audio/vo-week01.mp3",
+    "words": "build/vo-words.json",
+    "at": 1.8,
+    "volume": 1.4,
+    "script": "The alarm goes off at 4:45 and the house is still dark. You could roll over, and nobody would know. You lace up anyway, because over in Teaneck the lights are on and your crew is waiting on you. Cold air. Heavy legs. Round one. By the time this town wakes up, you've already won Monday.",
+    "chunks": [
+      ["The", "alarm"], ["goes", "off"], ["at", "4:45"], ["and", "the", "house"], ["is", "still"], ["dark."],
+      ["You", "could"], ["roll", "over,"], ["and", "nobody"], ["would", "know."],
+      ["You", "lace", "up"], ["anyway,"], ["because", "over"], ["in", "Teaneck"], ["the", "lights"], ["are", "on"],
+      ["and", "your", "crew"], ["is", "waiting"], ["on", "you."],
+      ["Cold", "air."], ["Heavy", "legs."], ["Round", "one."],
+      ["By", "the", "time"], ["this", "town"], ["wakes", "up,"], ["you've", "already"], ["won", "Monday."]
+    ],
+    "emphasis": ["4:45", "dark.", "anyway,", "Teaneck", "crew", "Cold", "Heavy", "Round", "Monday."]
+  },
+
+  "hits": [
+    {"word": 11, "text": "DARK", "at": "w:11", "until": "w:12", "style": "black"},
+    {"word": 23, "text": "ANYWAY", "at": "w:23", "until": "b:25", "style": "block"},
+    {"word": 55, "text": "MONDAY", "at": "b:50", "until": "b:52", "style": "drop"}
+  ],
+
+  "music": {
+    "file": "assets/audio/rhyno-instrumental.mp3",
+    "_credit": "Travis Scott, RHYNO (instrumental), 118.9 BPM. Breakdown src 87.2-98.2, near-silent 97.3-98.1, slam at src 98.228.",
+    "src_at_reel0": 72.996,
+    "beat": 0.50463,
+    "beat0": 0.0,
+    "drop": "b:50",
+    "levels": [
+      [0, 0], [0.1, 0.9], [1.72, 0.9], [1.95, 0.26],
+      [14.0, 0.26], [14.6, 0.42], [15.8, 0.42], [16.1, 0.3], [17.9, 0.3], [18.3, 0.65],
+      [25.15, 0.65], [25.23, 0.85], [27.22, 0.85], [27.27, 0]
+    ]
+  },
+
+  "end": {"at": "b:54", "length": 2.9, "hook_file": "assets/audio/different-breed-song.mp3", "hook_src": 48.8},
+
+  "clips": [
+    {"id": "bc5801", "src": "/Volumes/Ajeo/Projects/Different Breed/New Blue Collar Videos/gym_9_30_26 15/C5801.MP4", "in": 28.2, "out": 29.8, "frame": "window45", "cx": "0.55:0.62,1.55:0.64,2.55:0.53,3.55:0.55"},
+    {"id": "emw3530", "copy": "../../campaigns/motivational-monday/clips/proxies/02_emw3530.mp4"},
+    {"id": "bc5816", "src": "/Volumes/Ajeo/Projects/Different Breed/New Blue Collar Videos/gym_9_30_26 10/C5816.MP4", "in": 5.8, "out": 7.3, "frame": "window45", "cx": "0.7:0.35,1.2:0.40,1.7:0.42,2.2:0.48"},
+    {"id": "bc5824", "src": "/Volumes/Ajeo/Projects/Different Breed/New Blue Collar Videos/gym_9_30_26 13/C5824.MP4", "in": 6.5, "out": 8.0, "frame": "window45", "cx": "0.49"},
+    {"id": "c5262", "copy": "../../campaigns/motivational-monday/clips/proxies/05_c5262.mp4"},
+    {"id": "img0171", "copy": "../../campaigns/motivational-monday/clips/proxies/06_img0171.mp4"},
+    {"id": "c5244", "copy": "../../campaigns/motivational-monday/clips/proxies/07_c5244.mp4"},
+    {"id": "img1402", "copy": "../../campaigns/motivational-monday/clips/proxies/08_img1402.mp4"},
+    {"id": "img0254", "copy": "../../campaigns/motivational-monday/clips/proxies/09_img0254.mp4"},
+    {"id": "c5446", "copy": "../../campaigns/motivational-monday/clips/proxies/10_c5446.mp4"},
+    {"id": "img8871", "copy": "../../campaigns/motivational-monday/clips/proxies/11_img8871.mp4"},
+    {"id": "bc5794", "src": "/Volumes/Ajeo/Projects/Different Breed/New Blue Collar Videos/gym_9_30_26 13/C5794.MP4", "in": 24.0, "out": 25.5, "frame": "window45", "cx": "0.42"},
+    {"id": "c4233", "copy": "../../campaigns/motivational-monday/clips/proxies/14_c4233.mp4"},
+    {"id": "bc5842", "src": "/Volumes/Ajeo/Projects/Different Breed/New Blue Collar Videos/gym_9_30_26 10/C5842.MP4", "in": 8.2, "out": 9.7, "frame": "window45", "cx": "2.8:0.55,3.0:0.52,3.2:0.46"},
+    {"id": "c5055", "copy": "../../campaigns/motivational-monday/clips/proxies/16_c5055.mp4"},
+    {"id": "bc5852", "src": "/Volumes/Ajeo/Projects/Different Breed/New Blue Collar Videos/gym_9_30_26 5/C5852.MP4", "in": 63.0, "out": 64.6, "frame": "window45", "cx": "2.4:0.53,2.9:0.56,3.2:0.63,3.4:0.65"},
+    {"id": "img9891", "src": "/Volumes/Ajeo/Projects/Different Breed/Media Library/March 28, 2025/IMG_9891.mov", "in": 5.7, "out": 7.2},
+    {"id": "img9492", "src": "/Volumes/Ajeo/Projects/Different Breed/Media Library/August 3, 2026/IMG_9492.mov", "in": 24.0, "out": 25.5},
+    {"id": "c2519", "src": "/Volumes/Ajeo/Projects/Different Breed/Media Library/Raw/C2519.MP4", "in": 9.0, "out": 10.5},
+    {"id": "c5450", "src": "/Volumes/Ajeo/Projects/Different Breed/Media Library/2026/gym_7_22_26/C5450.MP4", "in": 9.3, "out": 10.8},
+    {"id": "bc5851", "src": "/Volumes/Ajeo/Projects/Different Breed/New Blue Collar Videos/gym_9_30_26/C5851.MP4", "in": 62.5, "out": 64.0, "frame": "window45", "cx": "1.3:0.27,1.77:0.30,2.23:0.29,2.7:0.33"}
+  ],
+
+  "shots": [
+    {"clip": "bc5801", "at": 0, "ms": 0.55, "note": "opener + title: close power exchange (C5801)"},
+    {"clip": "bc5816", "at": "b:6", "ms": 0.7, "note": "'the house': gloves hung on the DIFFERENT rope (C5816)"},
+    {"clip": "emw3530", "at": "b:9", "ms": 1.2, "grade": {"exposure": -0.7, "temperature": -0.2, "highlights": -0.4}, "zoom": 1.08, "note": "'is still': 5:53 AM, near-empty gym (IMG_3530)"},
+    {"clip": null, "at": "w:11", "note": "DARK: black, lights out"},
+    {"clip": "img0171", "at": "w:12", "ms": 1.4, "fade_in": 0.3, "note": "'You could roll over': 6:38 AM sled (IMG_0171)"},
+    {"clip": "c5244", "at": "b:17", "tx": "whip", "ms": 0.8, "note": "'nobody would know': 6:23 AM battle ropes (C5244)"},
+    {"clip": "bc5824", "at": "w:20", "ms": 1.6, "note": "'You lace up': coach buckles the headgear (C5824)"},
+    {"clip": "bc5794", "at": "w:23", "ms": 0.9, "fx": "impact", "note": "ANYWAY: fighter rips combos into Don's mitts (C5794)"},
+    {"clip": "c4233", "at": "b:26", "tx": "whip", "ms": 1.0, "note": "'in Teaneck': ring sparring on the DB logo, crew at the ropes (C4233)"},
+    {"clip": "img0254", "at": "b:29", "ms": 1.4, "note": "'lights are on': two members sharing one bag, 6:20 AM (IMG_0254)"},
+    {"clip": "c5262", "at": "b:31", "ms": 1.0, "note": "'your crew': two women slamming, 6:17 AM (C5262)"},
+    {"clip": "img9492", "at": "b:33", "tx": "whip", "ms": 1.6, "note": "'waiting on you': mitts on the DB logo (IMG_9492)"},
+    {"clip": "c5450", "at": "w:39", "ms": 1.2, "fx": "impact", "note": "COLD AIR: sled push (C5450)"},
+    {"clip": "img1402", "at": "w:41", "ms": 0.5, "fx": "impact", "note": "HEAVY LEGS: gritted teeth on the air bike, 5:59 AM (IMG_1402)"},
+    {"clip": "c2519", "at": "w:43", "ms": 0.8, "fx": "impact", "note": "ROUND ONE: over-shoulder sparring (C2519)"},
+    {"clip": "img8871", "at": "b:42", "ms": 1.0, "note": "'By the time': Jacob's ladder (IMG_8871)"},
+    {"clip": "img9891", "at": "b:44", "tx": "whip", "ms": 1.0, "note": "'this town wakes up': treadmill sprint (IMG_9891)"},
+    {"clip": "c5446", "at": "b:46", "ms": 1.0, "note": "'you've already': fast mitt combos (C5446)"},
+    {"clip": "bc5851", "at": "b:48", "ms": 1.6, "note": "'won Monday': Pair B close exchange, breakdown silence (C5851)"},
+    {"clip": "bc5842", "at": "b:50", "ms": 2.8, "fx": "impact", "note": "DROP + MONDAY: white gloves fires (C5842)"},
+    {"clip": "c5055", "at": "b:51", "ms": 1.3, "fx": "impact", "note": "drop: clean slip under a right (C5055)"},
+    {"clip": "bc5852", "at": "b:52", "ms": 2.4, "fx": "impact", "note": "drop climax: over-shoulder close exchange (C5852)"}
+  ]
+}

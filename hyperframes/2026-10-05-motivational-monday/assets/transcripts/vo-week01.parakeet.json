@@ -1,0 +1,285 @@
+{
+  "text": "The alarm goes off at 4:45, and the house is still dark. You could roll over, and nobody would know. You lace up anyway, because over in T-Nack, the lights are on, and your crew is waiting on you. Cold air, heavy legs, round one. By the time this town wakes up, you've already won Monday.",
+  "words": [
+    {
+      "text": "The",
+      "start": 0,
+      "end": 0.24
+    },
+    {
+      "text": "alarm",
+      "start": 0.24,
+      "end": 0.64
+    },
+    {
+      "text": "goes",
+      "start": 0.64,
+      "end": 0.88
+    },
+    {
+      "text": "off",
+      "start": 0.88,
+      "end": 1.04
+    },
+    {
+      "text": "at",
+      "start": 1.04,
+      "end": 1.2
+    },
+    {
+      "text": "4:45,",
+      "start": 1.2,
+      "end": 2.64
+    },
+    {
+      "text": "and",
+      "start": 2.64,
+      "end": 2.88
+    },
+    {
+      "text": "the",
+      "start": 2.88,
+      "end": 3.12
+    },
+    {
+      "text": "house",
+      "start": 3.12,
+      "end": 3.52
+    },
+    {
+      "text": "is",
+      "start": 3.52,
+      "end": 3.68
+    },
+    {
+      "text": "still",
+      "start": 3.68,
+      "end": 4.16
+    },
+    {
+      "text": "dark.",
+      "start": 4.16,
+      "end": 4.88
+    },
+    {
+      "text": "You",
+      "start": 4.88,
+      "end": 5.2
+    },
+    {
+      "text": "could",
+      "start": 5.2,
+      "end": 5.52
+    },
+    {
+      "text": "roll",
+      "start": 5.52,
+      "end": 6.08
+    },
+    {
+      "text": "over,",
+      "start": 6.08,
+      "end": 6.64
+    },
+    {
+      "text": "and",
+      "start": 6.64,
+      "end": 6.96
+    },
+    {
+      "text": "nobody",
+      "start": 6.96,
+      "end": 7.84
+    },
+    {
+      "text": "would",
+      "start": 7.84,
+      "end": 8.16
+    },
+    {
+      "text": "know.",
+      "start": 8.16,
+      "end": 8.8
+    },
+    {
+      "text": "You",
+      "start": 8.8,
+      "end": 9.12
+    },
+    {
+      "text": "lace",
+      "start": 9.12,
+      "end": 9.68
+    },
+    {
+      "text": "up",
+      "start": 9.68,
+      "end": 9.92
+    },
+    {
+      "text": "anyway,",
+      "start": 9.92,
+      "end": 10.56
+    },
+    {
+      "text": "because",
+      "start": 10.56,
+      "end": 10.8
+    },
+    {
+      "text": "over",
+      "start": 10.88,
+      "end": 11.12
+    },
+    {
+      "text": "in",
+      "start": 11.12,
+      "end": 11.36
+    },
+    {
+      "text": "T-Nack,",
+      "start": 11.36,
+      "end": 12.24
+    },
+    {
+      "text": "the",
+      "start": 12.24,
+      "end": 12.48
+    },
+    {
+      "text": "lights",
+      "start": 12.48,
+      "end": 12.8
+    },
+    {
+      "text": "are",
+      "start": 12.8,
+      "end": 13.04
+    },
+    {
+      "text": "on,",
+      "start": 13.04,
+      "end": 13.44
+    },
+    {
+      "text": "and",
+      "start": 13.44,
+      "end": 13.68
+    },
+    {
+      "text": "your",
+      "start": 13.68,
+      "end": 13.92
+    },
+    {
+      "text": "crew",
+      "start": 13.92,
+      "end": 14.32
+    },
+    {
+      "text": "is",
+      "start": 14.32,
+      "end": 14.56
+    },
+    {
+      "text": "waiting",
+      "start": 14.56,
+      "end": 14.96
+    },
+    {
+      "text": "on",
+      "start": 14.96,
+      "end": 15.28
+    },
+    {
+      "text": "you.",
+      "start": 15.28,
+      "end": 15.76
+    },
+    {
+      "text": "Cold",
+      "start": 15.76,
+      "end": 16.24
+    },
+    {
+      "text": "air,",
+      "start": 16.24,
+      "end": 16.8
+    },
+    {
+      "text": "heavy",
+      "start": 16.8,
+      "end": 17.36
+    },
+    {
+      "text": "legs,",
+      "start": 17.36,
+      "end": 18.24
+    },
+    {
+      "text": "round",
+      "start": 18.24,
+      "end": 18.8
+    },
+    {
+      "text": "one.",
+      "start": 18.8,
+      "end": 19.36
+    },
+    {
+      "text": "By",
+      "start": 19.36,
+      "end": 19.6
+    },
+    {
+      "text": "the",
+      "start": 19.6,
+      "end": 19.84
+    },
+    {
+      "text": "time",
+      "start": 19.84,
+      "end": 20.08
+    },
+    {
+      "text": "this",
+      "start": 20.08,
+      "end": 20.32
+    },
+    {
+      "text": "town",
+      "start": 20.32,
+      "end": 20.64
+    },
+    {
+      "text": "wakes",
+      "start": 20.64,
+      "end": 21.2
+    },
+    {
+      "text": "up,",
+      "start": 21.2,
+      "end": 21.6
+    },
+    {
+      "text": "you've",
+      "start": 21.6,
+      "end": 22
+    },
+    {
+      "text": "already",
+      "start": 22,
+      "end": 22.4
+    },
+    {
+      "text": "won",
+      "start": 22.4,
+      "end": 22.8
+    },
+    {
+      "text": "Monday.",
+      "start": 22.8,
+      "end": 23.44
+    }
+  ]
+}

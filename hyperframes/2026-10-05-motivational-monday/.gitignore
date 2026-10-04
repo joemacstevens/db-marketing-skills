@@ -1,0 +1,10 @@
+node_modules/
+renders/
+assets/footage/
+assets/audio/*.m4a
+assets/transcripts/*.wav
+assets/transcripts/raw.pcm
+.hyperframes/
+assets/audio/bed.wav
+snapshots/
+assets/audio/vo-take*-raw.mp3

@@ -63,3 +63,11 @@ _archive/
 
 # Workspace-level helper docs that shouldn't be tracked
 hoist.sh
+
+# Motivational Monday: commercial music (label tracks) never goes in the public repo
+campaigns/motivational-monday/music/candidates/
+hyperframes/*/assets/audio/rhyno*
+hyperframes/*/assets/audio/*-instrumental*
+campaigns/motivational-monday/clips/thumbs/
+campaigns/motivational-monday/clips/*.jpg
+campaigns/motivational-monday/script/*.mp3
