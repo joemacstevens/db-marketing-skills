@@ -26,6 +26,23 @@ reels/**/public/clips/
 # Loose camera files at the root of any reel project (e.g. sparring sub-reels)
 reels/**/*.MP4
 reels/**/*.MOV
+# Video never goes in git, anywhere in the repo. Footage lives on Ajeo
+# ("Project Archive/" mirrors repo paths); the website hosts its own video in
+# the main-site repo / Vercel Blob. A broad `git add` used to sweep raw drops
+# (don-drops/, because-of-boxing/, Blue Collar 2026/) into .git.
+# Allow-list below is the only exception; add to it deliberately.
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.m4v
+*.M4V
+*.webm
+*.mkv
+*.avi
+*.mxf
+# Brand hero loops and demos, small and shared by every page build.
+!brand-kit/video-assets/**
 # Exception: the daily ScheduleReel background clips are small (~4 MB each) and
 # the nightly cron needs them, so they ride along in git for a clean mini deploy.
 !reels/public/youth-invest/yi-open.mp4
