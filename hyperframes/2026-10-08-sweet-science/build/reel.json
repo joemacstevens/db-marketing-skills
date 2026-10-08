@@ -1,0 +1,22 @@
+{
+  "_doc": "Sweet Science (Don IMG_1868, Wed 10/7 7:16 PM). Reel time 0 = room-audio src 0: the room song runs unbroken under all footage. Picture cuts sit on room-song beats (aubio beat on the room track). Each shot plays source 'ms' for (next.at - at). tx = transition INTO this shot: cut | impact (punch + red edge flash) | whip (blur pan). 'zoom' = static punch-in, 'origin' = transform-origin, 'drift' = end scale for a slow push.",
+  "source": "assets/footage/img1868.mp4",
+  "room": {"file": "assets/audio/room-1868.m4a", "volume": 1.0},
+  "end": {"at": 18.233, "length": 3.1, "hook_file": "assets/audio/different-breed-song.mp3", "hook_src": 48.8, "hook_volume": 0.85},
+
+  "title": {"in": 1.5, "out": 2.88, "line1": "The sweet", "line2": "science"},
+
+  "shots": [
+    {"id": "s0", "at": 0.0,    "ms": 18.00, "tx": "cut",    "zoom": 1.0,  "drift": 1.05, "note": "opener: the whole line from the front, depth to the back wall"},
+    {"id": "s1", "at": 1.5,    "ms": 7.00,  "tx": "cut",    "zoom": 1.0,  "drift": 1.06, "note": "wide line from behind, everyone in stance (title over the first 1.5s)"},
+    {"id": "s2", "at": 6.965,  "ms": 2.95,  "tx": "whip",   "zoom": 1.22, "origin": "50% 88%", "drift": 1.28, "note": "close on the band at the ankles (grey tee, from behind)"},
+    {"id": "s3", "at": 8.648,  "ms": 12.50, "tx": "impact", "zoom": 1.0,  "drift": 1.06, "note": "alongside the middle of the line"},
+    {"id": "s4", "at": 11.134, "ms": 15.75, "tx": "whip",   "zoom": 1.08, "origin": "50% 80%", "drift": 1.12, "note": "band close from behind, then the line"},
+    {"id": "s5", "at": 12.852, "ms": 19.50, "tx": "impact", "zoom": 1.0,  "drift": 1.05, "note": "front of the line coming toward camera"},
+    {"id": "s6", "at": 14.539, "ms": 23.25, "tx": "cut",    "zoom": 1.0,  "drift": 1.07, "note": "front of the line close, stance, hands up"},
+    {"id": "s7", "at": 16.555, "ms": 27.35, "tx": "whip",   "zoom": 1.0,  "drift": 1.05, "note": "coach out front showing the stance to the line"}
+  ],
+
+  "move": {"in": 3.2, "out": 6.82, "kicker": "The move", "name": ["Banded", "footwork"], "works": "Hips · glutes · balance"},
+  "how": {"in": 8.8, "out": 11.0, "lines": ["Mini band at the ankles,", "stay in your stance", "and keep it tight"]}
+}
