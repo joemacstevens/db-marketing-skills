@@ -1,0 +1,245 @@
+{
+  "_doc": "Junior Boxing (CJ's IMG_7884 + IMG_7885, Wed 10/7 ~4:18-4:20 PM, outdoor lot, the 4:00 kids class). Each shot plays its source 'ms' for (next.at - at). 'src' picks the proxy. 'voice' = level-matched room audio for that shot (assets/audio/v-<id>.m4a, cut to exactly the shot's source window, so it starts at media 0). tx = transition INTO this shot: cut | impact | whip. zoom/origin/drift = static punch-in + slow push on the wrapper. s4 is the 120 fps slow-mo (1/4 speed) of src 46.95-47.625, continuing straight out of s3.",
+  "sources": {
+    "a": "assets/footage/img7884.mp4",
+    "a_slow": "assets/footage/img7884-slow-4680.mp4",
+    "b": "assets/footage/img7885.mp4"
+  },
+  "end": {
+    "at": 20.7,
+    "length": 3.0,
+    "hook_file": "assets/audio/three-ds-v2.mp3",
+    "hook_src": 46.7,
+    "hook_volume": 0.9
+  },
+  "bed": {
+    "file": "assets/audio/three-ds-v2.mp3",
+    "src": 10.0,
+    "under": 0.2,
+    "open": 0.7
+  },
+  "title": {
+    "in": 1.5,
+    "out": 2.86,
+    "line1": "Junior",
+    "line2": "Boxing"
+  },
+  "shots": [
+    {
+      "id": "s0",
+      "at": 0.0,
+      "src": "a",
+      "ms": 16.3,
+      "tx": "cut",
+      "zoom": 1.0,
+      "drift": 1.06,
+      "origin": "40% 45%",
+      "voice": true,
+      "note": "opener: Coach Don bent down setting a little girl's guard; title over him walking off while she holds it"
+    },
+    {
+      "id": "s2",
+      "at": 3.0,
+      "src": "a",
+      "ms": 33.1,
+      "tx": "whip",
+      "zoom": 1.14,
+      "drift": 1.2,
+      "origin": "62% 42%",
+      "voice": true,
+      "note": "the line with guards up ('Hands up'), then 'One step forward', kids step in at ~36.9"
+    },
+    {
+      "id": "s3",
+      "at": 7.65,
+      "src": "a",
+      "ms": 42.85,
+      "tx": "impact",
+      "zoom": 1.0,
+      "drift": 1.06,
+      "origin": "60% 50%",
+      "voice": true,
+      "note": "closer on the line: 'One step back. Good.', kids step back ~44.3"
+    },
+    {
+      "id": "s3b",
+      "at": 9.9,
+      "src": "a",
+      "ms": 45.65,
+      "tx": "impact",
+      "zoom": 1.12,
+      "drift": 1.16,
+      "origin": "15% 50%",
+      "voice": true,
+      "note": "punch-in on the blue-shirt kid in his guard: 'One, two' (drops src 45.1-45.65, a kid walking back across the line)"
+    },
+    {
+      "id": "s4",
+      "at": 11.2,
+      "src": "a_slow",
+      "ms": 0.6,
+      "tx": "cut",
+      "zoom": 1.16,
+      "drift": 1.3,
+      "origin": "15% 50%",
+      "voice": false,
+      "note": "slow-mo 1/4 straight out of s3b: the jab, the cross, back to his guard"
+    },
+    {
+      "id": "s5",
+      "at": 13.9,
+      "src": "a",
+      "ms": 56.0,
+      "tx": "whip",
+      "zoom": 1.0,
+      "drift": 1.06,
+      "origin": "35% 55%",
+      "voice": true,
+      "note": "'Let me see you do this', Don steps in and shows the roll, 'Roll, roll'"
+    },
+    {
+      "id": "s6",
+      "at": 16.55,
+      "src": "b",
+      "ms": 19.1,
+      "tx": "impact",
+      "zoom": 1.4,
+      "drift": 1.46,
+      "origin": "20% 52%",
+      "voice": true,
+      "note": "roll drill: Don sweeps his arm over the line, kids roll under, 'Roll, roll, very good'"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m-guard",
+      "in": 3.05,
+      "out": 5.1,
+      "kicker": "The move",
+      "name": "Hands up",
+      "works": "Guard the face"
+    },
+    {
+      "id": "m-feet",
+      "in": 5.2,
+      "out": 9.85,
+      "kicker": "The move",
+      "name": "Footwork",
+      "works": "Step in · step out"
+    },
+    {
+      "id": "m-onetwo",
+      "in": 9.95,
+      "out": 13.85,
+      "kicker": "The move",
+      "name": "The 1-2",
+      "works": "Jab · cross"
+    },
+    {
+      "id": "m-roll",
+      "in": 14.0,
+      "out": 20.5,
+      "kicker": "The move",
+      "name": "Roll under",
+      "works": "Defense · bend the knees"
+    }
+  ],
+  "chip": {
+    "in": 14.95,
+    "out": 16.5,
+    "name": "COACH DON",
+    "sub": "Teaching the roll"
+  },
+  "captions": [
+    {
+      "id": "c-fwd",
+      "end": 7.45,
+      "words": [
+        [
+          "ONE",
+          5.26
+        ],
+        [
+          "STEP",
+          5.74
+        ],
+        [
+          "FORWARD.",
+          6.14,
+          true
+        ]
+      ]
+    },
+    {
+      "id": "c-back",
+      "end": 9.85,
+      "words": [
+        [
+          "ONE",
+          7.76
+        ],
+        [
+          "STEP",
+          8.16
+        ],
+        [
+          "BACK.",
+          8.64,
+          true
+        ]
+      ]
+    },
+    {
+      "id": "c-12",
+      "end": 11.17,
+      "words": [
+        [
+          "ONE,",
+          10.09,
+          true
+        ],
+        [
+          "TWO.",
+          10.57,
+          true
+        ]
+      ]
+    },
+    {
+      "id": "c-roll",
+      "end": 16.5,
+      "words": [
+        [
+          "ROLL,",
+          15.42,
+          true
+        ],
+        [
+          "ROLL.",
+          15.98,
+          true
+        ]
+      ]
+    },
+    {
+      "id": "c-good",
+      "end": 20.65,
+      "words": [
+        [
+          "ROLL.",
+          19.61,
+          true
+        ],
+        [
+          "VERY",
+          20.17
+        ],
+        [
+          "GOOD.",
+          20.41,
+          true
+        ]
+      ]
+    }
+  ]
+}
