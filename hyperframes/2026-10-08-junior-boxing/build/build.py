@@ -154,7 +154,7 @@ doc = f"""<!DOCTYPE html>
       .cap .w {{ display: inline-block; padding: 0 9px; margin: 0 -2px; }}
 
       /* coach chip */
-      .chip {{ position: absolute; left: 64px; top: 1390px; display: flex; flex-direction: column; align-items: flex-start; }}
+      .chip {{ position: absolute; right: 64px; top: 1430px; display: flex; flex-direction: column; align-items: flex-end; }}
       .chip .nm {{ display: inline-block; background: var(--red); color: var(--bone); font-weight: 900; font-style: italic; font-size: 60px; line-height: 1.1; letter-spacing: 0.01em; padding: 8px 26px 12px; box-shadow: 8px 8px 0 var(--ink); }}
       .chip .sb {{ display: inline-block; margin-top: 12px; background: var(--ink); color: var(--bone); font-weight: 700; font-size: 30px; letter-spacing: 0.16em; padding: 9px 18px; text-transform: uppercase; }}
 
@@ -269,9 +269,9 @@ doc = f"""<!DOCTYPE html>
 
       // coach chip
       const CI = {CH['in']}, CO = {CH['out']};
-      tl.fromTo("#chip-nm", {{ x: -420, skewX: -12, opacity: 0 }}, {{ x: 0, skewX: 0, opacity: 1, duration: 0.3, ease: "power4.out" }}, CI);
-      tl.fromTo("#chip-sb", {{ x: -60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.26, ease: "power3.out" }}, CI + 0.17);
-      tl.to("#chip", {{ x: -1080, filter: "blur(18px)", duration: 0.2, ease: "power3.in" }}, CO - 0.22);
+      tl.fromTo("#chip-nm", {{ x: 420, skewX: 12, opacity: 0 }}, {{ x: 0, skewX: 0, opacity: 1, duration: 0.3, ease: "power4.out" }}, CI);
+      tl.fromTo("#chip-sb", {{ x: 60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.26, ease: "power3.out" }}, CI + 0.17);
+      tl.to("#chip", {{ x: 1080, filter: "blur(18px)", duration: 0.2, ease: "power3.in" }}, CO - 0.22);
 
       // whip out of the footage into the end tag
       tl.set("#w-main", {{ x: 0, filter: "blur(0px)" }}, 0);

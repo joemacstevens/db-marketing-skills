@@ -39,6 +39,8 @@ swinging arms over the line from far away).
 - THE MOVE cards (top): HANDS UP / Guard the face (3.05-5.1), FOOTWORK / Step in · step out (5.2-9.85),
   THE 1-2 / Jab · cross (9.95-13.85), ROLL UNDER / Defense · bend the knees (14.0-20.5).
 - Coach chip: COACH DON / Teaching the roll (14.95-16.5), only while Don is the only adult on screen.
+  v2: chip moved to the lower right (right 64px, top 1430, slides in from the right) so it no longer sits
+  under the centered ROLL, ROLL. caption (top 1250). Nothing else changed from v1.
 - End tag: logo, lockup, @DBELITEFITNESS.
 
 ## Captions (Don's words, word by word at Parakeet times)
@@ -69,7 +71,7 @@ DB youth drills reel. Sources are SDR bt709, no tonemap.
 
 ## Files
 
-- `renders/junior-boxing-v1.mp4` (1080x1920, 30 fps, 23.70s), `previews/junior-boxing-v1-phone.mp4` (540w)
+- `renders/junior-boxing-v2.mp4` (current, chip fix) and `renders/junior-boxing-v1.mp4` (1080x1920, 30 fps, 23.70s), phone previews in `previews/` (540w)
 - Edit `build/reel.json`, run `python3 build/build.py`, render, then master:
   `ffmpeg -i renders/junior-boxing-raw.mp4 -af "volume=3.9dB,alimiter=limit=0.89:level=disabled:attack=3:release=60" -c:v libx264 -preset slow -crf 18 -c:a aac -b:a 256k renders/junior-boxing-v1.mp4`
 - Proxies (gitignored) rebuild from `don-drops/2026-10-08/raw/`: img7884 `fps=30,scale=1080:1920`, img7885
