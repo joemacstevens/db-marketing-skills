@@ -6,7 +6,7 @@ Source: IMG_1868 (filmed and sent by Don, Wed 10/7 7:16 PM, 720p30 HLG, rotation
 class doing banded footwork: mini band at the ankles, boxing stance, single-file line down the turf,
 Coach P out front at the end.
 
-Audio (v3): no room audio. DB anthem stems, reel 0 = song 31.3: instrumental under everything (ducked
+Audio (v4): no room audio. Song stems from reel.json "music" (v4 = Coach P's Because of Boxing, v3 = DB anthem): instrumental under everything (ducked
 -12 dB under the house-voice VO), vocal stem in only after the VO, so the anthem's pre-chorus runs
 into "We are Different Breed" (song 48.96 = reel 17.66) on the end tag. One continuous VO take.
 Grade: "lite" correction (A2 turned the turf neon and skin orange in grade-compare).
@@ -64,7 +64,8 @@ VO_AT = VO["at"]
 VO_END = round(VO_AT + VO["speech_end"], 3)
 D = MU["duck"]
 inst_lane = [(0, 0), (0.06, 1), (VO_AT - 0.12, 1), (VO_AT + 0.05, D), (VO_END + 0.02, D), (VO_END + 0.25, 1), (TOTAL - 0.45, 1), (TOTAL, 0)]
-voc_lane = [(0, 0), (VO_END + 0.02, 0), (VO_END + 0.12, 1), (TOTAL - 0.45, 1), (TOTAL, 0)]
+VOC_IN = MU.get("voc_in", VO_END + 0.02)
+voc_lane = [(0, 0), (VOC_IN, 0), (VOC_IN + 0.08, 1), (TOTAL - 0.45, 1), (TOTAL, 0)]
 vo_dur = round(VO["speech_end"] + 0.35, 3)
 audio = [
     f'      <audio id="a-inst" src="{MU["inst"]}" data-start="0" data-duration="{TOTAL}" data-media-start="{SONG0}" data-track-index="10" data-volume="{MU["inst_volume"]}" '

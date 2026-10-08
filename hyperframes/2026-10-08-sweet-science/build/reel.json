@@ -1,30 +1,32 @@
 {
-  "_doc": "v3. Coach P's Sweet Science class (MindBody The Sweet Science, Wed 7-8 PM, Pablo Gary). IMG_1868 filmed and sent by Don, Wed 10/7 7:16 PM. Music = DB anthem stems (ElevenLabs two-stem split of different-breed-song.mp3), reel 0 = song 31.3, so the anthem's own pre-chorus leads into the 'We are Different Breed' hook (song 48.96 -> reel 17.66) on the end tag. Instrumental stem under everything (ducked -12 dB under the VO), vocal stem only after the VO ends. Cuts on the anthem beat grid (aubio beat). Each shot plays source 'ms' for (next.at - at). tx = transition INTO the shot.",
+  "_doc": "v4 (music = Coach P's Because of Boxing, Pablo main version, the song playing in the room; v3 used the DB anthem, snapshot in reel-v3.json). v3 notes follow. Coach P's Sweet Science class (MindBody The Sweet Science, Wed 7-8 PM, Pablo Gary). IMG_1868 filmed and sent by Don, Wed 10/7 7:16 PM. Music = DB anthem stems (ElevenLabs two-stem split of different-breed-song.mp3), reel 0 = song 31.3, so the anthem's own pre-chorus leads into the 'We are Different Breed' hook (song 48.96 -> reel 17.66) on the end tag. Instrumental stem under everything (ducked -12 dB under the VO), vocal stem only after the VO ends. Cuts on the anthem beat grid (aubio beat). Each shot plays source 'ms' for (next.at - at). tx = transition INTO the shot.",
   "source": "assets/footage/img1868.mp4",
   "music": {
-    "song_at_reel0": 31.3,
-    "inst": "assets/audio/db-stems/instrumental.mp3",
-    "voc": "assets/audio/db-stems/vocals.mp3",
+    "_note": "because-of-boxing-main.mp3 (pablos/), ElevenLabs two-stem split from pablos/stems/main. Room audio in IMG_1868 = this version at song = src + 52.2. Reel 0 = song 34.72 so the downbeat at song 52.34 is the end tag and 'I'm a different breed' (52.40) lands as the logo stamps.",
+    "song_at_reel0": 34.72,
+    "inst": "assets/audio/bob-stems/instrumental.mp3",
+    "voc": "assets/audio/bob-stems/vocals.mp3",
+    "voc_in": 11.2,
     "inst_volume": 0.9,
     "voc_volume": 0.9,
     "duck": 0.25
   },
   "vo": {"file": "assets/audio/vo-take4.mp3", "at": 1.55, "speech_end": 9.34, "volume": 1.0,
          "script": "This is the Sweet Science with Coach P. We're not just hitting bags in here, we build the fundamentals, starting with your feet. The band keeps you in your stance, so every punch has a base under it."},
-  "end": {"at": 17.62, "length": 3.2},
+  "end": {"at": 17.621, "length": 3.2},
 
   "title": {"in": 1.5, "out": 2.88, "kicker": "With Coach P", "line1": "The sweet", "line2": "science"},
-  "chip": {"in": 16.15, "out": 17.62, "name": "Coach P", "sub": "Showing the stance"},
+  "chip": {"in": 16.2, "out": 17.621, "name": "Coach P", "sub": "Showing the stance"},
 
   "shots": [
     {"id": "s0", "at": 0.0,    "ms": 18.00, "tx": "cut",    "zoom": 1.0,  "drift": 1.05, "note": "opener: the whole line from the front, depth to the back wall"},
     {"id": "s1", "at": 1.5,    "ms": 7.00,  "tx": "cut",    "zoom": 1.0,  "drift": 1.06, "note": "wide line from behind, everyone in stance (title over the first 1.5s)"},
-    {"id": "s2", "at": 6.871,  "ms": 2.95,  "tx": "whip",   "zoom": 1.22, "origin": "50% 88%", "drift": 1.28, "note": "close on the band at the ankles, lands as the beat comes back"},
-    {"id": "s3", "at": 8.547,  "ms": 12.50, "tx": "impact", "zoom": 1.0,  "drift": 1.06, "note": "alongside the middle of the line"},
-    {"id": "s4", "at": 10.943, "ms": 15.75, "tx": "whip",   "zoom": 1.08, "origin": "50% 80%", "drift": 1.12, "note": "band close from behind, then the line"},
-    {"id": "s5", "at": 12.626, "ms": 19.50, "tx": "impact", "zoom": 1.0,  "drift": 1.05, "note": "front of the line coming toward camera"},
-    {"id": "s6", "at": 14.18,  "ms": 23.25, "tx": "cut",    "zoom": 1.0,  "drift": 1.07, "note": "front of the line close, stance, hands up"},
-    {"id": "s7", "at": 15.862, "ms": 27.30, "tx": "whip",   "zoom": 1.0,  "drift": 1.05, "note": "Coach P out front showing the stance"}
+    {"id": "s2", "at": 6.877,  "ms": 2.95,  "tx": "whip",   "zoom": 1.22, "origin": "50% 88%", "drift": 1.28, "note": "close on the band at the ankles, lands as the beat comes back"},
+    {"id": "s3", "at": 8.396,  "ms": 12.50, "tx": "impact", "zoom": 1.0,  "drift": 1.06, "note": "alongside the middle of the line"},
+    {"id": "s4", "at": 10.901, "ms": 15.75, "tx": "whip",   "zoom": 1.08, "origin": "50% 80%", "drift": 1.12, "note": "band close from behind, then the line"},
+    {"id": "s5", "at": 12.593, "ms": 19.50, "tx": "impact", "zoom": 1.0,  "drift": 1.05, "note": "front of the line coming toward camera"},
+    {"id": "s6", "at": 14.226, "ms": 23.25, "tx": "cut",    "zoom": 1.0,  "drift": 1.07, "note": "front of the line close, stance, hands up"},
+    {"id": "s7", "at": 15.915, "ms": 27.30, "tx": "whip",   "zoom": 1.0,  "drift": 1.05, "note": "Coach P out front showing the stance"}
   ],
 
   "move": {"in": 3.2, "out": 6.82, "kicker": "The move", "name": ["Banded", "footwork"], "works": "Hips · glutes · balance"},

@@ -23,23 +23,25 @@ how our Sweet Science class helps with the fundamentals. We're not just hitting 
 
 Versions: v1 `renders/sweet-science-v1.mp4` (room audio, no labels), v2 `renders/blue-collar-footwork-v2.mp4`
 (wrongly labeled Blue Collar, superseded; snapshot in `build/build-v2.py` + `build/reel-v2.json`).
-**v3 is current:** `renders/sweet-science-v3.mp4`, `previews/sweet-science-v3-phone.mp4`.
+v3 `renders/sweet-science-v3.mp4` (DB anthem bed, snapshot `build/reel-v3.json`).
+**v4 is current:** `renders/sweet-science-v4.mp4`, `previews/sweet-science-v4-phone.mp4`. Same as v3 except the music is
+Coach P's own Because of Boxing song, the one playing in the room (Joey 10/8), and the cuts are re-snapped to its beat.
 
-## Cut (v3, reel time, source time)
+## Cut (v4, reel time, source time)
 
 | Reel | Source | On screen |
 |---|---|---|
 | 0.00-1.50 | 18.00-19.50 | opener, no text: the whole line from the front |
-| 1.50-6.87 | 7.00-12.37 | wide line from behind. Title 1.5-3.0, THE MOVE card 3.2-6.8, captions from 3.87 |
-| 6.87-8.55 | 2.95-4.63 | whip in, punch-in on the band at the ankles, lands as the beat comes back |
-| 8.55-10.94 | 12.50-14.90 | red-flash cut, alongside the middle of the line |
-| 10.94-12.63 | 15.75-17.43 | whip in, band close from behind, then the line |
-| 12.63-14.18 | 19.50-21.05 | red-flash cut, front of the line coming toward camera |
-| 14.18-15.86 | 23.25-24.93 | front of the line close, stance, hands up |
-| 15.86-17.62 | 27.30-29.06 | whip in, Coach P out front. Chip 16.15-17.62 |
+| 1.50-6.88 | 7.00-12.38 | wide line from behind. Title 1.5-3.0, THE MOVE card 3.2-6.8, captions from 3.87 |
+| 6.88-8.40 | 2.95-4.47 | whip in, punch-in on the band at the ankles, lands as the beat comes back |
+| 8.40-10.90 | 12.50-15.00 | red-flash cut, alongside the middle of the line |
+| 10.90-12.59 | 15.75-17.44 | whip in, band close from behind, then the line |
+| 12.59-14.23 | 19.50-21.13 | red-flash cut, front of the line coming toward camera |
+| 14.23-15.92 | 23.25-24.94 | front of the line close, stance, hands up |
+| 15.92-17.62 | 27.30-29.01 | whip in, Coach P out front. Chip 16.20-17.62 |
 | 17.62-20.82 | | end tag: logo, "what we do is absolutely different" lockup, @DBELITEFITNESS |
 
-Cuts sit on the anthem's beat grid (aubio beat on different-breed-song.mp3).
+Cuts sit on the song's beat grid (aubio beat on because-of-boxing-main.mp3, about 144 BPM).
 
 ## On-screen text
 
@@ -48,7 +50,7 @@ Cuts sit on the anthem's beat grid (aubio beat on different-breed-song.mp3).
 - VO captions, word-timed, active word on a red block (3.87-11.3): WE'RE NOT JUST HITTING BAGS IN HERE. / WE BUILD
   THE FUNDAMENTALS, / STARTING WITH YOUR FEET. / THE BAND KEEPS YOU IN YOUR STANCE, / SO EVERY PUNCH HAS A BASE UNDER IT.
   Nothing captioned under the title (it already says "the sweet science with Coach P").
-- Coach chip: COACH P / Showing the stance (16.15-17.62), lower left, clear of his body
+- Coach chip: COACH P / Showing the stance (16.20-17.62), lower left, clear of his body
 - End tag: logo, lockup, @DBELITEFITNESS
 - The v1/v2 how-to line was dropped (the VO says it now).
 
@@ -66,20 +68,29 @@ whisper medium.en agrees word for word, and whisper on the final mix reads every
 > This is the Sweet Science with Coach P. We're not just hitting bags in here, we build the fundamentals,
 > starting with your feet. The band keeps you in your stance, so every punch has a base under it.
 
-## Music
+## Music (v4)
 
-No room audio (the room song was unidentified, possible mute risk). Bed = the DB anthem itself, split into
-instrumental + vocal stems with `scripts/separate-music-stems.mjs` (`assets/audio/db-stems/`). Reel 0 = song 31.3.
+Coach P's "Because of Boxing", Pablo main version (`because-of-boxing/music/pablos/because-of-boxing-main.mp3`).
+That's the song on the room speakers in IMG_1868. Onset cross-correlation of the room track gave song = src + 52.2
+on all 9 four-second windows (z 4.7-7.8); the mens-song, pablos-men and pablos-women versions gave scattered
+offsets. Stems: the existing ElevenLabs two-stem split `pablos/stems/main/` (25 ms behind the mix, same
+performance), copied to `assets/audio/bob-stems/` (gitignored). No room audio in the mix.
 
-- Instrumental stem under everything at 0.9, ducked to 0.25 (-12 dB) under the VO (1.55-10.91). The song's own
-  stop-time (song 37.0-38.1, reel 5.7-6.8) leaves "we build the fundamentals" in the clear, and the beat comes
-  back on the band close-up cut.
-- Vocal stem muted under the VO, then in from 10.91, so the anthem's pre-chorus plays over the last shots:
-  "Hands up, chin down, here we go" (reel 11.2) and "Feel the whole room start to grow" (14.8). No lyrics are
-  printed on screen.
-- "We are Different Breed" (song 48.96) lands at reel 17.66, as the end-tag logo stamps. It's the same song
-  running straight through, so there's no crossfade at the end tag.
-- Master: render -15.1 LUFS, +1.1 dB plus alimiter (limit 0.89). Final -14.0 LUFS integrated, -1.0 dBFS peak.
+- Reel 0 = song 34.72. The downbeat at song 52.34 = reel 17.62 = end tag.
+- Instrumental stem under everything at 0.9, ducked to 0.25 (-12 dB) under the VO (1.55-10.91). It has no
+  drop-outs in this range.
+- Vocal stem muted under the VO (that keeps the "Elite Sports Academy" line and the chorus out). In at 11.2, after
+  "transformation" ends, so the last shots carry "Full speed, full speed... you and me, we are not the same,
+  we are not the same".
+- End-tag hook: "I'm a different breed" (song 52.40) lands at reel 17.685, just after the cut to the end tag
+  (17.62), as the logo stamps (17.67-18.07). "I got a different breed, forged from fire" follows under the tag.
+  Verified by correlating the vocal stem against the final mix.
+- No lyrics printed on screen.
+- Master: render -15.4 LUFS, +1.4 dB plus alimiter (limit 0.89). Final -14.0 LUFS integrated, -1.0 dBFS peak.
+- Listen check: whisper medium.en and small.en on the final mix read the full VO word for word over the bed, then
+  the song lyrics after it.
+
+v3 used the DB anthem stems the same way (reel 0 = song 31.3, "We are Different Breed" on the tag).
 
 ## Grade
 
@@ -92,7 +103,8 @@ zscale hable tonemap proxy. A2 turned the turf neon and skin orange in grade-com
   to -14 LUFS.
 - Gitignored, rebuild from `don-drops/2026-10-08/raw/IMG_1868.mov`: `assets/footage/img1868.mp4` (zscale hable,
   `-g 15 -keyint_min 15`), `assets/audio/room-1868.m4a` (v1/v2 only).
-- `assets/audio/db-stems/*.mp3` (~7 MB) are not gitignored.
+- `assets/audio/db-stems/` (v3) and `assets/audio/bob-stems/` (v4) are gitignored. Rebuild bob-stems by copying
+  `because-of-boxing/music/pablos/stems/main/{instrumental,vocals}.mp3` and `pablos/because-of-boxing-main.mp3`.
 
 ## Proposed caption
 

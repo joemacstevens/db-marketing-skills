@@ -6,3 +6,4 @@ assets/transcripts/*.wav
 assets/transcripts/raw.pcm
 .hyperframes/
 assets/audio/db-stems/
+assets/audio/bob-stems/
