@@ -2,7 +2,7 @@
 workflow: general-video
 flow: companion
 storyboard: no
-message: "The sweet science: an evening class doing banded footwork down the turf"
+message: "Blue Collar fight camp, the sweet science: Coach P's fighters doing banded footwork down the turf"
 destination: instagram-reels, facebook, threads, tiktok
 aspect: 1080x1920
 language: en
@@ -12,24 +12,28 @@ angle: footage-remix
 
 ## Intent
 
-Don's IMG_1868 (Wed 10/7 7:16 PM, 29.1s, 1280x720 HLG, rotation -90 so 720x1280 portrait), captioned by Don
-"The sweet science". A single-file line of members (mostly men) with a mini band around the ankles, stepping
-down the turf in boxing stance, coach out front showing the stance at the end. One continuous phone take, cut
+IMG_1868 (Wed 10/7 7:16 PM, 29.1s, 1280x720 HLG, rotation -90 so 720x1280 portrait). Don filmed and sent it
+with the caption "The sweet science". It's a Blue Collar Boxing fight-camp session (camp began Oct 4) run by
+Coach P (Pablo). A single-file line of fighters (mostly men) with a mini band around the ankles, stepping down
+the turf in boxing stance, Coach P out front showing the stance at the end. One continuous phone take, cut
 into 8 shots on room-song beats, no source moment used twice. Not the Saturday Sweet Science class (Coach
-Danny), so no class, day or coach is named on screen.
+Danny); "the sweet science" here is boxing slang.
+
+v2 (Joey 10/8): Blue Collar kicker on the title and a COACH P chip on the last shot. v1 (no camp/coach
+labels) is kept as renders/sweet-science-v1.mp4.
 
 ## Cut (reel time, source time)
 
 | Reel | Source | On screen |
 |---|---|---|
 | 0.00-1.50 | 18.00-19.50 | opener, no text: the whole line from the front, depth to the back wall |
-| 1.50-6.97 | 7.00-12.47 | wide line from behind, everyone in stance. Title 1.5-3.0, THE MOVE card 3.2-6.8 |
+| 1.50-6.97 | 7.00-12.47 | wide line from behind, everyone in stance. Title 1.5-3.0 (BLUE COLLAR FIGHT CAMP / THE SWEET / SCIENCE), THE MOVE card 3.2-6.8 |
 | 6.97-8.65 | 2.95-4.63 | whip in, punch-in close on the band at the ankles (grey tee, from behind) |
 | 8.65-11.13 | 12.50-14.99 | impact cut, alongside the middle of the line (orange track pants). How-line 8.8-11.0 |
 | 11.13-12.85 | 15.75-17.47 | whip in, band close from behind, camera swings back to the line |
 | 12.85-14.54 | 19.50-21.19 | impact cut, front of the line coming toward camera |
 | 14.54-16.56 | 23.25-25.27 | front of the line close, stance, hands up |
-| 16.56-18.23 | 27.35-29.03 | whip in, coach out front showing the stance |
+| 16.56-18.23 | 27.35-29.03 | whip in, Coach P out front showing the stance. Chip COACH P / Showing the stance 16.85-18.23 |
 | 18.23-21.33 | | end tag: logo, "what we do is absolutely different" lockup, @DBELITEFITNESS, DB hook |
 
 Dropped: src 0-2.9 (lone member by a bench, then a pan), 4.6-7.0 (pan), 21.2-23.2 (blurred pass of an
@@ -37,12 +41,13 @@ orange/white hoodie at the lens), 25.3-27.3 (empty turf).
 
 ## On-screen text
 
-- Title (Don's words): THE SWEET / SCIENCE (red slab)
+- Title: kicker "BLUE COLLAR FIGHT CAMP", then THE SWEET / SCIENCE (red slab, Don's phrase)
 - THE MOVE: BANDED FOOTWORK, works line "Hips · glutes · balance"
 - How-line: "Mini band at the ankles, / stay in your stance / and keep it tight"
+- Coach chip (v2): COACH P (red slab), "Showing the stance" (ink sub-line), lower left, clear of his body
 - End tag: logo, lockup, @DBELITEFITNESS
 
-All text sits in the top ~470px, above the heads in every shot (checked on render frames, not snapshots).
+All title/card text sits in the top ~470px, above the heads in every shot (checked on render frames, not snapshots).
 
 ## Audio
 
@@ -64,21 +69,25 @@ zscale hable tonemap proxy. A2 turned the turf neon and skin orange in grade-com
 
 ## Files
 
-- `renders/sweet-science-v1.mp4` (1080x1920, 30 fps, 21.33s), `previews/sweet-science-v1-phone.mp4` (540w)
+- v2: `renders/blue-collar-footwork-v2.mp4` (1080x1920, 30 fps, 21.33s, -14.0 LUFS, -1.0 dBFS), `previews/blue-collar-footwork-v2-phone.mp4` (540w)
+- v1: `renders/sweet-science-v1.mp4`, `previews/sweet-science-v1-phone.mp4`
 - Edit timings in `build/reel.json`, then `python3 build/build.py` and re-render. The proxy
   (`assets/footage/img1868.mp4`) and room audio (`assets/audio/room-1868.m4a`) are gitignored. Rebuild them
   from `don-drops/2026-10-08/raw/IMG_1868.mov` with the zscale hable chain and `-g 15 -keyint_min 15`.
 
 ## Proposed caption
 
-DB members working on their footwork like they always do #differentbreed #boxing #footwork #teaneck
+Footwork night at Blue Collar fight camp, Coach P had the whole line working with the bands on #differentbreed #bluecollarboxing #boxing #fightcamp #teaneck
 
 ## Flags
 
 - Room song identity (above). If it's commercial, Meta/TikTok may mute the clip audio.
-- Coach out front (16.6-18.2, black beanie, camo pants) is not identified and not named.
-- Faces are visible throughout (members in a class line, Don filming). Nobody falls or breaks stance in the
+- Coach out front (16.6-18.2, black beanie, black long sleeve, camo pants) is chipped as Coach P. Checked against
+  Blue Collar Day 1 IMG_7830 (red DB tee, white beanie): same dark skin, short beard along the jaw, lean build.
+  Only a profile at 720p, so it is consistent but not a face-level match. He is the only adult out front
+  facing the line, and everyone else in frame is in the line or far in the background.
+- Faces are visible throughout (fighters in the line, Don filming). Nobody falls or breaks stance in the
   used ranges.
-- Drill name is by eye: band at the ankles, boxing stance, stepping down the line. If Don calls it something
+- Drill name is by eye: band at the ankles, boxing stance, stepping down the line. If Coach P calls it something
   else, change `move.name` in reel.json.
 - No CTA card. Built Different had "Book a class · link in bio". Easy to add if Joey wants it.

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Generate index.html for the 2026-10-08 "Sweet Science" reel from build/reel.json.
 
-Source: Don's IMG_1868 (Wed 10/7 7:16 PM, 720p30 HLG, rotation -90), tonemapped (zscale hable)
-SDR proxy at assets/footage/img1868.mp4 (720x1280, -g 15). Evening class doing banded footwork:
-mini band at the ankles, boxing stance, single-file line down the turf, coach out front at the end.
+Source: IMG_1868 (filmed and sent by Don, Wed 10/7 7:16 PM, 720p30 HLG, rotation -90), tonemapped
+(zscale hable) SDR proxy at assets/footage/img1868.mp4 (720x1280, -g 15). Coach P's Blue Collar fight
+camp doing banded footwork: mini band at the ankles, boxing stance, single-file line down the turf,
+Coach P out front at the end.
 
 Audio: the room track (assets/audio/room-1868.m4a, src 0 at reel 0) runs unbroken under all
 footage. It fades on the end-tag whip while the DB song's "We are Different Breed" hook (48.8)
@@ -52,6 +53,7 @@ T = R["title"]
 M = R["move"]
 H = R["how"]
 E = R["end"]
+C = R["chip"]
 
 room_d = round(END_AT + 0.3, 3)
 HOOK_AT = round(END_AT - 0.15, 3)  # "We" (song 48.96) lands right as the logo stamps
@@ -94,6 +96,7 @@ doc = f"""<!DOCTYPE html>
       /* title, Don's words */
       .title {{ position: absolute; left: 64px; top: 120px; width: 940px; transform: rotate(-4deg); transform-origin: left center; }}
       .big {{ display: block; font-weight: 900; font-style: italic; text-transform: uppercase; letter-spacing: -0.02em; font-size: 108px; line-height: 1.0; white-space: nowrap; color: var(--bone); text-shadow: 9px 9px 0 var(--ink); }}
+      .tk {{ display: inline-block; background: var(--ink); color: var(--bone); font-weight: 700; font-size: 34px; letter-spacing: 0.16em; padding: 10px 20px; text-transform: uppercase; margin-bottom: 14px; border-left: 10px solid var(--red); }}
       .hl {{ display: inline-block; background: var(--red); margin-top: 16px; padding: 6px 30px 14px; box-shadow: 12px 12px 0 var(--ink); transform-origin: left center; }}
       .hl .ln {{ display: block; font-weight: 900; font-style: italic; text-transform: uppercase; font-size: 124px; line-height: 1.04; letter-spacing: -0.02em; color: var(--bone); white-space: nowrap; }}
 
@@ -108,6 +111,11 @@ doc = f"""<!DOCTYPE html>
       /* how-line */
       .how {{ position: absolute; left: 64px; top: 110px; width: 960px; }}
       .how .ln {{ display: table; font-weight: 700; font-size: 44px; line-height: 1.0; letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone); background: rgba(10, 10, 10, 0.78); padding: 12px 20px 14px; margin-bottom: 8px; border-left: 10px solid var(--red); }}
+
+      /* coach chip (house style, junior-boxing COACH DON chip) */
+      .chip {{ position: absolute; left: 64px; top: 1390px; display: flex; flex-direction: column; align-items: flex-start; }}
+      .chip .nm {{ display: inline-block; background: var(--red); color: var(--bone); font-weight: 900; font-style: italic; font-size: 60px; line-height: 1.1; letter-spacing: 0.01em; padding: 8px 26px 12px; box-shadow: 8px 8px 0 var(--ink); text-transform: uppercase; }}
+      .chip .sb {{ display: inline-block; margin-top: 12px; background: var(--ink); color: var(--bone); font-weight: 700; font-size: 30px; letter-spacing: 0.16em; padding: 9px 18px; text-transform: uppercase; }}
 
       .card {{ position: absolute; inset: 0; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }}
       .end img {{ display: block; width: 560px; height: 560px; object-fit: contain; }}
@@ -127,6 +135,7 @@ doc = f"""<!DOCTYPE html>
       <div id="t-title" class="clip layer" data-start="{T['in']}" data-duration="{round(T['out'] + 0.16 - T['in'], 3)}" data-track-index="2">
         <div class="shade" id="title-shade" style="opacity: 0"></div>
         <div class="title" id="title-box" data-layout-allow-overflow="">
+          <span class="tk" id="title-k" data-layout-allow-overlap="">{esc(T['kicker'])}</span>
           <span class="big" id="title-1" data-layout-allow-overlap="">{esc(T['line1'])}</span>
           <span class="hl" id="title-2" data-layout-allow-overlap=""><span class="ln" data-layout-allow-overlap="">{esc(T['line2'])}</span></span>
         </div>
@@ -143,6 +152,9 @@ doc = f"""<!DOCTYPE html>
         <div class="scrim" id="t-how-scrim"></div>
         <div class="how" id="how-box">{''.join(f'<span class="ln" id="how-{i}">{esc(x)}</span>' for i, x in enumerate(H['lines']))}</div>
       </div>
+
+      <!-- coach chip -->
+      <div id="t-chip" class="clip layer" data-start="{C['in']}" data-duration="{round(C['out'] - C['in'], 3)}" data-track-index="5"><div class="chip" id="chip"><span class="nm" id="chip-nm">{esc(C['name'])}</span><span class="sb" id="chip-sb">{esc(C['sub'])}</span></div></div>
 
       <!-- end tag -->
       <div id="t-end" class="clip layer" data-start="{END_AT}" data-duration="{round(TOTAL - END_AT, 3)}" data-track-index="6">
@@ -184,6 +196,7 @@ doc = f"""<!DOCTYPE html>
       // title slam
       const TI = {T['in']}, TO = {T['out']};
       tl.fromTo("#title-shade", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.16 }}, TI);
+      tl.fromTo("#title-k", {{ x: -60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.2, ease: "power3.out" }}, TI);
       tl.fromTo("#title-1", {{ scale: 1.8, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.2, ease: "power4.out" }}, TI + 0.04);
       tl.fromTo("#title-2", {{ scaleX: 0, opacity: 0 }}, {{ scaleX: 1, opacity: 1, duration: 0.24, ease: "expo.out" }}, TI + 0.26);
       tl.fromTo("#title-2 .ln", {{ scale: 1.5, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.22, ease: "back.out(2.2)" }}, TI + 0.32);
@@ -209,9 +222,15 @@ doc = f"""<!DOCTYPE html>
       tl.to("#how-box", {{ y: -80, opacity: 0, duration: 0.22, ease: "power3.in" }}, HO - 0.24);
       tl.to("#t-how-scrim", {{ opacity: 0, duration: 0.24, ease: "none" }}, HO - 0.24);
 
+      // coach chip
+      const CI = {C['in']}, CO = {C['out']};
+      tl.fromTo("#chip-nm", {{ x: -420, skewX: -12, opacity: 0 }}, {{ x: 0, skewX: 0, opacity: 1, duration: 0.3, ease: "power4.out" }}, CI);
+      tl.fromTo("#chip-sb", {{ x: -60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.26, ease: "power3.out" }}, CI + 0.17);
+
       // whip out of the footage into the end tag
       tl.set("#w-main", {{ x: 0, filter: "blur(0px)" }}, 0);
       tl.fromTo("#w-main", {{ x: 0, filter: "blur(0px)" }}, {{ x: -1080, filter: "blur(26px)", duration: 0.18, ease: "power3.in", immediateRender: false }}, END - 0.18);
+      tl.fromTo("#chip", {{ x: 0, opacity: 1 }}, {{ x: -1080, opacity: 1, duration: 0.18, ease: "power3.in", immediateRender: false }}, END - 0.18);
 
       // end tag: logo stamps, lockup and handle rise
       tl.fromTo("#end-logo", {{ scale: 1.5, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }}, END + 0.05);

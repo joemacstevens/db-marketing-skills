@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
-"""Generate index.html for the 2026-10-08 "Morning Crew" ep. 3 reel.
+"""Generate index.html for the Blue Collar 2026 Day One finisher reel (v2).
 
-Source: Don's IMG_1820 (Tue 10/6 7:07 AM, 720p30 HLG, portrait), tonemapped (hable)
+v1 was cut as "Morning Crew ep. 3"; Joey confirmed 10/8 that IMG_1820 is Blue Collar fight
+camp Day 1 (the finisher, five minutes after the 6:02-7:02 AM Day 1 clips) and the coach
+counting is Coach P (Pablo: red DB tee, white beanie, blue shorts), not Don.
+
+Source: IMG_1820 (Tue 10/6 7:07 AM, 720p30 HLG, portrait), tonemapped (hable)
 proxy at assets/footage/img1820.mp4. Early class on the turf, a row of members on mats
-with dumbbells. Three rounds on Don's clock:
+with dumbbells. Three rounds on Coach P's clock:
   src 0.0-5.4   dumbbell toe touch (legs straight up, reach the bell to the toes), count "...seven, eight, nine, ten"
   src 8.5-21.6  dumbbell floor press ("Ready, and work time, work, one, two...")
   src 30.3-43.7 dumbbell V-ups ("...work, one ... nine, and time")
 
 Natural sync everywhere: every audio clip plays the same source range as its picture,
-so Don's count and the room music stay with the footage (march-cut style, no bed under
+so Coach P's count and the room music stay with the footage (march-cut style, no bed under
 the room audio). The anthem hook only lands on the end tag.
 
 Words (WHAT): whisper small.en + medium.en on 8 isolated windows, Parakeet on the full
 clip. "Ready, and work time, work, one" agreed on every engine. The V-up coaching line
 ("don't let your feet touch the ...") never settled on its last word, so nothing of
-Don's speech is burned in. Text on screen = title + three THE MOVE labels only.
+Coach P's speech is burned in. Text on screen = title, three THE MOVE labels, COACH P chip.
 Times (WHEN): Parakeet word starts cross-checked against the RMS envelope; segment
 cuts sit in gaps between counts (src 5.5, 15.1, 32.4).
 """
@@ -52,11 +56,15 @@ MOVES = [
 ]
 
 
+# COACH P chip: reel 17.0-20.4 = src 37.3-40.7 ("five, (feet) to the ground, six, don't let your feet touch...")
+CHIP_IN, CHIP_OUT = 17.0, 20.4
+
+
 def lane(points):
     return html.escape(json.dumps({"version": 1, "lanes": [{"target": "volume", "points": [{"t": round(t, 3), "v": v} for t, v in points]}]}), quote=True)
 
 
-# V-ups ran ~3 dB under the first two rounds (Don farther from the phone)
+# V-ups ran ~3 dB under the first two rounds (Coach P farther from the phone)
 SEG_VOL = {"toe": 1.0, "press": 1.0, "vups": 1.41}
 
 videos, audio = [], []
@@ -121,11 +129,11 @@ doc = f"""<!DOCTYPE html>
       .shade {{ position: absolute; inset: 0; background: rgba(10, 10, 10, 0.4); }}
 
       /* title */
-      .title {{ position: absolute; left: 70px; top: 600px; width: 940px; transform: rotate(-4deg); transform-origin: left center; }}
-      .title .kick {{ display: inline-block; background: var(--ink); color: var(--bone); font-weight: 700; font-size: 34px; letter-spacing: 0.18em; padding: 10px 22px; text-transform: uppercase; }}
-      .big {{ display: block; font-weight: 900; font-style: italic; text-transform: uppercase; letter-spacing: -0.02em; font-size: 160px; line-height: 0.95; white-space: nowrap; color: var(--bone); text-shadow: 12px 12px 0 var(--ink); margin-top: 18px; }}
-      .hl {{ display: inline-block; background: var(--red); margin-top: 22px; padding: 10px 34px 22px; box-shadow: 12px 12px 0 var(--ink); transform-origin: left center; }}
-      .hl .ln {{ display: block; font-weight: 900; font-style: italic; text-transform: uppercase; font-size: 160px; line-height: 1.0; letter-spacing: -0.02em; white-space: nowrap; color: var(--bone); }}
+      .title {{ position: absolute; left: 64px; top: 392px; width: 960px; transform: rotate(-3deg); transform-origin: left center; }}
+      .title .kick {{ display: inline-block; background: var(--ink); color: var(--bone); font-weight: 700; font-size: 30px; letter-spacing: 0.18em; padding: 8px 20px; text-transform: uppercase; }}
+      .big {{ display: block; font-weight: 900; font-style: italic; text-transform: uppercase; letter-spacing: -0.02em; font-size: 104px; line-height: 1.0; white-space: nowrap; color: var(--bone); text-shadow: 9px 9px 0 var(--ink); margin-top: 8px; }}
+      .hl {{ display: inline-block; background: var(--red); margin-top: 8px; padding: 6px 26px 12px; box-shadow: 9px 9px 0 var(--ink); transform-origin: left center; }}
+      .hl .ln {{ display: block; font-weight: 900; font-style: italic; text-transform: uppercase; font-size: 84px; line-height: 1.05; letter-spacing: -0.01em; white-space: nowrap; color: var(--bone); }}
 
       /* THE MOVE labels (top third, over the gym, clear of the mats) */
       .scrim {{ position: absolute; left: 0; right: 0; top: 0; height: 820px; background: linear-gradient(to bottom, rgba(10,10,10,0.62) 0%, rgba(10,10,10,0.45) 55%, rgba(10,10,10,0) 100%); }}
@@ -135,6 +143,10 @@ doc = f"""<!DOCTYPE html>
       .move .n .ln {{ display: block; line-height: 1.02; white-space: nowrap; }}
       .move .rule {{ display: block; width: 370px; height: 8px; background: var(--red); margin: 20px 0 16px; transform-origin: left center; }}
       .move .wk {{ display: inline-block; font-weight: 700; font-size: 36px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone); background: rgba(10, 10, 10, 0.74); padding: 9px 18px; }}
+
+      /* COACH P chip: right of him at the top of frame while his count is the main sound */
+      .chip {{ position: absolute; left: 330px; top: 250px; }}
+      .chip .nm {{ display: inline-block; background: var(--red); color: var(--bone); font-weight: 900; font-style: italic; text-transform: uppercase; font-size: 64px; line-height: 1.1; padding: 10px 28px 14px; box-shadow: 8px 8px 0 var(--ink); transform-origin: left center; white-space: nowrap; }}
 
       .card {{ position: absolute; inset: 0; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }}
       .end img {{ display: block; width: 560px; height: 560px; object-fit: contain; }}
@@ -154,14 +166,19 @@ doc = f"""<!DOCTYPE html>
       <div id="t-title" class="clip layer" data-start="{T_IN}" data-duration="{round(T_OUT - T_IN, 2)}" data-track-index="2">
         <div class="shade" id="title-shade" style="opacity: 0"></div>
         <div class="title" id="title-box" data-layout-allow-overflow="">
-          <span class="kick" id="title-k">It's just work</span>
-          <span class="big" id="title-1" data-layout-allow-overlap="">MORNING</span>
-          <span class="hl" id="title-2" data-layout-allow-overlap=""><span class="ln" data-layout-allow-overlap="">CREW</span></span>
+          <span class="kick" id="title-k">Blue Collar 2026</span>
+          <span class="big" id="title-1" data-layout-allow-overlap="">DAY ONE</span>
+          <span class="hl" id="title-2" data-layout-allow-overlap=""><span class="ln" data-layout-allow-overlap="">FINISHER</span></span>
         </div>
       </div>
 
       <!-- THE MOVE labels -->
 {chr(10).join(moves_html)}
+
+      <!-- COACH P chip (he's on screen top-left, counting the V-ups) -->
+      <div id="t-coach" class="clip layer" data-start="{CHIP_IN}" data-duration="{round(CHIP_OUT - CHIP_IN, 2)}" data-track-index="5">
+        <div class="chip" id="chip-box"><span class="nm" id="chip-nm">Coach P</span></div>
+      </div>
 
       <!-- end tag -->
       <div id="t-end" class="clip layer" data-start="{END_AT}" data-duration="{round(TOTAL - END_AT, 2)}" data-track-index="6">
@@ -214,6 +231,10 @@ doc = f"""<!DOCTYPE html>
         tl.fromTo("#" + id + "-box", {{ y: 0, opacity: 1 }}, {{ y: -80, opacity: 0, duration: 0.22, ease: "power3.in", immediateRender: false }}, at + dur - 0.24);
         tl.fromTo("#" + id + "-scrim", {{ opacity: 1 }}, {{ opacity: 0, duration: 0.24, ease: "none", immediateRender: false }}, at + dur - 0.24);
       }});
+
+      // COACH P chip
+      tl.fromTo("#chip-nm", {{ scaleX: 0, opacity: 0 }}, {{ scaleX: 1, opacity: 1, duration: 0.3, ease: "expo.out" }}, {CHIP_IN} + 0.02);
+      tl.fromTo("#chip-box", {{ x: 0, opacity: 1, filter: "blur(0px)" }}, {{ x: -700, opacity: 1, filter: "blur(16px)", duration: 0.18, ease: "power3.in", immediateRender: false }}, {CHIP_OUT} - 0.2);
 
       // whip out of the footage into the end tag
       tl.set("#w-main", {{ x: 0, filter: "blur(0px)" }}, 0);
