@@ -1,5 +1,5 @@
 {
-  "_doc": "Treadmill sprints STORY (IG/FB story, 1080x1920). IMG_1878 filmed and sent by Don, Thu 10/8 9:39 AM: two women sprinting side by side on the treadmills, one continuous shot. Room audio is gym-speaker music only, so it is dropped. Music = DB anthem stems, reel 0 = song 102.4147 (aubio beat), instrumental full + vocal stem low under the footage through song 118.51 (the beat right before the anthem's own instrumental drop-out at 118.6). End beat = full anthem mix from song 48.85 so 'We are Different Breed' (48.96) lands on the logo stamp and the beat slams back in at 49.70 (reel 16.95). Cuts on the anthem beat grid. Each shot plays source 'ms' for (next.at - at); source runs continuously (no moment repeated). tx = transition INTO the shot.",
+  "_doc": "Treadmill sprints STORY (IG/FB story, 1080x1920). IMG_1878 filmed and sent by Don, Thu 10/8 9:39 AM: two women sprinting side by side on the treadmills, one continuous shot. Room audio is gym-speaker music only, so it is dropped. Music = DB anthem stems, reel 0 = song 102.4147 (aubio beat), instrumental full + vocal stem low under the footage through song 118.51 (the beat right before the anthem's own instrumental drop-out at 118.6). End beat = full anthem mix from song 48.85 so 'We are Different Breed' (48.96) lands on the logo stamp and the beat slams back in at 49.70 (reel 16.95). Cuts on the anthem beat grid. Each shot plays source 'ms' for (next.at - at); source runs continuously (no moment repeated). tx = transition INTO the shot. v2 (Joey 10/8): one-take house VO, bed ducked under it and vocal stem out while it talks; last line lands right before the 'We are Different Breed' end beat; 2-beat instrumental fill under the hook so the end beat has no dead spot. v1 snapshot in reel-v1.json + build-v1.py.",
   "source": "assets/footage/img1878.mp4",
   "source_len": 22.45,
   "music": {
@@ -10,7 +10,14 @@
     "voc_volume": 0.4,
     "end_mix": "assets/audio/different-breed-song.mp3",
     "end_song_at": 48.85,
-    "end_volume": 1.0
+    "end_volume": 1.0,
+    "duck": 0.3,
+    "fill": {
+      "src": "assets/audio/db-stems/instrumental.mp3",
+      "song_at": 116.1176,
+      "volume": 0.6,
+      "_note": "two beats of the chorus instrumental under the a cappella hook (end 16.10 -> beat return 16.95)"
+    }
   },
   "end": {
     "at": 16.1001,
@@ -55,5 +62,134 @@
       "sprints"
     ],
     "works": "Legs · lungs · conditioning"
-  }
+  },
+  "vo": {
+    "file": "assets/audio/vo-take1.mp3",
+    "script": "Look at these two. Thursday morning and they're giving that treadmill everything they've got. That's the standard in here.",
+    "_note": "ONE ElevenLabs take (house voice qVpGLzi5EhjW3WGVhOa9, eleven_multilingual_v2, generate-vo.mjs settings, default speed). Two placements of the same take: lines 1-2 straight through, line 3 moved later so it lands right before the end beat. Speech spans from silencedetect -40 dB; word times Parakeet (assets/transcripts/vo-take1.parakeet.json), whisper medium.en agrees.",
+    "clips": [
+      {
+        "at": 1.7,
+        "media": 0.0,
+        "dur": 4.75,
+        "speech": [
+          0.08,
+          4.57
+        ]
+      },
+      {
+        "at": 14.5,
+        "media": 4.94,
+        "dur": 1.45,
+        "speech": [
+          5.02,
+          6.24
+        ]
+      }
+    ],
+    "volume": 1.0
+  },
+  "captions": [
+    {
+      "words": [
+        [
+          "Look",
+          1.78
+        ],
+        [
+          "at",
+          2.02
+        ],
+        [
+          "these",
+          2.18
+        ],
+        [
+          "two.",
+          2.42
+        ]
+      ],
+      "end": 3.0
+    },
+    {
+      "words": [
+        [
+          "Thursday",
+          3.04
+        ],
+        [
+          "morning",
+          3.46
+        ]
+      ],
+      "end": 3.74
+    },
+    {
+      "words": [
+        [
+          "and",
+          3.78
+        ],
+        [
+          "they're",
+          3.94
+        ],
+        [
+          "giving",
+          4.18
+        ],
+        [
+          "that",
+          4.42
+        ],
+        [
+          "treadmill",
+          4.66
+        ]
+      ],
+      "end": 5.36
+    },
+    {
+      "words": [
+        [
+          "everything",
+          5.38
+        ],
+        [
+          "they've",
+          5.78
+        ],
+        [
+          "got.",
+          6.18
+        ]
+      ],
+      "end": 6.56
+    },
+    {
+      "words": [
+        [
+          "That's",
+          14.58
+        ],
+        [
+          "the",
+          14.76
+        ],
+        [
+          "standard",
+          15.0
+        ],
+        [
+          "in",
+          15.4
+        ],
+        [
+          "here.",
+          15.64
+        ]
+      ],
+      "end": 16.06
+    }
+  ]
 }

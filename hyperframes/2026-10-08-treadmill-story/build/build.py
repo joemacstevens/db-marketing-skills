@@ -53,16 +53,45 @@ M = R["move"]
 MU = R["music"]
 SONG0 = MU["song_at_reel0"]
 FOOT_END = round(END_AT + 0.04, 3)
-bed_lane = [(0, 0), (0.05, 1), (END_AT - 0.06, 1), (FOOT_END, 0)]
+VO = R["vo"]
+D = MU["duck"]
+# VO speech windows in story time
+WIN = [(round(c["at"] + c["speech"][0] - c["media"], 3), round(c["at"] + c["speech"][1] - c["media"], 3)) for c in VO["clips"]]
+inst_lane = [(0, 0), (0.05, 1)]
+voc_lane = [(0, 0), (0.05, 1)]
+for a, b in WIN:
+    inst_lane += [(a - 0.14, 1), (a - 0.02, D), (b + 0.05, D), (b + 0.2, 1)]
+    voc_lane += [(a - 0.2, 1), (a - 0.06, 0), (b + 0.05, 0), (b + 0.2, 1)]
+inst_lane = [pt for pt in inst_lane if pt[0] < END_AT - 0.06] + [(END_AT - 0.06, inst_lane[-1][1] if inst_lane[-1][0] < END_AT - 0.06 else D), (FOOT_END, 0)]
+voc_lane = [pt for pt in voc_lane if pt[0] < END_AT - 0.06] + [(END_AT - 0.06, voc_lane[-1][1] if voc_lane[-1][0] < END_AT - 0.06 else 0), (FOOT_END, 0)]
 end_lane = [(0, 0), (0.03, 1), (END_LEN - 0.5, 1), (END_LEN, 0)]
+F = MU["fill"]
+FILL_LEN = 0.86
+fill_lane = [(0, 0), (0.03, 1), (FILL_LEN - 0.08, 1), (FILL_LEN, 0)]
 audio = [
     f'      <audio id="a-inst" src="{MU["inst"]}" data-start="0" data-duration="{FOOT_END}" data-media-start="{SONG0}" data-track-index="10" data-volume="{MU["inst_volume"]}" '
-    f'data-automation="{lane(bed_lane)}"></audio>',
+    f'data-automation="{lane(inst_lane)}"></audio>',
     f'      <audio id="a-voc" src="{MU["voc"]}" data-start="0" data-duration="{FOOT_END}" data-media-start="{SONG0}" data-track-index="11" data-volume="{MU["voc_volume"]}" '
-    f'data-automation="{lane(bed_lane)}"></audio>',
+    f'data-automation="{lane(voc_lane)}"></audio>',
     f'      <audio id="a-end" src="{MU["end_mix"]}" data-start="{END_AT}" data-duration="{END_LEN}" data-media-start="{MU["end_song_at"]}" data-track-index="12" data-volume="{MU["end_volume"]}" '
     f'data-automation="{lane(end_lane)}"></audio>',
+    f'      <audio id="a-fill" src="{F["src"]}" data-start="{END_AT}" data-duration="{FILL_LEN}" data-media-start="{F["song_at"]}" data-track-index="13" data-volume="{F["volume"]}" '
+    f'data-automation="{lane(fill_lane)}"></audio>',
 ]
+for i, c in enumerate(VO["clips"]):
+    vl = [(0, 0), (0.03, 1), (c["dur"] - 0.06, 1), (c["dur"], 0)]
+    audio.append(f'      <audio id="a-vo{i}" src="{VO["file"]}" data-start="{c["at"]}" data-duration="{c["dur"]}" data-media-start="{c["media"]}" data-track-index="{14 + i}" data-volume="{VO["volume"]}" '
+                 f'data-automation="{lane(vl)}"></audio>')
+
+CAPS = R.get("captions", [])
+cap_html = []
+cap_js = []
+for ci, c in enumerate(CAPS):
+    st = round(c["words"][0][1] - 0.04, 3)
+    en = c["end"]
+    sp = " ".join(f'<span class="cw" id="c{ci}-w{wi}" data-layout-allow-overlap="">{esc(w)}</span>' for wi, (w, _) in enumerate(c["words"]))
+    cap_html.append(f'      <div id="t-cap{ci}" class="clip layer" data-start="{st}" data-duration="{round(en - st, 3)}" data-track-index="7"><div class="cap" id="cap{ci}">{sp}</div></div>')
+    cap_js.append([f"c{ci}", [t for _, t in c["words"]], en])
 
 shots_js = json.dumps([{k: s[k] for k in ("id", "at", "dur", "tx", "zoom", "drift")} for s in SHOTS])
 
@@ -100,6 +129,10 @@ doc = f"""<!DOCTYPE html>
       .move .rule {{ display: block; width: 420px; height: 8px; background: var(--red); margin: 18px 0 14px; transform-origin: left center; }}
       .move .wk {{ display: inline-block; font-weight: 700; font-size: 34px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone); background: rgba(10, 10, 10, 0.78); padding: 8px 16px; }}
 
+      /* VO captions (sweet-science style), under the move card, inside the story safe zone */
+      .cap {{ position: absolute; left: 60px; right: 60px; top: 1400px; text-align: center; font-weight: 900; font-style: italic; text-transform: uppercase; font-size: 60px; line-height: 1.18; color: var(--bone); text-shadow: 6px 6px 0 var(--ink); }}
+      .cap .cw {{ display: inline-block; padding: 2px 12px 6px; margin: 0 0 8px; background: rgba(10, 10, 10, 0.62); }}
+
       .card {{ position: absolute; inset: 0; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }}
       .end img {{ display: block; width: 560px; height: 560px; object-fit: contain; }}
       .end .lock {{ display: block; width: 820px; height: auto; margin-top: 56px; }}
@@ -119,6 +152,9 @@ doc = f"""<!DOCTYPE html>
         <div class="move" id="move-box"><span class="k">{esc(M['kicker'])}</span><span class="n">{''.join(f'<span class="ln">{esc(x)}</span>' for x in M['name'])}</span><span class="rule"></span><span class="wk">{esc(M['works'])}</span></div>
       </div>
 
+      <!-- VO captions (word-timed from the take) -->
+{chr(10).join(cap_html)}
+
       <!-- end beat: logo + lockup -->
       <div id="t-end" class="clip layer" data-start="{END_AT}" data-duration="{END_LEN}" data-track-index="6">
         <div class="card end">
@@ -127,7 +163,7 @@ doc = f"""<!DOCTYPE html>
         </div>
       </div>
 
-      <!-- audio (track 10+): anthem stems under the footage, full anthem hook on the end beat -->
+      <!-- audio (track 10+): anthem stems under the footage (ducked under the VO, vocal stem out), full anthem hook + 2-beat instrumental fill on the end beat, one-take VO -->
 {chr(10).join(audio)}
     </div>
 
@@ -162,6 +198,18 @@ doc = f"""<!DOCTYPE html>
       tl.fromTo("#move-box .wk", {{ x: -40, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }}, MI + 0.42);
       tl.fromTo("#move-box", {{ x: 0, opacity: 1 }}, {{ x: -1080, opacity: 1, duration: 0.2, ease: "power3.in", immediateRender: false }}, MO - 0.22);
       tl.to("#t-move-scrim", {{ opacity: 0, duration: 0.22, ease: "none" }}, MO - 0.22);
+
+      // VO captions: words land on the voice, active word gets the red block (opacity in the to-vars)
+      const CAPS = {json.dumps(cap_js)};
+      CAPS.forEach(([id, times, end]) => {{
+        times.forEach((t, i) => {{
+          const el = "#" + id + "-w" + i;
+          const next = i + 1 < times.length ? times[i + 1] : end;
+          tl.fromTo(el, {{ opacity: 0, y: 22, scale: 1.12 }}, {{ opacity: 1, y: 0, scale: 1, duration: 0.14, ease: "power3.out" }}, t);
+          tl.fromTo(el, {{ backgroundColor: "rgba(10,10,10,0.62)" }}, {{ backgroundColor: "rgba(232,29,29,1)", duration: 0.05, ease: "none" }}, t);
+          tl.to(el, {{ backgroundColor: "rgba(10,10,10,0.62)", duration: 0.05, ease: "none" }}, Math.max(t + 0.07, next - 0.02));
+        }});
+      }});
 
       // whip out of the footage into the end beat
       tl.set("#w-main", {{ x: 0, filter: "blur(0px)" }}, 0);

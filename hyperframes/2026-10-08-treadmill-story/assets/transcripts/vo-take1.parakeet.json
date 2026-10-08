@@ -1,0 +1,100 @@
+{
+  "text": "Look at these two. Thursday morning and they're giving that treadmill everything they've got. That's the standard in here.",
+  "words": [
+    {
+      "text": "Look",
+      "start": 0,
+      "end": 0.32
+    },
+    {
+      "text": "at",
+      "start": 0.32,
+      "end": 0.48
+    },
+    {
+      "text": "these",
+      "start": 0.48,
+      "end": 0.72
+    },
+    {
+      "text": "two.",
+      "start": 0.72,
+      "end": 1.2
+    },
+    {
+      "text": "Thursday",
+      "start": 1.2,
+      "end": 1.76
+    },
+    {
+      "text": "morning",
+      "start": 1.76,
+      "end": 2
+    },
+    {
+      "text": "and",
+      "start": 2.08,
+      "end": 2.24
+    },
+    {
+      "text": "they're",
+      "start": 2.24,
+      "end": 2.48
+    },
+    {
+      "text": "giving",
+      "start": 2.48,
+      "end": 2.72
+    },
+    {
+      "text": "that",
+      "start": 2.72,
+      "end": 2.96
+    },
+    {
+      "text": "treadmill",
+      "start": 2.96,
+      "end": 3.68
+    },
+    {
+      "text": "everything",
+      "start": 3.68,
+      "end": 4.08
+    },
+    {
+      "text": "they've",
+      "start": 4.08,
+      "end": 4.48
+    },
+    {
+      "text": "got.",
+      "start": 4.48,
+      "end": 4.88
+    },
+    {
+      "text": "That's",
+      "start": 4.88,
+      "end": 5.2
+    },
+    {
+      "text": "the",
+      "start": 5.2,
+      "end": 5.44
+    },
+    {
+      "text": "standard",
+      "start": 5.44,
+      "end": 5.84
+    },
+    {
+      "text": "in",
+      "start": 5.84,
+      "end": 6.08
+    },
+    {
+      "text": "here.",
+      "start": 6.08,
+      "end": 6.48
+    }
+  ]
+}
