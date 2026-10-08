@@ -1,0 +1,59 @@
+{
+  "_doc": "Treadmill sprints STORY (IG/FB story, 1080x1920). IMG_1878 filmed and sent by Don, Thu 10/8 9:39 AM: two women sprinting side by side on the treadmills, one continuous shot. Room audio is gym-speaker music only, so it is dropped. Music = DB anthem stems, reel 0 = song 102.4147 (aubio beat), instrumental full + vocal stem low under the footage through song 118.51 (the beat right before the anthem's own instrumental drop-out at 118.6). End beat = full anthem mix from song 48.85 so 'We are Different Breed' (48.96) lands on the logo stamp and the beat slams back in at 49.70 (reel 16.95). Cuts on the anthem beat grid. Each shot plays source 'ms' for (next.at - at); source runs continuously (no moment repeated). tx = transition INTO the shot.",
+  "source": "assets/footage/img1878.mp4",
+  "source_len": 22.45,
+  "music": {
+    "song_at_reel0": 102.4147,
+    "inst": "assets/audio/db-stems/instrumental.mp3",
+    "voc": "assets/audio/db-stems/vocals.mp3",
+    "inst_volume": 1.0,
+    "voc_volume": 0.4,
+    "end_mix": "assets/audio/different-breed-song.mp3",
+    "end_song_at": 48.85,
+    "end_volume": 1.0
+  },
+  "end": {
+    "at": 16.1001,
+    "length": 2.0
+  },
+  "shots": [
+    {
+      "id": "s0",
+      "at": 0.0,
+      "ms": 5.6,
+      "tx": "cut",
+      "zoom": 1.0,
+      "drift": 1.07,
+      "note": "wide: both women sprinting side by side"
+    },
+    {
+      "id": "s1",
+      "at": 6.8879,
+      "ms": 12.488,
+      "tx": "impact",
+      "zoom": 1.4,
+      "drift": 1.48,
+      "origin": "55% 22%",
+      "note": "punch-in to a medium on both women: profiles, arms driving, down to the knees (a feet-only push was mostly treadmill rails)"
+    },
+    {
+      "id": "s2",
+      "at": 10.2899,
+      "ms": 15.89,
+      "tx": "cut",
+      "zoom": 1.0,
+      "drift": 1.08,
+      "note": "back out, camera in closer, both women driving the arms"
+    }
+  ],
+  "move": {
+    "in": 1.74,
+    "out": 6.62,
+    "kicker": "Thursday morning",
+    "name": [
+      "Treadmill",
+      "sprints"
+    ],
+    "works": "Legs · lungs · conditioning"
+  }
+}

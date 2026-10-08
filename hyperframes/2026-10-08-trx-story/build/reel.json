@@ -1,0 +1,100 @@
+{
+  "_doc": "TRX Toning Tornado story (Don's IMG_1867, Wed 10/7 6:09 PM, Pulse studio). One continuous take, room audio is the spine. Edit here, then python3 build/build.py. Text stays inside y 260-1600 (story UI).",
+  "source": "assets/footage/img1867.mp4",
+  "footage": {
+    "ms": 0.0,
+    "length": 15.95,
+    "zoom": 1.0,
+    "drift": 1.06,
+    "origin": "50% 45%"
+  },
+  "end": {
+    "length": 2.0,
+    "handle": "@cphysiquetraining",
+    "hook_file": "assets/audio/different-breed-song.mp3",
+    "hook_src": 48.7,
+    "hook_volume": 0.85
+  },
+  "title": {
+    "in": 1.0,
+    "out": 3.55,
+    "line1": "TRX",
+    "line2": "Toning Tornado",
+    "sub": "Suspension training"
+  },
+  "card": {
+    "in": 5.05,
+    "out": 12.25,
+    "kicker": "The move",
+    "name": "TRX Row",
+    "works": "Back · biceps · core"
+  },
+  "chip": {
+    "in": 13.22,
+    "out": 14.25,
+    "name": "COACH CARLOS",
+    "sub": "@cphysiquetraining"
+  },
+  "captions": [
+    {
+      "id": "c-switch",
+      "end": 5.05,
+      "words": [
+        [
+          "SWITCH",
+          3.76,
+          true
+        ],
+        [
+          "IT",
+          4.4
+        ],
+        [
+          "UP.",
+          4.56,
+          true
+        ]
+      ]
+    },
+    {
+      "id": "c-nice",
+      "end": 10.55,
+      "words": [
+        [
+          "YES.",
+          8.32,
+          true
+        ],
+        [
+          "NICE.",
+          9.44,
+          true
+        ]
+      ]
+    },
+    {
+      "id": "c-breathe",
+      "end": 13.95,
+      "words": [
+        [
+          "BREATHE",
+          12.48,
+          true
+        ],
+        [
+          "ON",
+          12.8
+        ],
+        [
+          "THE",
+          13.04
+        ],
+        [
+          "BOTTOM.",
+          13.12,
+          true
+        ]
+      ]
+    }
+  ]
+}

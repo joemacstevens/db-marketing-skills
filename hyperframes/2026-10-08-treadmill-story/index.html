@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-Book.otf"); font-weight: 400; }
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-Bold.otf"); font-weight: 700; }
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-Black.otf"); font-weight: 900; }
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-BlackItalic.otf"); font-weight: 900; font-style: italic; }
+      :root { --ink: #0a0a0a; --red: #e81d1d; --bone: #f6f2ec; --steel: #b8b2a8; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); font-family: "NORD", sans-serif; }
+
+      /* footage: 720x1280 -> exact 1.5x cover */
+      .shot { position: absolute; inset: 0; overflow: hidden; will-change: transform, filter; }
+      .shot .punch, .shot .fr { position: absolute; inset: 0; will-change: transform; }
+      .shot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .flash { position: absolute; inset: 0; box-shadow: inset 0 0 0 0 var(--red); opacity: 0; }
+
+      .layer { position: absolute; inset: 0; }
+      /* low band scrim behind the move card (story UI covers top ~250 and bottom ~300) */
+      .scrim { position: absolute; left: 0; right: 0; top: 880px; height: 600px; background: linear-gradient(to bottom, rgba(10,10,10,0), rgba(10,10,10,0.55) 28%, rgba(10,10,10,0.55) 72%, rgba(10,10,10,0)); }
+
+      /* THE MOVE card (house style), sits on the treadmill arm, clear of faces and feet */
+      .move { position: absolute; left: 64px; top: 1000px; width: 960px; }
+      .move .k { display: inline-block; background: var(--red); color: var(--bone); font-weight: 700; font-size: 32px; letter-spacing: 0.16em; padding: 10px 22px; text-transform: uppercase; }
+      .move .n { display: block; font-weight: 900; font-style: italic; text-transform: uppercase; font-size: 104px; line-height: 0.96; color: var(--bone); text-shadow: 8px 8px 0 var(--ink); margin-top: 16px; white-space: nowrap; }
+      .move .n .ln { display: block; }
+      .move .rule { display: block; width: 420px; height: 8px; background: var(--red); margin: 18px 0 14px; transform-origin: left center; }
+      .move .wk { display: inline-block; font-weight: 700; font-size: 34px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone); background: rgba(10, 10, 10, 0.78); padding: 8px 16px; }
+
+      .card { position: absolute; inset: 0; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+      .end img { display: block; width: 560px; height: 560px; object-fit: contain; }
+      .end .lock { display: block; width: 820px; height: auto; margin-top: 56px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="18.1" data-width="1080" data-height="1920">
+
+      <!-- footage: one source, 3 shots, source runs straight through, each moment used once -->
+      <div class="shot" id="w-main"><div class="punch" id="punch" data-layout-allow-overflow="">
+        <div class="fr" id="fr-s0" style="transform-origin: 50% 50%" data-layout-allow-overflow=""><video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0,&quot;contrast&quot;:0.25,&quot;highlights&quot;:-0.2,&quot;shadows&quot;:0,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.12,&quot;temperature&quot;:0,&quot;tint&quot;:0,&quot;vibrance&quot;:0.22,&quot;saturation&quot;:0},&quot;details&quot;:{&quot;vignette&quot;:0,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="v-s0" class="clip" src="assets/footage/img1878.mp4" data-start="0.0" data-duration="6.888" data-media-start="5.6" data-track-index="0" muted playsinline></video></div>
+        <div class="fr" id="fr-s1" style="transform-origin: 55% 22%" data-layout-allow-overflow=""><video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0,&quot;contrast&quot;:0.25,&quot;highlights&quot;:-0.2,&quot;shadows&quot;:0,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.12,&quot;temperature&quot;:0,&quot;tint&quot;:0,&quot;vibrance&quot;:0.22,&quot;saturation&quot;:0},&quot;details&quot;:{&quot;vignette&quot;:0,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="v-s1" class="clip" src="assets/footage/img1878.mp4" data-start="6.8879" data-duration="3.402" data-media-start="12.488" data-track-index="1" muted playsinline></video></div>
+        <div class="fr" id="fr-s2" style="transform-origin: 50% 50%" data-layout-allow-overflow=""><video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0,&quot;contrast&quot;:0.25,&quot;highlights&quot;:-0.2,&quot;shadows&quot;:0,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.12,&quot;temperature&quot;:0,&quot;tint&quot;:0,&quot;vibrance&quot;:0.22,&quot;saturation&quot;:0},&quot;details&quot;:{&quot;vignette&quot;:0,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="v-s2" class="clip" src="assets/footage/img1878.mp4" data-start="10.2899" data-duration="5.81" data-media-start="15.89" data-track-index="0" muted playsinline></video></div>
+      </div><div class="flash" id="flash"></div></div>
+
+      <!-- THE MOVE -->
+      <div id="t-move" class="clip layer" data-start="1.74" data-duration="4.88" data-track-index="3">
+        <div class="scrim" id="t-move-scrim"></div>
+        <div class="move" id="move-box"><span class="k">Thursday morning</span><span class="n"><span class="ln">Treadmill</span><span class="ln">sprints</span></span><span class="rule"></span><span class="wk">Legs · lungs · conditioning</span></div>
+      </div>
+
+      <!-- end beat: logo + lockup -->
+      <div id="t-end" class="clip layer" data-start="16.1001" data-duration="2.0" data-track-index="6">
+        <div class="card end">
+          <img id="end-logo" src="assets/brand/db-logo.png" alt="Different Breed Elite Fitness">
+          <img class="lock" id="end-lock" src="assets/brand/lockup-absolutely-different-white.png" alt="What we do is absolutely different">
+        </div>
+      </div>
+
+      <!-- audio (track 10+): anthem stems under the footage, full anthem hook on the end beat -->
+      <audio id="a-inst" src="assets/audio/db-stems/instrumental.mp3" data-start="0" data-duration="16.14" data-media-start="102.4147" data-track-index="10" data-volume="1.0" data-automation="{&quot;version&quot;: 1, &quot;lanes&quot;: [{&quot;target&quot;: &quot;volume&quot;, &quot;points&quot;: [{&quot;t&quot;: 0, &quot;v&quot;: 0}, {&quot;t&quot;: 0.05, &quot;v&quot;: 1}, {&quot;t&quot;: 16.04, &quot;v&quot;: 1}, {&quot;t&quot;: 16.14, &quot;v&quot;: 0}]}]}"></audio>
+      <audio id="a-voc" src="assets/audio/db-stems/vocals.mp3" data-start="0" data-duration="16.14" data-media-start="102.4147" data-track-index="11" data-volume="0.4" data-automation="{&quot;version&quot;: 1, &quot;lanes&quot;: [{&quot;target&quot;: &quot;volume&quot;, &quot;points&quot;: [{&quot;t&quot;: 0, &quot;v&quot;: 0}, {&quot;t&quot;: 0.05, &quot;v&quot;: 1}, {&quot;t&quot;: 16.04, &quot;v&quot;: 1}, {&quot;t&quot;: 16.14, &quot;v&quot;: 0}]}]}"></audio>
+      <audio id="a-end" src="assets/audio/different-breed-song.mp3" data-start="16.1001" data-duration="2.0" data-media-start="48.85" data-track-index="12" data-volume="1.0" data-automation="{&quot;version&quot;: 1, &quot;lanes&quot;: [{&quot;target&quot;: &quot;volume&quot;, &quot;points&quot;: [{&quot;t&quot;: 0, &quot;v&quot;: 0}, {&quot;t&quot;: 0.03, &quot;v&quot;: 1}, {&quot;t&quot;: 1.5, &quot;v&quot;: 1}, {&quot;t&quot;: 2.0, &quot;v&quot;: 0}]}]}"></audio>
+    </div>
+
+    <script>
+      const SHOTS = [{"id": "s0", "at": 0.0, "dur": 6.888, "tx": "cut", "zoom": 1.0, "drift": 1.07}, {"id": "s1", "at": 6.8879, "dur": 3.402, "tx": "impact", "zoom": 1.4, "drift": 1.48}, {"id": "s2", "at": 10.2899, "dur": 5.81, "tx": "cut", "zoom": 1.0, "drift": 1.08}];
+      const END = 16.1001;
+      const tl = gsap.timeline({ paused: true });
+
+      // per-shot framing: static punch-in plus a slow push across the shot (wrapper, never the video)
+      SHOTS.forEach((s) => {
+        tl.fromTo("#fr-" + s.id, { scale: s.zoom }, { scale: s.drift, duration: s.dur, ease: "none", immediateRender: true }, s.at);
+      });
+
+      // transitions into each shot
+      tl.set("#punch", { scale: 1, x: 0, filter: "blur(0px)" }, 0);
+      tl.set("#flash", { opacity: 0 }, 0);
+      SHOTS.forEach((s) => {
+        const t = s.at;
+        if (s.tx === "impact") {
+          tl.fromTo("#punch", { scale: 1.08 }, { scale: 1.0, duration: 0.45, ease: "power3.out", immediateRender: false }, t);
+          tl.fromTo("#flash", { opacity: 1, boxShadow: "inset 0 0 0 26px #e81d1d" }, { opacity: 0, boxShadow: "inset 0 0 0 0px #e81d1d", duration: 0.3, ease: "power2.out", immediateRender: false }, t);
+        }
+      });
+
+      // THE MOVE: kicker pops, name rises, rule draws, works line (opacity kept in the to-vars)
+      const MI = 1.74, MO = 6.62;
+      tl.fromTo("#t-move-scrim", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none" }, MI);
+      tl.fromTo("#move-box .k", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.26, ease: "back.out(2)" }, MI);
+      tl.fromTo("#move-box .n .ln:nth-child(1)", { x: -120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power4.out" }, MI + 0.08);
+      tl.fromTo("#move-box .n .ln:nth-child(2)", { x: -120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power4.out" }, MI + 0.2);
+      tl.fromTo("#move-box .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.36, ease: "expo.out" }, MI + 0.32);
+      tl.fromTo("#move-box .wk", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, MI + 0.42);
+      tl.fromTo("#move-box", { x: 0, opacity: 1 }, { x: -1080, opacity: 1, duration: 0.2, ease: "power3.in", immediateRender: false }, MO - 0.22);
+      tl.to("#t-move-scrim", { opacity: 0, duration: 0.22, ease: "none" }, MO - 0.22);
+
+      // whip out of the footage into the end beat
+      tl.set("#w-main", { x: 0, filter: "blur(0px)" }, 0);
+      tl.fromTo("#w-main", { x: 0, filter: "blur(0px)" }, { x: -1080, filter: "blur(26px)", duration: 0.18, ease: "power3.in", immediateRender: false }, END - 0.18);
+
+      // end beat: logo stamps on the hook, lockup rises as the beat slams back in
+      tl.fromTo("#end-logo", { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.36, ease: "back.out(1.8)" }, END + 0.05);
+      tl.fromTo("#end-lock", { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, END + 0.62);
+      tl.to("#t-end .card", { opacity: 0, duration: 0.3, ease: "none" }, 18.1 - 0.3);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
