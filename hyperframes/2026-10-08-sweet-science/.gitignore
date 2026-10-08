@@ -5,3 +5,4 @@ assets/audio/*.m4a
 assets/transcripts/*.wav
 assets/transcripts/raw.pcm
 .hyperframes/
+assets/audio/db-stems/

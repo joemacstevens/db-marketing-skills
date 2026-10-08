@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""Generate index.html for the 2026-10-08 "Sweet Science" reel from build/reel.json.
+"""Generate index.html for the 2026-10-08 "Sweet Science" reel (v3) from build/reel.json.
 
 Source: IMG_1868 (filmed and sent by Don, Wed 10/7 7:16 PM, 720p30 HLG, rotation -90), tonemapped
-(zscale hable) SDR proxy at assets/footage/img1868.mp4 (720x1280, -g 15). Coach P's Blue Collar fight
-camp doing banded footwork: mini band at the ankles, boxing stance, single-file line down the turf,
+(zscale hable) SDR proxy at assets/footage/img1868.mp4 (720x1280, -g 15). Coach P's Sweet Science
+class doing banded footwork: mini band at the ankles, boxing stance, single-file line down the turf,
 Coach P out front at the end.
 
-Audio: the room track (assets/audio/room-1868.m4a, src 0 at reel 0) runs unbroken under all
-footage. It fades on the end-tag whip while the DB song's "We are Different Breed" hook (48.8)
-comes in. No other bed (clip has its own music: feedback_no-anthem-under-gym-audio).
+Audio (v3): no room audio. DB anthem stems, reel 0 = song 31.3: instrumental under everything (ducked
+-12 dB under the house-voice VO), vocal stem in only after the VO, so the anthem's pre-chorus runs
+into "We are Different Breed" (song 48.96 = reel 17.66) on the end tag. One continuous VO take.
 Grade: "lite" correction (A2 turned the turf neon and skin orange in grade-compare).
+v2 (Blue Collar labels, room audio) is snapshotted in build-v2.py + reel-v2.json.
 """
 import html
 import json
@@ -51,20 +52,48 @@ for i, s in enumerate(SHOTS):
 
 T = R["title"]
 M = R["move"]
-H = R["how"]
+H = R.get("how")
+MU = R["music"]
+VO = R["vo"]
+CAPS = R.get("captions", [])
 E = R["end"]
 C = R["chip"]
 
-room_d = round(END_AT + 0.3, 3)
-HOOK_AT = round(END_AT - 0.15, 3)  # "We" (song 48.96) lands right as the logo stamps
-HOOK_D = round(TOTAL - HOOK_AT, 3)
+SONG0 = MU["song_at_reel0"]
+VO_AT = VO["at"]
+VO_END = round(VO_AT + VO["speech_end"], 3)
+D = MU["duck"]
+inst_lane = [(0, 0), (0.06, 1), (VO_AT - 0.12, 1), (VO_AT + 0.05, D), (VO_END + 0.02, D), (VO_END + 0.25, 1), (TOTAL - 0.45, 1), (TOTAL, 0)]
+voc_lane = [(0, 0), (VO_END + 0.02, 0), (VO_END + 0.12, 1), (TOTAL - 0.45, 1), (TOTAL, 0)]
+vo_dur = round(VO["speech_end"] + 0.35, 3)
 audio = [
-    f'      <audio id="a-room" src="{R["room"]["file"]}" data-start="0" data-duration="{room_d}" data-media-start="0" data-track-index="10" data-volume="{R["room"]["volume"]}" '
-    f'data-automation="{lane([(0, 1), (END_AT - 0.06, 1), (room_d, 0)])}"></audio>',
-    f'      <audio id="a-hook" src="{E["hook_file"]}" data-start="{HOOK_AT}" data-duration="{HOOK_D}" data-media-start="{E["hook_src"]}" data-track-index="11" data-volume="{E["hook_volume"]}" '
-    f'data-automation="{lane([(0, 0), (0.15, 1), (HOOK_D - 0.4, 1), (HOOK_D, 0)])}"></audio>',
+    f'      <audio id="a-inst" src="{MU["inst"]}" data-start="0" data-duration="{TOTAL}" data-media-start="{SONG0}" data-track-index="10" data-volume="{MU["inst_volume"]}" '
+    f'data-automation="{lane(inst_lane)}"></audio>',
+    f'      <audio id="a-voc" src="{MU["voc"]}" data-start="0" data-duration="{TOTAL}" data-media-start="{SONG0}" data-track-index="11" data-volume="{MU["voc_volume"]}" '
+    f'data-automation="{lane(voc_lane)}"></audio>',
+    f'      <audio id="a-vo" src="{VO["file"]}" data-start="{VO_AT}" data-duration="{vo_dur}" data-media-start="0" data-track-index="12" data-volume="{VO["volume"]}"></audio>',
 ]
 
+cap_html = []
+cap_js = []
+for ci, c in enumerate(CAPS):
+    st = round(VO_AT + c["words"][0][1] - 0.04, 3)
+    en = round(VO_AT + c["end"], 3)
+    spans = " ".join(f'<span class="cw" id="c{ci}-w{wi}" data-layout-allow-overlap="">{esc(w)}</span>' for wi, (w, _) in enumerate(c["words"]))
+    cap_html.append(f'      <div id="t-cap{ci}" class="clip layer" data-start="{st}" data-duration="{round(en - st, 3)}" data-track-index="7"><div class="cap" id="cap{ci}">{spans}</div></div>')
+    cap_js.append([f"c{ci}", [round(VO_AT + t, 3) for _, t in c["words"]], en])
+
+HOW_JS = ""
+HOW_HTML = ""
+if H:
+    HOW_JS = ("      // how-line, line by line\n"
+              f'      tl.fromTo("#t-how-scrim", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2, ease: "none" }}, {H["in"]});\n'
+              + "".join(f'      tl.fromTo("#how-{i}", {{ x: -60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.26, ease: "power3.out" }}, {round(H["in"] + 0.05 + i * 0.22, 3)});\n' for i in range(len(H["lines"])))
+              + f'      tl.to("#how-box", {{ y: -80, opacity: 0, duration: 0.22, ease: "power3.in" }}, {round(H["out"] - 0.24, 3)});\n'
+              + f'      tl.to("#t-how-scrim", {{ opacity: 0, duration: 0.24, ease: "none" }}, {round(H["out"] - 0.24, 3)});\n')
+    HOW_HTML = (f'      <div id="t-how" class="clip layer" data-start="{H["in"]}" data-duration="{round(H["out"] - H["in"], 3)}" data-track-index="4">'
+                f'<div class="scrim" id="t-how-scrim"></div><div class="how" id="how-box">'
+                + ''.join(f'<span class="ln" id="how-{i}">{esc(x)}</span>' for i, x in enumerate(H["lines"])) + '</div></div>')
 shots_js = json.dumps([{k: s[k] for k in ("id", "at", "dur", "tx", "zoom", "drift")} for s in SHOTS])
 
 doc = f"""<!DOCTYPE html>
@@ -112,6 +141,10 @@ doc = f"""<!DOCTYPE html>
       .how {{ position: absolute; left: 64px; top: 110px; width: 960px; }}
       .how .ln {{ display: table; font-weight: 700; font-size: 44px; line-height: 1.0; letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone); background: rgba(10, 10, 10, 0.78); padding: 12px 20px 14px; margin-bottom: 8px; border-left: 10px solid var(--red); }}
 
+      /* VO captions */
+      .cap {{ position: absolute; left: 70px; right: 70px; top: 1130px; text-align: center; font-weight: 900; font-style: italic; text-transform: uppercase; font-size: 66px; line-height: 1.18; color: var(--bone); text-shadow: 6px 6px 0 var(--ink); }}
+      .cap .cw {{ display: inline-block; padding: 2px 12px 6px; margin: 0 0 8px; background: rgba(10, 10, 10, 0.62); }}
+
       /* coach chip (house style, junior-boxing COACH DON chip) */
       .chip {{ position: absolute; left: 64px; top: 1390px; display: flex; flex-direction: column; align-items: flex-start; }}
       .chip .nm {{ display: inline-block; background: var(--red); color: var(--bone); font-weight: 900; font-style: italic; font-size: 60px; line-height: 1.1; letter-spacing: 0.01em; padding: 8px 26px 12px; box-shadow: 8px 8px 0 var(--ink); text-transform: uppercase; }}
@@ -147,11 +180,10 @@ doc = f"""<!DOCTYPE html>
         <div class="move" id="move-box"><span class="k">{esc(M['kicker'])}</span><span class="n">{' '.join(f'<span class="ln">{esc(x)}</span>' for x in M['name'])}</span><span class="rule"></span><span class="wk">{esc(M['works'])}</span></div>
       </div>
 
-      <!-- how-line -->
-      <div id="t-how" class="clip layer" data-start="{H['in']}" data-duration="{round(H['out'] - H['in'], 3)}" data-track-index="4">
-        <div class="scrim" id="t-how-scrim"></div>
-        <div class="how" id="how-box">{''.join(f'<span class="ln" id="how-{i}">{esc(x)}</span>' for i, x in enumerate(H['lines']))}</div>
-      </div>
+{HOW_HTML}
+
+      <!-- VO captions (word-timed from the isolated take) -->
+{chr(10).join(cap_html)}
 
       <!-- coach chip -->
       <div id="t-chip" class="clip layer" data-start="{C['in']}" data-duration="{round(C['out'] - C['in'], 3)}" data-track-index="5"><div class="chip" id="chip"><span class="nm" id="chip-nm">{esc(C['name'])}</span><span class="sb" id="chip-sb">{esc(C['sub'])}</span></div></div>
@@ -213,14 +245,18 @@ doc = f"""<!DOCTYPE html>
       tl.to("#move-box", {{ y: -80, opacity: 0, duration: 0.22, ease: "power3.in" }}, MO - 0.24);
       tl.to("#t-move-scrim", {{ opacity: 0, duration: 0.24, ease: "none" }}, MO - 0.24);
 
-      // how-line, line by line
-      const HI = {H['in']}, HO = {H['out']};
-      tl.fromTo("#t-how-scrim", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2, ease: "none" }}, HI);
-      [0, 1, 2].forEach((i) => {{
-        tl.fromTo("#how-" + i, {{ x: -60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.26, ease: "power3.out" }}, HI + 0.05 + i * 0.22);
+{HOW_JS}
+      // VO captions: words land on the voice, active word gets the red block
+      const CAPS = {json.dumps(cap_js)};
+      CAPS.forEach(([id, times, end]) => {{
+        times.forEach((t, i) => {{
+          const el = "#" + id + "-w" + i;
+          const next = i + 1 < times.length ? times[i + 1] : end;
+          tl.fromTo(el, {{ opacity: 0, y: 22, scale: 1.12 }}, {{ opacity: 1, y: 0, scale: 1, duration: 0.14, ease: "power3.out" }}, t);
+          tl.fromTo(el, {{ backgroundColor: "rgba(10,10,10,0.62)" }}, {{ backgroundColor: "rgba(232,29,29,1)", duration: 0.05, ease: "none" }}, t);
+          tl.to(el, {{ backgroundColor: "rgba(10,10,10,0.62)", duration: 0.05, ease: "none" }}, Math.max(t + 0.07, next - 0.02));
+        }});
       }});
-      tl.to("#how-box", {{ y: -80, opacity: 0, duration: 0.22, ease: "power3.in" }}, HO - 0.24);
-      tl.to("#t-how-scrim", {{ opacity: 0, duration: 0.24, ease: "none" }}, HO - 0.24);
 
       // coach chip
       const CI = {C['in']}, CO = {C['out']};
