@@ -1,0 +1,249 @@
+<meta charset="utf-8">
+<title>DB Reel Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap">
+<style>
+@font-face { font-family: 'Nord'; src: url('fonts/NORD-BlackItalic.otf') format('opentype'); font-weight: 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Nord'; src: url('fonts/NORD-Black.otf') format('opentype'); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* Layout: a day-by-day run sheet. Each day is a row of phones, time on top, caption + platforms underneath. */
+:root {
+  --bg: #F6F2EC;        /* bone */
+  --surface: #FFFFFF;
+  --fg: #141414;
+  --fg-2: #3A3936;
+  --fg-3: #6E6A63;
+  --rule: rgba(10,10,10,.14);
+  --accent: #E81D1D;
+  --accent-ink: #A50F0F;
+  --bezel: #0A0A0A;
+  --bezel-edge: #0A0A0A;
+  --chip: #E7E2DA;
+  --ok: #2BB673;
+  --font-display: 'Nord', 'Oswald', 'Arial Narrow', Impact, sans-serif;
+  --font-utility: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Barlow', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0F0F0F; --surface: #1A1A1A; --fg: #F6F2EC; --fg-2: #D8D2C8; --fg-3: #9C968C;
+  --rule: rgba(246,242,236,.14); --accent: #FF3B3B; --accent-ink: #FF6B6B; --bezel: #000; --bezel-edge: #3A3936; --chip: #2A2A2A; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #0F0F0F; --surface: #1A1A1A; --fg: #F6F2EC; --fg-2: #D8D2C8; --fg-3: #9C968C;
+  --rule: rgba(246,242,236,.14); --accent: #FF3B3B; --accent-ink: #FF6B6B; --bezel: #000; --bezel-edge: #3A3936; --chip: #2A2A2A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 15px/1.45 var(--font-body); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; padding-bottom: 20px; border-bottom: 3px solid var(--fg); }
+.eyebrow { font: 500 12px/1 var(--font-utility); letter-spacing: .14em; text-transform: uppercase; color: var(--fg-3); }
+h1 { margin: 8px 0 0; font: italic 900 clamp(40px, 7vw, 76px)/.9 var(--font-display); text-transform: uppercase; letter-spacing: -.01em; }
+h1 .hl { position: relative; display: inline-block; padding: 0 .12em; color: #fff; z-index: 0; }
+h1 .hl::before { content: ""; position: absolute; inset: .06em -.02em .02em; background: var(--accent); transform: skewX(-12deg); z-index: -1; }
+.meta { display: grid; gap: 6px; text-align: right; font-variant-numeric: tabular-nums; }
+.meta .next { font: 600 15px/1.2 var(--font-utility); text-transform: uppercase; letter-spacing: .06em; }
+.meta .next b { color: var(--accent-ink); font-weight: 600; }
+.meta .sync { font-size: 13px; color: var(--fg-3); }
+.meta .sync.stale { color: var(--accent-ink); font-weight: 600; }
+@media (max-width: 640px) { .meta { text-align: left; } }
+
+.day { margin-top: 40px; }
+.day-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+.day-head h2 { margin: 0; font: 600 22px/1 var(--font-utility); text-transform: uppercase; letter-spacing: .05em; }
+.day-head .rel { font: 500 12px/1 var(--font-utility); letter-spacing: .12em; text-transform: uppercase; background: var(--fg); color: var(--bg); padding: 5px 8px 4px; }
+.day-head .rel.today { background: var(--accent); color: #fff; }
+.day-head .count { margin-left: auto; font-size: 13px; color: var(--fg-3); }
+
+.row { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 32px 28px; margin-top: 20px; }
+.post { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.post.past { opacity: .45; }
+.when { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.time { font: italic 900 30px/1 var(--font-display); text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.time small { font-size: 15px; margin-left: 2px; }
+.kind { font: 500 11px/1 var(--font-utility); letter-spacing: .14em; text-transform: uppercase; border: 1.5px solid var(--fg); padding: 4px 6px 3px; }
+.kind.story { border-color: var(--accent-ink); color: var(--accent-ink); }
+.countdown { font: 500 13px/1 var(--font-utility); letter-spacing: .05em; text-transform: uppercase; color: var(--fg-3); font-variant-numeric: tabular-nums; margin-top: -4px; }
+.countdown.soon { color: var(--accent-ink); }
+
+/* Phone */
+.phone { position: relative; width: 100%; max-width: 300px; aspect-ratio: 9 / 19.5; background: var(--bezel); border: 1px solid var(--bezel-edge); border-radius: 38px; padding: 10px; box-shadow: 6px 6px 0 var(--accent); }
+.screen { position: relative; width: 100%; height: 100%; border-radius: 29px; overflow: hidden; background: #000; cursor: pointer; }
+.screen video, .screen img.poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.screen .island { position: absolute; top: 9px; left: 50%; width: 30%; height: 22px; transform: translateX(-50%); background: #000; border-radius: 14px; z-index: 3; }
+.screen .tab { position: absolute; top: 40px; left: 14px; z-index: 2; color: #fff; font: 700 17px/1 var(--font-body); text-shadow: 0 1px 3px rgba(0,0,0,.5); }
+.screen .story-bar { position: absolute; top: 40px; left: 10px; right: 10px; height: 2px; background: rgba(255,255,255,.45); z-index: 2; }
+.screen .story-bar i { display: block; height: 100%; width: 0; background: #fff; }
+.screen .scrim { position: absolute; inset: auto 0 0 0; height: 42%; background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0)); z-index: 1; pointer-events: none; }
+.screen .ui { position: absolute; left: 12px; right: 52px; bottom: 18px; z-index: 2; color: #fff; display: grid; gap: 7px; font-size: 12.5px; line-height: 1.35; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+.ui .who { display: flex; align-items: center; gap: 7px; font-weight: 600; min-width: 0; }
+.ui .who img { width: 26px; height: 26px; border-radius: 50%; background: #E81D1D; padding: 2px; flex: none; }
+.ui .who span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ui .who .follow { flex: none; border: 1px solid rgba(255,255,255,.8); border-radius: 7px; padding: 2px 7px; font-size: 11px; }
+.ui .cap { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; white-space: pre-line; }
+.screen .rail { position: absolute; right: 10px; bottom: 22px; z-index: 2; display: grid; gap: 16px; justify-items: center; }
+.rail svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 1.8; filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
+.screen .play { position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; border-radius: 50%; background: rgba(0,0,0,.45); z-index: 2; display: grid; place-items: center; transition: opacity .2s; }
+.screen .play svg { width: 26px; height: 26px; fill: #fff; margin-left: 4px; }
+.screen.playing .play { opacity: 0; }
+.screen .progress { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 3; background: rgba(255,255,255,.25); }
+.screen .progress i { display: block; height: 100%; width: 0; background: #fff; }
+.screen .empty { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: #9C968C; font-size: 13px; }
+.screen:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.facts { display: flex; flex-wrap: wrap; gap: 6px; }
+.facts span { font: 500 11px/1 var(--font-utility); letter-spacing: .1em; text-transform: uppercase; background: var(--chip); color: var(--fg-2); padding: 5px 7px 4px; }
+details { border-top: 1px solid var(--rule); padding-top: 8px; }
+summary { cursor: pointer; font: 500 12px/1.4 var(--font-utility); letter-spacing: .1em; text-transform: uppercase; color: var(--fg-2); }
+summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+details dl { margin: 10px 0 0; display: grid; gap: 10px; }
+details dt { font: 500 11px/1 var(--font-utility); letter-spacing: .12em; text-transform: uppercase; color: var(--fg-3); }
+details dd { margin: 4px 0 0; white-space: pre-line; overflow-wrap: anywhere; font-size: 14px; color: var(--fg); }
+.file { font-size: 12px; color: var(--fg-3); overflow-wrap: anywhere; }
+
+.empty-state { margin-top: 48px; padding: 32px; border: 2px solid var(--fg); background: var(--surface); box-shadow: 4px 4px 0 var(--fg); max-width: 560px; }
+.empty-state h2 { margin: 0 0 6px; font: italic 900 28px/1 var(--font-display); text-transform: uppercase; }
+.empty-state p { margin: 0; color: var(--fg-2); }
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--fg-3); }
+@media (prefers-reduced-motion: reduce) { .screen .play { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">@dbelitefitness · Upload-Post queue · Eastern time</div>
+      <h1>Reel <span class="hl">Queue</span></h1>
+    </div>
+    <div class="meta">
+      <div class="next" id="next"></div>
+      <div class="sync" id="sync"></div>
+    </div>
+  </header>
+  <main id="days"></main>
+  <footer>Tap a phone to play with sound. Faded cards have already gone out since the last sync. Built from Upload-Post's live queue joined to content-calendar/calendar.json.</footer>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const TZ = "America/New_York";
+const fmt = (d, o) => new Intl.DateTimeFormat("en-US", { timeZone: TZ, ...o }).format(d);
+const dayKey = (d) => fmt(d, { year: "numeric", month: "2-digit", day: "2-digit" });
+const PLATFORM = { instagram: "IG", facebook: "FB", threads: "Threads", tiktok: "TikTok" };
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function rel(ms) {
+  const m = Math.round(Math.abs(ms) / 60000);
+  if (m < 60) return `${m}m`;
+  const h = Math.floor(m / 60), d = Math.floor(h / 24);
+  return d >= 2 ? `${d}d ${h % 24}h` : `${h}h ${m % 60}m`;
+}
+function dayLabel(d) {
+  const today = dayKey(new Date()), tmr = dayKey(new Date(Date.now() + 864e5)), k = dayKey(d);
+  return k === today ? ["Today", "today"] : k === tmr ? ["Tomorrow", ""] : null;
+}
+function mmss(s) { s = Math.round(s); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; }
+
+const ICONS = {
+  heart: '<svg viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>',
+  comment: '<svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>',
+  send: '<svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>',
+  play: '<svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg>',
+};
+
+function card(it) {
+  const d = new Date(it.at);
+  const [hm, ap] = fmt(d, { hour: "numeric", minute: "2-digit" }).split(" ");
+  const story = it.kind === "Story";
+  const collab = it.collaborators.length ? ` and ${esc(it.collaborators.join(", "))}` : "";
+  const media = it.video
+    ? `<video preload="none" playsinline poster="${esc(it.poster)}" src="${esc(it.video)}"></video><div class="play">${ICONS.play}</div><div class="progress"><i></i></div>`
+    : it.poster ? `<img class="poster" src="${esc(it.poster)}" alt="">` : `<div class="empty">No local file for this post. Check the calendar entry.</div>`;
+  const overlay = story
+    ? `<div class="story-bar"><i></i></div>`
+    : `<div class="tab">Reels</div><div class="scrim"></div>
+       <div class="ui"><div class="who"><img src="avatar.png" alt=""><span>dbelitefitness${collab}</span><b class="follow">Follow</b></div>
+       <div class="cap">${esc(it.caption)}</div></div>
+       <div class="rail">${ICONS.heart}${ICONS.comment}${ICONS.send}</div>`;
+  const facts = [...it.platforms.map((p) => PLATFORM[p] || p), it.duration ? mmss(it.duration) : null, it.campaign].filter(Boolean);
+  const extra = [
+    ["Instagram caption", it.caption],
+    it.fb_caption && it.fb_caption !== it.caption ? ["Facebook caption", it.fb_caption] : null,
+    it.first_comment ? ["First comment", it.first_comment] : null,
+    it.collaborators.length ? ["Collab", it.collaborators.map((c) => "@" + c).join(" ")] : null,
+    ["Calendar id", it.calendar_id || "not in calendar.json"],
+    ["Upload-Post job", it.job_id],
+  ].filter(Boolean);
+  return `<article class="post" data-at="${esc(it.at)}">
+    <div class="when"><div class="time">${hm}<small>${ap}</small></div><span class="kind ${story ? "story" : ""}">${esc(it.kind)}</span></div>
+    <div class="countdown"></div>
+    <div class="phone"><div class="screen" tabindex="0" role="button" aria-label="Play ${esc(it.kind)} for ${esc(fmt(d, { weekday: "long", hour: "numeric", minute: "2-digit" }))}"><div class="island"></div>${media}${it.video ? "" : ""}${overlay}</div></div>
+    <div class="facts">${facts.map((f) => `<span>${esc(f)}</span>`).join("")}</div>
+    <details><summary>Caption and details</summary><dl>${extra.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl></details>
+    ${it.file ? `<div class="file">${esc(it.file)}</div>` : ""}
+  </article>`;
+}
+
+function render() {
+  const root = document.getElementById("days");
+  if (!DATA || !DATA.items.length) {
+    root.innerHTML = `<div class="empty-state"><h2>Nothing queued</h2><p>Upload-Post has no scheduled posts for @dbelitefitness right now. New reels show up here once they're approved and scheduled.</p></div>`;
+    return;
+  }
+  const groups = new Map();
+  for (const it of DATA.items) {
+    const k = dayKey(new Date(it.at));
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(it);
+  }
+  root.innerHTML = [...groups.values()].map((items) => {
+    const d = new Date(items[0].at), lab = dayLabel(d);
+    return `<section class="day"><div class="day-head"><h2>${fmt(d, { weekday: "long" })} · ${fmt(d, { month: "short", day: "numeric" })}</h2>
+      ${lab ? `<span class="rel ${lab[1]}">${lab[0]}</span>` : ""}<span class="count">${items.length} post${items.length > 1 ? "s" : ""}</span></div>
+      <div class="row">${items.map(card).join("")}</div></section>`;
+  }).join("");
+  wirePlayers();
+}
+
+function tick() {
+  const now = Date.now();
+  let next = null;
+  document.querySelectorAll(".post").forEach((el) => {
+    const t = Date.parse(el.dataset.at), c = el.querySelector(".countdown");
+    if (t <= now) { el.classList.add("past"); c.textContent = "Went out " + rel(now - t) + " ago"; c.classList.remove("soon"); }
+    else { c.textContent = "Posts in " + rel(t - now); c.classList.toggle("soon", t - now < 3 * 36e5); if (!next || t < next) next = t; }
+  });
+  document.getElementById("next").innerHTML = next ? `Next post in <b>${rel(next - now)}</b>` : "Queue is clear";
+  if (DATA) {
+    const s = document.getElementById("sync"), age = now - Date.parse(DATA.synced_at);
+    s.textContent = `Synced ${fmt(new Date(DATA.synced_at), { weekday: "short", month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit" })} ET` + (age > 36 * 36e5 ? " · out of date" : "");
+    s.classList.toggle("stale", age > 36 * 36e5);
+  }
+}
+
+function wirePlayers() {
+  const screens = [...document.querySelectorAll(".screen")];
+  screens.forEach((sc) => {
+    const v = sc.querySelector("video");
+    if (!v) return;
+    const bar = sc.querySelector(".progress i");
+    const toggle = () => {
+      if (v.paused) {
+        screens.forEach((o) => { const ov = o.querySelector("video"); if (ov && ov !== v && !ov.paused) ov.pause(); });
+        v.muted = false; v.play().catch(() => { v.muted = true; v.play().catch(() => {}); });
+      } else v.pause();
+    };
+    sc.addEventListener("click", toggle);
+    sc.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+    v.addEventListener("play", () => sc.classList.add("playing"));
+    v.addEventListener("pause", () => sc.classList.remove("playing"));
+    v.addEventListener("ended", () => { sc.classList.remove("playing"); v.currentTime = 0; });
+    v.addEventListener("timeupdate", () => { if (v.duration) bar.style.width = (v.currentTime / v.duration) * 100 + "%"; });
+  });
+}
+
+render();
+tick();
+setInterval(tick, 30000);
+</script>

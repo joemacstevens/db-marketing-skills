@@ -67,10 +67,12 @@ When Joey says **"post it"** or **"send it"** or **"go live"**:
 1. Check the calendar for `approved` posts
 2. Run `publish.mjs` (or `--schedule` if posts have future dates)
 3. Report back what was posted
+4. If anything was scheduled, moved, or cancelled, refresh the Reel Queue page (`skills/reel-schedule-preview.md`) and include the link
 
 When Joey says **"what's in the queue?"**:
 1. Run `publish.mjs --review`
 2. Summarize the output
+3. Refresh the Reel Queue page and hand him the link (https://claude.ai/artifact/AHVku7EeUcJCA3WxKwY6DL)
 
 When Joey says **"approve these"** or **"looks good"**:
 1. Update the relevant posts in calendar.json: `status: "approved"`, `approved_at: now`

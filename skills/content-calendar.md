@@ -150,6 +150,8 @@ When Joey asks "what's in the queue?" or "show me what's coming up," generate a 
 
 ## Integration with Other Skills
 
+- **Reel Queue preview** (`skills/reel-schedule-preview.md`): phone previews of everything queued on Upload-Post. Refresh it whenever a post is scheduled, moved, or cancelled.
+
 | When using... | Do this with the calendar |
 |--------------|--------------------------|
 | **social-content** | Add each generated post as a `ready` entry |
