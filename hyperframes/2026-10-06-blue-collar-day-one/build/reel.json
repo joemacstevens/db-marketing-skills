@@ -1,0 +1,62 @@
+{
+  "_doc": "Blue Collar Day 1, Cut B 'Nonstop'. Reel time = song time (Black Skinhead from src 0). Times: a number (reel s) or 'b:N' = beat N of the grid 0.4025 + N*0.46152 (backbeat grid fitted on the instrumental stem). Each shot is cut from source 'src' (IMG_78xx under Blue Collar 2026/Day 1) starting at source second 'ms'. frame: fill (portrait 9:16) or win11 (landscape source, 1:1 window over a blurred fill). 'room' = play the clip's own audio over this slot (coach callouts). Captions: words with SOURCE times, converted to reel via the shot offset.",
+  "grid": {"phase": 0.4025, "beat": 0.46152},
+  "end": {"at": "b:55", "length": 2.45, "hook_file": "assets/audio/different-breed-song.mp3", "hook_src": 48.8},
+
+  "title": {"at": "b:3", "out": "b:7", "kicker": "Coach P's fight camp", "line1": "Blue Collar", "line2": "Day One"},
+
+  "shots": [
+    {"id": "s00", "src": "7835", "at": 0,      "ms": 45.0,  "note": "Coach P shadowboxing at the lens"},
+    {"id": "s01", "src": "7826", "at": "b:3",  "ms": 23.577, "room": {"from": 1.60, "gain": 2.6}, "note": "countdown rope, GO at reel 3.83"},
+    {"id": "s02", "src": "7827", "at": "b:9",  "ms": 0.3,   "fx": "impact", "note": "Discipline sign rope"},
+    {"id": "s03", "src": "7826", "at": "b:11", "ms": 27.0,  "fx": "impact", "note": "woman, rope close"},
+    {"id": "s04", "src": "7830", "at": "b:13", "ms": 40.6,  "room": {"gain": 1.6}, "note": "pick it up, Desire wall"},
+    {"id": "s05", "src": "7834", "at": "b:18", "ms": 26.75, "room": {"gain": 2.2}, "tx": "whip", "note": "Coach P: left right nonstop and work"},
+    {"id": "s06", "src": "7835", "at": "b:25", "ms": 70.1,  "fx": "impact", "note": "PAD FLURRY 1 white shirt"},
+    {"id": "s07", "src": "7835", "at": "b:27", "ms": 78.8,  "fx": "impact", "note": "blue gloves"},
+    {"id": "s08", "src": "7835", "at": "b:29", "ms": 49.8,  "fx": "impact", "note": "Coach P hands-on"},
+    {"id": "s09", "src": "7835", "at": "b:31", "ms": 100.4, "fx": "impact", "note": "women on pads"},
+    {"id": "s10", "src": "7835", "at": "b:33", "ms": 88.4,  "fx": "impact", "note": "pink gloves into body protector"},
+    {"id": "s11", "src": "7836", "at": "b:35", "ms": 3.2,   "frame": "win11", "cx": 0.5, "fx": "impact", "note": "wide, absolutely different wall"},
+    {"id": "s12", "src": "7837", "at": "b:37", "ms": 1.2,   "frame": "win11", "cx": 0.5, "fx": "impact", "note": "braid vs orange hat, close"},
+    {"id": "s13", "src": "7830", "at": "b:39", "ms": 57.1,  "room": {"gain": 1.6}, "tx": "whip", "note": "Coach P calls push-ups (hands cupped)"},
+    {"id": "s14", "src": "7830", "at": 20.39,  "ms": 62.4,  "fx": "impact", "note": "push-ups under Discipline, on the stomp hit"},
+    {"id": "s15", "src": "7839", "at": "b:46", "ms": 13.29, "frame": "win11", "rotate": "transpose=2", "cx": 0.5, "room": {"gain": 1.6}, "note": "push it up x3"},
+    {"id": "s16", "src": "7835", "at": "b:52", "ms": 133.4, "fx": "impact", "note": "last look, braid vs orange hat"}
+  ],
+
+  "captions": [
+    {"shot": "s05", "chunks": [[["LEFT,", 27.32], ["RIGHT,", 27.72]], [["LEFT,", 27.96], ["RIGHT,", 28.12]], [["NONSTOP,", 28.28]], [["AND", 29.0], ["WORK.", 29.24]]], "end": 29.98},
+    {"shot": "s04", "chunks": [[["PICK", 41.62], ["IT", 41.85], ["UP!", 42.0]]], "end": 42.88},
+    {"shot": "s15", "chunks": [[["PUSH", 13.36], ["IT", 13.76], ["UP.", 13.92]], [["PUSH", 14.16], ["IT", 14.48], ["UP.", 14.64]], [["PUSH", 14.88], ["IT", 15.2], ["UP.", 15.44]]], "end": 16.0}
+  ],
+
+  "hits": [
+    {"text": "GO!", "at": 3.80, "until": "b:9", "style": "drop"},
+    {"text": "PUSH-UPS", "at": 18.62, "until": 20.36, "style": "block"}
+  ],
+
+  "labels": [
+    {"text": "Jump rope", "at": "b:9", "until": "b:13"},
+    {"text": "Pad work", "at": "b:25", "until": "b:39"},
+    {"text": "Dumbbell curls", "at": "b:46", "until": "b:52"}
+  ],
+
+  "music": {
+    "_credit": "Kanye West, Black Skinhead (Yeezus). ElevenLabs stems from reels/public/tracks/track-05-kanye-black-skinhead.mp3, reel 0 = song 0.",
+    "inst": "assets/audio/bs-instrumental.wav",
+    "voc": "assets/audio/bs-vocals.wav",
+    "_levels": "[t, inst, vocal]. Under coach callouts the vocal stem drops out and the instrumental ducks, so Coach P never fights Kanye.",
+    "levels": [
+      [0, 0.0, 0.0], [0.08, 0.9, 0.0],
+      [1.55, 0.9, 0.0], [1.75, 0.26, 0.0], [3.86, 0.26, 0.0], [4.02, 1.0, 0.0],
+      [6.35, 1.0, 0.0], [6.45, 0.38, 0.0],
+      [11.88, 0.38, 0.0], [11.94, 0.95, 0.9],
+      [18.36, 0.95, 0.9], [18.46, 0.38, 0.0],
+      [20.34, 0.38, 0.0], [20.39, 1.0, 0.9],
+      [21.58, 1.0, 0.9], [21.68, 0.38, 0.0],
+      [24.36, 0.38, 0.0], [24.42, 0.95, 0.9],
+      [25.70, 0.95, 0.9], [25.84, 0.0, 0.0]
+    ]
+  }
+}
