@@ -1,4 +1,4 @@
-# April's women's-board reel: captions (v1, awaiting Joey)
+# April's women's-board reel: captions (v1 SCHEDULED Mon 10/19 8 PM ET, job 106322e9)
 
 Render: `renders/pull-up-april-reel-v1.mp4` (24.4s, 1080x1920). Phone preview: `renders/pull-up-april-reel-v1-preview.mp4`.
 Proposed slot: Mon 10/19 8 PM ET (men's reel went this morning), or Tue 10/20 6 PM. IG/FB/Threads/TikTok.
