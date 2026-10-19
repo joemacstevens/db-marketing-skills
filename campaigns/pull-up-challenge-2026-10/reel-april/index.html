@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <title>Pull Up Challenge reel, April takes the women's board</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Nord"; src: url("fonts/NORD-Black.otf") format("opentype"); font-weight: 900; font-style: normal; }
+      @font-face { font-family: "Oswald"; src: url("fonts/Oswald.ttf") format("truetype"); font-weight: 200 700; font-style: normal; }
+
+      :root { --ink: #0a0908; --bone: #f3efe9; --red: #e81d1d; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); font-family: "Oswald", sans-serif; color: var(--bone); }
+
+      #men { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #fx { position: absolute; inset: 0; pointer-events: none; }
+      #shade-top { position: absolute; left: 0; right: 0; top: 0; height: 620px; background: linear-gradient(180deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.5) 55%, rgba(10,9,8,0) 100%); }
+      #shade-bot { position: absolute; left: 0; right: 0; bottom: 0; height: 900px; background: linear-gradient(0deg, rgba(10,9,8,0.9) 0%, rgba(10,9,8,0.55) 45%, rgba(10,9,8,0) 100%); }
+      #grain { position: absolute; inset: -64px; background: url("assets/img/grain.png") repeat; opacity: 0.06; mix-blend-mode: overlay; }
+      #flash { position: absolute; inset: 0; background: var(--red); opacity: 0; mix-blend-mode: screen; }
+
+      .w { display: block; text-transform: uppercase; white-space: nowrap; }
+      .tracked { font: 600 34px/1 "Oswald"; letter-spacing: 0.3em; text-transform: uppercase; }
+      .rule { display: block; width: 90px; height: 5px; background: var(--red); }
+
+      /* header, below the IG progress bar + handle */
+      #head { position: absolute; left: 40px; top: 250px; display: flex; align-items: center; gap: 26px; background: rgba(10,9,8,0.82); padding: 20px 34px 20px 24px; }
+      #logo { width: 112px; height: 112px; display: block; }
+      #head-text { display: flex; flex-direction: column; gap: 12px; }
+      #k1 { font: 600 30px/1 "Oswald"; letter-spacing: 0.3em; color: var(--bone); }
+      #k2 { font: 700 62px/1 "Oswald"; color: var(--bone); }
+      #k2 .red { color: var(--red); }
+
+      /* 1.5s title card after the 1.5s footage hook */
+      #title { position: absolute; left: 0; right: 0; top: 700px; display: flex; flex-direction: column; align-items: center; opacity: 0; }
+      #title-plate { position: absolute; left: 0; right: 0; top: 640px; height: 560px; background: rgba(10,9,8,0.78); opacity: 0; }
+      #t1 { font: 600 36px/1 "Oswald"; letter-spacing: 0.32em; }
+      #t2 { font: 900 190px/1 "Nord"; margin-top: 30px; }
+      #t3 { margin-top: 26px; background: var(--red); padding: 16px 34px 12px; }
+      #t3 span { font: 700 76px/1 "Oswald"; color: var(--bone); }
+
+      /* rep counter */
+      #counter { position: absolute; left: 64px; top: 1040px; width: 640px; height: 420px; }
+      #c-label-unused { position: absolute; left: 0; top: 0; font: 600 34px/1 "Oswald"; letter-spacing: 0.34em; background: rgba(10,9,8,0.82); padding: 8px 10px 6px 14px; }
+      #c-box { position: absolute; left: 0; top: 56px; width: 360px; height: 360px; }
+      #c-ring { position: absolute; inset: 0; border: 10px solid var(--red); }
+      .dg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 900 210px/1 "Nord"; color: var(--bone); opacity: 0; padding-top: 14px; }
+
+      #chip { position: absolute; left: 0; top: 1150px; width: 1080px; height: 420px; }
+      #chip-bg { position: absolute; left: 0; top: 76px; width: 1010px; height: 270px; background: var(--red); transform-origin: 0% 50%; }
+      #chip-text { position: absolute; left: 64px; top: 76px; height: 270px; display: flex; flex-direction: column; justify-content: center; }
+      #ch1 { font: 600 34px/1 "Oswald"; letter-spacing: 0.28em; }
+      #ch2 { font: 900 92px/1 "Nord"; margin-top: 10px; }
+      #ch3 { font: 700 46px/1 "Oswald"; margin-top: 10px; color: var(--ink); }
+
+      /* end card over the held last frame */
+      #end { position: absolute; inset: 0; opacity: 0; }
+      #end-shade { position: absolute; inset: 0; background: rgba(10,9,8,0.8); }
+      #end-body { position: absolute; left: 0; right: 0; top: 330px; display: flex; flex-direction: column; align-items: center; }
+      #e-logo { width: 150px; height: 150px; display: block; }
+      #e1 { font: 700 112px/1 "Oswald"; margin-top: 46px; }
+      #e2 { font: 900 400px/1 "Nord"; color: var(--red); margin-top: 18px; }
+      #e3 { font: 700 72px/1 "Oswald"; margin-top: 18px; }
+      #e-rule { display: flex; align-items: center; gap: 24px; margin-top: 44px; }
+      #e4 { font: 700 54px/1 "Oswald"; margin-top: 30px; }
+      #e5 { font: 600 34px/1 "Oswald"; letter-spacing: 0.24em; margin-top: 22px; color: var(--red); }
+    
+      .c-name { position: absolute; left: 0; top: 0; font: 600 34px/1 "Oswald"; letter-spacing: 0.3em; background: rgba(10,9,8,0.82); padding: 8px 10px 6px 14px; opacity: 0; }
+      #ff { position: absolute; left: 380px; top: 76px; font: 700 40px/1 "Oswald"; letter-spacing: 0.12em; background: var(--red); color: var(--bone); padding: 10px 16px 6px; opacity: 0; }
+</style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="24.4" data-width="1080" data-height="1920">
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0,&quot;contrast&quot;:0.3,&quot;highlights&quot;:-0.28,&quot;shadows&quot;:0,&quot;whites&quot;:0.04,&quot;blacks&quot;:-0.16,&quot;temperature&quot;:0.04,&quot;tint&quot;:0,&quot;vibrance&quot;:0.5,&quot;saturation&quot;:0.16},&quot;details&quot;:{&quot;vignette&quot;:0,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="men" class="clip" src="assets/video/april.mp4" data-start="0" data-duration="24.4" data-track-index="0" muted playsinline></video>
+
+      <div id="scene" class="clip" data-start="0" data-duration="24.4" data-track-index="1" style="position:absolute; inset:0;">
+        <div id="fx"><div id="shade-top"></div><div id="shade-bot"></div></div>
+
+        <div id="head">
+          <img id="logo" src="assets/brand/DB-logo.png" alt="Different Breed Elite Fitness">
+          <div id="head-text">
+            <span id="k1" class="w">October Pull Up Challenge</span>
+            <span id="k2" class="w">Women's board <span class="red">new #1</span></span>
+          </div>
+        </div>
+        <div id="title-plate"></div>
+        <div id="title">
+          <span id="t1" class="w">October Pull Up Challenge</span>
+          <span id="t2" class="w">Women's</span>
+          <div id="t3"><span class="w">New leader</span></div>
+        </div>
+
+        <div id="counter">
+          <span class="c-name w" id="n-apr">April</span>
+          <span id="ff" class="w">4x speed</span>
+          <div id="c-box">
+            <div id="c-ring"></div>
+            <span class="dg" id="d1">1</span><span class="dg" id="d2">2</span><span class="dg" id="d3">3</span><span class="dg" id="d4">4</span><span class="dg" id="d5">5</span><span class="dg" id="d6">6</span><span class="dg" id="d7">7</span><span class="dg" id="d8">8</span><span class="dg" id="d9">9</span><span class="dg" id="d10">10</span>
+          </div>
+        </div>
+
+        <div id="chip2" style="position:absolute; left:0; top:1150px; width:1080px; height:420px;">
+          <div id="chip2-bg" style="position:absolute; left:0; top:76px; width:900px; height:270px; background:var(--red); transform-origin:0% 50%;"></div>
+          <div style="position:absolute; left:64px; top:76px; height:270px; display:flex; flex-direction:column; justify-content:center;">
+            <span id="c2h1" class="w" style="font:600 34px/1 'Oswald'; letter-spacing:0.28em;">Women's board</span>
+            <span id="c2h2" class="w" style="font:900 104px/1 'Nord'; margin-top:10px;">April 10</span>
+            <span id="c2h3" class="w" style="font:700 46px/1 'Oswald'; margin-top:10px; color:var(--ink);">First place</span>
+          </div>
+        </div>
+
+        <div id="end">
+          <div id="end-shade"></div>
+          <div id="end-body">
+            <img id="e-logo" src="assets/brand/DB-logo.png" alt="">
+            <span id="e1" class="w">Can you beat</span>
+            <span id="e2" class="w">10?</span>
+            <span id="e3" class="w">Max pull ups straight</span>
+            <div id="e-rule"><span class="rule"></span><span class="w tracked">Oct 1 – Oct 31</span><span class="rule"></span></div>
+            <span id="e4" class="w">Men's + women's boards</span>
+            <span id="e5" class="w">Winners spin the wheel</span>
+          </div>
+        </div>
+
+        <div id="grain"></div>
+        <div id="flash"></div>
+      </div>
+
+      <audio id="soundtrack" src="assets/audio/soundtrack.wav" data-start="0" data-duration="24.4" data-track-index="10" data-volume="1"></audio>
+    </div>
+
+    <script>
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const flash = (at, p) => tl.fromTo("#flash", { opacity: p }, { opacity: 0, duration: 0.28, ease: "power2.out", immediateRender: false }, at);
+
+        tl.fromTo("#grain", { x: 0, y: 0 }, { keyframes: [{ x: -30, y: 18, duration: 0.07 }, { x: 22, y: -26, duration: 0.07 }, { x: -12, y: 30, duration: 0.07 }, { x: 0, y: 0, duration: 0.07 }], repeat: 99, ease: "steps(1)" }, 0);
+
+        // 0-1.5s pure footage (April's 10th), 1.5-3.0s title card, content from 3.0s
+        tl.fromTo(["#shade-top", "#shade-bot"], { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 1.3);
+        tl.fromTo("#title-plate", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 1.5);
+        tl.fromTo("#title", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 1.5);
+        tl.fromTo("#t1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.2, ease: "power3.out" }, 1.5);
+        tl.fromTo("#t2", { opacity: 0, scale: 2.6 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.in" }, 1.55);
+        flash(1.75, 0.35);
+        tl.fromTo("#t3", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "expo.out" }, 1.85);
+        tl.to(["#title", "#title-plate"], { opacity: 0, scale: 1.08, duration: 0.15, ease: "power2.in" }, 2.85);
+        tl.fromTo("#head", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 3.0);
+        tl.fromTo("#logo", { scale: 1.8, rotation: -12, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.4, ease: "back.out(1.7)" }, 3.0);
+        tl.fromTo("#k1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 3.1);
+        tl.fromTo("#k2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 3.2);
+
+        // rep counter: April's rep tops (motion-detected head at the bar), mapped through the speed ramp (reps.py)
+        const APR = [2.7, 4.075, 4.75, 5.5, 6.15, 6.85, 7.575, 8.35, 10.625, 14.975];
+        let shown = -1;
+        const show = (n, t, big) => {
+          if (shown >= 0) tl.set("#d" + shown, { opacity: 0 }, t);
+          tl.fromTo("#d" + n, { opacity: 1, scale: big ? 1.9 : 1.35 }, { scale: 1, duration: big ? 0.18 : 0.08, ease: "power4.in", immediateRender: false }, t);
+          if (big) {
+            tl.fromTo("#c-ring", { scale: 1 }, { keyframes: [{ scale: 1.08, duration: 0.07 }, { scale: 1, duration: 0.22, ease: "back.out(3)" }], immediateRender: false }, t + 0.16);
+            flash(t + 0.16, 0.18);
+          }
+          shown = n;
+        };
+
+        // rep 1 lands under the title card, so the counter arrives on 1
+        tl.fromTo("#counter", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 3.05);
+        tl.set("#n-apr", { opacity: 1 }, 3.05);
+        show(1, 3.05, false);
+        APR.forEach((t, i) => { if (i > 0) show(i + 1, t, t < 3.8 || (t >= 9.825 && t < 12.625) || t >= 13.975); });
+        tl.fromTo("#ff", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.15 }, 3.8);
+        tl.to("#ff", { opacity: 0, duration: 0.12 }, 9.8);
+        tl.fromTo("#ff", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.15, immediateRender: false }, 12.625);
+        tl.to("#ff", { opacity: 0, duration: 0.12 }, 13.95);
+        flash(16.65, 0.45);
+
+        // "that's ten" (16.65) -> first place chip
+        tl.to("#counter", { opacity: 0, x: -60, duration: 0.25, ease: "power2.in" }, 16.8);
+        tl.fromTo("#chip2-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "expo.out" }, 16.9);
+        tl.fromTo("#c2h1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 17.0);
+        tl.fromTo("#c2h2", { opacity: 0, scale: 1.8, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.in" }, 17.07);
+        tl.fromTo("#c2h3", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 17.3);
+        flash(17.27, 0.25);
+        tl.to("#chip2", { opacity: 0, duration: 0.3, ease: "power2.in" }, 19.4);
+        tl.to(["#head", "#shade-top", "#shade-bot"], { opacity: 0, duration: 0.3, ease: "power2.in" }, 19.4);
+
+        // end card on the held last frame, lands with the anthem hook (anthem starts 19.6)
+        const E = 19.7 - 22.9;
+        tl.fromTo("#end", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 22.9 + E);
+        tl.fromTo("#e-logo", { scale: 1.8, rotation: -12, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.4, ease: "back.out(1.7)" }, 23.0 + E);
+        tl.fromTo("#e1", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.in" }, 23.2 + E);
+        tl.fromTo("#e2", { opacity: 0, scale: 3 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, 23.45 + E);
+        flash(23.67 + E, 0.4);
+        tl.fromTo("#end-body", { x: 0, y: 0 }, { keyframes: [{ x: -14, y: 8, duration: 0.04 }, { x: 10, y: -7, duration: 0.04 }, { x: 0, y: 0, duration: 0.06 }] }, 23.67 + E);
+        tl.fromTo("#e3", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 23.9 + E);
+        tl.fromTo("#e-rule .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, 24.1 + E);
+        tl.fromTo("#e-rule .tracked", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 24.1 + E);
+        tl.fromTo("#e4", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 24.35 + E);
+        tl.fromTo("#e5", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 24.6 + E);
+        tl.fromTo("#e2", { scale: 1 }, { keyframes: [{ scale: 1.06, duration: 0.1 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }], immediateRender: false }, 25.9 + E);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>
