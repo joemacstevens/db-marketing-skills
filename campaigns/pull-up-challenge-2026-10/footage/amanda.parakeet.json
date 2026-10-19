@@ -1,0 +1,120 @@
+{
+  "text": "Challenge begins. Grip on the side of the bar. It's one two three four. Five. Six. Come on. Come on. Come on. Six.",
+  "words": [
+    {
+      "text": "Challenge",
+      "start": 0.24,
+      "end": 0.72
+    },
+    {
+      "text": "begins.",
+      "start": 0.72,
+      "end": 1.52
+    },
+    {
+      "text": "Grip",
+      "start": 1.52,
+      "end": 2
+    },
+    {
+      "text": "on",
+      "start": 2,
+      "end": 2.08
+    },
+    {
+      "text": "the",
+      "start": 2.08,
+      "end": 2.16
+    },
+    {
+      "text": "side",
+      "start": 2.16,
+      "end": 2.4
+    },
+    {
+      "text": "of",
+      "start": 2.4,
+      "end": 2.56
+    },
+    {
+      "text": "the",
+      "start": 2.56,
+      "end": 2.88
+    },
+    {
+      "text": "bar.",
+      "start": 2.88,
+      "end": 3.84
+    },
+    {
+      "text": "It's",
+      "start": 4.8,
+      "end": 5.36
+    },
+    {
+      "text": "one",
+      "start": 5.36,
+      "end": 5.68
+    },
+    {
+      "text": "two",
+      "start": 6.88,
+      "end": 7.2
+    },
+    {
+      "text": "three",
+      "start": 8.64,
+      "end": 9.28
+    },
+    {
+      "text": "four.",
+      "start": 11.36,
+      "end": 14.4
+    },
+    {
+      "text": "Five.",
+      "start": 14.4,
+      "end": 17.92
+    },
+    {
+      "text": "Six.",
+      "start": 18.08,
+      "end": 18.88
+    },
+    {
+      "text": "Come",
+      "start": 18.88,
+      "end": 19.2
+    },
+    {
+      "text": "on.",
+      "start": 19.2,
+      "end": 19.68
+    },
+    {
+      "text": "Come",
+      "start": 19.68,
+      "end": 20
+    },
+    {
+      "text": "on.",
+      "start": 20,
+      "end": 20.24
+    },
+    {
+      "text": "Come",
+      "start": 20.24,
+      "end": 20.4
+    },
+    {
+      "text": "on.",
+      "start": 20.4,
+      "end": 20.64
+    },
+    {
+      "text": "Six.",
+      "start": 21.52,
+      "end": 21.92
+    }
+  ]
+}
