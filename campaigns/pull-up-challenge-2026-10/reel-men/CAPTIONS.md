@@ -1,4 +1,4 @@
-# Men's board reel: captions (draft, awaiting Joey)
+# Men's board reel: captions (POSTED 10/19 ~10:20 AM, all 4 platforms)
 
 Render: `renders/pull-up-men-reel-v2.mp4` (27.6s, 1080x1920). Phone preview: `renders/pull-up-men-reel-v2-preview.mp4`.
 Proposed slot: Mon 10/19 6 PM ET, IG/FB/Threads/TikTok (8 PM carousel already holds tonight's second post).
