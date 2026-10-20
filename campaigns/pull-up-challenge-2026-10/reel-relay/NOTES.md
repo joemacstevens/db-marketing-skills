@@ -17,3 +17,8 @@ keep counting, people drop off at their max until the leader finishes. Copy: "ar
   -> `build-audio.sh` -> `build-index.py` (fills build/index.template.html) -> `npx hyperframes render`.
 - Type: DB Kinetic Type Kit (Archivo var / Instrument Serif / DM Mono), kit end card. Counter corner flips per
   shot to the lifter's empty side.
+- v3 (Joey 10/20): coaches' real voices as an undertone (ElevenLabs 2-stem vocals per clip, each count lifted at its
+  parakeet word time and dropped 0.12s after its rep beat; music ducks ~4 dB) via `build-audio.py`. "ladies, can you
+  beat 10?" card on April's hold (one extra stomp-clap cycle, grid intact). CTA now "guys, can you beat 27?" with
+  Don's "twenty-seven". Lifter names are big Archivo punch (were tiny DM Mono tags). A red max digit is cleared at
+  the next cut so it never reads as the next lifter's number.

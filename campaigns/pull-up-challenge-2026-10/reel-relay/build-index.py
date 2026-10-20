@@ -11,10 +11,10 @@ digits = "\n          ".join(
     f'<span class="dg punch{" red" if r["n"] in maxes else ""}" id="d{r["n"]}">{r["n"]}</span>' for r in T["reps"])
 names, extra = [], []
 for i, c in enumerate(T["chunks"]):
-    names.append(f'<span class="nm tag" id="nm{i}">{c["who"]}</span>')
+    names.append(f'<div class="nm" id="nm{i}"><span class="who punch">{c["who"]}</span></div>')
     if c["to"] == c["max"]:
         t = next(r["t"] for r in T["reps"] if r["n"] == c["max"])
-        names.append(f'<span class="nm tag" id="mx{i}">{c["who"]}<span class="rule"></span>{BOARD[c["who"]]}</span>')
+        names.append(f'<div class="nm" id="mx{i}"><span class="tag">{BOARD[c["who"]]}</span><span class="who punch">{c["who"]}</span></div>')
         extra.append({"i": i, "t": t})
 T["maxTags"] = extra
 out = (src.replace("__TOTAL__", str(T["total"])).replace("__GRADE__", grade)

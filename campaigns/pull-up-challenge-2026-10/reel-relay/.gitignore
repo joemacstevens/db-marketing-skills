@@ -3,3 +3,8 @@ build/tic.wav
 assets/video/
 renders/*.mp4
 .hyperframes/
+build/voice/*
+!build/voice/*-stems/
+build/voice/*-stems/*
+!build/voice/*-stems/vocals.mp3
+build/*.wav

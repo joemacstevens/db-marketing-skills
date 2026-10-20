@@ -23,7 +23,7 @@
       .sq { width: 20px; height: 20px; background: var(--red); display: block; }
       .rule { width: 90px; height: 2.5px; background: rgba(255,255,255,0.85); display: block; }
       .red { color: var(--red); }
-      #t2, #t3, #k2, #k3, #e2, #e3 { opacity: 0; }
+      #t2, #t3, #k2, #k2b, #l2, #l3, #e2, #e3 { opacity: 0; }
 
       #scrim-bot { position: absolute; left: 0; right: 0; bottom: 0; height: 1150px; background: linear-gradient(to top, rgba(11,11,12,0.78) 0%, rgba(11,11,12,0.5) 55%, rgba(11,11,12,0)); opacity: 0; }
       #scrim-full { position: absolute; inset: 0; background: rgba(11,11,12,0.55); opacity: 0; }
@@ -37,22 +37,29 @@
 
       /* running count: lower-left over the floor, tag above */
       /* corner flips per shot to the lifter's empty side: .r = bottom-right (default), .l = bottom-left */
-      #count { position: absolute; left: 55px; right: 55px; bottom: 330px; height: 470px; opacity: 0; }
-      .nm { position: absolute; top: 0; right: 4px; opacity: 0; font-size: 32px; color: #fff; }
+      #count { position: absolute; left: 55px; right: 55px; bottom: 330px; height: 540px; opacity: 0; }
+      .nm { position: absolute; top: 0; right: 4px; height: 160px; opacity: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; gap: 12px; }
+      .nm .who { font-size: 104px; line-height: 0.84; font-stretch: 112%; letter-spacing: -0.01em; }
+      .nm .tag { font-size: 30px; color: #fff; }
+      #count.l .nm, #count.m .nm { align-items: flex-start; }
       .dg { position: absolute; right: 0; bottom: 0; font-size: 430px; line-height: 0.8; font-stretch: 62%; letter-spacing: -0.03em; opacity: 0; transform-origin: 100% 100%; }
-      #count.l .nm { right: auto; left: 6px; }
+      #count.l .nm { right: auto; left: 0; }
       #count.m { bottom: auto; top: 700px; }
-      #count.m .nm { right: auto; left: 6px; }
+      #count.m .nm { right: auto; left: 0; }
       #count.m .dg { right: auto; left: 0; transform-origin: 0% 100%; }
       #count.l .dg { right: auto; left: 0; transform-origin: 0% 100%; }
       #scrim-top { position: absolute; left: 0; right: 0; top: 0; height: 560px; background: linear-gradient(to bottom, rgba(11,11,12,0.6), rgba(11,11,12,0)); opacity: 0; }
 
       /* CTA over the held last frame */
+      #ladies { position: absolute; left: 60px; bottom: 330px; opacity: 0; }
+      #l1 { font-size: 160px; line-height: 0.95; margin-left: 8px; }
+      #l2 { font-size: 250px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.025em; margin-top: 14px; }
+      #l3 { font-size: 250px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.025em; }
       #cta { position: absolute; left: 60px; right: 55px; top: 560px; opacity: 0; }
       #cta-tag { margin-bottom: 60px; }
       #k1 { font-size: 150px; line-height: 0.95; margin-left: 8px; }
       #k2 { font-size: 290px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.03em; margin-top: 18px; }
-      #k3 { font-size: 120px; line-height: 0.95; margin-top: 46px; margin-left: 8px; }
+      #k2b { font-size: 290px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.03em; }
       #k4 { position: absolute; left: 60px; bottom: 330px; opacity: 0; }
 
       /* §7.07 end card */
@@ -89,11 +96,17 @@
           __DIGITS__
         </div>
 
+        <div id="ladies">
+          <span id="l1" class="conn">ladies,</span>
+          <span id="l2" class="punch">Can you</span>
+          <span id="l3" class="punch">Beat <span class="red">10?</span></span>
+        </div>
+
         <div id="cta">
           <div id="cta-tag" class="tag"><span class="sq"></span>Last week<span class="rule"></span>Ends Oct 31</div>
-          <span id="k1" class="conn">think you can</span>
-          <span id="k2" class="punch">Beat <span class="red">27?</span></span>
-          <span id="k3" class="conn">ladies, beat 10.</span>
+          <span id="k1" class="conn">guys,</span>
+          <span id="k2" class="punch">Can you</span>
+          <span id="k2b" class="punch">Beat <span class="red">27?</span></span>
         </div>
         <div id="k4" class="tag"><span class="rule"></span>Put your number on the lobby board</div>
 
@@ -138,6 +151,9 @@
         // name tag cuts with the shot
         T.chunks.forEach((c, i) => {
           tl.set("#nm" + i, { opacity: 1 }, c.start);
+          // a red max digit never carries into the next lifter's shot
+          const pc = T.chunks[i - 1];
+          if (pc && pc.to === pc.max) tl.set("#d" + pc.max, { opacity: 0 }, pc.max === 10 ? T.ladies[1] : c.start);
           tl.set("#count", { className: c.who === "April" ? "l" : c.from === 23 ? "m" : "r" }, c.start);  // Roberto close-up: mid-left, clear of his legs
           tl.set("#nm" + i, { opacity: 0 }, c.end);
         });
@@ -148,6 +164,16 @@
           tl.set("#mx" + m.i, { opacity: 0 }, T.chunks[m.i].end);
         });
 
+        // ladies' moment over April's hold: the red 10 lands, then the card takes the frame
+        const [L0, L1] = T.ladies;
+        tl.set("#count", { opacity: 0 }, L0);
+        tl.set("#count", { opacity: 1 }, L1);
+        tl.set("#ladies", { opacity: 1 }, L0);
+        connIn("#l1", L0);
+        punchIn("#l2", L0 + 0.25);
+        punchIn("#l3", L0 + 0.5);
+        tl.set("#ladies", { opacity: 0 }, L1);
+
         // CTA over the held frame
         const C = T.tailEnd;
         tl.set(["#count"], { opacity: 0 }, C);
@@ -155,9 +181,9 @@
         tl.set("#cta", { opacity: 1 }, C);
         connIn("#cta-tag", C);
         connIn("#k1", C + 0.1);
-        punchIn("#k2", C + 0.48);
-        connIn("#k3", C + 1.0);
-        connIn("#k4", C + 1.2);
+        punchIn("#k2", C + 0.35);
+        punchIn("#k2b", C + 0.6);  // lands with Don's "twenty-seven"
+        connIn("#k4", C + 1.0);
 
         // §7.07 end card
         const E = T.endTag;  // anthem "We" lands here

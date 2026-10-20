@@ -23,7 +23,7 @@
       .sq { width: 20px; height: 20px; background: var(--red); display: block; }
       .rule { width: 90px; height: 2.5px; background: rgba(255,255,255,0.85); display: block; }
       .red { color: var(--red); }
-      #t2, #t3, #k2, #k3, #e2, #e3 { opacity: 0; }
+      #t2, #t3, #k2, #k2b, #l2, #l3, #e2, #e3 { opacity: 0; }
 
       #scrim-bot { position: absolute; left: 0; right: 0; bottom: 0; height: 1150px; background: linear-gradient(to top, rgba(11,11,12,0.78) 0%, rgba(11,11,12,0.5) 55%, rgba(11,11,12,0)); opacity: 0; }
       #scrim-full { position: absolute; inset: 0; background: rgba(11,11,12,0.55); opacity: 0; }
@@ -37,22 +37,29 @@
 
       /* running count: lower-left over the floor, tag above */
       /* corner flips per shot to the lifter's empty side: .r = bottom-right (default), .l = bottom-left */
-      #count { position: absolute; left: 55px; right: 55px; bottom: 330px; height: 470px; opacity: 0; }
-      .nm { position: absolute; top: 0; right: 4px; opacity: 0; font-size: 32px; color: #fff; }
+      #count { position: absolute; left: 55px; right: 55px; bottom: 330px; height: 540px; opacity: 0; }
+      .nm { position: absolute; top: 0; right: 4px; height: 160px; opacity: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; gap: 12px; }
+      .nm .who { font-size: 104px; line-height: 0.84; font-stretch: 112%; letter-spacing: -0.01em; }
+      .nm .tag { font-size: 30px; color: #fff; }
+      #count.l .nm, #count.m .nm { align-items: flex-start; }
       .dg { position: absolute; right: 0; bottom: 0; font-size: 430px; line-height: 0.8; font-stretch: 62%; letter-spacing: -0.03em; opacity: 0; transform-origin: 100% 100%; }
-      #count.l .nm { right: auto; left: 6px; }
+      #count.l .nm { right: auto; left: 0; }
       #count.m { bottom: auto; top: 700px; }
-      #count.m .nm { right: auto; left: 6px; }
+      #count.m .nm { right: auto; left: 0; }
       #count.m .dg { right: auto; left: 0; transform-origin: 0% 100%; }
       #count.l .dg { right: auto; left: 0; transform-origin: 0% 100%; }
       #scrim-top { position: absolute; left: 0; right: 0; top: 0; height: 560px; background: linear-gradient(to bottom, rgba(11,11,12,0.6), rgba(11,11,12,0)); opacity: 0; }
 
       /* CTA over the held last frame */
+      #ladies { position: absolute; left: 60px; bottom: 330px; opacity: 0; }
+      #l1 { font-size: 160px; line-height: 0.95; margin-left: 8px; }
+      #l2 { font-size: 250px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.025em; margin-top: 14px; }
+      #l3 { font-size: 250px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.025em; }
       #cta { position: absolute; left: 60px; right: 55px; top: 560px; opacity: 0; }
       #cta-tag { margin-bottom: 60px; }
       #k1 { font-size: 150px; line-height: 0.95; margin-left: 8px; }
       #k2 { font-size: 290px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.03em; margin-top: 18px; }
-      #k3 { font-size: 120px; line-height: 0.95; margin-top: 46px; margin-left: 8px; }
+      #k2b { font-size: 290px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.03em; }
       #k4 { position: absolute; left: 60px; bottom: 330px; opacity: 0; }
 
       /* §7.07 end card */
@@ -69,10 +76,10 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="29.08" data-width="1080" data-height="1920">
-      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0,&quot;contrast&quot;:0.3,&quot;highlights&quot;:-0.28,&quot;shadows&quot;:0,&quot;whites&quot;:0.04,&quot;blacks&quot;:-0.16,&quot;temperature&quot;:0.04,&quot;tint&quot;:0,&quot;vibrance&quot;:0.5,&quot;saturation&quot;:0.16},&quot;details&quot;:{&quot;vignette&quot;:0,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="relay" class="clip" src="assets/video/relay.mp4" data-start="0" data-duration="29.08" data-track-index="0" muted playsinline></video>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30.08" data-width="1080" data-height="1920">
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0,&quot;contrast&quot;:0.3,&quot;highlights&quot;:-0.28,&quot;shadows&quot;:0,&quot;whites&quot;:0.04,&quot;blacks&quot;:-0.16,&quot;temperature&quot;:0.04,&quot;tint&quot;:0,&quot;vibrance&quot;:0.5,&quot;saturation&quot;:0.16},&quot;details&quot;:{&quot;vignette&quot;:0,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="relay" class="clip" src="assets/video/relay.mp4" data-start="0" data-duration="30.08" data-track-index="0" muted playsinline></video>
 
-      <div id="scene" class="clip" data-start="0" data-duration="29.08" data-track-index="1" style="position:absolute; inset:0;">
+      <div id="scene" class="clip" data-start="0" data-duration="30.08" data-track-index="1" style="position:absolute; inset:0;">
         <div id="scrim-bot"></div>
         <div id="scrim-full"></div>
         <div id="scrim-top"></div>
@@ -85,22 +92,22 @@
         </div>
 
         <div id="count">
-          <span class="nm tag" id="nm0">Amanda</span>
-            <span class="nm tag" id="nm1">April</span>
-            <span class="nm tag" id="nm2">Amanda</span>
-            <span class="nm tag" id="mx2">Amanda<span class="rule"></span>Women's #2</span>
-            <span class="nm tag" id="nm3">April</span>
-            <span class="nm tag" id="mx3">April<span class="rule"></span>Women's #1</span>
-            <span class="nm tag" id="nm4">Roberto</span>
-            <span class="nm tag" id="nm5">Ahmed</span>
-            <span class="nm tag" id="nm6">Roberto</span>
-            <span class="nm tag" id="nm7">Ahmed</span>
-            <span class="nm tag" id="nm8">Roberto</span>
-            <span class="nm tag" id="nm9">Ahmed</span>
-            <span class="nm tag" id="nm10">Roberto</span>
-            <span class="nm tag" id="mx10">Roberto<span class="rule"></span>Men's #2</span>
-            <span class="nm tag" id="nm11">Ahmed</span>
-            <span class="nm tag" id="mx11">Ahmed<span class="rule"></span>Men's #1</span>
+          <div class="nm" id="nm0"><span class="who punch">Amanda</span></div>
+            <div class="nm" id="nm1"><span class="who punch">April</span></div>
+            <div class="nm" id="nm2"><span class="who punch">Amanda</span></div>
+            <div class="nm" id="mx2"><span class="tag">Women's #2</span><span class="who punch">Amanda</span></div>
+            <div class="nm" id="nm3"><span class="who punch">April</span></div>
+            <div class="nm" id="mx3"><span class="tag">Women's #1</span><span class="who punch">April</span></div>
+            <div class="nm" id="nm4"><span class="who punch">Roberto</span></div>
+            <div class="nm" id="nm5"><span class="who punch">Ahmed</span></div>
+            <div class="nm" id="nm6"><span class="who punch">Roberto</span></div>
+            <div class="nm" id="nm7"><span class="who punch">Ahmed</span></div>
+            <div class="nm" id="nm8"><span class="who punch">Roberto</span></div>
+            <div class="nm" id="nm9"><span class="who punch">Ahmed</span></div>
+            <div class="nm" id="nm10"><span class="who punch">Roberto</span></div>
+            <div class="nm" id="mx10"><span class="tag">Men's #2</span><span class="who punch">Roberto</span></div>
+            <div class="nm" id="nm11"><span class="who punch">Ahmed</span></div>
+            <div class="nm" id="mx11"><span class="tag">Men's #1</span><span class="who punch">Ahmed</span></div>
           <span class="dg punch" id="d1">1</span>
           <span class="dg punch" id="d2">2</span>
           <span class="dg punch" id="d3">3</span>
@@ -130,11 +137,17 @@
           <span class="dg punch red" id="d27">27</span>
         </div>
 
+        <div id="ladies">
+          <span id="l1" class="conn">ladies,</span>
+          <span id="l2" class="punch">Can you</span>
+          <span id="l3" class="punch">Beat <span class="red">10?</span></span>
+        </div>
+
         <div id="cta">
           <div id="cta-tag" class="tag"><span class="sq"></span>Last week<span class="rule"></span>Ends Oct 31</div>
-          <span id="k1" class="conn">think you can</span>
-          <span id="k2" class="punch">Beat <span class="red">27?</span></span>
-          <span id="k3" class="conn">ladies, beat 10.</span>
+          <span id="k1" class="conn">guys,</span>
+          <span id="k2" class="punch">Can you</span>
+          <span id="k2b" class="punch">Beat <span class="red">27?</span></span>
         </div>
         <div id="k4" class="tag"><span class="rule"></span>Put your number on the lobby board</div>
 
@@ -150,12 +163,12 @@
         </div>
       </div>
 
-      <audio id="soundtrack" src="assets/audio/soundtrack.wav" data-start="0" data-duration="29.08" data-track-index="10" data-volume="1"></audio>
+      <audio id="soundtrack" src="assets/audio/soundtrack.wav" data-start="0" data-duration="30.08" data-track-index="10" data-volume="1"></audio>
     </div>
 
     <script>
       (function () {
-        const T = {"total": 29.08, "song0": 54.33, "drop": 3.0, "reps": [{"n": 1, "t": 4.526}, {"n": 2, "t": 5.248}, {"n": 3, "t": 5.926}, {"n": 4, "t": 6.648}, {"n": 5, "t": 7.327}, {"n": 6, "t": 8.049}, {"n": 7, "t": 8.727}, {"n": 8, "t": 9.449}, {"n": 9, "t": 10.127}, {"n": 10, "t": 10.849}, {"n": 11, "t": 11.528}, {"n": 12, "t": 12.249}, {"n": 13, "t": 12.928}, {"n": 14, "t": 13.65}, {"n": 15, "t": 14.328}, {"n": 16, "t": 15.05}, {"n": 17, "t": 15.728}, {"n": 18, "t": 16.45}, {"n": 19, "t": 17.129}, {"n": 20, "t": 17.851}, {"n": 21, "t": 18.529}, {"n": 22, "t": 19.251}, {"n": 23, "t": 19.929}, {"n": 24, "t": 20.651}, {"n": 25, "t": 21.33}, {"n": 26, "t": 22.73}, {"n": 27, "t": 24.13}], "chunks": [{"who": "Amanda", "max": 6, "from": 1, "to": 2, "start": 3.0, "end": 5.597}, {"who": "April", "max": 10, "from": 3, "to": 4, "start": 5.597, "end": 6.997}, {"who": "Amanda", "max": 6, "from": 5, "to": 6, "start": 6.997, "end": 8.398}, {"who": "April", "max": 10, "from": 7, "to": 10, "start": 8.398, "end": 11.198}, {"who": "Roberto", "max": 25, "from": 11, "to": 12, "start": 11.198, "end": 12.598}, {"who": "Ahmed", "max": 27, "from": 13, "to": 14, "start": 12.598, "end": 13.999}, {"who": "Roberto", "max": 25, "from": 15, "to": 16, "start": 13.999, "end": 15.399}, {"who": "Ahmed", "max": 27, "from": 17, "to": 18, "start": 15.399, "end": 16.799}, {"who": "Roberto", "max": 25, "from": 19, "to": 20, "start": 16.799, "end": 18.2}, {"who": "Ahmed", "max": 27, "from": 21, "to": 22, "start": 18.2, "end": 19.6}, {"who": "Roberto", "max": 25, "from": 23, "to": 25, "start": 19.6, "end": 22.03}, {"who": "Ahmed", "max": 27, "from": 26, "to": 27, "start": 22.03, "end": 24.93}], "tailEnd": 24.93, "endTag": 27.13, "maxTags": [{"i": 2, "t": 8.049}, {"i": 3, "t": 10.849}, {"i": 10, "t": 21.33}, {"i": 11, "t": 24.13}]};
+        const T = {"total": 30.08, "song0": 54.33, "drop": 3.0, "reps": [{"n": 1, "t": 4.526}, {"n": 2, "t": 5.248}, {"n": 3, "t": 5.926}, {"n": 4, "t": 6.648}, {"n": 5, "t": 7.327}, {"n": 6, "t": 8.049}, {"n": 7, "t": 8.727}, {"n": 8, "t": 9.449}, {"n": 9, "t": 10.127}, {"n": 10, "t": 10.849}, {"n": 11, "t": 12.928}, {"n": 12, "t": 13.65}, {"n": 13, "t": 14.328}, {"n": 14, "t": 15.05}, {"n": 15, "t": 15.728}, {"n": 16, "t": 16.45}, {"n": 17, "t": 17.129}, {"n": 18, "t": 17.851}, {"n": 19, "t": 18.529}, {"n": 20, "t": 19.251}, {"n": 21, "t": 19.929}, {"n": 22, "t": 20.651}, {"n": 23, "t": 21.33}, {"n": 24, "t": 22.052}, {"n": 25, "t": 22.73}, {"n": 26, "t": 24.13}, {"n": 27, "t": 25.531}], "chunks": [{"who": "Amanda", "max": 6, "from": 1, "to": 2, "start": 3.0, "end": 5.597}, {"who": "April", "max": 10, "from": 3, "to": 4, "start": 5.597, "end": 6.997}, {"who": "Amanda", "max": 6, "from": 5, "to": 6, "start": 6.997, "end": 8.398}, {"who": "April", "max": 10, "from": 7, "to": 10, "start": 8.398, "end": 12.599}, {"who": "Roberto", "max": 25, "from": 11, "to": 12, "start": 12.599, "end": 13.999}, {"who": "Ahmed", "max": 27, "from": 13, "to": 14, "start": 13.999, "end": 15.399}, {"who": "Roberto", "max": 25, "from": 15, "to": 16, "start": 15.399, "end": 16.799}, {"who": "Ahmed", "max": 27, "from": 17, "to": 18, "start": 16.799, "end": 18.2}, {"who": "Roberto", "max": 25, "from": 19, "to": 20, "start": 18.2, "end": 19.6}, {"who": "Ahmed", "max": 27, "from": 21, "to": 22, "start": 19.6, "end": 21.0}, {"who": "Roberto", "max": 25, "from": 23, "to": 25, "start": 21.0, "end": 23.43}, {"who": "Ahmed", "max": 27, "from": 26, "to": 27, "start": 23.43, "end": 26.131}], "tailEnd": 26.131, "endTag": 28.131, "ladies": [11.299, 12.599], "maxTags": [{"i": 2, "t": 8.049}, {"i": 3, "t": 10.849}, {"i": 10, "t": 22.73}, {"i": 11, "t": 25.531}]};
         const tl = gsap.timeline({ paused: true });
         const punchIn = (sel, at) => tl.fromTo(sel, { opacity: 1, scale: 1.08 }, { scale: 1, duration: 0.2, ease: "power3.out", immediateRender: false }, at);
         const connIn = (sel, at) => tl.fromTo(sel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.27, ease: "power2.out", immediateRender: false }, at);
@@ -179,6 +192,9 @@
         // name tag cuts with the shot
         T.chunks.forEach((c, i) => {
           tl.set("#nm" + i, { opacity: 1 }, c.start);
+          // a red max digit never carries into the next lifter's shot
+          const pc = T.chunks[i - 1];
+          if (pc && pc.to === pc.max) tl.set("#d" + pc.max, { opacity: 0 }, pc.max === 10 ? T.ladies[1] : c.start);
           tl.set("#count", { className: c.who === "April" ? "l" : c.from === 23 ? "m" : "r" }, c.start);  // Roberto close-up: mid-left, clear of his legs
           tl.set("#nm" + i, { opacity: 0 }, c.end);
         });
@@ -189,6 +205,16 @@
           tl.set("#mx" + m.i, { opacity: 0 }, T.chunks[m.i].end);
         });
 
+        // ladies' moment over April's hold: the red 10 lands, then the card takes the frame
+        const [L0, L1] = T.ladies;
+        tl.set("#count", { opacity: 0 }, L0);
+        tl.set("#count", { opacity: 1 }, L1);
+        tl.set("#ladies", { opacity: 1 }, L0);
+        connIn("#l1", L0);
+        punchIn("#l2", L0 + 0.25);
+        punchIn("#l3", L0 + 0.5);
+        tl.set("#ladies", { opacity: 0 }, L1);
+
         // CTA over the held frame
         const C = T.tailEnd;
         tl.set(["#count"], { opacity: 0 }, C);
@@ -196,9 +222,9 @@
         tl.set("#cta", { opacity: 1 }, C);
         connIn("#cta-tag", C);
         connIn("#k1", C + 0.1);
-        punchIn("#k2", C + 0.48);
-        connIn("#k3", C + 1.0);
-        connIn("#k4", C + 1.2);
+        punchIn("#k2", C + 0.35);
+        punchIn("#k2b", C + 0.6);  // lands with Don's "twenty-seven"
+        connIn("#k4", C + 1.0);
 
         // §7.07 end card
         const E = T.endTag;  // anthem "We" lands here

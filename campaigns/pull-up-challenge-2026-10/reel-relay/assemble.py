@@ -17,7 +17,9 @@ def beat(k):  # output time of rep k's top
     if k >= 26:  # Ahmed's finish: 26 and 27 each get two beats (~real speed), both on claps
         return beat(25) + P * (k - 25)
     s = CLAP0 + P * (k - 1) / 2 if k % 2 else STOMP0 + P * (k - 2) / 2
-    return s - SONG0
+    return s - SONG0 + (LADIES if k >= 11 else 0)
+
+LADIES = P  # one stomp-clap cycle on April's hold after her 10 for "ladies, can you beat 10?"; keeps the grid
 
 # Rep tops in source seconds. Amanda = Don's count -0.2s (lag checked on frames). April = motion-detected
 # (reel-april). Men = Don's count, refined by eye on frame grids for every rep that's on screen.
@@ -50,7 +52,9 @@ for ci, (who, a, b) in enumerate(CHUNKS):
     start = 3.0 if ci == 0 else segs[-1][1]  # chunk 1 opens on the drop: Amanda grips and goes at 1x
     # chunk end edge
     if last:
-        end = pts[-1][0] + 0.8
+        end = pts[-1][0] + 0.6
+    elif who == "april" and b == 10:
+        end = beat(10) + AND + LADIES
     elif CHUNKS[ci + 1][1] == 26:
         end = beat(25) + 0.70  # Roberto's 25 on the clap, cut on the next stomp
     else:
@@ -78,7 +82,7 @@ for ci, (who, a, b) in enumerate(CHUNKS):
     segs.append((start, end, who, make()))
 
 TAIL_END = segs[-1][1]
-TOTAL = round(TAIL_END + 2.2 + 1.95, 2)  # CTA over the held frame (2.2s), then the DB end tag on "We are Different Breed" (1.95s, ends before the next "we")
+TOTAL = round(TAIL_END + 2.0 + 1.95, 2)  # CTA over the held frame (2.0s), then the DB end tag on "We are Different Breed" (1.95s, ends before the next "we")
 N = round(TOTAL * FPS)
 
 # Which source frame each output frame needs
@@ -130,7 +134,7 @@ timing = {
     "reps": [{"n": k, "t": round(beat(k), 3)} for k in range(1, 28)],
     "chunks": [{"who": NAMES[w], "max": MAX[w], "from": a, "to": b, "start": round(s[0], 3), "end": round(s[1], 3)}
                for (w, a, b), s in zip(CHUNKS, segs[1:])],
-    "tailEnd": round(TAIL_END, 3), "endTag": round(TAIL_END + 2.2, 3),
+    "tailEnd": round(TAIL_END, 3), "endTag": round(TAIL_END + 2.0, 3), "ladies": [round(beat(10) + 0.45, 3), round(beat(10) + AND + LADIES, 3)],
 }
 json.dump(timing, open("timing.json", "w"), indent=1)
 print("total", TOTAL, "s; rep 27 at", timing["reps"][-1]["t"])

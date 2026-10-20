@@ -1,6 +1,6 @@
-# Relay reel captions (v2, awaiting Joey)
+# Relay reel captions (v3, awaiting Joey)
 
-Render: `renders/pull-up-relay-v2.mp4` (29.1s, ends on the DB end tag + "We are Different Breed" hook). Phone preview: `renders/pull-up-relay-v2-preview.mp4`.
+Render: `renders/pull-up-relay-v3.mp4` (30.1s: coach counts under the beat, "ladies, can you beat 10?" after April, "guys, can you beat 27?" CTA, DB end tag + anthem hook). Phone preview: `renders/pull-up-relay-v3-preview.mp4`.
 Proposed slot: Mon 10/26 6 PM ET (first day of the last week), IG/FB/Threads/TikTok.
 
 **IG / Threads**
