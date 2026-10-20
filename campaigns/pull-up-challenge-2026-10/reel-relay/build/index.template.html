@@ -59,6 +59,7 @@
       #cta-tag { margin-bottom: 60px; }
       #k1 { font-size: 150px; line-height: 0.95; margin-left: 8px; }
       #k2 { font-size: 290px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.03em; margin-top: 18px; }
+      #k3 { font-size: 130px; line-height: 0.95; margin-top: 40px; margin-left: 8px; }
       #k2b { font-size: 290px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.03em; }
       #k4 { position: absolute; left: 60px; bottom: 330px; opacity: 0; }
 
@@ -84,7 +85,7 @@
         <div id="scrim-full"></div>
         <div id="scrim-top"></div>
 
-        <div id="t-tag" class="tag"><span class="sq"></span>Pull up challenge<span class="rule"></span>Last week</div>
+        <div id="t-tag" class="tag"><span class="sq"></span>Pull up challenge<span class="rule"></span>10 days left</div>
         <div id="title">
           <span id="t1" class="conn">are you</span>
           <span id="t2" class="punch">Up for the</span>
@@ -103,10 +104,11 @@
         </div>
 
         <div id="cta">
-          <div id="cta-tag" class="tag"><span class="sq"></span>Last week<span class="rule"></span>Ends Oct 31</div>
+          <div id="cta-tag" class="tag"><span class="sq"></span>Pull up challenge<span class="rule"></span>Ends Oct 31</div>
           <span id="k1" class="conn">guys,</span>
           <span id="k2" class="punch">Can you</span>
           <span id="k2b" class="punch">Beat <span class="red">27?</span></span>
+          <span id="k3" class="conn">10 days left.</span>
         </div>
         <div id="k4" class="tag"><span class="rule"></span>Put your number on the lobby board</div>
 
@@ -183,7 +185,8 @@
         connIn("#k1", C + 0.1);
         punchIn("#k2", C + 0.35);
         punchIn("#k2b", C + 0.6);  // lands with Don's "twenty-seven"
-        connIn("#k4", C + 1.0);
+        connIn("#k3", C + 1.0);
+        connIn("#k4", C + 1.2);
 
         // §7.07 end card
         const E = T.endTag;  // anthem "We" lands here
