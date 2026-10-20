@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Daily schedule story, run from Joey's MacBook against the main checkout.
+  Replaces the April agent that pointed at the deleted db-marketing-skills-main/ folder
+  (launchd exit 78 EX_CONFIG on every run since).
+
+  Install (only after Joey OKs it, and only if the Mac mini job is NOT also posting):
+    cp cron/launchd/com.db.daily-schedule.plist ~/Library/LaunchAgents/
+    launchctl bootout gui/$(id -u)/com.db.daily-schedule 2>/dev/null
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.db.daily-schedule.plist
+
+  The laptop must be awake at 12:01 AM. launchd runs a missed calendar job on wake,
+  so a sleeping lid means the story posts when the lid opens, not at midnight.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.db.daily-schedule</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/joestevens/.nvm/versions/node/v22.15.0/bin/node</string>
+        <string>/Users/joestevens/Projects/Different Breed/scripts/run-daily-schedule.mjs</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/joestevens/Projects/Different Breed</string>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>0</integer>
+        <key>Minute</key>
+        <integer>1</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/joestevens/Library/Logs/db-daily-schedule.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/joestevens/Library/Logs/db-daily-schedule.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>TZ</key>
+        <string>America/New_York</string>
+        <key>PATH</key>
+        <string>/Users/joestevens/.nvm/versions/node/v22.15.0/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>HEARTBEAT_PUSH</key>
+        <string>1</string>
+        <key>HEARTBEAT_HOST</key>
+        <string>joey-macbook</string>
+    </dict>
+</dict>
+</plist>

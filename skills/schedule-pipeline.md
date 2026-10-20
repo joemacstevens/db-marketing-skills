@@ -3,6 +3,14 @@
 ## Purpose
 Complete technical reference for generating and publishing the daily "Today's Card" schedule story for Different Breed Elite Fitness. This covers the end-to-end pipeline: fetching live class data → rendering animated video → publishing to IG + FB as Stories.
 
+## Status — 2026-10-20 (read this first)
+
+- **Last story posted:** Wed 10/7, 12:01 AM ET, by the Mac mini's OpenClaw cron ("Today's Card — <Day>"). Nothing since 10/8 (checked against Upload-Post `/api/uploadposts/history`).
+- **Mac mini:** on the LAN at 192.168.86.49, but sshd resets every connection during key exchange, so logs can't be read remotely. Someone has to check the mini in person (reboot / Remote Login / OpenClaw gateway).
+- **MacBook backup agent** (`~/Library/LaunchAgents/com.db.daily-schedule.plist`): pointed at the deleted `db-marketing-skills-main/` folder, so every run since April fails with launchd exit 78. A corrected plist that runs `scripts/run-daily-schedule.mjs` from the main checkout is at `cron/launchd/com.db.daily-schedule.plist` (not installed; run only ONE of mini or MacBook or the story double-posts).
+- **The mini never writes `content-calendar/calendar.json`.** Only `scripts/run-daily-schedule.mjs` does. A calendar check alone reports MISSING even on days the story posted. Use `cron/heartbeat.json` (written by `run-daily-schedule.mjs`, pushed to GitHub with `HEARTBEAT_PUSH=1`) or Upload-Post history.
+- **Worktrees can't render ScheduleReel:** `reels/src/Root.tsx` imports untracked comps that only exist in the main checkout. Render from `/Users/joestevens/Projects/Different Breed/reels`.
+
 ## Architecture Overview
 
 ```

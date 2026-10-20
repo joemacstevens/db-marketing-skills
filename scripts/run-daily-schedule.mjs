@@ -13,6 +13,11 @@
  *   --dry-run           Do everything except publish
  *   --skip-pick         Re-use existing background clips in reels/public/
  *   --skip-render       Re-use an existing render at the expected path
+ *
+ * Every non-dry run records its outcome in cron/heartbeat.json (current state)
+ * and cron/heartbeat.jsonl (history) under job "daily-schedule-story". Set
+ * HEARTBEAT_PUSH=1 to also write both files to GitHub main via `gh api`, so the
+ * cloud spot-check can see the result without this machine pushing a commit.
  */
 
 import {
@@ -43,6 +48,75 @@ const args = Object.fromEntries(
 const DRY_RUN = !!args["dry-run"];
 const SKIP_PICK = !!args["skip-pick"];
 const SKIP_RENDER = !!args["skip-render"];
+
+const HEARTBEAT_JOB = "daily-schedule-story";
+const STARTED_AT = new Date();
+
+// ─── Heartbeat ───
+function recordHeartbeat(status, summary, { ref = null, error = null } = {}) {
+  if (DRY_RUN) return;
+  const finished = new Date();
+  const host = process.env.HEARTBEAT_HOST || execFileSync("hostname").toString().trim();
+  const event = {
+    job: HEARTBEAT_JOB,
+    host,
+    started_at: STARTED_AT.toISOString(),
+    finished_at: finished.toISOString(),
+    status,
+    duration_ms: finished - STARTED_AT,
+    summary,
+    ref,
+    error,
+  };
+  const hbPath = resolve(ROOT, "cron", "heartbeat.json");
+  const logPath = resolve(ROOT, "cron", "heartbeat.jsonl");
+  try {
+    const state = existsSync(hbPath) ? JSON.parse(readFileSync(hbPath, "utf8") || "{}") : {};
+    const prev = state[HEARTBEAT_JOB] || {};
+    state[HEARTBEAT_JOB] = {
+      last_at: event.finished_at,
+      status,
+      last_summary: summary,
+      last_ref: ref,
+      last_error: error,
+      last_success_at: status === "success" ? event.finished_at : prev.last_success_at ?? null,
+      host,
+    };
+    writeFileSync(hbPath, JSON.stringify(state, null, 2) + "\n");
+    const log = existsSync(logPath) ? readFileSync(logPath, "utf8") : "";
+    writeFileSync(logPath, log + JSON.stringify(event) + "\n");
+    if (process.env.HEARTBEAT_PUSH === "1") {
+      for (const file of [hbPath, logPath]) pushToGitHub(file, `Heartbeat: ${HEARTBEAT_JOB} ${status}`);
+    }
+  } catch (e) {
+    console.error("Heartbeat write failed:", e.message);
+  }
+}
+
+function pushToGitHub(file, message) {
+  const repoPath = file.slice(ROOT.length + 1);
+  const repo = process.env.HEARTBEAT_REPO || "joemacstevens/db-marketing-skills";
+  let sha = null;
+  const cur = spawnSync("gh", ["api", `repos/${repo}/contents/${repoPath}?ref=main`, "--jq", ".sha"]);
+  if (cur.status === 0) sha = cur.stdout.toString().trim() || null;
+  const body = {
+    message,
+    branch: "main",
+    content: readFileSync(file).toString("base64"),
+    ...(sha ? { sha } : {}),
+  };
+  const res = spawnSync("gh", ["api", "-X", "PUT", `repos/${repo}/contents/${repoPath}`, "--input", "-"], {
+    input: JSON.stringify(body),
+  });
+  if (res.status !== 0) console.error(`Heartbeat push failed for ${repoPath}:`, res.stderr.toString().trim());
+}
+
+function fail(step, err) {
+  const msg = err?.message || String(err);
+  console.error(`${step} failed:`, msg);
+  recordHeartbeat("failure", `${DATE}: ${step} failed`, { error: msg.slice(0, 500) });
+  process.exit(1);
+}
 
 const FB_PAGE_ID = "100873874674621"; // DB Elite Fitness & Sports FB page
 
@@ -80,16 +154,22 @@ function loadApiKey() {
 
 // ─── 1. Fetch schedule ───
 console.log("[1/5] Fetching schedule from MindBody...");
-const scheduleJson = execFileSync(
-  "node",
-  [resolve(__dirname, "fetch-mindbody-schedule.mjs"), DATE],
-  { cwd: ROOT }
-).toString();
-const props = JSON.parse(scheduleJson);
+let props;
+try {
+  const scheduleJson = execFileSync(
+    "node",
+    [resolve(__dirname, "fetch-mindbody-schedule.mjs"), DATE],
+    { cwd: ROOT }
+  ).toString();
+  props = JSON.parse(scheduleJson);
+} catch (err) {
+  fail("MindBody fetch", err);
+}
 console.log(`      → ${props.schedule.length} classes`);
 
 if (props.schedule.length === 0) {
   console.log("\nNo classes today — skipping render + publish. (Gym closed or API empty.)");
+  recordHeartbeat("success", `${DATE}: 0 classes, nothing to post`);
   process.exit(0);
 }
 
@@ -106,10 +186,7 @@ if (!SKIP_PICK) {
     [resolve(REELS, "src", "schedule", "pickBackgroundClips.mjs"), `--date=${DATE}`],
     { stdio: "inherit" }
   );
-  if (pickRes.status !== 0) {
-    console.error("Picker failed.");
-    process.exit(1);
-  }
+  if (pickRes.status !== 0) fail("B-roll picker", `exit ${pickRes.status}`);
 } else {
   console.log("\n[2/5] Skipping picker (--skip-pick).");
 }
@@ -133,10 +210,7 @@ if (!SKIP_RENDER) {
     ],
     { cwd: REELS, stdio: "inherit" }
   );
-  if (renderRes.status !== 0) {
-    console.error("Render failed.");
-    process.exit(1);
-  }
+  if (renderRes.status !== 0) fail("Render", `remotion exit ${renderRes.status}`);
 } else {
   console.log("\n[3/5] Skipping render (--skip-render).");
 }
@@ -183,8 +257,7 @@ try {
   }
   console.log("      ✓ Published");
 } catch (err) {
-  console.error("Publish failed:", err.message);
-  process.exit(1);
+  fail("Publish", err);
 }
 
 // ─── 5. Log to calendar ───
@@ -237,3 +310,11 @@ const urls = (uploadResponse?.results || [])
   .map((r) => `  ${r.platform}: ${r.success ? "✓" : "✗"} ${r.post_url || r.error_message || ""}`)
   .join("\n");
 if (urls) console.log(urls + "\n");
+
+const results = Array.isArray(uploadResponse?.results) ? uploadResponse.results : [];
+const failed = results.filter((r) => !r.success).map((r) => r.platform);
+recordHeartbeat(
+  failed.length ? "partial" : "success",
+  `${DATE}: ${props.schedule.length} classes posted to Stories${failed.length ? `, failed on ${failed.join("+")}` : ""}`,
+  { ref: results.find((r) => r.post_url)?.post_url || renderOut, error: failed.length ? `failed: ${failed.join(", ")}` : null }
+);
