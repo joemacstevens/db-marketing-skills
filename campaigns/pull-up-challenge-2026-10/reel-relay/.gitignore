@@ -1,0 +1,5 @@
+build/proxy/
+build/tic.wav
+assets/video/
+renders/*.mp4
+.hyperframes/

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <title>Pull Up Challenge relay, are you up for it</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* DB Kinetic Type Kit: Archivo variable (punch), Instrument Serif Italic (connector), DM Mono (tag) */
+      @font-face { font-family: "Archivo"; src: url("fonts/Archivo-Variable.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; }
+      @font-face { font-family: "Instrument Serif"; src: url("fonts/InstrumentSerif-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; }
+      @font-face { font-family: "DM Mono"; src: url("fonts/DMMono-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; }
+
+      :root { --red: #E3202B; --white: #FFFFFF; --ink: #0B0B0C; --endbg: #090909; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); color: var(--white); }
+      #relay { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+
+      .punch { font-family: "Archivo"; font-weight: 900; text-transform: uppercase; white-space: nowrap; display: block; word-spacing: 0.1em; }
+      .conn { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; white-space: nowrap; display: block; }
+      .tag { font-family: "DM Mono"; font-weight: 500; font-size: 25px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.85); white-space: nowrap; display: flex; align-items: center; gap: 20px; }
+      .sq { width: 20px; height: 20px; background: var(--red); display: block; }
+      .rule { width: 90px; height: 2.5px; background: rgba(255,255,255,0.85); display: block; }
+      .red { color: var(--red); }
+      #t2, #t3, #k2, #k3, #e2, #e3 { opacity: 0; }
+
+      #scrim-bot { position: absolute; left: 0; right: 0; bottom: 0; height: 1150px; background: linear-gradient(to top, rgba(11,11,12,0.78) 0%, rgba(11,11,12,0.5) 55%, rgba(11,11,12,0)); opacity: 0; }
+      #scrim-full { position: absolute; inset: 0; background: rgba(11,11,12,0.55); opacity: 0; }
+
+      /* title card (1.5-3.0s): stack, lower-left */
+      #title { position: absolute; left: 60px; bottom: 380px; opacity: 0; }
+      #t-tag { position: absolute; left: 60px; top: 260px; opacity: 0; }
+      #t1 { font-size: 150px; line-height: 0.9; margin-left: 10px; }
+      #t2 { font-size: 250px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.02em; margin-top: 18px; }
+      #t3 { font-size: 214px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.025em; }
+
+      /* running count: lower-left over the floor, tag above */
+      /* corner flips per shot to the lifter's empty side: .r = bottom-right (default), .l = bottom-left */
+      #count { position: absolute; left: 55px; right: 55px; bottom: 330px; height: 470px; opacity: 0; }
+      .nm { position: absolute; top: 0; right: 4px; opacity: 0; font-size: 32px; color: #fff; }
+      .dg { position: absolute; right: 0; bottom: 0; font-size: 430px; line-height: 0.8; font-stretch: 62%; letter-spacing: -0.03em; opacity: 0; transform-origin: 100% 100%; }
+      #count.l .nm { right: auto; left: 6px; }
+      #count.m { bottom: auto; top: 700px; }
+      #count.m .nm { right: auto; left: 6px; }
+      #count.m .dg { right: auto; left: 0; transform-origin: 0% 100%; }
+      #count.l .dg { right: auto; left: 0; transform-origin: 0% 100%; }
+      #scrim-top { position: absolute; left: 0; right: 0; top: 0; height: 560px; background: linear-gradient(to bottom, rgba(11,11,12,0.6), rgba(11,11,12,0)); opacity: 0; }
+
+      /* CTA over the held last frame */
+      #cta { position: absolute; left: 60px; right: 55px; top: 560px; opacity: 0; }
+      #cta-tag { margin-bottom: 60px; }
+      #k1 { font-size: 150px; line-height: 0.95; margin-left: 8px; }
+      #k2 { font-size: 290px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.03em; margin-top: 18px; }
+      #k3 { font-size: 120px; line-height: 0.95; margin-top: 46px; margin-left: 8px; }
+      #k4 { position: absolute; left: 60px; bottom: 330px; opacity: 0; }
+
+      /* §7.07 end card */
+      #end { position: absolute; inset: 0; background: var(--endbg); padding: 100px 70px; display: flex; flex-direction: column; justify-content: space-between; opacity: 0; }
+      #end-top { display: flex; justify-content: space-between; }
+      #end-top .tag { color: rgba(255,255,255,0.8); }
+      #e-logo { width: 330px; height: 330px; margin-left: -20px; margin-bottom: 90px; display: block; }
+      #e1 { font-size: 135px; line-height: 0.95; }
+      #e2 { font-size: 210px; line-height: 0.82; font-stretch: 62%; letter-spacing: -0.025em; margin-top: 25px; }
+      #e3 { font-size: 120px; line-height: 0.9; font-stretch: 125%; letter-spacing: -0.01em; margin-top: 10px; }
+      #end-bot { display: flex; align-items: center; gap: 22px; }
+      #end-bot .dash { width: 70px; height: 5px; background: var(--red); display: block; }
+      #end-bot .tag { font-size: 30px; letter-spacing: 0.14em; text-transform: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__TOTAL__" data-width="1080" data-height="1920">
+      <video __GRADE__ id="relay" class="clip" src="assets/video/relay.mp4" data-start="0" data-duration="__TOTAL__" data-track-index="0" muted playsinline></video>
+
+      <div id="scene" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="1" style="position:absolute; inset:0;">
+        <div id="scrim-bot"></div>
+        <div id="scrim-full"></div>
+        <div id="scrim-top"></div>
+
+        <div id="t-tag" class="tag"><span class="sq"></span>Pull up challenge<span class="rule"></span>Last week</div>
+        <div id="title">
+          <span id="t1" class="conn">are you</span>
+          <span id="t2" class="punch">Up for the</span>
+          <span id="t3" class="punch red">Challenge?</span>
+        </div>
+
+        <div id="count">
+          __NAMES__
+          __DIGITS__
+        </div>
+
+        <div id="cta">
+          <div id="cta-tag" class="tag"><span class="sq"></span>Last week<span class="rule"></span>Ends Oct 31</div>
+          <span id="k1" class="conn">think you can</span>
+          <span id="k2" class="punch">Beat <span class="red">27?</span></span>
+          <span id="k3" class="conn">ladies, beat 10.</span>
+        </div>
+        <div id="k4" class="tag"><span class="rule"></span>Put your number on the lobby board</div>
+
+        <div id="end">
+          <div id="end-top"><span class="tag">Different Breed</span><span class="tag">Elite Fitness</span></div>
+          <div>
+            <img id="e-logo" src="assets/brand/DB-logo.png" alt="Different Breed Elite Fitness">
+            <span id="e1" class="conn">What we do is</span>
+            <span id="e2" class="punch">Absolutely</span>
+            <span id="e3" class="punch red">Different.</span>
+          </div>
+          <div id="end-bot"><span class="dash"></span><span class="tag">@dbelitefitness</span></div>
+        </div>
+      </div>
+
+      <audio id="soundtrack" src="assets/audio/soundtrack.wav" data-start="0" data-duration="__TOTAL__" data-track-index="10" data-volume="1"></audio>
+    </div>
+
+    <script>
+      (function () {
+        const T = __TIMING__;
+        const tl = gsap.timeline({ paused: true });
+        const punchIn = (sel, at) => tl.fromTo(sel, { opacity: 1, scale: 1.08 }, { scale: 1, duration: 0.2, ease: "power3.out", immediateRender: false }, at);
+        const connIn = (sel, at) => tl.fromTo(sel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.27, ease: "power2.out", immediateRender: false }, at);
+
+        // 0-1.5 hook, no type. 1.5-3.0 title card on the riser, hard cut out on the drop.
+        tl.set(["#scrim-bot", "#scrim-top", "#t-tag", "#title"], { opacity: 1 }, 1.5);
+        tl.set("#scrim-top", { opacity: 0 }, T.drop);
+        connIn("#t1", 1.5);
+        punchIn("#t2", 1.78);
+        punchIn("#t3", 2.15);
+        tl.set(["#t-tag", "#title"], { opacity: 0 }, T.drop);
+
+        // running count: each digit cuts on at its rep's top (on the hit), settles 1.08 -> 1
+        tl.set("#count", { opacity: 1 }, T.drop);
+        let prev = null;
+        T.reps.forEach((r) => {
+          if (prev) tl.set(prev, { opacity: 0 }, r.t);
+          punchIn("#d" + r.n, r.t);
+          prev = "#d" + r.n;
+        });
+        // name tag cuts with the shot
+        T.chunks.forEach((c, i) => {
+          tl.set("#nm" + i, { opacity: 1 }, c.start);
+          tl.set("#count", { className: c.who === "April" ? "l" : c.from === 23 ? "m" : "r" }, c.start);  // Roberto close-up: mid-left, clear of his legs
+          tl.set("#nm" + i, { opacity: 0 }, c.end);
+        });
+        // on a lifter's top rep the tag flips to their board spot (the digit goes red)
+        T.maxTags.forEach((m) => {
+          tl.set("#nm" + m.i, { opacity: 0 }, m.t);
+          tl.set("#mx" + m.i, { opacity: 1 }, m.t);
+          tl.set("#mx" + m.i, { opacity: 0 }, T.chunks[m.i].end);
+        });
+
+        // CTA over the held frame
+        const C = T.tailEnd;
+        tl.set(["#count"], { opacity: 0 }, C);
+        tl.fromTo("#scrim-full", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, C);
+        tl.set("#cta", { opacity: 1 }, C);
+        connIn("#cta-tag", C);
+        connIn("#k1", C + 0.1);
+        punchIn("#k2", C + 0.48);
+        connIn("#k3", C + 1.0);
+        connIn("#k4", C + 1.2);
+
+        // §7.07 end card
+        const E = C + 2.6;
+        tl.set(["#cta", "#k4", "#scrim-full", "#scrim-bot"], { opacity: 0 }, E);
+        tl.set("#end", { opacity: 1 }, E);
+        tl.fromTo("#e-logo", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, E);
+        connIn("#e1", E + 0.12);
+        punchIn("#e2", E + 0.4);
+        punchIn("#e3", E + 0.65);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>
