@@ -82,7 +82,7 @@ for ci, (who, a, b) in enumerate(CHUNKS):
     segs.append((start, end, who, make()))
 
 TAIL_END = segs[-1][1]
-TOTAL = round(TAIL_END + 2.0 + 1.95, 2)  # CTA over the held frame (2.0s), then the DB end tag on "We are Different Breed" (1.95s, ends before the next "we")
+TOTAL = round(TAIL_END + 2.0 + 2.85, 2)  # CTA over the held frame (2.0s), then the DB end tag on the full "We are Different Breed" (2.85s)
 N = round(TOTAL * FPS)
 
 # Which source frame each output frame needs

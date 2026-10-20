@@ -63,22 +63,23 @@ word("ahmed", 42.16, T["tailEnd"] + 0.55, 42.64)
 voice = voice[:int(TOTAL * SR)]
 peak = np.abs(voice).max(); voice *= 0.5 / peak  # voices sit under the music
 
-# music: TIC to the end tag, anthem hook under it ("We" on E)
+# music: TIC to the end tag, then the anthem line with "We" on E. Timed off the isolated anthem vocal:
+# "We" 49.30, "are" ~49.6, "dif-fer-ent" 50.0-50.3, "BREED" held 50.6-51.5, next line 52.3. Joey 10/20: hear all of it.
 M = "/Volumes/Ajeo/Projects/Different Breed/Music/Till I Collapse (Instrumental) [HGnpwvw3cwM].mp3"
 A = "/Users/joestevens/Projects/Different Breed/music/Different Breed.mp3"
 tic = load(M, 54.33, E)
 f = int(0.3 * SR); tic[-f:] *= np.linspace(1, 0, f)[:, None]
-an = load(A, 48.55, TOTAL - E + 0.12)
-f = int(0.25 * SR); an[-f:] *= np.linspace(1, 0, f)[:, None]
+an = load(A, 49.15, 52.15 - 49.15)
+f = int(0.4 * SR); an[-f:] *= np.linspace(1, 0, f)[:, None]
 music = np.zeros_like(voice)
 music[:len(tic)] += tic[:len(music)]
-i = int((E - 0.12) * SR); music[i:i + len(an)] += an[:len(music) - i]
+i = int((E - 0.15) * SR); music[i:i + len(an)] += an[:len(music) - i]
 
 # duck the music ~4 dB under the voices (smoothed envelope), not on the anthem
 env = np.abs(voice).max(1)
 k = int(0.06 * SR); env = np.convolve(env, np.ones(k) / k, "same")
 duck = 1 - 0.37 * np.clip(env / 0.08, 0, 1)
-duck[int((E - 0.12) * SR):] = 1
+duck[int((E - 0.15) * SR):] = 1
 mix = music * duck[:, None] + voice
 mix = np.clip(mix, -1, 1).astype(np.float32)
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-",
