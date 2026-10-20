@@ -1,6 +1,6 @@
-# Relay reel captions (v1, awaiting Joey)
+# Relay reel captions (v2, awaiting Joey)
 
-Render: `renders/pull-up-relay-v1.mp4` (29.6s). Phone preview: `renders/pull-up-relay-v1-preview.mp4`.
+Render: `renders/pull-up-relay-v2.mp4` (29.1s, ends on the DB end tag + "We are Different Breed" hook). Phone preview: `renders/pull-up-relay-v2-preview.mp4`.
 Proposed slot: Mon 10/26 6 PM ET (first day of the last week), IG/FB/Threads/TikTok.
 
 **IG / Threads**

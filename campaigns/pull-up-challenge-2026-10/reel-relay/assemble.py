@@ -50,7 +50,7 @@ for ci, (who, a, b) in enumerate(CHUNKS):
     start = 3.0 if ci == 0 else segs[-1][1]  # chunk 1 opens on the drop: Amanda grips and goes at 1x
     # chunk end edge
     if last:
-        end = pts[-1][0] + 1.1
+        end = pts[-1][0] + 0.8
     elif CHUNKS[ci + 1][1] == 26:
         end = beat(25) + 0.70  # Roberto's 25 on the clap, cut on the next stomp
     else:
@@ -78,7 +78,7 @@ for ci, (who, a, b) in enumerate(CHUNKS):
     segs.append((start, end, who, make()))
 
 TAIL_END = segs[-1][1]
-TOTAL = round(TAIL_END + 4.4, 2)  # CTA over the held frame, then the DB end card
+TOTAL = round(TAIL_END + 2.2 + 1.95, 2)  # CTA over the held frame (2.2s), then the DB end tag on "We are Different Breed" (1.95s, ends before the next "we")
 N = round(TOTAL * FPS)
 
 # Which source frame each output frame needs
@@ -130,7 +130,7 @@ timing = {
     "reps": [{"n": k, "t": round(beat(k), 3)} for k in range(1, 28)],
     "chunks": [{"who": NAMES[w], "max": MAX[w], "from": a, "to": b, "start": round(s[0], 3), "end": round(s[1], 3)}
                for (w, a, b), s in zip(CHUNKS, segs[1:])],
-    "tailEnd": round(TAIL_END, 3),
+    "tailEnd": round(TAIL_END, 3), "endTag": round(TAIL_END + 2.2, 3),
 }
 json.dump(timing, open("timing.json", "w"), indent=1)
 print("total", TOTAL, "s; rep 27 at", timing["reps"][-1]["t"])

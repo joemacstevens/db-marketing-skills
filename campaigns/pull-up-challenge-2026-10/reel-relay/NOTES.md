@@ -8,6 +8,8 @@ keep counting, people drop off at their max until the leader finishes. Copy: "ar
   Every rep on screen is that lifter's real Nth rep, so the number is honest. On a max rep the digit goes red and
   the tag flips to their board spot (Women's #2 / #1, Men's #2 / #1).
 - Music: Till I Collapse (instrumental), Ajeo Music/, from 54.33s. Riser under the hook + title, drop at 3.0s.
+  v2 (Joey 10/20, "end on our end tag"): TIC ducks out into the kit end tag, anthem hook "We are Different Breed"
+  (music/Different Breed.mp3 from 48.55) under it; ABSOLUTELY on "different", DIFFERENT. on the downbeat.
   Odd reps on the clap, even reps on the first stomp, cuts on the second stomp. Music untouched, no gym audio.
 - Rep tops: Amanda = Don's count -0.2s; April = motion-detected (reel-april); men = Don's count refined by eye
   (Don's count lags up to 0.8s on the slow late reps). Ahmed's rep 1 is before his clip starts, never shown.

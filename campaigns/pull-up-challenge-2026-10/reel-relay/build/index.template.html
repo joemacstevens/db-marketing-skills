@@ -160,13 +160,13 @@
         connIn("#k4", C + 1.2);
 
         // §7.07 end card
-        const E = C + 2.6;
+        const E = T.endTag;  // anthem "We" lands here
         tl.set(["#cta", "#k4", "#scrim-full", "#scrim-bot"], { opacity: 0 }, E);
         tl.set("#end", { opacity: 1 }, E);
         tl.fromTo("#e-logo", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, E);
-        connIn("#e1", E + 0.12);
-        punchIn("#e2", E + 0.4);
-        punchIn("#e3", E + 0.65);
+        connIn("#e1", E + 0.1);
+        punchIn("#e2", E + 0.63);  // "different"
+        punchIn("#e3", E + 1.03);  // "breed"
 
         window.__timelines = window.__timelines || {};
         window.__timelines["main"] = tl;
