@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-Book.otf"); font-weight: 400; }
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-Bold.otf"); font-weight: 700; }
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-BoldItalic.otf"); font-weight: 700; font-style: italic; }
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-Black.otf"); font-weight: 900; }
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-BlackItalic.otf"); font-weight: 900; font-style: italic; }
+      :root { --ink: #0a0a0a; --red: #e81d1d; --bone: #f6f2ec; --steel: #b8b2a8; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); font-family: "NORD", sans-serif; }
+
+      .shot { position: absolute; inset: 0; overflow: hidden; will-change: transform, filter, opacity; }
+      .shot .push { position: absolute; inset: 0; will-change: transform; }
+      .shot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .shot.win .push { inset: auto; left: 0; top: 285px; width: 1080px; height: 1350px; box-shadow: 0 -18px 40px rgba(10,10,10,0.55), 0 18px 40px rgba(10,10,10,0.55); }
+      .shot.win.wide .push { top: 656px; height: 608px; }
+      .wipebar { position: absolute; top: 0; left: 0; width: 34px; height: 1920px; background: var(--red); box-shadow: 0 0 0 6px var(--ink); opacity: 0; }
+      .vig { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(10,10,10,0) 55%, rgba(10,10,10,0.5) 100%); }
+      .layer { position: absolute; inset: 0; }
+
+      /* title: BLACK TEAM vs RED TEAM over the darkened opener */
+      .shade { position: absolute; inset: 0; background: rgba(10, 10, 10, 0.55); opacity: 0; }
+      .title { position: absolute; left: 0; right: 0; top: 560px; text-align: center; }
+      .title .eye { display: inline-block; color: var(--bone); font-weight: 700; font-size: 34px; letter-spacing: 0.3em; text-transform: uppercase; }
+      .title .t { display: block; width: max-content; margin: 26px auto 0; font-weight: 900; font-style: italic; font-size: 124px; line-height: 1.04; text-transform: uppercase; white-space: nowrap; padding: 6px 40px 16px; transform: skewX(-6deg); }
+      .title .bk { background: var(--ink); color: var(--bone); box-shadow: 12px 12px 0 var(--bone); }
+      .title .rd { background: var(--red); color: var(--bone); box-shadow: 12px 12px 0 var(--ink); }
+      .title .vs { display: block; margin: 22px auto 0; color: var(--bone); font-weight: 900; font-style: italic; font-size: 84px; line-height: 1.04; }
+
+      /* coach chip: name + team tag, lower band above the captions */
+      .chip { position: absolute; left: 56px; top: 1130px; transform: skewX(-6deg); transform-origin: left top; white-space: nowrap; }
+      .chip .nm { display: inline-block; vertical-align: top; background: var(--bone); color: var(--ink); font-weight: 900; font-style: italic; font-size: 52px; line-height: 1.08; letter-spacing: 0.02em; text-transform: uppercase; padding: 8px 24px 12px; }
+      .chip .tm { display: inline-block; vertical-align: top; font-weight: 900; font-style: italic; font-size: 52px; line-height: 1.08; letter-spacing: 0.02em; text-transform: uppercase; padding: 8px 24px 12px; }
+      .chip .tm.black { background: var(--ink); color: var(--bone); box-shadow: 8px 8px 0 var(--bone); }
+      .chip .tm.red { background: var(--red); color: var(--bone); box-shadow: 8px 8px 0 var(--ink); }
+
+      /* captions: the coach's exact words, one phrase at a time */
+      .cap { position: absolute; left: 60px; right: 60px; top: 1290px; text-align: center; }
+      .cap span { display: inline-block; max-width: 960px; color: var(--bone); font-weight: 900; font-style: italic; font-size: 70px; line-height: 1.08; text-transform: uppercase; background: rgba(10,10,10,0.78); padding: 8px 26px 14px; box-shadow: 8px 8px 0 var(--red); }
+
+      /* THAT NIGHT bridge */
+      .night { position: absolute; left: 0; right: 0; top: 800px; text-align: center; }
+      .night .t { display: inline-block; color: var(--bone); background: var(--ink); font-weight: 900; font-style: italic; font-size: 132px; line-height: 1.04; text-transform: uppercase; padding: 6px 40px 16px; box-shadow: 12px 12px 0 var(--red); transform: skewX(-6deg); }
+
+      /* CTA card */
+      .card { position: absolute; inset: 0; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+      .cta .eye { color: var(--steel); font-weight: 700; font-size: 34px; letter-spacing: 0.3em; text-transform: uppercase; }
+      .cta .t { display: block; width: max-content; margin: 26px auto 0; font-weight: 900; font-style: italic; font-size: 110px; line-height: 1.04; text-transform: uppercase; white-space: nowrap; padding: 6px 36px 14px; transform: skewX(-6deg); }
+      .cta .bk { background: var(--bone); color: var(--ink); box-shadow: 10px 10px 0 var(--red); }
+      .cta .rd { background: var(--red); color: var(--bone); box-shadow: 10px 10px 0 var(--bone); }
+      .cta .vs { display: block; margin: 18px auto 0; color: var(--bone); font-weight: 900; font-style: italic; font-size: 70px; line-height: 1.04; }
+      .cta .fd { display: block; margin-top: 90px; color: var(--bone); font-weight: 900; font-style: italic; font-size: 96px; line-height: 1.04; letter-spacing: 0.02em; text-transform: uppercase; }
+      .cta .dt { display: inline-block; margin-top: 18px; color: var(--red); font-weight: 900; font-size: 52px; line-height: 1.1; letter-spacing: 0.14em; text-transform: uppercase; }
+
+      /* end tag */
+      /* Blue Collar end tag: circular logo, Fight Day date */
+      .end img { display: block; width: 600px; height: 600px; object-fit: cover; clip-path: circle(49.5% at 50% 50%); }
+      .end .fd { display: block; margin-top: 64px; color: var(--bone); font-weight: 900; font-style: italic; font-size: 112px; line-height: 1.04; letter-spacing: 0.02em; text-transform: uppercase; }
+      .end .dt { display: inline-block; margin-top: 20px; color: var(--red); font-weight: 900; font-size: 56px; line-height: 1.1; letter-spacing: 0.14em; text-transform: uppercase; }
+      /* DB tag, after the Blue Collar tag */
+      .dbt img { display: block; width: 560px; height: 560px; object-fit: contain; }
+      .dbt .lock { display: block; width: 820px; height: auto; margin-top: 56px; }
+      .dbt .h { display: block; margin-top: 54px; font-weight: 400; font-size: 36px; letter-spacing: 0.2em; color: var(--steel); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="28.9" data-width="1080" data-height="1920">
+
+      <!-- ─── footage: Coach Ali's kids, Sat 10/18 ─── -->
+      <!-- IMG6206 src 11.40-14.40: OPENER: red-headgear kid working with Ali, Ali facing camera; title over it from 1.5 -->
+      <div class="shot" id="w0"><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v0" class="clip" src="assets/footage/s00-img6206.mp4" data-start="0.000" data-duration="3.000" data-media-start="0.500" data-track-index="0" muted playsinline></video></div></div>
+      <!-- IMG6196 src 1.40-3.80: sparring, red vs gold headgear, Ali walks in: &#x27;Only jab and hook.&#x27; -->
+      <div class="shot win" id="w1"><video id="vb1" class="clip bgv" src="assets/footage/s01-img6196-bg.mp4" data-start="3.000" data-duration="2.400" data-media-start="0.500" data-track-index="21" muted playsinline></video><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v1" class="clip" src="assets/footage/s01-img6196.mp4" data-start="3.000" data-duration="2.400" data-media-start="0.500" data-track-index="1" muted playsinline></video></div></div>
+      <!-- IMG6206 src 15.00-18.00: Ali + the kid up close (name chip): &#x27;Good. Good shot.&#x27; -->
+      <div class="shot" id="w2"><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v2" class="clip" src="assets/footage/s02-img6206.mp4" data-start="5.400" data-duration="3.000" data-media-start="0.500" data-track-index="0" muted playsinline></video></div></div>
+      <!-- IMG6213 src 2.60-4.80: red headgear vs grey shirt on the ropes: &#x27;Good combination.&#x27; -->
+      <div class="shot win" id="w3"><video id="vb3" class="clip bgv" src="assets/footage/s03-img6213-bg.mp4" data-start="8.400" data-duration="2.200" data-media-start="0.500" data-track-index="21" muted playsinline></video><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v3" class="clip" src="assets/footage/s03-img6213.mp4" data-start="8.400" data-duration="2.200" data-media-start="0.500" data-track-index="1" muted playsinline></video></div></div>
+      <!-- IMG6208 src 0.10-2.90: the 13-year-old on Ali&#x27;s mitts, DB logo on the floor -->
+      <div class="shot" id="w4"><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v4" class="clip" src="assets/footage/s04-img6208.mp4" data-start="10.300" data-duration="2.800" data-media-start="0.100" data-track-index="0" muted playsinline></video></div></div>
+      <!-- IMG6196 src 19.60-22.90: Ali watching the exchange: &#x27;Good job, both of you.&#x27; -->
+      <div class="shot win" id="w5"><video id="vb5" class="clip bgv" src="assets/footage/s05-img6196-bg.mp4" data-start="13.100" data-duration="3.300" data-media-start="0.500" data-track-index="21" muted playsinline></video><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v5" class="clip" src="assets/footage/s05-img6196.mp4" data-start="13.100" data-duration="3.300" data-media-start="0.500" data-track-index="1" muted playsinline></video></div></div>
+      <!-- IMG6208 src 6.60-8.60: her combos on the mitts -->
+      <div class="shot" id="w6"><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v6" class="clip" src="assets/footage/s06-img6208.mp4" data-start="16.400" data-duration="2.000" data-media-start="0.500" data-track-index="0" muted playsinline></video></div></div>
+      <!-- IMG6210 src 14.60-17.10: blue gloves vs white gloves trading, wide (v2: 22.6-25 was a blurry zoom): &#x27;Be ready to counter.&#x27; -->
+      <div class="shot win" id="w7"><video id="vb7" class="clip bgv" src="assets/footage/s07-img6210-bg.mp4" data-start="18.400" data-duration="2.500" data-media-start="0.500" data-track-index="21" muted playsinline></video><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v7" class="clip" src="assets/footage/s07-img6210.mp4" data-start="18.400" data-duration="2.500" data-media-start="0.500" data-track-index="1" muted playsinline></video></div></div>
+      <!-- IMG6206 src 25.00-27.50: CLOSER: the kid lets it go on Ali, &#x27;Jab, jab, two.&#x27; -->
+      <div class="shot" id="w8"><div class="push" data-layout-allow-overflow=""><video data-color-grading="{&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;contrast&quot;:0.2,&quot;highlights&quot;:-0.15,&quot;whites&quot;:0.02,&quot;blacks&quot;:-0.1,&quot;vibrance&quot;:0.25,&quot;saturation&quot;:0.03}}" id="v8" class="clip" src="assets/footage/s08-img6206.mp4" data-start="20.900" data-duration="2.500" data-media-start="0.500" data-track-index="0" muted playsinline></video></div></div>
+      <div class="vig"></div>
+      <div class="wipebar" id="wipebar"></div>
+
+      <!-- ─── title (over the opener) ─── -->
+      <div id="t-title" class="clip layer" data-start="1.5" data-duration="1.500" data-track-index="2">
+        <div class="shade" id="title-shade"></div>
+        <div class="title" id="title-box">
+          <span class="eye" id="title-eye" data-layout-allow-overflow="">Blue Collar Boxing</span>
+          <span class="t bk" id="title-bk" data-layout-allow-overflow="">Youth</span>
+          <span class="t rd" id="title-rd" data-layout-allow-overflow="">Fight camp</span>
+        </div>
+      </div>
+
+      <!-- ─── coach chips ─── -->
+      <div id="t-chip0" class="clip layer" data-start="5.460" data-duration="2.880" data-track-index="4"><div class="chip" id="chip0-box"><span class="nm" id="chip0-nm" data-layout-allow-overflow="">Coach Ali</span><span class="tm red" id="chip0-tm" data-layout-allow-overflow="">Blue Collar</span></div></div>
+
+
+      <!-- ─── captions: the coaches' exact words ─── -->
+      <div id="t-cap0" class="clip layer" data-start="0.280" data-duration="1.470" data-track-index="7"><div class="cap"><span id="cap0" data-layout-allow-overflow="">Hit like a truck, dude.</span></div></div>
+      <div id="t-cap1" class="clip layer" data-start="3.440" data-duration="1.760" data-track-index="8"><div class="cap"><span id="cap1" data-layout-allow-overflow="">Only jab and hook.</span></div></div>
+      <div id="t-cap2" class="clip layer" data-start="7.360" data-duration="0.640" data-track-index="7"><div class="cap"><span id="cap2" data-layout-allow-overflow="">Good shot.</span></div></div>
+      <div id="t-cap3" class="clip layer" data-start="9.400" data-duration="0.850" data-track-index="8"><div class="cap"><span id="cap3" data-layout-allow-overflow="">Good combination.</span></div></div>
+      <div id="t-cap4" class="clip layer" data-start="14.780" data-duration="1.670" data-track-index="7"><div class="cap"><span id="cap4" data-layout-allow-overflow="">Good job, both of you.</span></div></div>
+      <div id="t-cap5" class="clip layer" data-start="18.600" data-duration="1.250" data-track-index="8"><div class="cap"><span id="cap5" data-layout-allow-overflow="">Be ready to counter.</span></div></div>
+      <div id="t-cap6" class="clip layer" data-start="21.340" data-duration="1.110" data-track-index="7"><div class="cap"><span id="cap6" data-layout-allow-overflow="">Jab, jab, two.</span></div></div>
+
+      <!-- ─── end tag ─── -->
+      <div id="t-end" class="clip layer" data-start="23.4" data-duration="3.200" data-track-index="9">
+        <div class="card end">
+          <img id="end-logo" src="assets/brand/blue-collar-logo.jpg" alt="Blue Collar Boxing">
+          <span class="fd" id="end-fd" data-layout-allow-overflow="">Fight Day</span>
+          <span class="dt" id="end-dt" data-layout-allow-overflow="">Sunday &middot; Nov 22</span>
+        </div>
+      </div>
+
+      <!-- ─── DB tag (picture only; the Blue Collar song keeps playing) ─── -->
+      <div id="t-db" class="clip layer" data-start="26.6" data-duration="2.300" data-track-index="17">
+        <div class="card dbt">
+          <img id="db-logo" src="assets/brand/db-logo.png" alt="Different Breed Elite Fitness">
+          <img class="lock" id="db-lock" src="assets/brand/lockup-absolutely-different-white.png" alt="What we do is absolutely different">
+          <span class="h" id="db-h">@DBELITEFITNESS</span>
+        </div>
+      </div>
+
+      <!-- ─── audio: Blue Collar Heavy bed, Coach Ali's callouts, Fight time hook on the Blue Collar tag ─── -->
+      <audio id="a-bed" src="assets/audio/bc-heavy-instrumental-bed.wav" data-start="0" data-duration="23.400" data-media-start="0" data-track-index="12" data-volume="1" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.05,&quot;v&quot;:1.4},{&quot;t&quot;:0.08,&quot;v&quot;:1.4},{&quot;t&quot;:0.25,&quot;v&quot;:0.252},{&quot;t&quot;:1.7,&quot;v&quot;:0.252},{&quot;t&quot;:1.95,&quot;v&quot;:1.4},{&quot;t&quot;:3.24,&quot;v&quot;:1.4},{&quot;t&quot;:3.41,&quot;v&quot;:0.252},{&quot;t&quot;:5.15,&quot;v&quot;:0.252},{&quot;t&quot;:5.4,&quot;v&quot;:1.4},{&quot;t&quot;:5.98,&quot;v&quot;:1.4},{&quot;t&quot;:6.15,&quot;v&quot;:0.252},{&quot;t&quot;:7.95,&quot;v&quot;:0.252},{&quot;t&quot;:8.2,&quot;v&quot;:1.4},{&quot;t&quot;:9.23,&quot;v&quot;:1.4},{&quot;t&quot;:9.4,&quot;v&quot;:0.252},{&quot;t&quot;:10.2,&quot;v&quot;:0.252},{&quot;t&quot;:10.45,&quot;v&quot;:1.4},{&quot;t&quot;:14.58,&quot;v&quot;:1.4},{&quot;t&quot;:14.75,&quot;v&quot;:0.252},{&quot;t&quot;:16.4,&quot;v&quot;:0.252},{&quot;t&quot;:16.65,&quot;v&quot;:1.4},{&quot;t&quot;:18.43,&quot;v&quot;:1.4},{&quot;t&quot;:18.6,&quot;v&quot;:0.252},{&quot;t&quot;:19.8,&quot;v&quot;:0.252},{&quot;t&quot;:20.05,&quot;v&quot;:1.4},{&quot;t&quot;:21.13,&quot;v&quot;:1.4},{&quot;t&quot;:21.3,&quot;v&quot;:0.252},{&quot;t&quot;:22.4,&quot;v&quot;:0.252},{&quot;t&quot;:22.65,&quot;v&quot;:1.4},{&quot;t&quot;:23.15,&quot;v&quot;:1.4},{&quot;t&quot;:23.38,&quot;v&quot;:0},{&quot;t&quot;:23.4,&quot;v&quot;:0}]}]}"></audio>
+      <audio id="a-lines" src="assets/audio/coach-lines.wav" data-start="0" data-duration="23.700" data-media-start="0" data-track-index="10" data-volume="1" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.14,&quot;v&quot;:0},{&quot;t&quot;:0.2,&quot;v&quot;:1},{&quot;t&quot;:1.75,&quot;v&quot;:1},{&quot;t&quot;:1.81,&quot;v&quot;:0},{&quot;t&quot;:3.3,&quot;v&quot;:0},{&quot;t&quot;:3.36,&quot;v&quot;:1},{&quot;t&quot;:5.2,&quot;v&quot;:1},{&quot;t&quot;:5.26,&quot;v&quot;:0},{&quot;t&quot;:6.04,&quot;v&quot;:0},{&quot;t&quot;:6.1,&quot;v&quot;:1},{&quot;t&quot;:8.0,&quot;v&quot;:1},{&quot;t&quot;:8.06,&quot;v&quot;:0},{&quot;t&quot;:9.29,&quot;v&quot;:0},{&quot;t&quot;:9.35,&quot;v&quot;:1},{&quot;t&quot;:10.25,&quot;v&quot;:1},{&quot;t&quot;:10.31,&quot;v&quot;:0},{&quot;t&quot;:14.64,&quot;v&quot;:0},{&quot;t&quot;:14.7,&quot;v&quot;:1},{&quot;t&quot;:16.45,&quot;v&quot;:1},{&quot;t&quot;:16.51,&quot;v&quot;:0},{&quot;t&quot;:18.49,&quot;v&quot;:0},{&quot;t&quot;:18.55,&quot;v&quot;:1},{&quot;t&quot;:19.85,&quot;v&quot;:1},{&quot;t&quot;:19.91,&quot;v&quot;:0},{&quot;t&quot;:21.19,&quot;v&quot;:0},{&quot;t&quot;:21.25,&quot;v&quot;:1},{&quot;t&quot;:22.45,&quot;v&quot;:1},{&quot;t&quot;:22.51,&quot;v&quot;:0},{&quot;t&quot;:23.7,&quot;v&quot;:0}]}]}"></audio>
+      <audio id="a-hook" src="assets/audio/blue-collar-heavy.mp3" data-start="23.320" data-duration="5.580" data-media-start="7.6" data-track-index="11" data-volume="1" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.08,&quot;v&quot;:1.4},{&quot;t&quot;:4.979999999999999,&quot;v&quot;:1.4},{&quot;t&quot;:5.579999999999998,&quot;v&quot;:0}]}]}"></audio>
+    </div>
+
+    <script>
+      // Blue Collar Boxing: Youth (generated by build/build.py, do not hand-edit).
+      const SLOTS = [{"a": 0.0, "s": 0.0, "b": 3.0, "tx": "cut", "lead": 0, "win": false, "head": false}, {"a": 3.0, "s": 3.0, "b": 5.4, "tx": "whip", "lead": 0, "win": true, "head": false}, {"a": 5.4, "s": 5.4, "b": 8.4, "tx": "cut", "lead": 0, "win": false, "head": false}, {"a": 8.4, "s": 8.4, "b": 10.6, "tx": "cut", "lead": 0, "win": true, "head": false}, {"a": 10.6, "s": 10.3, "b": 13.1, "tx": "wipe", "lead": 0.3, "win": false, "head": false}, {"a": 13.1, "s": 13.1, "b": 16.4, "tx": "cut", "lead": 0, "win": true, "head": false}, {"a": 16.4, "s": 16.4, "b": 18.4, "tx": "cut", "lead": 0, "win": false, "head": false}, {"a": 18.4, "s": 18.4, "b": 20.9, "tx": "cut", "lead": 0, "win": true, "head": false}, {"a": 20.9, "s": 20.9, "b": 23.4, "tx": "cut", "lead": 0, "win": false, "head": false}];
+      const CHIP_T = [[5.46, 8.34]];
+      const CAP_T = [[0.28, 1.75], [3.44, 5.2], [7.36, 8.0], [9.4, 10.25], [14.78, 16.45], [18.6, 19.85], [21.34, 22.45]];
+      const WIPE = 0.3;
+
+      const tl = gsap.timeline({ paused: true });
+      tl.set(".shot", { x: 0, y: 0, opacity: 1, clipPath: "inset(0% 0% 0% 0%)", filter: "blur(0px) brightness(1)" }, 0);
+      tl.set("#wipebar", { x: 1080, opacity: 0 }, 0);
+
+      SLOTS.forEach((s, i) => {
+        const w = "#w" + i;
+        const p = w + " .push";
+        const d = s.b - s.s;
+        if (s.win) {
+          tl.set(w, { visibility: "hidden" }, 0);
+          tl.set(w, { visibility: "visible" }, s.s);
+          tl.set(w, { visibility: "hidden" }, s.b);
+        }
+        // light push only (no over-zoom on Adrian's landscape camera); talking heads barely move
+        const P = s.head ? [1.0, 1.02] : [1.0, 1.04];
+        tl.fromTo(p, { scale: P[0] }, { scale: P[1], duration: d, ease: "none", immediateRender: false }, s.s);
+        if (i === 0) return;
+        if (s.tx === "xf") {
+          tl.fromTo(w, { opacity: 0 }, { opacity: 1, duration: s.lead, ease: "power1.inOut", immediateRender: false }, s.s);
+        } else if (s.tx === "wipe") {
+          tl.fromTo(w, { clipPath: "inset(0% 0% 0% 100%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: WIPE, ease: "power3.inOut", immediateRender: false }, s.s);
+          tl.fromTo("#wipebar", { x: 1080, opacity: 1 }, { x: -34, opacity: 1, duration: WIPE, ease: "power3.inOut", immediateRender: false }, s.s);
+          tl.set("#wipebar", { opacity: 0 }, s.a + 0.01);
+        } else if (s.tx === "whip") {
+          const dir = i % 2 ? 1 : -1;
+          tl.fromTo("#w" + (i - 1), { x: 0, filter: "blur(0px) brightness(1)" }, { x: -1080 * dir, filter: "blur(24px) brightness(1)", duration: 0.14, ease: "power3.in", immediateRender: false }, s.a - 0.14);
+          tl.fromTo(w, { x: 1080 * dir, filter: "blur(24px) brightness(1)" }, { x: 0, filter: "blur(0px) brightness(1)", duration: 0.18, ease: "power3.out", immediateRender: false }, s.a);
+        } else {
+          tl.fromTo(w, { filter: "blur(0px) brightness(1.4)" }, { filter: "blur(0px) brightness(1)", duration: 0.2, ease: "power2.out", immediateRender: false }, s.a);
+        }
+      });
+
+      // ── title: eyebrow, BLACK TEAM slams from the left, VS pops, RED TEAM slams from the right; whip out ──
+      tl.fromTo("#title-shade", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 1.5);
+      tl.fromTo("#title-eye", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.2, ease: "power3.out" }, 1.5);
+      tl.fromTo("#title-bk", { x: -900, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "expo.out" }, 1.5 + 0.04);
+      tl.fromTo("#title-rd", { x: 900, opacity: 0 }, { x: 0, opacity: 1, duration: 0.22, ease: "expo.out" }, 1.5 + 0.26);
+      tl.fromTo("#title-box", { x: 0, opacity: 1, filter: "blur(0px)" }, { x: -1080, opacity: 1, filter: "blur(22px)", duration: 0.16, ease: "power3.in" }, 3.0 - 0.16);
+      tl.to("#title-shade", { opacity: 0, duration: 0.16, ease: "none" }, 3.0 - 0.16);
+
+      // ── coach chips ──
+      CHIP_T.forEach(([a, b], n) => {
+        const id = "#chip" + n;
+        tl.fromTo(id + "-nm", { x: -600, opacity: 0 }, { x: 0, opacity: 1, duration: 0.24, ease: "expo.out" }, a);
+        tl.fromTo(id + "-tm", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.24, ease: "expo.out" }, a + 0.12);
+        tl.fromTo(id + "-box", { x: 0, opacity: 1 }, { x: -1100, opacity: 1, duration: 0.16, ease: "power3.in" }, b - 0.16);
+      });
+
+      // ── captions: each phrase pops in on its first word ──
+      CAP_T.forEach(([a, b], n) => {
+        tl.fromTo("#cap" + n, { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.08, ease: "power2.out" }, a);
+      });
+
+
+      // ── CTA: the two teams stack, then the date lands ──
+
+      // ── end tag ──
+      tl.fromTo("#end-logo", { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }, 23.4 + 0.02);
+      // "Fight time" -> FIGHT DAY slams; "Fight time" again (~1.7) -> the date
+      tl.fromTo("#end-fd", { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "back.out(1.8)" }, 23.4 + 0.56);
+      tl.fromTo("#end-dt", { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.24, ease: "power3.out" }, 23.4 + 1.68);
+      tl.fromTo("#db-logo", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.6)" }, 26.6 + 0.03);
+      tl.fromTo("#db-lock", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 26.6 + 0.3);
+      tl.fromTo("#db-h", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 26.6 + 0.55);
+      tl.to("#t-db .card", { opacity: 0, duration: 0.3, ease: "none" }, 28.9 - 0.32);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
