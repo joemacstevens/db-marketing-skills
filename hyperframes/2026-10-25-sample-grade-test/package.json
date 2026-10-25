@@ -1,0 +1,9 @@
+{
+  "name": "2026-10-25-sample-grade-test",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.199 check",
+    "render": "npx --yes hyperframes@0.8.199 render"
+  }
+}
