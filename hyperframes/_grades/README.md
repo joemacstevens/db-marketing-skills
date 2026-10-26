@@ -12,6 +12,9 @@ Rooms light differently, so a single bad clip gets its own lighter patch rather 
 
 ## sample-cinematic.json (Joey picked MEDIUM, 2026-10-25)
 
+**Default on every new reel** (Don dumps, Adrian drops, everything) unless Joey opts a piece out.
+It replaces the old Don "A2" correction grade; don't stack the two.
+
 Matched to Travis Sample's reel at DB (instagram.com/p/De1S896NdOh, @thetravissample). Moody, cool, low-key:
 teal-green shadows, cool-gray mids, skin kept warm, highlights rolled off to ~85% (never clip), low saturation,
 greens and reds pulled hard (turf, brand-red walls), light grain + vignette.
