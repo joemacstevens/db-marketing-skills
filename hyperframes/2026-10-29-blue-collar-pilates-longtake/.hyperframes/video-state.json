@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "historyId": "6070e33c-cc0a-4017-8125-27a2df418c3c",
+  "currentRevision": "f5aa0e6b-d34f-4dda-adf1-38b047c79955",
+  "pendingChanges": false,
+  "files": {
+    "assets/brand/blue-collar-logo.jpg": {
+      "hash": "4c4a6aaad750da9108ee95e7b55cfcc35f84e5826c7890f13cb4dd1273d6ed5c",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/4c/4c4a6aaad750da9108ee95e7b55cfcc35f84e5826c7890f13cb4dd1273d6ed5c"
+    },
+    "assets/brand/db-logo.png": {
+      "hash": "229b1668721a52d80149921e23442a0d2018b74bd66427a0e58fe6c79452f6c1",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/22/229b1668721a52d80149921e23442a0d2018b74bd66427a0e58fe6c79452f6c1"
+    },
+    "assets/fonts/kit/Archivo-Variable-Italic.woff2": {
+      "hash": "d63de74ee5ad92cd506c8dd0f795e84bd084aea8eef90173b5d2464096c5fa4a",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/d6/d63de74ee5ad92cd506c8dd0f795e84bd084aea8eef90173b5d2464096c5fa4a"
+    },
+    "assets/fonts/kit/Archivo-Variable.woff2": {
+      "hash": "e3a28eade21a900c7155a247757f4b2834c07bb7ef07ad7efa55cebaac1e8f5e",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/e3/e3a28eade21a900c7155a247757f4b2834c07bb7ef07ad7efa55cebaac1e8f5e"
+    },
+    "assets/fonts/kit/DMMono-Medium.woff2": {
+      "hash": "9964608a849396bd00c4bfd7034afe03486469dcf20b4f6b8cbdfdd310369951",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/99/9964608a849396bd00c4bfd7034afe03486469dcf20b4f6b8cbdfdd310369951"
+    },
+    "assets/fonts/kit/InstrumentSerif-Italic.woff2": {
+      "hash": "5a51946dfffa82972bc98745359c46761515641fda557c25116459a9f83da4a7",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/5a/5a51946dfffa82972bc98745359c46761515641fda557c25116459a9f83da4a7"
+    },
+    "hyperframes.json": {
+      "hash": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/ad/ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
+    },
+    "index.html": {
+      "hash": "2b77e7adad1ca12ef158702120c6112c6808f60cd934044073663a025c3851b5",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/2b/2b77e7adad1ca12ef158702120c6112c6808f60cd934044073663a025c3851b5"
+    },
+    "meta.json": {
+      "hash": "8a0dabea498193303adfdf004175000390076fcdf60ed817c11f1fd2f919b70b",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/8a/8a0dabea498193303adfdf004175000390076fcdf60ed817c11f1fd2f919b70b"
+    },
+    "package.json": {
+      "hash": "c9fa21289ad04eb78f4a18a3baabc015a48adb33f2b52034023fe5c48614ced6",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/c9/c9fa21289ad04eb78f4a18a3baabc015a48adb33f2b52034023fe5c48614ced6"
+    },
+    "assets/audio/coach-lines.wav": {
+      "hash": "3c194ef76cb8917f53fdcb172811ac441b3bc0c35a6c3cd9ba37a2a87be3a057",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/3c/3c194ef76cb8917f53fdcb172811ac441b3bc0c35a6c3cd9ba37a2a87be3a057"
+    },
+    "assets/audio/different-breed-song.mp3": {
+      "hash": "a8f6712d81d4f6ab9f9bce06122efb95294f7f73d2cc37cce01bd34a720b0f08",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/a8/a8f6712d81d4f6ab9f9bce06122efb95294f7f73d2cc37cce01bd34a720b0f08"
+    },
+    "assets/audio/song-bc-bed-longtake.wav": {
+      "hash": "88664894a923870771206ff75676809f5aa668e5a0fd51e1b909f780cab6d053",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/88/88664894a923870771206ff75676809f5aa668e5a0fd51e1b909f780cab6d053"
+    },
+    "assets/audio/song-bc-bed.wav": {
+      "hash": "91b5c96b988b6e6f9ddb3b8130bd24d1fb2407b3e5775bbe30d877ac37f450d7",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/91/91b5c96b988b6e6f9ddb3b8130bd24d1fb2407b3e5775bbe30d877ac37f450d7"
+    },
+    "assets/audio/song-bc-heavy-instrumental.mp3": {
+      "hash": "6de7dc4c2bdc9bfe44227e1464425011979248dd9c87f798f38b3841101ecc3b",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/6d/6de7dc4c2bdc9bfe44227e1464425011979248dd9c87f798f38b3841101ecc3b"
+    },
+    "assets/audio/song-bc-heavy.mp3": {
+      "hash": "c81e2cad261b1d796f7feeeca61cd9c7f66970c8dd0f940746fe7d6ed5ad83c8",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/c8/c81e2cad261b1d796f7feeeca61cd9c7f66970c8dd0f940746fe7d6ed5ad83c8"
+    },
+    "assets/audio/song-ikebe-3000.mp3": {
+      "hash": "e308f9983b2c1ed2622b72ddb4dfb2ad5c72ae94ea1b45a9ed0daa53b273e19d",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/e3/e308f9983b2c1ed2622b72ddb4dfb2ad5c72ae94ea1b45a9ed0daa53b273e19d"
+    },
+    "assets/footage/lt_sh0.6_2441a_0.00_1.50.mp4": {
+      "hash": "a6d3e9e530771c2d65dfa0c51da3a64ad894255286f414cdb2c5b4dceb1e1b39",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/a6/a6d3e9e530771c2d65dfa0c51da3a64ad894255286f414cdb2c5b4dceb1e1b39"
+    },
+    "assets/footage/lt_sh0.6_2441b_3.12_5.70.mp4": {
+      "hash": "da5ffbf828ac072552dffdc08e95753ec5d407f2aec2050d6b07337f3ca661b4",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/da/da5ffbf828ac072552dffdc08e95753ec5d407f2aec2050d6b07337f3ca661b4"
+    },
+    "assets/footage/lt_sh0.6_2442a_25.25_26.95.mp4": {
+      "hash": "c4bf3eaf0367ad426842f3a66f79a40bf7581003d13c459d8780faee3dc69d99",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/c4/c4bf3eaf0367ad426842f3a66f79a40bf7581003d13c459d8780faee3dc69d99"
+    },
+    "assets/footage/lt_sh0.6_2442a_7.98_23.90.mp4": {
+      "hash": "d2023e82ff447128eac2746b72ef59eb7e6d68006ccf7994e788896a84393122",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/d2/d2023e82ff447128eac2746b72ef59eb7e6d68006ccf7994e788896a84393122"
+    },
+    "assets/footage/lt_sh0.6_2505a_17.95_28.75.mp4": {
+      "hash": "003383ec96198bc713ec27f6653646aeab5283eea24268e142c587a8bc0a8091",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/00/003383ec96198bc713ec27f6653646aeab5283eea24268e142c587a8bc0a8091"
+    },
+    "assets/footage/lt_sh0.6_2506a_3.50_10.30.mp4": {
+      "hash": "e3c8ce439747db5a4e5401cf9a5f29e25394d6b1df6541093301d3def5709c92",
+      "content": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/e3/e3c8ce439747db5a4e5401cf9a5f29e25394d6b1df6541093301d3def5709c92"
+    }
+  },
+  "revisions": {
+    "f5aa0e6b-d34f-4dda-adf1-38b047c79955": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792984501846,
+      "endedAt": 1792984501847,
+      "files": {
+        "index.html": {
+          "before": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/63/6306745dff5d465d975a6209e94b34caf1de72479cbb22be0c461be184d5df31",
+          "after": "/Users/joestevens/.cache/hyperframes/history/6070e33c-cc0a-4017-8125-27a2df418c3c/blobs/2b/2b77e7adad1ca12ef158702120c6112c6808f60cd934044073663a025c3851b5"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "f5aa0e6b-d34f-4dda-adf1-38b047c79955",
+      "id": "112e05f4-72a7-47dc-8ac9-19f9b803f5de"
+    },
+    "revisions": {
+      "f5aa0e6b-d34f-4dda-adf1-38b047c79955": [
+        {
+          "id": "112e05f4-72a7-47dc-8ac9-19f9b803f5de",
+          "scope": "project",
+          "report": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-blue-collar-pilates-longtake/.hyperframes/artifacts/checks/112e05f4-72a7-47dc-8ac9-19f9b803f5de.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792984507220,
+          "contentHash": "92522c2b6e3c3187e99e29289c73345ecf9e8b153e01cf4de1c185002654757f",
+          "revision": "f5aa0e6b-d34f-4dda-adf1-38b047c79955",
+          "inputFingerprint": "a8eebca7ab4501b847734eb5d578722d815642eaba8a23c62941e34b5d0dfb1f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "e2d35892-8529-4e90-b9f6-90a1bf37063f",
+        "scope": "project",
+        "report": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-blue-collar-pilates-longtake/.hyperframes/artifacts/checks/e2d35892-8529-4e90-b9f6-90a1bf37063f.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792984373035,
+        "contentHash": "71493ab8e3dc9960b85ea4d9368a22a04a5748f04969bd11b37e520cd870187e",
+        "revision": null,
+        "inputFingerprint": "e269ed7777227bd42007cf700b6fe2c64738c8f2c638fa483978a0ecfbb56260",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "e978e649-6454-4371-956e-e6a7181c6450",
+      "completedAt": 1792984571459,
+      "output": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-blue-collar-pilates-longtake/renders/longtake-v1-raw.mp4",
+      "status": "completed",
+      "revision": "f5aa0e6b-d34f-4dda-adf1-38b047c79955"
+    },
+    "retainedRevisions": [
+      "f5aa0e6b-d34f-4dda-adf1-38b047c79955"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

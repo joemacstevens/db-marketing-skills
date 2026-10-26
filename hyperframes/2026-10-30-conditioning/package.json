@@ -1,0 +1,9 @@
+{
+  "name": "2026-10-30-conditioning",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.159 check",
+    "render": "npx --yes hyperframes@0.8.159 render"
+  }
+}

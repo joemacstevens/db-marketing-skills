@@ -1,0 +1,9 @@
+{
+  "name": "2026-10-26-leg-day",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.200 check",
+    "render": "npx --yes hyperframes@0.8.200 render"
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 9,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 4 has 6 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-title\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-title",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-title\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-m2\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-m2",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-m2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-m4\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-m4",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-m4\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-m5\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-m5",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-m5\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-m8\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-m8",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-m8\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-m20\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-m20",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-m20\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-endA\"> is a timeline element that contains nested <div id=\"ea\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-endA",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-endA\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-endB\"> is a timeline element that contains nested <div id=\"eb\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-endB",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-29-core-work/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-endB\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 28.038,
+    "samples": [
+      1.558,
+      4.673,
+      7.788,
+      10.904,
+      14.019,
+      17.134,
+      20.25,
+      23.365,
+      26.48
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.558,
+      7.788,
+      14.019,
+      20.25,
+      26.48
+    ],
+    "checked": 17,
+    "passed": 17
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 4,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 9 text elements stay under it for 0.5 s or more, the smallest \"Different Breed\" at 25 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "Different Breed",
+        "selector": "#ti-tag > span:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 105,
+          "y": 330,
+          "width": 307.5,
+          "height": 33
+        },
+        "time": 1.62,
+        "times": [
+          1.62,
+          1.62,
+          3.365,
+          6.106,
+          8.1,
+          12.212,
+          20.312,
+          25.795,
+          25.795
+        ],
+        "fontPx": 25,
+        "floorPx": 28,
+        "seconds": 1.62,
+        "elements": [
+          {
+            "selector": "#ti-tag > span:nth-of-type(2)",
+            "text": "Different Breed",
+            "fontPx": 25,
+            "time": 1.62,
+            "seconds": 1.62
+          },
+          {
+            "selector": "#ti-tag > span:nth-of-type(4)",
+            "text": "Elite Fitness",
+            "fontPx": 25,
+            "time": 1.62,
+            "seconds": 1.62
+          },
+          {
+            "selector": "#m2-tag > span:nth-of-type(2)",
+            "text": "The move",
+            "fontPx": 25,
+            "time": 3.365,
+            "seconds": 1.869
+          },
+          {
+            "selector": "#m4-tag > span:nth-of-type(2)",
+            "text": "The move",
+            "fontPx": 25,
+            "time": 6.106,
+            "seconds": 1.994
+          },
+          {
+            "selector": "#m5-tag > span:nth-of-type(2)",
+            "text": "The move",
+            "fontPx": 25,
+            "time": 8.1,
+            "seconds": 1.994
+          },
+          {
+            "selector": "#m8-tag > span:nth-of-type(2)",
+            "text": "The move",
+            "fontPx": 25,
+            "time": 12.212,
+            "seconds": 1.87
+          },
+          {
+            "selector": "#m20-tag > span:nth-of-type(2)",
+            "text": "The move",
+            "fontPx": 25,
+            "time": 20.312,
+            "seconds": 2.368
+          },
+          {
+            "selector": "#eb > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "Different Breed",
+            "fontPx": 25,
+            "time": 25.795,
+            "seconds": 2.243
+          },
+          {
+            "selector": "#eb > div:nth-of-type(1) > span:nth-of-type(2)",
+            "text": "Teaneck, NJ",
+            "fontPx": 25,
+            "time": 25.795,
+            "seconds": 2.243
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"ABSOLUTELY\" (1 word) is on screen 1.74 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "ABSOLUTELY",
+        "selector": "#eb-p1",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 70,
+          "y": 1070.52,
+          "width": 935.86,
+          "height": 228.01999999999998
+        },
+        "time": 26.301,
+        "words": 1,
+        "seconds": 1.741,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"DIFFERENT.\" (1 word) is on screen 1.44 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "DIFFERENT.",
+        "selector": "#eb-p2",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 70,
+          "y": 1269.63,
+          "width": 927.61,
+          "height": 130.17000000000007
+        },
+        "time": 26.605,
+        "words": 1,
+        "seconds": 1.437,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"@dbelitefitness\" (1 word) is on screen 1.17 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "@dbelitefitness",
+        "selector": "#eb-h > span:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 160,
+          "y": 1781,
+          "width": 333,
+          "height": 39
+        },
+        "time": 26.87,
+        "words": 1,
+        "seconds": 1.172,
+        "floorSeconds": 2
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 225
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

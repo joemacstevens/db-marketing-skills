@@ -1,0 +1,9 @@
+{
+  "name": "2026-10-29-blue-collar-pilates-longtake",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.199 check",
+    "render": "npx --yes hyperframes@0.8.199 render"
+  }
+}

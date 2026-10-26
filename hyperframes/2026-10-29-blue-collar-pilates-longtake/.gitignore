@@ -1,0 +1,6 @@
+assets/audio/song-*
+assets/footage/
+renders/
+
+# Raw coach audio from member footage: stays local (public repo)
+assets/audio/coach-lines.wav

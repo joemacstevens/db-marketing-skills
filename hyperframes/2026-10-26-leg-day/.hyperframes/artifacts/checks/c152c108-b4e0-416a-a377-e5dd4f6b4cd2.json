@@ -1,0 +1,313 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 6,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-title\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-title",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-26-leg-day/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-title\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-sq\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-sq",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-26-leg-day/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-sq\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-bs\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-bs",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-26-leg-day/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-bs\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-le\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-le",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-26-leg-day/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-le\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-vc\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-vc",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-26-leg-day/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-vc\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"t-end\"> is a timeline element that contains nested <div id=\"f7\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#t-end",
+        "dataAttributes": {},
+        "sourceFile": "/Users/joestevens/Projects/Different Breed/.claude/worktrees/photo-content-color-grading-5a56af/hyperframes/2026-10-26-leg-day/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"t-end\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 23.012,
+    "samples": [
+      1.278,
+      3.835,
+      6.392,
+      8.949,
+      11.506,
+      14.063,
+      16.62,
+      19.177,
+      21.734
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.278,
+      6.392,
+      11.506,
+      16.62,
+      21.734
+    ],
+    "checked": 12,
+    "passed": 12
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 8 text elements stay under it for 0.5 s or more, the smallest \"Different Breed\" at 25 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "Different Breed",
+        "selector": "#ti-tag > span:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 105,
+          "y": 330,
+          "width": 307.5,
+          "height": 33
+        },
+        "time": 1.617,
+        "times": [
+          1.617,
+          1.617,
+          4.105,
+          7.712,
+          11.195,
+          14.802,
+          19.28,
+          19.28
+        ],
+        "fontPx": 25,
+        "floorPx": 28,
+        "seconds": 1.741,
+        "elements": [
+          {
+            "selector": "#ti-tag > span:nth-of-type(2)",
+            "text": "Different Breed",
+            "fontPx": 25,
+            "time": 1.617,
+            "seconds": 1.741
+          },
+          {
+            "selector": "#ti-tag > span:nth-of-type(4)",
+            "text": "Personal Training",
+            "fontPx": 25,
+            "time": 1.617,
+            "seconds": 1.741
+          },
+          {
+            "selector": "#sq-tag > span:nth-of-type(1)",
+            "text": "Quads · Glutes · Core",
+            "fontPx": 25,
+            "time": 4.105,
+            "seconds": 2.736
+          },
+          {
+            "selector": "#bs-tag > span:nth-of-type(2)",
+            "text": "Quads · Glutes · Balance",
+            "fontPx": 25,
+            "time": 7.712,
+            "seconds": 2.736
+          },
+          {
+            "selector": "#le-tag > span:nth-of-type(2)",
+            "text": "Quads",
+            "fontPx": 25,
+            "time": 11.195,
+            "seconds": 2.736
+          },
+          {
+            "selector": "#vc-tag > span:nth-of-type(1)",
+            "text": "Legs · Lungs · Grip",
+            "fontPx": 25,
+            "time": 14.802,
+            "seconds": 0.995
+          },
+          {
+            "selector": "#f7 > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "Leg Day",
+            "fontPx": 25,
+            "time": 19.28,
+            "seconds": 3.732
+          },
+          {
+            "selector": "#f7 > div:nth-of-type(1) > span:nth-of-type(2)",
+            "text": "Personal Training",
+            "fontPx": 25,
+            "time": 19.28,
+            "seconds": 3.732
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"with Coach Don\" (3 words) is on screen 0.83 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "with Coach Don",
+        "selector": "#ti-c",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 64,
+          "y": 1409.56,
+          "width": 677.53,
+          "height": 156
+        },
+        "time": 2.472,
+        "words": 3,
+        "seconds": 0.832,
+        "floorSeconds": 1.05
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Legs · Lungs · Grip\" (3 words) is on screen 1.00 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Legs · Lungs · Grip",
+        "selector": "#vc-tag > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 502.5,
+          "y": 1604.06,
+          "width": 389.5,
+          "height": 33
+        },
+        "time": 14.701,
+        "words": 3,
+        "seconds": 1.003,
+        "floorSeconds": 1.05
+      }
+    ],
+    "enabled": true,
+    "step": 0.12400000000000055,
+    "samples": 185
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

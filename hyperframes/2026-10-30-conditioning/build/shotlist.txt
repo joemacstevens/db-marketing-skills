@@ -1,0 +1,28 @@
+  0.00-  1.64  song  40.39  IMG_2481  in   0.05 out   1.69  OPENER: backward sled drag, close, leaning into the straps
+  1.64-  3.27  song  42.03  (title)                      TITLE: SATURDAY CONDITIONING
+  3.27-  4.36  song  43.67  6FFEB08B  in   1.00 out   2.09  AIR BIKE: man in black tank, coach in blue beside him
+  4.36-  5.45  song  44.76  6FFEB08B  in   5.00 out   6.09  air bike, second window
+  5.45-  6.55  song  45.85  IMG_2481  in   1.95 out   3.04  SLED DRAG: walking backward, straps taut
+  6.55-  7.64  song  46.94  IMG_2481  in   4.30 out   5.39  sled drag, sled + plate slides into frame
+  7.64-  8.73  song  48.03  IMG_2478  in   5.95 out   7.04  SINGLE-LEG SWING: cap client, hinge -> swing
+  8.73-  9.82  song  49.12  IMG_2478  in   9.20 out  10.29  single-leg swing, next rep
+  9.82- 10.91  song  50.21  IMG_1818  in   2.90 out   3.99  WALKING LUNGE: barbell, green plates, side-on
+ 10.91- 12.00  song  51.30  IMG_1818  in   4.80 out   5.89  walking lunge, next steps
+ 12.00- 13.09  song  52.39  3BCC5C9F  in  12.05 out  13.14  SLIDER LUNGE: cap client, side angle, down into the lunge
+ 13.09- 14.18  song  53.48  3BCC5C9F  in  14.45 out  15.54  slider lunge, next rep
+ 14.18- 15.27  song  54.58  IMG_2434  in   1.40 out   2.49  BALL SLAM: overhead -> slam (Fri 10/23)
+ 15.27- 16.36  song  55.67  IMG_2434  in   3.00 out   4.09  ball slam, next rep
+ 16.36- 17.45  song  56.76  F1D1601F  in   2.00 out   3.09  treadmill run, cap client
+ 17.45- 18.00  song  57.85  6FFEB08B  in   8.00 out   8.55  air bike
+ 18.00- 18.55  song  58.39  IMG_2481  in   6.20 out   6.75  sled close with plate
+ 18.55- 19.09  song  58.94  IMG_1818  in   7.20 out   7.75  walking lunge
+ 19.09- 19.64  song  59.48  IMG_2434  in   4.60 out   5.15  ball slam
+ 19.64- 20.18  song  60.03  IMG_2478  in   7.60 out   8.15  single-leg swing
+ 20.18- 20.73  song  60.58  6FFEB08B  in   3.20 out   3.75  air bike (the stop beat 60.57)
+ 20.73- 21.27  song  61.12  IMG_2481  in   7.40 out   7.95  sled drag wide
+ 21.27- 21.82  song  61.67  IMG_2478  in  10.90 out  11.45  swing up
+ 21.82- 22.36  song  62.21  IMG_1818  in   0.40 out   0.95  lunge, plate fills the frame
+ 22.36- 22.91  song  62.76  6FFEB08B  in   9.80 out  10.35  air bike
+ 22.91- 23.45  song  63.30  F1D1601F  in   5.50 out   6.05  treadmill
+ 23.45- 24.00  song  63.85  IMG_2481  in   3.30 out   3.85  sled drag close
+ 24.00- 24.55  song  64.39  IMG_2434  in   0.20 out   0.75  ball slam, last hit before the end card
