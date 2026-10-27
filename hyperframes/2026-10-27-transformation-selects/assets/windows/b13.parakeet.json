@@ -1,0 +1,200 @@
+{
+  "text": "Everything is perfect, everything is good. I love it. This picture here. This is before when you started coming here and this is now. Yes, it's like that. That's why I say I love your gym. The best gym.",
+  "words": [
+    {
+      "text": "Everything",
+      "start": 0,
+      "end": 0.48
+    },
+    {
+      "text": "is",
+      "start": 0.48,
+      "end": 0.72
+    },
+    {
+      "text": "perfect,",
+      "start": 0.72,
+      "end": 1.2
+    },
+    {
+      "text": "everything",
+      "start": 1.2,
+      "end": 1.52
+    },
+    {
+      "text": "is",
+      "start": 1.52,
+      "end": 1.68
+    },
+    {
+      "text": "good.",
+      "start": 1.68,
+      "end": 2
+    },
+    {
+      "text": "I",
+      "start": 2,
+      "end": 2.16
+    },
+    {
+      "text": "love",
+      "start": 2.16,
+      "end": 2.32
+    },
+    {
+      "text": "it.",
+      "start": 2.32,
+      "end": 2.56
+    },
+    {
+      "text": "This",
+      "start": 2.96,
+      "end": 3.28
+    },
+    {
+      "text": "picture",
+      "start": 3.28,
+      "end": 3.68
+    },
+    {
+      "text": "here.",
+      "start": 3.92,
+      "end": 4.56
+    },
+    {
+      "text": "This",
+      "start": 4.56,
+      "end": 4.88
+    },
+    {
+      "text": "is",
+      "start": 4.88,
+      "end": 5.2
+    },
+    {
+      "text": "before",
+      "start": 5.2,
+      "end": 6.08
+    },
+    {
+      "text": "when",
+      "start": 6.56,
+      "end": 6.8
+    },
+    {
+      "text": "you",
+      "start": 6.8,
+      "end": 6.96
+    },
+    {
+      "text": "started",
+      "start": 6.96,
+      "end": 7.36
+    },
+    {
+      "text": "coming",
+      "start": 7.36,
+      "end": 7.76
+    },
+    {
+      "text": "here",
+      "start": 7.76,
+      "end": 8
+    },
+    {
+      "text": "and",
+      "start": 8.16,
+      "end": 8.4
+    },
+    {
+      "text": "this",
+      "start": 8.4,
+      "end": 8.64
+    },
+    {
+      "text": "is",
+      "start": 8.64,
+      "end": 8.96
+    },
+    {
+      "text": "now.",
+      "start": 8.96,
+      "end": 10.88
+    },
+    {
+      "text": "Yes,",
+      "start": 10.88,
+      "end": 11.76
+    },
+    {
+      "text": "it's",
+      "start": 11.76,
+      "end": 12.16
+    },
+    {
+      "text": "like",
+      "start": 12.16,
+      "end": 12.48
+    },
+    {
+      "text": "that.",
+      "start": 12.48,
+      "end": 12.88
+    },
+    {
+      "text": "That's",
+      "start": 12.88,
+      "end": 13.2
+    },
+    {
+      "text": "why",
+      "start": 13.2,
+      "end": 13.44
+    },
+    {
+      "text": "I",
+      "start": 13.44,
+      "end": 13.68
+    },
+    {
+      "text": "say",
+      "start": 13.68,
+      "end": 13.92
+    },
+    {
+      "text": "I",
+      "start": 13.92,
+      "end": 14.08
+    },
+    {
+      "text": "love",
+      "start": 14.08,
+      "end": 14.32
+    },
+    {
+      "text": "your",
+      "start": 14.32,
+      "end": 14.64
+    },
+    {
+      "text": "gym.",
+      "start": 14.64,
+      "end": 15.44
+    },
+    {
+      "text": "The",
+      "start": 15.44,
+      "end": 15.68
+    },
+    {
+      "text": "best",
+      "start": 15.68,
+      "end": 16
+    },
+    {
+      "text": "gym.",
+      "start": 16,
+      "end": 16.48
+    }
+  ]
+}

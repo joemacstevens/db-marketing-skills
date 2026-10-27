@@ -1,0 +1,235 @@
+{
+  "text": "I'm live, so go ahead. What you'll tell me before I stop. I just had my physical on Monday. Okay. Uh dropped 22 pounds. 22 pounds. My cholesterol is 50 points lower. Uh-huh. And my EKG came back perfect. So thank you. Different breed. Lion King.",
+  "words": [
+    {
+      "text": "I'm",
+      "start": 0.08,
+      "end": 0.24
+    },
+    {
+      "text": "live,",
+      "start": 0.24,
+      "end": 0.4
+    },
+    {
+      "text": "so",
+      "start": 0.4,
+      "end": 0.48
+    },
+    {
+      "text": "go",
+      "start": 0.8,
+      "end": 0.88
+    },
+    {
+      "text": "ahead.",
+      "start": 0.88,
+      "end": 1.04
+    },
+    {
+      "text": "What",
+      "start": 1.04,
+      "end": 1.12
+    },
+    {
+      "text": "you'll",
+      "start": 1.2,
+      "end": 1.44
+    },
+    {
+      "text": "tell",
+      "start": 1.44,
+      "end": 1.6
+    },
+    {
+      "text": "me",
+      "start": 1.6,
+      "end": 1.6
+    },
+    {
+      "text": "before",
+      "start": 1.68,
+      "end": 1.84
+    },
+    {
+      "text": "I",
+      "start": 1.84,
+      "end": 2
+    },
+    {
+      "text": "stop.",
+      "start": 2,
+      "end": 2.32
+    },
+    {
+      "text": "I",
+      "start": 2.32,
+      "end": 2.4
+    },
+    {
+      "text": "just",
+      "start": 2.4,
+      "end": 2.56
+    },
+    {
+      "text": "had",
+      "start": 2.56,
+      "end": 2.72
+    },
+    {
+      "text": "my",
+      "start": 2.72,
+      "end": 2.8
+    },
+    {
+      "text": "physical",
+      "start": 2.8,
+      "end": 3.2
+    },
+    {
+      "text": "on",
+      "start": 3.2,
+      "end": 3.36
+    },
+    {
+      "text": "Monday.",
+      "start": 3.36,
+      "end": 3.92
+    },
+    {
+      "text": "Okay.",
+      "start": 3.92,
+      "end": 4.48
+    },
+    {
+      "text": "Uh",
+      "start": 4.64,
+      "end": 4.8
+    },
+    {
+      "text": "dropped",
+      "start": 5.12,
+      "end": 5.52
+    },
+    {
+      "text": "22",
+      "start": 5.52,
+      "end": 6
+    },
+    {
+      "text": "pounds.",
+      "start": 6,
+      "end": 6.56
+    },
+    {
+      "text": "22",
+      "start": 6.56,
+      "end": 6.96
+    },
+    {
+      "text": "pounds.",
+      "start": 6.96,
+      "end": 7.52
+    },
+    {
+      "text": "My",
+      "start": 7.92,
+      "end": 8.24
+    },
+    {
+      "text": "cholesterol",
+      "start": 8.24,
+      "end": 8.88
+    },
+    {
+      "text": "is",
+      "start": 8.96,
+      "end": 9.2
+    },
+    {
+      "text": "50",
+      "start": 9.2,
+      "end": 9.52
+    },
+    {
+      "text": "points",
+      "start": 9.52,
+      "end": 9.84
+    },
+    {
+      "text": "lower.",
+      "start": 9.84,
+      "end": 10.32
+    },
+    {
+      "text": "Uh-huh.",
+      "start": 10.32,
+      "end": 10.8
+    },
+    {
+      "text": "And",
+      "start": 10.8,
+      "end": 10.96
+    },
+    {
+      "text": "my",
+      "start": 10.96,
+      "end": 11.12
+    },
+    {
+      "text": "EKG",
+      "start": 11.12,
+      "end": 11.84
+    },
+    {
+      "text": "came",
+      "start": 11.84,
+      "end": 12.08
+    },
+    {
+      "text": "back",
+      "start": 12.08,
+      "end": 12.32
+    },
+    {
+      "text": "perfect.",
+      "start": 12.32,
+      "end": 13.12
+    },
+    {
+      "text": "So",
+      "start": 13.6,
+      "end": 13.92
+    },
+    {
+      "text": "thank",
+      "start": 14.56,
+      "end": 14.96
+    },
+    {
+      "text": "you.",
+      "start": 14.96,
+      "end": 15.44
+    },
+    {
+      "text": "Different",
+      "start": 15.44,
+      "end": 15.76
+    },
+    {
+      "text": "breed.",
+      "start": 15.76,
+      "end": 16.32
+    },
+    {
+      "text": "Lion",
+      "start": 16.48,
+      "end": 16.72
+    },
+    {
+      "text": "King.",
+      "start": 16.88,
+      "end": 17.52
+    }
+  ]
+}

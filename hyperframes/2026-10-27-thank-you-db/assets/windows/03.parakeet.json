@@ -1,0 +1,75 @@
+{
+  "text": "lost weight too. Down from 185 to now 160. Not bad. Not bad for",
+  "words": [
+    {
+      "text": "lost",
+      "start": 0.32,
+      "end": 0.64
+    },
+    {
+      "text": "weight",
+      "start": 0.64,
+      "end": 0.88
+    },
+    {
+      "text": "too.",
+      "start": 1.04,
+      "end": 1.68
+    },
+    {
+      "text": "Down",
+      "start": 2.24,
+      "end": 2.64
+    },
+    {
+      "text": "from",
+      "start": 2.64,
+      "end": 2.88
+    },
+    {
+      "text": "185",
+      "start": 2.88,
+      "end": 3.68
+    },
+    {
+      "text": "to",
+      "start": 3.92,
+      "end": 4.16
+    },
+    {
+      "text": "now",
+      "start": 4.16,
+      "end": 4.4
+    },
+    {
+      "text": "160.",
+      "start": 4.56,
+      "end": 5.92
+    },
+    {
+      "text": "Not",
+      "start": 5.92,
+      "end": 6.32
+    },
+    {
+      "text": "bad.",
+      "start": 6.32,
+      "end": 7.04
+    },
+    {
+      "text": "Not",
+      "start": 7.04,
+      "end": 7.28
+    },
+    {
+      "text": "bad",
+      "start": 7.28,
+      "end": 7.52
+    },
+    {
+      "text": "for",
+      "start": 7.52,
+      "end": 7.68
+    }
+  ]
+}

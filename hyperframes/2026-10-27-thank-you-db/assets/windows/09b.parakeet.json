@@ -1,0 +1,105 @@
+{
+  "text": "Twenty two pounds. Twenty two pounds. Uh my cholesterol is fifty points lower. Uh-huh. And my EKG came back perfect.",
+  "words": [
+    {
+      "text": "Twenty",
+      "start": 0.16,
+      "end": 0.24
+    },
+    {
+      "text": "two",
+      "start": 0.32,
+      "end": 0.4
+    },
+    {
+      "text": "pounds.",
+      "start": 0.48,
+      "end": 0.88
+    },
+    {
+      "text": "Twenty",
+      "start": 0.88,
+      "end": 1.04
+    },
+    {
+      "text": "two",
+      "start": 1.12,
+      "end": 1.2
+    },
+    {
+      "text": "pounds.",
+      "start": 1.28,
+      "end": 1.84
+    },
+    {
+      "text": "Uh",
+      "start": 1.84,
+      "end": 2.08
+    },
+    {
+      "text": "my",
+      "start": 2.24,
+      "end": 2.56
+    },
+    {
+      "text": "cholesterol",
+      "start": 2.56,
+      "end": 3.12
+    },
+    {
+      "text": "is",
+      "start": 3.28,
+      "end": 3.52
+    },
+    {
+      "text": "fifty",
+      "start": 3.52,
+      "end": 3.84
+    },
+    {
+      "text": "points",
+      "start": 3.84,
+      "end": 4.16
+    },
+    {
+      "text": "lower.",
+      "start": 4.16,
+      "end": 4.64
+    },
+    {
+      "text": "Uh-huh.",
+      "start": 4.64,
+      "end": 4.96
+    },
+    {
+      "text": "And",
+      "start": 5.04,
+      "end": 5.2
+    },
+    {
+      "text": "my",
+      "start": 5.2,
+      "end": 5.36
+    },
+    {
+      "text": "EKG",
+      "start": 5.36,
+      "end": 6.08
+    },
+    {
+      "text": "came",
+      "start": 6.08,
+      "end": 6.24
+    },
+    {
+      "text": "back",
+      "start": 6.24,
+      "end": 6.4
+    },
+    {
+      "text": "perfect.",
+      "start": 6.4,
+      "end": 6.8
+    }
+  ]
+}

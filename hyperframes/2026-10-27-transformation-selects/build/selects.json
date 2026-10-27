@@ -1,0 +1,220 @@
+{
+  "_note": "Tier 1 bites from campaigns/transformation-montage/SOURCE-CLIPS.md, in that file's row order. in/out = source seconds, snapped to word edges with Parakeet (build/words.py). src roots: BOB = main checkout because-of-boxing/, AJ = Ajeo Different Breed, TM = AJ/Incoming Videos/Transformation Montage 2026-10-26.",
+  "roots": {
+    "BOB": "/Users/joestevens/Projects/Different Breed/because-of-boxing",
+    "AJ": "/Volumes/Ajeo/Projects/Different Breed",
+    "TM": "/Volumes/Ajeo/Projects/Different Breed/Incoming Videos/Transformation Montage 2026-10-26"
+  },
+  "bites": [
+    {
+      "id": "b01a",
+      "row": "1",
+      "who": "James Lyons",
+      "what": "Heart attack, Dec 2021",
+      "src": "BOB/testimonials/July 20, 2026/IMG_5576.mov",
+      "in": 11.3,
+      "out": 23.1,
+      "first": 11.3,
+      "last": 21.4
+    },
+    {
+      "id": "b01b",
+      "row": "1",
+      "who": "James Lyons",
+      "what": "Recovered because of boxing",
+      "src": "BOB/testimonials/July 20, 2026/IMG_5576.mov",
+      "in": 97.0,
+      "out": 117.2,
+      "first": 97.8,
+      "last": 115.24
+    },
+    {
+      "id": "b02a",
+      "row": "2",
+      "who": "Stacy Smith (voice, Don on cam)",
+      "what": "A1C down",
+      "src": "AJ/Project Archive/don-drops/2026-07-15/IMG_8761.mov",
+      "in": 4.7,
+      "out": 11.7,
+      "first": 4.8,
+      "last": 10.9
+    },
+    {
+      "id": "b02b",
+      "row": "2",
+      "who": "Stacy Smith (voice, Don on cam)",
+      "what": "Heart looks good",
+      "src": "AJ/Project Archive/don-drops/2026-07-15/IMG_8761.mov",
+      "in": 21.5,
+      "out": 32.0,
+      "first": 22.3,
+      "last": null,
+      "out_fixed": 30.2
+    },
+    {
+      "id": "b03",
+      "row": "3",
+      "who": "Unnamed · Iron Tiger tee",
+      "what": "22 lbs · cholesterol · EKG",
+      "src": "AJ/Media Library/February 12, 2025/IMG_7904.mov",
+      "in": 2.5,
+      "out": 16.3,
+      "first": 2.8,
+      "last": 16.26
+    },
+    {
+      "id": "b04",
+      "row": "4",
+      "who": "\"King\"",
+      "what": "LDL 118 → 99",
+      "src": "AJ/Media Library/December 14, 2025/IMG_1962.mov",
+      "in": 11.0,
+      "out": 33.0,
+      "first": 11.9,
+      "last": 31.16
+    },
+    {
+      "id": "b05",
+      "row": "5",
+      "who": "Unnamed · blue tank",
+      "what": "224 → 184",
+      "src": "AJ/Media Library/August 10, 2025/IMG_4955.mov",
+      "in": 33.2,
+      "out": 42.9,
+      "first": 32.1,
+      "last": 41.4
+    },
+    {
+      "id": "b06",
+      "row": "6",
+      "who": "Unnamed · FloWater",
+      "what": "40 lbs in a year",
+      "src": "AJ/Project Archive/don-drops/2026-09-30/raw/IMG_1571.mov",
+      "in": 3.0,
+      "out": 16.5,
+      "first": 7.16,
+      "last": 15.16
+    },
+    {
+      "id": "b07",
+      "row": "7",
+      "who": "Unnamed · grey tee",
+      "what": "30 lbs in 1.5 years",
+      "src": "AJ/Media Library/2026/April 26, 2026/IMG_5702.mov",
+      "in": 8.4,
+      "out": 20.7,
+      "first": 8.5,
+      "last": 19.4
+    },
+    {
+      "id": "b08",
+      "row": "8",
+      "who": "Unnamed · red hoodie",
+      "what": "25 lbs since November",
+      "src": "AJ/Media Library/2026/April 23, 2026/IMG_5637.mov",
+      "in": 5.7,
+      "out": 13.0,
+      "first": 6.2,
+      "last": 11.22
+    },
+    {
+      "id": "b09",
+      "row": "9",
+      "who": "Gene",
+      "what": "185 → 160 at 54",
+      "src": "BOB/testimonials/July 20, 2026/IMG_5559.mov",
+      "in": 67.9,
+      "out": 78.0,
+      "first": 67.9,
+      "last": 77.5
+    },
+    {
+      "id": "b10",
+      "row": "10",
+      "who": "Gabriel Gonzalez",
+      "what": "15 lbs on doctor's orders",
+      "src": "BOB/testimonials/IMG_5778.mov",
+      "in": 0.0,
+      "out": 17.5,
+      "first": 3.92,
+      "last": 16.96
+    },
+    {
+      "id": "b11",
+      "row": "11",
+      "who": "The couple (produced edit)",
+      "what": "Chronic pain · depression",
+      "src": "AJ/Video/Produced/0502 (1).mp4",
+      "in": 3.2,
+      "out": 36.5,
+      "first": 2.9,
+      "last": 36.2
+    },
+    {
+      "id": "b12a",
+      "row": "12",
+      "who": "Veronica Young",
+      "what": "Last year's jeans",
+      "src": "TM/IMG_0313_veronica-jeans_2026-08-22.mov",
+      "in": 0.0,
+      "out": 18.5,
+      "first": 0.1,
+      "last": 18.5
+    },
+    {
+      "id": "b12b",
+      "row": "12",
+      "who": "Veronica Young (confirm)",
+      "what": "60, about to die",
+      "src": "TM/veronica-one-year-60-about-to-die_2026-08-24.mp4",
+      "in": 12.0,
+      "out": 41.0,
+      "first": 20.4,
+      "last": 40.48
+    },
+    {
+      "id": "b12c",
+      "row": "12",
+      "who": "Veronica Young (confirm)",
+      "what": "Lost 14 lbs",
+      "src": "TM/veronica-one-year-60-about-to-die_2026-08-24.mp4",
+      "in": 47.0,
+      "out": 51.0,
+      "first": 47.5,
+      "last": 51.0
+    },
+    {
+      "id": "b12d",
+      "row": "12b",
+      "who": "Marjan + Coach Danny",
+      "what": "3 InBody scans",
+      "src": "TM/marjan-inbody-changed-my-life_2026-01-11.mp4",
+      "in": 12.0,
+      "out": 37.0,
+      "first": 12.4,
+      "last": 36.32
+    },
+    {
+      "id": "b13",
+      "row": "13",
+      "who": "Unnamed · photo on phone",
+      "what": "Before / after photo",
+      "src": "AJ/Media Library/June 26, 2025/IMG_3466.mov",
+      "in": 11.0,
+      "out": 23.5,
+      "first": 11.96,
+      "last": 21.48
+    },
+    {
+      "id": "b14",
+      "row": "14",
+      "who": "Dave",
+      "what": "InBody 75 → 82",
+      "src": "TM/IMG_2104_dave-inbody_2025-12-19.mov",
+      "in": 4.3,
+      "out": 41.0,
+      "first": 4.3,
+      "last": 40.78
+    }
+  ]
+}

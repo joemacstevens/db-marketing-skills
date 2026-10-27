@@ -1,0 +1,365 @@
+{
+  "text": "Three scans and I want y'all to look. Each scan body composition history has improved. Skeletal muscle mass has gone up. 81.4, 83.6, 84.7. Look at this preferred body fat, 19.5, 17.8, 16.6. What do you think about the training with Danny? Oh it's fucking great. It's great, man. Like I appreciate what you and Danny done for me for like your past couple years. Y'all changing my life for real. So",
+  "words": [
+    {
+      "text": "Three",
+      "start": 0.16,
+      "end": 0.48
+    },
+    {
+      "text": "scans",
+      "start": 0.48,
+      "end": 0.72
+    },
+    {
+      "text": "and",
+      "start": 0.8,
+      "end": 0.96
+    },
+    {
+      "text": "I",
+      "start": 0.96,
+      "end": 1.04
+    },
+    {
+      "text": "want",
+      "start": 1.04,
+      "end": 1.2
+    },
+    {
+      "text": "y'all",
+      "start": 1.2,
+      "end": 1.44
+    },
+    {
+      "text": "to",
+      "start": 1.44,
+      "end": 1.68
+    },
+    {
+      "text": "look.",
+      "start": 1.68,
+      "end": 2.4
+    },
+    {
+      "text": "Each",
+      "start": 2.4,
+      "end": 2.88
+    },
+    {
+      "text": "scan",
+      "start": 2.88,
+      "end": 3.36
+    },
+    {
+      "text": "body",
+      "start": 3.92,
+      "end": 4.48
+    },
+    {
+      "text": "composition",
+      "start": 4.48,
+      "end": 5.04
+    },
+    {
+      "text": "history",
+      "start": 5.12,
+      "end": 5.68
+    },
+    {
+      "text": "has",
+      "start": 5.68,
+      "end": 5.92
+    },
+    {
+      "text": "improved.",
+      "start": 5.92,
+      "end": 6.48
+    },
+    {
+      "text": "Skeletal",
+      "start": 6.48,
+      "end": 7.04
+    },
+    {
+      "text": "muscle",
+      "start": 7.04,
+      "end": 7.36
+    },
+    {
+      "text": "mass",
+      "start": 7.36,
+      "end": 7.68
+    },
+    {
+      "text": "has",
+      "start": 7.68,
+      "end": 7.84
+    },
+    {
+      "text": "gone",
+      "start": 7.84,
+      "end": 8
+    },
+    {
+      "text": "up.",
+      "start": 8,
+      "end": 8.4
+    },
+    {
+      "text": "81.4,",
+      "start": 8.4,
+      "end": 9.52
+    },
+    {
+      "text": "83.6,",
+      "start": 9.92,
+      "end": 11.12
+    },
+    {
+      "text": "84.7.",
+      "start": 11.12,
+      "end": 12.48
+    },
+    {
+      "text": "Look",
+      "start": 12.48,
+      "end": 12.72
+    },
+    {
+      "text": "at",
+      "start": 12.72,
+      "end": 12.88
+    },
+    {
+      "text": "this",
+      "start": 12.88,
+      "end": 13.04
+    },
+    {
+      "text": "preferred",
+      "start": 13.04,
+      "end": 13.44
+    },
+    {
+      "text": "body",
+      "start": 13.44,
+      "end": 13.68
+    },
+    {
+      "text": "fat,",
+      "start": 13.68,
+      "end": 14.08
+    },
+    {
+      "text": "19.5,",
+      "start": 14.08,
+      "end": 15.36
+    },
+    {
+      "text": "17.8,",
+      "start": 15.36,
+      "end": 16.8
+    },
+    {
+      "text": "16.6.",
+      "start": 16.8,
+      "end": 18.24
+    },
+    {
+      "text": "What",
+      "start": 18.24,
+      "end": 18.56
+    },
+    {
+      "text": "do",
+      "start": 18.56,
+      "end": 18.72
+    },
+    {
+      "text": "you",
+      "start": 18.72,
+      "end": 18.8
+    },
+    {
+      "text": "think",
+      "start": 18.8,
+      "end": 18.96
+    },
+    {
+      "text": "about",
+      "start": 18.96,
+      "end": 19.12
+    },
+    {
+      "text": "the",
+      "start": 19.12,
+      "end": 19.28
+    },
+    {
+      "text": "training",
+      "start": 19.28,
+      "end": 19.52
+    },
+    {
+      "text": "with",
+      "start": 19.52,
+      "end": 19.68
+    },
+    {
+      "text": "Danny?",
+      "start": 19.68,
+      "end": 20.16
+    },
+    {
+      "text": "Oh",
+      "start": 20.16,
+      "end": 20.32
+    },
+    {
+      "text": "it's",
+      "start": 20.4,
+      "end": 20.64
+    },
+    {
+      "text": "fucking",
+      "start": 20.64,
+      "end": 20.88
+    },
+    {
+      "text": "great.",
+      "start": 20.96,
+      "end": 21.28
+    },
+    {
+      "text": "It's",
+      "start": 21.28,
+      "end": 21.52
+    },
+    {
+      "text": "great,",
+      "start": 21.52,
+      "end": 21.84
+    },
+    {
+      "text": "man.",
+      "start": 21.84,
+      "end": 22.08
+    },
+    {
+      "text": "Like",
+      "start": 22.08,
+      "end": 22.24
+    },
+    {
+      "text": "I",
+      "start": 22.32,
+      "end": 22.4
+    },
+    {
+      "text": "appreciate",
+      "start": 22.4,
+      "end": 22.8
+    },
+    {
+      "text": "what",
+      "start": 22.8,
+      "end": 22.96
+    },
+    {
+      "text": "you",
+      "start": 22.96,
+      "end": 23.12
+    },
+    {
+      "text": "and",
+      "start": 23.12,
+      "end": 23.28
+    },
+    {
+      "text": "Danny",
+      "start": 23.28,
+      "end": 23.52
+    },
+    {
+      "text": "done",
+      "start": 23.68,
+      "end": 23.84
+    },
+    {
+      "text": "for",
+      "start": 23.92,
+      "end": 24
+    },
+    {
+      "text": "me",
+      "start": 24,
+      "end": 24.08
+    },
+    {
+      "text": "for",
+      "start": 24.16,
+      "end": 24.32
+    },
+    {
+      "text": "like",
+      "start": 24.32,
+      "end": 24.4
+    },
+    {
+      "text": "your",
+      "start": 24.48,
+      "end": 24.56
+    },
+    {
+      "text": "past",
+      "start": 24.72,
+      "end": 24.88
+    },
+    {
+      "text": "couple",
+      "start": 24.88,
+      "end": 25.04
+    },
+    {
+      "text": "years.",
+      "start": 25.12,
+      "end": 25.36
+    },
+    {
+      "text": "Y'all",
+      "start": 25.36,
+      "end": 25.52
+    },
+    {
+      "text": "changing",
+      "start": 25.6,
+      "end": 25.92
+    },
+    {
+      "text": "my",
+      "start": 25.92,
+      "end": 26
+    },
+    {
+      "text": "life",
+      "start": 26,
+      "end": 26.16
+    },
+    {
+      "text": "for",
+      "start": 26.16,
+      "end": 26.32
+    },
+    {
+      "text": "real.",
+      "start": 26.32,
+      "end": 26.56
+    },
+    {
+      "text": "So",
+      "start": 26.8,
+      "end": 26.88
+    }
+  ]
+}

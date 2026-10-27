@@ -1,0 +1,9 @@
+{
+  "name": "2026-10-27-transformation-selects",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.207 check",
+    "render": "npx --yes hyperframes@0.8.207 render"
+  }
+}

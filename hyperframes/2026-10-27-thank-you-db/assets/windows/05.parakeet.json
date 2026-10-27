@@ -1,0 +1,100 @@
+{
+  "text": "Yeah, and you get it what you need. Uh I lost forty pounds since last year. Ooh. Forty pounds.",
+  "words": [
+    {
+      "text": "Yeah,",
+      "start": 0.24,
+      "end": 0.56
+    },
+    {
+      "text": "and",
+      "start": 0.56,
+      "end": 0.72
+    },
+    {
+      "text": "you",
+      "start": 0.72,
+      "end": 0.88
+    },
+    {
+      "text": "get",
+      "start": 0.88,
+      "end": 1.04
+    },
+    {
+      "text": "it",
+      "start": 1.12,
+      "end": 1.28
+    },
+    {
+      "text": "what",
+      "start": 1.28,
+      "end": 1.44
+    },
+    {
+      "text": "you",
+      "start": 1.44,
+      "end": 1.6
+    },
+    {
+      "text": "need.",
+      "start": 1.6,
+      "end": 1.92
+    },
+    {
+      "text": "Uh",
+      "start": 1.92,
+      "end": 2
+    },
+    {
+      "text": "I",
+      "start": 2.08,
+      "end": 2.16
+    },
+    {
+      "text": "lost",
+      "start": 2.24,
+      "end": 2.48
+    },
+    {
+      "text": "forty",
+      "start": 2.48,
+      "end": 2.8
+    },
+    {
+      "text": "pounds",
+      "start": 2.8,
+      "end": 3.12
+    },
+    {
+      "text": "since",
+      "start": 3.12,
+      "end": 3.52
+    },
+    {
+      "text": "last",
+      "start": 3.52,
+      "end": 3.76
+    },
+    {
+      "text": "year.",
+      "start": 3.76,
+      "end": 4.32
+    },
+    {
+      "text": "Ooh.",
+      "start": 4.32,
+      "end": 4.96
+    },
+    {
+      "text": "Forty",
+      "start": 4.96,
+      "end": 5.28
+    },
+    {
+      "text": "pounds.",
+      "start": 5.28,
+      "end": 5.84
+    }
+  ]
+}

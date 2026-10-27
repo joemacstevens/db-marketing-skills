@@ -1,0 +1,75 @@
+{
+  "text": "These are the jeans you had on a year ago. And they was tight.",
+  "words": [
+    {
+      "text": "These",
+      "start": 0,
+      "end": 0.16
+    },
+    {
+      "text": "are",
+      "start": 0.16,
+      "end": 0.32
+    },
+    {
+      "text": "the",
+      "start": 0.32,
+      "end": 0.4
+    },
+    {
+      "text": "jeans",
+      "start": 0.4,
+      "end": 0.72
+    },
+    {
+      "text": "you",
+      "start": 0.8,
+      "end": 0.96
+    },
+    {
+      "text": "had",
+      "start": 0.96,
+      "end": 1.2
+    },
+    {
+      "text": "on",
+      "start": 1.2,
+      "end": 1.36
+    },
+    {
+      "text": "a",
+      "start": 1.36,
+      "end": 1.52
+    },
+    {
+      "text": "year",
+      "start": 1.52,
+      "end": 1.84
+    },
+    {
+      "text": "ago.",
+      "start": 1.84,
+      "end": 2.56
+    },
+    {
+      "text": "And",
+      "start": 2.56,
+      "end": 2.8
+    },
+    {
+      "text": "they",
+      "start": 2.8,
+      "end": 3.04
+    },
+    {
+      "text": "was",
+      "start": 3.04,
+      "end": 3.28
+    },
+    {
+      "text": "tight.",
+      "start": 3.28,
+      "end": 4.16
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=720, height=1280">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-Book.otf"); font-weight: 400; }
+      @font-face { font-family: "NORD"; src: url("assets/fonts/NORD-Bold.otf"); font-weight: 700; }
+      :root { --ink: #0a0a0a; --red: #e81d1d; --bone: #f6f2ec; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 720px; height: 1280px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); font-family: "NORD", sans-serif; }
+      video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .lab { position: absolute; inset: 0; z-index: 5; }
+      .num, .what { position: absolute; left: 40px; color: var(--bone); text-transform: uppercase; padding: 8px 14px; line-height: 1.1; }
+      .num { top: 72px; background: var(--red); font-weight: 700; font-size: 24px; letter-spacing: 0.08em; }
+      .what { top: 120px; background: rgba(10, 10, 10, 0.78); font-weight: 400; font-size: 21px; letter-spacing: 0.06em; }
+      .src { position: absolute; left: 40px; bottom: 76px; color: rgba(246, 242, 236, 0.82); background: rgba(10, 10, 10, 0.6); font-size: 19px; letter-spacing: 0; padding: 6px 10px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="213.367" data-width="720" data-height="1280">
+      <video id="v-b03" class="clip" src="assets/footage/b03.mp4" data-start="0.0" data-duration="14.133" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-b03" src="assets/audio/b03.wav" data-start="0.0" data-duration="14.133" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-b03" class="clip lab" data-start="0.0" data-duration="14.133" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#3 · Unnamed · Iron Tiger tee</div>
+        <div class="what">22 lbs · cholesterol · EKG</div>
+        <div class="src">1/17 · IMG_7904 · 2.8–16.9s</div>
+      </div>
+      <video id="v-b05" class="clip" src="assets/footage/b05.mp4" data-start="14.433" data-duration="10.167" data-media-start="0" data-track-index="0" muted playsinline></video>
+      <audio id="a-b05" src="assets/audio/b05.wav" data-start="14.433" data-duration="10.167" data-media-start="0" data-track-index="10" data-volume="1"></audio>
+      <div id="lab-b05" class="clip lab" data-start="14.433" data-duration="10.167" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#5 · Unnamed · blue tank</div>
+        <div class="what">224 to 184</div>
+        <div class="src">2/17 · IMG_4955 · 32.0–42.2s</div>
+      </div>
+      <video id="v-b06" class="clip" src="assets/footage/b06.mp4" data-start="24.9" data-duration="8.700" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-b06" src="assets/audio/b06.wav" data-start="24.9" data-duration="8.700" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-b06" class="clip lab" data-start="24.9" data-duration="8.700" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#6 · Unnamed · FloWater</div>
+        <div class="what">40 lbs in a year</div>
+        <div class="src">3/17 · IMG_1571 · 7.1–15.8s</div>
+      </div>
+      <video id="v-b07" class="clip" src="assets/footage/b07.mp4" data-start="33.9" data-duration="11.967" data-media-start="0" data-track-index="0" muted playsinline></video>
+      <audio id="a-b07" src="assets/audio/b07.wav" data-start="33.9" data-duration="11.967" data-media-start="0" data-track-index="10" data-volume="1"></audio>
+      <div id="lab-b07" class="clip lab" data-start="33.9" data-duration="11.967" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#7 · Unnamed · grey tee</div>
+        <div class="what">30 lbs in 1.5 years</div>
+        <div class="src">4/17 · IMG_5702 · 8.2–20.2s</div>
+      </div>
+      <video id="v-b08" class="clip" src="assets/footage/b08.mp4" data-start="46.167" data-duration="6.333" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-b08" src="assets/audio/b08.wav" data-start="46.167" data-duration="6.333" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-b08" class="clip lab" data-start="46.167" data-duration="6.333" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#8 · Unnamed · red hoodie</div>
+        <div class="what">25 lbs since November</div>
+        <div class="src">5/17 · IMG_5637 · 6.1–12.5s</div>
+      </div>
+      <video id="v-b09" class="clip" src="assets/footage/b09.mp4" data-start="52.8" data-duration="10.900" data-media-start="0" data-track-index="0" muted playsinline></video>
+      <audio id="a-b09" src="assets/audio/b09.wav" data-start="52.8" data-duration="10.900" data-media-start="0" data-track-index="10" data-volume="1"></audio>
+      <div id="lab-b09" class="clip lab" data-start="52.8" data-duration="10.900" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#9 · Gene</div>
+        <div class="what">185 to 160 at 54</div>
+        <div class="src">6/17 · IMG_5559 · 67.9–78.8s</div>
+      </div>
+      <video id="v-b10" class="clip" src="assets/footage/b10.mp4" data-start="64.0" data-duration="14.333" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-b10" src="assets/audio/b10.wav" data-start="64.0" data-duration="14.333" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-b10" class="clip lab" data-start="64.0" data-duration="14.333" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#10 · Gabriel Gonzalez</div>
+        <div class="what">15 lbs on doctor&#x27;s orders</div>
+        <div class="src">7/17 · IMG_5778 · 3.9–18.2s</div>
+      </div>
+      <video id="v-b12a" class="clip" src="assets/footage/b12a.mp4" data-start="78.633" data-duration="19.300" data-media-start="0" data-track-index="0" muted playsinline></video>
+      <audio id="a-b12a" src="assets/audio/b12a.wav" data-start="78.633" data-duration="19.300" data-media-start="0" data-track-index="10" data-volume="1"></audio>
+      <div id="lab-b12a" class="clip lab" data-start="78.633" data-duration="19.300" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#12 · Veronica Young</div>
+        <div class="what">Last year&#x27;s jeans</div>
+        <div class="src">8/17 · IMG_0313_veronica-jeans · 0.0–19.3s</div>
+      </div>
+      <video id="v-b12c" class="clip" src="assets/footage/b12c.mp4" data-start="97.933" data-duration="4.700" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-b12c" src="assets/audio/b12c.wav" data-start="97.933" data-duration="4.700" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-b12c" class="clip lab" data-start="97.933" data-duration="4.700" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#12 · Veronica Young (confirm)</div>
+        <div class="what">Lost 14 lbs</div>
+        <div class="src">9/17 · veronica-one-year-60-about-to-die · 47.3–52.0s</div>
+      </div>
+      <video id="v-b12d" class="clip" src="assets/footage/b12d.mp4" data-start="102.933" data-duration="24.367" data-media-start="0" data-track-index="0" muted playsinline></video>
+      <audio id="a-b12d" src="assets/audio/b12d.wav" data-start="102.933" data-duration="24.367" data-media-start="0" data-track-index="10" data-volume="1"></audio>
+      <div id="lab-b12d" class="clip lab" data-start="102.933" data-duration="24.367" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#12b · Marjan + Coach Danny</div>
+        <div class="what">3 InBody scans</div>
+        <div class="src">10/17 · marjan-inbody-changed-my-life · 12.4–36.7s</div>
+      </div>
+      <video id="v-b13" class="clip" src="assets/footage/b13.mp4" data-start="127.6" data-duration="10.200" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-b13" src="assets/audio/b13.wav" data-start="127.6" data-duration="10.200" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-b13" class="clip lab" data-start="127.6" data-duration="10.200" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#13 · Unnamed · photo on phone</div>
+        <div class="what">Before / after photo</div>
+        <div class="src">11/17 · IMG_3466 · 11.7–21.9s</div>
+      </div>
+      <video id="v-b14" class="clip" src="assets/footage/b14.mp4" data-start="138.1" data-duration="36.867" data-media-start="0" data-track-index="0" muted playsinline></video>
+      <audio id="a-b14" src="assets/audio/b14.wav" data-start="138.1" data-duration="36.867" data-media-start="0" data-track-index="10" data-volume="1"></audio>
+      <div id="lab-b14" class="clip lab" data-start="138.1" data-duration="36.867" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#14 · Dave</div>
+        <div class="what">InBody 75 to 82</div>
+        <div class="src">12/17 · IMG_2104_dave-inbody · 4.3–41.1s</div>
+      </div>
+      <video id="v-s1" class="clip" src="assets/footage/s1.mp4" data-start="175.267" data-duration="3.867" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-s1" src="assets/audio/s1.wav" data-start="175.267" data-duration="3.867" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-s1" class="clip lab" data-start="175.267" data-duration="3.867" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#S1 · Unnamed · name unclear</div>
+        <div class="what">8 lbs in 6 classes</div>
+        <div class="src">13/17 · IMG_3379 · 11.3–15.2s</div>
+      </div>
+      <video id="v-s2" class="clip" src="assets/footage/s2.mp4" data-start="179.433" data-duration="10.000" data-media-start="0" data-track-index="0" muted playsinline></video>
+      <audio id="a-s2" src="assets/audio/s2.wav" data-start="179.433" data-duration="10.000" data-media-start="0" data-track-index="10" data-volume="1"></audio>
+      <div id="lab-s2" class="clip lab" data-start="179.433" data-duration="10.000" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#S2 · Unnamed · on the bike</div>
+        <div class="what">5 lbs in 3 weeks</div>
+        <div class="src">14/17 · IMG_0330 · 4.2–14.2s</div>
+      </div>
+      <video id="v-s3" class="clip" src="assets/footage/s3.mp4" data-start="189.733" data-duration="14.233" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-s3" src="assets/audio/s3.wav" data-start="189.733" data-duration="14.233" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-s3" class="clip lab" data-start="189.733" data-duration="14.233" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#S3 · David (Blue Collar 2026)</div>
+        <div class="what">170 to 160 by fight day</div>
+        <div class="src">15/17 · David · 259.1–273.3s</div>
+      </div>
+      <video id="v-s4" class="clip" src="assets/footage/s4.mp4" data-start="204.267" data-duration="5.800" data-media-start="0" data-track-index="0" muted playsinline></video>
+      <audio id="a-s4" src="assets/audio/s4.wav" data-start="204.267" data-duration="5.800" data-media-start="0" data-track-index="10" data-volume="1"></audio>
+      <div id="lab-s4" class="clip lab" data-start="204.267" data-duration="5.800" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#S4 · Freddie Loperena Jr.</div>
+        <div class="what">5 lbs in 2 weeks</div>
+        <div class="src">16/17 · C6179 · 541.6–547.4s</div>
+      </div>
+      <video id="v-b04c" class="clip" src="assets/footage/b04c.mp4" data-start="210.367" data-duration="3.000" data-media-start="0" data-track-index="1" muted playsinline></video>
+      <audio id="a-b04c" src="assets/audio/b04c.wav" data-start="210.367" data-duration="3.000" data-media-start="0" data-track-index="11" data-volume="1"></audio>
+      <div id="lab-b04c" class="clip lab" data-start="210.367" data-duration="3.000" data-track-index="20" data-track-kind="graphics">
+        <div class="num">#4 · &quot;King&quot; · closer option</div>
+        <div class="what">Thank you, Different Breed</div>
+        <div class="src">17/17 · IMG_1962 · 29.2–32.2s</div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.from("#lab-b03 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 0.0);
+      tl.from("#lab-b03 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 0.080);
+      tl.from("#lab-b05 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 14.433);
+      tl.from("#lab-b05 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 14.513);
+      tl.from("#lab-b06 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 24.9);
+      tl.from("#lab-b06 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 24.980);
+      tl.from("#lab-b07 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 33.9);
+      tl.from("#lab-b07 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 33.980);
+      tl.from("#lab-b08 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 46.167);
+      tl.from("#lab-b08 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 46.247);
+      tl.from("#lab-b09 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 52.8);
+      tl.from("#lab-b09 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 52.880);
+      tl.from("#lab-b10 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 64.0);
+      tl.from("#lab-b10 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 64.080);
+      tl.from("#lab-b12a .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 78.633);
+      tl.from("#lab-b12a .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 78.713);
+      tl.from("#lab-b12d .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 102.933);
+      tl.from("#lab-b12d .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 103.013);
+      tl.from("#lab-b13 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 127.6);
+      tl.from("#lab-b13 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 127.680);
+      tl.from("#lab-b14 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 138.1);
+      tl.from("#lab-b14 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 138.180);
+      tl.from("#lab-s1 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 175.267);
+      tl.from("#lab-s1 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 175.347);
+      tl.from("#lab-s2 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 179.433);
+      tl.from("#lab-s2 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 179.513);
+      tl.from("#lab-s3 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 189.733);
+      tl.from("#lab-s3 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 189.813);
+      tl.from("#lab-s4 .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 204.267);
+      tl.from("#lab-s4 .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 204.347);
+      tl.from("#lab-b04c .num", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 210.367);
+      tl.from("#lab-b04c .what", { x: -36, opacity: 0, duration: 0.35, ease: "power3.out" }, 210.447);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+node_modules/
+renders/
+assets/footage/
+assets/audio/
+assets/windows/*.wav
+.hyperframes/
+snapshots/
+previews/
+assets/stems/
+assets/*.wav
+build/music/*.wav
+build/music/*.log
+build/voice-list.txt

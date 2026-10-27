@@ -1,0 +1,63 @@
+{
+  "summary": "A calm and reflective instrumental track featuring piano, pads, and a steady rhythm section. It builds from a gentle intro to a more dynamic and hopeful main theme.",
+  "bpm": 122,
+  "mood": [
+    "calm",
+    "reflective",
+    "hopeful",
+    "uplifting"
+  ],
+  "energy": "variable",
+  "sections": [
+    {
+      "start_sec": 0,
+      "end_sec": 10,
+      "label": "intro",
+      "note": "Gentle piano and pads"
+    },
+    {
+      "start_sec": 10,
+      "end_sec": 21,
+      "label": "verse",
+      "note": "Drums and bass enter, main melodic idea introduced"
+    },
+    {
+      "start_sec": 21,
+      "end_sec": 32,
+      "label": "pre-chorus",
+      "note": "Melody develops, subtle build in layers"
+    },
+    {
+      "start_sec": 32,
+      "end_sec": 44.8,
+      "label": "chorus",
+      "note": "Fuller instrumentation, main melodic hook prominent"
+    }
+  ],
+  "best_loop": {
+    "end_sec": 44.8,
+    "start_sec": 32
+  },
+  "genre": [
+    "cinematic",
+    "ambient pop",
+    "instrumental"
+  ],
+  "hooks": [
+    {
+      "start_sec": 32,
+      "end_sec": 44.8,
+      "text": "Main melodic theme with full arrangement"
+    }
+  ],
+  "instrumentation": [
+    "piano",
+    "synthesizer pads",
+    "drums",
+    "bass guitar",
+    "synth melody"
+  ],
+  "key": "G major",
+  "use_case_fit": "Background music for corporate videos, reflective montages, study music, or calm transitions.",
+  "vocals": "none"
+}

@@ -1,0 +1,65 @@
+{
+  "summary": "A chill, lo-fi hip-hop instrumental track featuring a smooth piano melody over a relaxed beat, with subtle string accents adding warmth and depth.",
+  "bpm": 85,
+  "mood": [
+    "calm",
+    "reflective",
+    "chill",
+    "uplifting",
+    "mellow"
+  ],
+  "energy": "medium",
+  "sections": [
+    {
+      "start_sec": 0,
+      "end_sec": 10,
+      "label": "intro",
+      "note": "Gentle piano chords and light percussion build"
+    },
+    {
+      "start_sec": 10,
+      "end_sec": 32,
+      "label": "verse",
+      "note": "Main beat and bassline enter with core piano melody"
+    },
+    {
+      "start_sec": 32,
+      "end_sec": 43,
+      "label": "chorus",
+      "note": "Strings join, melody becomes more prominent"
+    },
+    {
+      "start_sec": 43,
+      "end_sec": 45,
+      "label": "outro",
+      "note": "Track fades out with piano"
+    }
+  ],
+  "best_loop": {
+    "end_sec": 24,
+    "note": "Main groove with piano and drums",
+    "start_sec": 10
+  },
+  "genre": [
+    "Lo-fi Hip-Hop",
+    "Chillhop",
+    "Jazz-hop"
+  ],
+  "hooks": [
+    {
+      "start_sec": 32,
+      "end_sec": 43,
+      "text": "Main melodic theme with strings"
+    }
+  ],
+  "instrumentation": [
+    "piano",
+    "drums",
+    "bass",
+    "synth strings"
+  ],
+  "key": "D Major",
+  "production_notes": "Clean mix, warm and inviting atmosphere.",
+  "use_case_fit": "Background music for studying, relaxation, or creative work.",
+  "vocals": "none"
+}

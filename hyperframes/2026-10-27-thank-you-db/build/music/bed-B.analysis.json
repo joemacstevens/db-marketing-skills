@@ -1,0 +1,70 @@
+{
+  "summary": "An uplifting and atmospheric electronic track featuring a driving beat and melodic synth lines, building in energy throughout.",
+  "bpm": 122,
+  "mood": [
+    "uplifting",
+    "atmospheric",
+    "hopeful",
+    "energetic",
+    "motivational"
+  ],
+  "energy": "high",
+  "sections": [
+    {
+      "start_sec": 0,
+      "end_sec": 10,
+      "label": "intro",
+      "note": "Pads and arpeggiated synth"
+    },
+    {
+      "start_sec": 10,
+      "end_sec": 21,
+      "label": "verse",
+      "note": "Drums and bass enter, main synth melody"
+    },
+    {
+      "start_sec": 21,
+      "end_sec": 31,
+      "label": "chorus",
+      "note": "Fuller instrumentation, prominent main melody"
+    },
+    {
+      "start_sec": 31,
+      "end_sec": 42,
+      "label": "outro",
+      "note": "Continues chorus theme, fades out"
+    }
+  ],
+  "best_loop": {
+    "end_sec": 31,
+    "note": "Energetic main theme",
+    "start_sec": 21
+  },
+  "genre": [
+    "electronic",
+    "ambient electronic",
+    "chillwave"
+  ],
+  "hooks": [
+    {
+      "start_sec": 10,
+      "end_sec": 21,
+      "text": "Main synth melody introduced"
+    },
+    {
+      "start_sec": 21,
+      "end_sec": 31,
+      "text": "Main synth melody, fuller arrangement"
+    }
+  ],
+  "instrumentation": [
+    "synthesizer",
+    "drums",
+    "bass synth",
+    "pads",
+    "percussion"
+  ],
+  "key": "D minor",
+  "use_case_fit": "Background music for corporate videos, tech presentations, travel vlogs, or focus music.",
+  "vocals": "none"
+}

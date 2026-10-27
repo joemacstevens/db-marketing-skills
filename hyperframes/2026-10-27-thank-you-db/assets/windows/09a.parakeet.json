@@ -1,0 +1,90 @@
+{
+  "text": "had my physical on Monday. Okay. Uh dropped twenty two pounds. Twenty two pounds. Uh my cholesterol",
+  "words": [
+    {
+      "text": "had",
+      "start": 0.16,
+      "end": 0.24
+    },
+    {
+      "text": "my",
+      "start": 0.32,
+      "end": 0.4
+    },
+    {
+      "text": "physical",
+      "start": 0.4,
+      "end": 0.8
+    },
+    {
+      "text": "on",
+      "start": 0.8,
+      "end": 0.96
+    },
+    {
+      "text": "Monday.",
+      "start": 0.96,
+      "end": 1.44
+    },
+    {
+      "text": "Okay.",
+      "start": 1.44,
+      "end": 2.16
+    },
+    {
+      "text": "Uh",
+      "start": 2.16,
+      "end": 2.32
+    },
+    {
+      "text": "dropped",
+      "start": 2.56,
+      "end": 3.04
+    },
+    {
+      "text": "twenty",
+      "start": 3.04,
+      "end": 3.28
+    },
+    {
+      "text": "two",
+      "start": 3.36,
+      "end": 3.52
+    },
+    {
+      "text": "pounds.",
+      "start": 3.52,
+      "end": 4.08
+    },
+    {
+      "text": "Twenty",
+      "start": 4.08,
+      "end": 4.24
+    },
+    {
+      "text": "two",
+      "start": 4.32,
+      "end": 4.4
+    },
+    {
+      "text": "pounds.",
+      "start": 4.48,
+      "end": 5.04
+    },
+    {
+      "text": "Uh",
+      "start": 5.04,
+      "end": 5.2
+    },
+    {
+      "text": "my",
+      "start": 5.36,
+      "end": 5.6
+    },
+    {
+      "text": "cholesterol",
+      "start": 5.6,
+      "end": 6
+    }
+  ]
+}

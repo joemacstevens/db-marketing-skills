@@ -1,0 +1,181 @@
+{
+  "model_id": "music_v2",
+  "composition_plan": {
+    "chunks": [
+      {
+        "text": "[Intro]\n{soft warm felt piano chords and a gentle pad, intimate, no drums, leaves room for talking}",
+        "duration_ms": 7800,
+        "positive_styles": [
+          "instrumental",
+          "90 BPM",
+          "uplifting soulful hip-hop",
+          "warm and hopeful",
+          "proud",
+          "triumphant transformation story",
+          "soft felt piano",
+          "warm pad",
+          "intimate",
+          "sparse",
+          "quiet"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "drums",
+          "kick",
+          "snare",
+          "bass",
+          "hi-hats"
+        ],
+        "context_adherence": "high"
+      },
+      {
+        "text": "[Groove]\n{the beat drops in: dusty boom-bap kick and snare, warm bass, Rhodes chords over the piano, steady head-nod, building confidence}",
+        "duration_ms": 19630,
+        "positive_styles": [
+          "instrumental",
+          "90 BPM",
+          "uplifting soulful hip-hop",
+          "warm and hopeful",
+          "proud",
+          "triumphant transformation story",
+          "boom-bap drums",
+          "warm bass",
+          "Rhodes chords",
+          "head-nod groove",
+          "steady momentum",
+          "building"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "808 slide",
+          "distorted",
+          "aggressive"
+        ],
+        "context_adherence": "high"
+      },
+      {
+        "text": "[Lift]\n{the biggest section: add soaring strings and claps on 2 and 4, fuller chords, triumphant}",
+        "duration_ms": 8270,
+        "positive_styles": [
+          "instrumental",
+          "90 BPM",
+          "uplifting soulful hip-hop",
+          "warm and hopeful",
+          "proud",
+          "triumphant transformation story",
+          "soaring strings",
+          "claps",
+          "fuller",
+          "triumphant",
+          "emotional peak"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "distorted",
+          "aggressive"
+        ],
+        "context_adherence": "high"
+      },
+      {
+        "text": "[Breakdown]\n{drums drop out: just piano and strings, tender and grateful, slower feel}",
+        "duration_ms": 6730,
+        "positive_styles": [
+          "instrumental",
+          "90 BPM",
+          "uplifting soulful hip-hop",
+          "warm and hopeful",
+          "proud",
+          "triumphant transformation story",
+          "piano and strings only",
+          "tender",
+          "grateful",
+          "heartfelt"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "drums",
+          "kick",
+          "snare",
+          "hi-hats"
+        ],
+        "context_adherence": "high"
+      },
+      {
+        "text": "[Outro]\n{one last full hit with drums, strings and piano together, then let the final chord ring out}",
+        "duration_ms": 3500,
+        "positive_styles": [
+          "instrumental",
+          "90 BPM",
+          "uplifting soulful hip-hop",
+          "warm and hopeful",
+          "proud",
+          "triumphant transformation story",
+          "final big hit",
+          "ring out",
+          "resolved",
+          "proud ending"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "fade in"
+        ],
+        "context_adherence": "high"
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "model_id": "music_v2",
+  "composition_plan": {
+    "chunks": [
+      {
+        "text": "[Intro]\n{a single repeating bright piano motif with a soft sub swell underneath, no drums, room for talking}",
+        "duration_ms": 7800,
+        "positive_styles": [
+          "instrumental",
+          "92 BPM",
+          "cinematic inspirational hip-hop",
+          "motivational",
+          "hopeful and powerful",
+          "transformation story",
+          "bright piano motif",
+          "soft sub swell",
+          "sparse",
+          "anticipation",
+          "quiet"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "drums",
+          "kick",
+          "snare",
+          "hi-hats"
+        ],
+        "context_adherence": "high"
+      },
+      {
+        "text": "[Groove]\n{big punchy hip-hop drums enter with the piano motif, deep bass, crisp hi-hats, confident forward motion}",
+        "duration_ms": 19630,
+        "positive_styles": [
+          "instrumental",
+          "92 BPM",
+          "cinematic inspirational hip-hop",
+          "motivational",
+          "hopeful and powerful",
+          "transformation story",
+          "punchy hip-hop drums",
+          "piano motif",
+          "deep bass",
+          "crisp hi-hats",
+          "forward motion",
+          "building"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "distorted",
+          "heavy metal"
+        ],
+        "context_adherence": "high"
+      },
+      {
+        "text": "[Lift]\n{everything opens up: big cinematic strings, stomps and claps, the motif played higher, triumphant}",
+        "duration_ms": 8270,
+        "positive_styles": [
+          "instrumental",
+          "92 BPM",
+          "cinematic inspirational hip-hop",
+          "motivational",
+          "hopeful and powerful",
+          "transformation story",
+          "big cinematic strings",
+          "stomps and claps",
+          "triumphant",
+          "soaring",
+          "emotional peak"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "distorted"
+        ],
+        "context_adherence": "high"
+      },
+      {
+        "text": "[Breakdown]\n{drums cut out, only the piano motif and held strings, emotional and grateful}",
+        "duration_ms": 6730,
+        "positive_styles": [
+          "instrumental",
+          "92 BPM",
+          "cinematic inspirational hip-hop",
+          "motivational",
+          "hopeful and powerful",
+          "transformation story",
+          "piano motif and held strings only",
+          "emotional",
+          "grateful"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "drums",
+          "kick",
+          "snare",
+          "hi-hats"
+        ],
+        "context_adherence": "high"
+      },
+      {
+        "text": "[Outro]\n{one final huge hit with everything, then the last chord rings out}",
+        "duration_ms": 3500,
+        "positive_styles": [
+          "instrumental",
+          "92 BPM",
+          "cinematic inspirational hip-hop",
+          "motivational",
+          "hopeful and powerful",
+          "transformation story",
+          "final huge hit",
+          "ring out",
+          "resolved"
+        ],
+        "negative_styles": [
+          "vocals",
+          "singing",
+          "choir",
+          "chanting",
+          "spoken word",
+          "voice",
+          "humming",
+          "rap",
+          "lyrics",
+          "shouts",
+          "vocal chops",
+          "vocal samples",
+          "fade in"
+        ],
+        "context_adherence": "high"
+      }
+    ]
+  }
+}

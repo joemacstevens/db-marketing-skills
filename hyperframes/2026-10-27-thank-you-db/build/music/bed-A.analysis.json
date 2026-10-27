@@ -1,0 +1,76 @@
+{
+  "summary": "An atmospheric and reflective electronic track featuring evolving synth melodies, deep bass, and a steady electronic beat, creating a calm yet building soundscape.",
+  "bpm": 70,
+  "mood": [
+    "atmospheric",
+    "reflective",
+    "calm",
+    "evolving",
+    "hopeful"
+  ],
+  "energy": "variable",
+  "sections": [
+    {
+      "start_sec": 0,
+      "end_sec": 10,
+      "label": "intro",
+      "note": "Ambient pads and arpeggiated synth"
+    },
+    {
+      "start_sec": 10,
+      "end_sec": 21,
+      "label": "verse",
+      "note": "Electronic drums and synth bass establish groove"
+    },
+    {
+      "start_sec": 21,
+      "end_sec": 31,
+      "label": "chorus",
+      "note": "Main synth melody enters"
+    },
+    {
+      "start_sec": 31,
+      "end_sec": 42,
+      "label": "bridge",
+      "note": "Melody expands, energy peaks"
+    },
+    {
+      "start_sec": 42,
+      "end_sec": 45,
+      "label": "outro",
+      "note": "Pads fade out"
+    }
+  ],
+  "best_loop": {
+    "end_sec": 31,
+    "note": "Main melodic theme with full groove",
+    "start_sec": 21
+  },
+  "genre": [
+    "ambient electronic",
+    "chillwave",
+    "downtempo"
+  ],
+  "hooks": [
+    {
+      "start_sec": 21,
+      "end_sec": 31,
+      "text": "Main synth melody"
+    },
+    {
+      "start_sec": 31,
+      "end_sec": 42,
+      "text": "Expanded synth melody"
+    }
+  ],
+  "instrumentation": [
+    "synth pads",
+    "synth bass",
+    "electronic drums",
+    "arpeggiated synth",
+    "percussion"
+  ],
+  "key": "C minor",
+  "use_case_fit": "Background music for study, relaxation, creative work, or cinematic underscore for thoughtful moments.",
+  "vocals": "none"
+}

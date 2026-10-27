@@ -1,0 +1,197 @@
+{
+  "_note": "Weight-loss selects (Joey 10/27): Tier 1 weight rows + the smaller weight lines, King's thank-you as a closer option. Shared ids reuse the tier-1 cuts.",
+  "roots": {
+    "BOB": "/Users/joestevens/Projects/Different Breed/because-of-boxing",
+    "AJ": "/Volumes/Ajeo/Projects/Different Breed",
+    "TM": "/Volumes/Ajeo/Projects/Different Breed/Incoming Videos/Transformation Montage 2026-10-26"
+  },
+  "bites": [
+    {
+      "id": "b03",
+      "row": "3",
+      "who": "Unnamed · Iron Tiger tee",
+      "what": "22 lbs · cholesterol · EKG",
+      "src": "AJ/Media Library/February 12, 2025/IMG_7904.mov",
+      "in": 2.5,
+      "out": 16.3,
+      "first": 2.8,
+      "last": 16.26
+    },
+    {
+      "id": "b05",
+      "row": "5",
+      "who": "Unnamed · blue tank",
+      "what": "224 → 184",
+      "src": "AJ/Media Library/August 10, 2025/IMG_4955.mov",
+      "in": 33.2,
+      "out": 42.9,
+      "first": 32.1,
+      "last": 41.4
+    },
+    {
+      "id": "b06",
+      "row": "6",
+      "who": "Unnamed · FloWater",
+      "what": "40 lbs in a year",
+      "src": "AJ/Project Archive/don-drops/2026-09-30/raw/IMG_1571.mov",
+      "in": 3.0,
+      "out": 16.5,
+      "first": 7.16,
+      "last": 15.16
+    },
+    {
+      "id": "b07",
+      "row": "7",
+      "who": "Unnamed · grey tee",
+      "what": "30 lbs in 1.5 years",
+      "src": "AJ/Media Library/2026/April 26, 2026/IMG_5702.mov",
+      "in": 8.4,
+      "out": 20.7,
+      "first": 8.5,
+      "last": 19.4
+    },
+    {
+      "id": "b08",
+      "row": "8",
+      "who": "Unnamed · red hoodie",
+      "what": "25 lbs since November",
+      "src": "AJ/Media Library/2026/April 23, 2026/IMG_5637.mov",
+      "in": 5.7,
+      "out": 13.0,
+      "first": 6.2,
+      "last": 11.22
+    },
+    {
+      "id": "b09",
+      "row": "9",
+      "who": "Gene",
+      "what": "185 → 160 at 54",
+      "src": "BOB/testimonials/July 20, 2026/IMG_5559.mov",
+      "in": 67.9,
+      "out": 78.0,
+      "first": 67.9,
+      "last": 77.5
+    },
+    {
+      "id": "b10",
+      "row": "10",
+      "who": "Gabriel Gonzalez",
+      "what": "15 lbs on doctor's orders",
+      "src": "BOB/testimonials/IMG_5778.mov",
+      "in": 0.0,
+      "out": 17.5,
+      "first": 3.92,
+      "last": 16.96
+    },
+    {
+      "id": "b12a",
+      "row": "12",
+      "who": "Veronica Young",
+      "what": "Last year's jeans",
+      "src": "TM/IMG_0313_veronica-jeans_2026-08-22.mov",
+      "in": 0.0,
+      "out": 18.5,
+      "first": 0.1,
+      "last": 18.5
+    },
+    {
+      "id": "b12c",
+      "row": "12",
+      "who": "Veronica Young (confirm)",
+      "what": "Lost 14 lbs",
+      "src": "TM/veronica-one-year-60-about-to-die_2026-08-24.mp4",
+      "in": 47.0,
+      "out": 51.0,
+      "first": 47.5,
+      "last": 51.0
+    },
+    {
+      "id": "b12d",
+      "row": "12b",
+      "who": "Marjan + Coach Danny",
+      "what": "3 InBody scans",
+      "src": "TM/marjan-inbody-changed-my-life_2026-01-11.mp4",
+      "in": 12.0,
+      "out": 37.0,
+      "first": 12.4,
+      "last": 36.32
+    },
+    {
+      "id": "b13",
+      "row": "13",
+      "who": "Unnamed · photo on phone",
+      "what": "Before / after photo",
+      "src": "AJ/Media Library/June 26, 2025/IMG_3466.mov",
+      "in": 11.0,
+      "out": 23.5,
+      "first": 11.96,
+      "last": 21.48
+    },
+    {
+      "id": "b14",
+      "row": "14",
+      "who": "Dave",
+      "what": "InBody 75 → 82",
+      "src": "TM/IMG_2104_dave-inbody_2025-12-19.mov",
+      "in": 4.3,
+      "out": 41.0,
+      "first": 4.3,
+      "last": 40.78
+    },
+    {
+      "id": "s1",
+      "row": "S1",
+      "who": "Unnamed · name unclear",
+      "what": "8 lbs in 6 classes",
+      "src": "AJ/Media Library/June 23, 2025/IMG_3379.mov",
+      "in": 9.5,
+      "out": 17.5,
+      "first": 11.5,
+      "last": 14.54
+    },
+    {
+      "id": "s2",
+      "row": "S2",
+      "who": "Unnamed · on the bike",
+      "what": "5 lbs in 3 weeks",
+      "src": "AJ/Media Library/Teaneck, October 6, 2025/IMG_0330.mov",
+      "in": 3.0,
+      "out": 14.0,
+      "first": 4.2,
+      "last": 13.16
+    },
+    {
+      "id": "s3",
+      "row": "S3",
+      "who": "David (Blue Collar 2026)",
+      "what": "170 to 160 by fight day",
+      "src": "AJ/Project Archive/Blue Collar 2026/Coach P Interviews/David.mp4",
+      "in": 256.0,
+      "out": 276.0,
+      "first": 259.12,
+      "last": 272.8
+    },
+    {
+      "id": "s4",
+      "row": "S4",
+      "who": "Freddie Loperena Jr.",
+      "what": "5 lbs in 2 weeks",
+      "src": "AJ/Incoming Videos/gym_10_21_26/C6179.MP4",
+      "in": 539.5,
+      "out": 549.5,
+      "first": 541.66,
+      "last": 546.94
+    },
+    {
+      "id": "b04c",
+      "row": "4",
+      "who": "\"King\" · closer option",
+      "what": "Thank you, Different Breed",
+      "src": "AJ/Media Library/December 14, 2025/IMG_1962.mov",
+      "in": 27.5,
+      "out": 33.0,
+      "first": 29.42,
+      "last": 31.18
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "text": "Lifestyle changes. My man Dave took his in-body scan today. Went on look at this scan. See that number there? 82. Once you see his previous number was a 75. Man went on a little plan instructed by Kaz. Went up to 82. Skeletal muscle mass went up from an 88 to a 93. See that? Body fat went down from 55 to 48. Skeletal muscle mass went from 88 to 93. Preferred body fat went down from 26 to 20. How do you feel, man? Feel great, man. Happy to be here. Feel great. Keep going towards the right number. That's it.",
+  "words": [
+    {
+      "text": "Lifestyle",
+      "start": 0.16,
+      "end": 0.64
+    },
+    {
+      "text": "changes.",
+      "start": 0.8,
+      "end": 2
+    },
+    {
+      "text": "My",
+      "start": 2,
+      "end": 2.32
+    },
+    {
+      "text": "man",
+      "start": 2.32,
+      "end": 2.56
+    },
+    {
+      "text": "Dave",
+      "start": 2.8,
+      "end": 3.44
+    },
+    {
+      "text": "took",
+      "start": 3.76,
+      "end": 4.08
+    },
+    {
+      "text": "his",
+      "start": 4.08,
+      "end": 4.32
+    },
+    {
+      "text": "in-body",
+      "start": 4.32,
+      "end": 4.88
+    },
+    {
+      "text": "scan",
+      "start": 4.88,
+      "end": 5.12
+    },
+    {
+      "text": "today.",
+      "start": 5.12,
+      "end": 5.36
+    },
+    {
+      "text": "Went",
+      "start": 5.44,
+      "end": 5.52
+    },
+    {
+      "text": "on",
+      "start": 5.68,
+      "end": 5.76
+    },
+    {
+      "text": "look",
+      "start": 5.92,
+      "end": 6.08
+    },
+    {
+      "text": "at",
+      "start": 6.08,
+      "end": 6.16
+    },
+    {
+      "text": "this",
+      "start": 6.16,
+      "end": 6.4
+    },
+    {
+      "text": "scan.",
+      "start": 6.4,
+      "end": 7.12
+    },
+    {
+      "text": "See",
+      "start": 7.12,
+      "end": 7.36
+    },
+    {
+      "text": "that",
+      "start": 7.36,
+      "end": 7.6
+    },
+    {
+      "text": "number",
+      "start": 7.6,
+      "end": 7.84
+    },
+    {
+      "text": "there?",
+      "start": 8.08,
+      "end": 8.72
+    },
+    {
+      "text": "82.",
+      "start": 8.72,
+      "end": 9.76
+    },
+    {
+      "text": "Once",
+      "start": 9.76,
+      "end": 10.08
+    },
+    {
+      "text": "you",
+      "start": 10.08,
+      "end": 10.16
+    },
+    {
+      "text": "see",
+      "start": 10.32,
+      "end": 10.48
+    },
+    {
+      "text": "his",
+      "start": 10.48,
+      "end": 10.72
+    },
+    {
+      "text": "previous",
+      "start": 10.72,
+      "end": 11.28
+    },
+    {
+      "text": "number",
+      "start": 11.28,
+      "end": 11.76
+    },
+    {
+      "text": "was",
+      "start": 11.92,
+      "end": 12.16
+    },
+    {
+      "text": "a",
+      "start": 12.24,
+      "end": 12.48
+    },
+    {
+      "text": "75.",
+      "start": 12.48,
+      "end": 13.84
+    },
+    {
+      "text": "Man",
+      "start": 13.84,
+      "end": 14.08
+    },
+    {
+      "text": "went",
+      "start": 14.24,
+      "end": 14.48
+    },
+    {
+      "text": "on",
+      "start": 14.48,
+      "end": 14.64
+    },
+    {
+      "text": "a",
+      "start": 14.64,
+      "end": 14.72
+    },
+    {
+      "text": "little",
+      "start": 14.72,
+      "end": 14.96
+    },
+    {
+      "text": "plan",
+      "start": 14.96,
+      "end": 15.2
+    },
+    {
+      "text": "instructed",
+      "start": 15.28,
+      "end": 16
+    },
+    {
+      "text": "by",
+      "start": 16,
+      "end": 16.24
+    },
+    {
+      "text": "Kaz.",
+      "start": 16.48,
+      "end": 17.52
+    },
+    {
+      "text": "Went",
+      "start": 17.52,
+      "end": 17.84
+    },
+    {
+      "text": "up",
+      "start": 17.84,
+      "end": 18
+    },
+    {
+      "text": "to",
+      "start": 18,
+      "end": 18.08
+    },
+    {
+      "text": "82.",
+      "start": 18.32,
+      "end": 19.68
+    },
+    {
+      "text": "Skeletal",
+      "start": 19.68,
+      "end": 20.4
+    },
+    {
+      "text": "muscle",
+      "start": 20.4,
+      "end": 20.8
+    },
+    {
+      "text": "mass",
+      "start": 20.8,
+      "end": 21.04
+    },
+    {
+      "text": "went",
+      "start": 21.04,
+      "end": 21.2
+    },
+    {
+      "text": "up",
+      "start": 21.2,
+      "end": 21.36
+    },
+    {
+      "text": "from",
+      "start": 21.36,
+      "end": 21.44
+    },
+    {
+      "text": "an",
+      "start": 21.52,
+      "end": 21.68
+    },
+    {
+      "text": "88",
+      "start": 21.68,
+      "end": 22.24
+    },
+    {
+      "text": "to",
+      "start": 22.24,
+      "end": 22.48
+    },
+    {
+      "text": "a",
+      "start": 22.48,
+      "end": 22.72
+    },
+    {
+      "text": "93.",
+      "start": 22.72,
+      "end": 24.08
+    },
+    {
+      "text": "See",
+      "start": 24.08,
+      "end": 24.4
+    },
+    {
+      "text": "that?",
+      "start": 24.4,
+      "end": 24.96
+    },
+    {
+      "text": "Body",
+      "start": 25.92,
+      "end": 26.32
+    },
+    {
+      "text": "fat",
+      "start": 26.32,
+      "end": 26.48
+    },
+    {
+      "text": "went",
+      "start": 26.64,
+      "end": 26.8
+    },
+    {
+      "text": "down",
+      "start": 26.8,
+      "end": 27.04
+    },
+    {
+      "text": "from",
+      "start": 27.04,
+      "end": 27.2
+    },
+    {
+      "text": "55",
+      "start": 27.2,
+      "end": 27.84
+    },
+    {
+      "text": "to",
+      "start": 27.84,
+      "end": 28.08
+    },
+    {
+      "text": "48.",
+      "start": 28.32,
+      "end": 29.28
+    },
+    {
+      "text": "Skeletal",
+      "start": 29.68,
+      "end": 30.32
+    },
+    {
+      "text": "muscle",
+      "start": 30.32,
+      "end": 30.72
+    },
+    {
+      "text": "mass",
+      "start": 30.72,
+      "end": 31.12
+    },
+    {
+      "text": "went",
+      "start": 31.12,
+      "end": 31.36
+    },
+    {
+      "text": "from",
+      "start": 31.36,
+      "end": 31.52
+    },
+    {
+      "text": "88",
+      "start": 31.52,
+      "end": 32.16
+    },
+    {
+      "text": "to",
+      "start": 32.16,
+      "end": 32.32
+    },
+    {
+      "text": "93.",
+      "start": 32.32,
+      "end": 33.2
+    },
+    {
+      "text": "Preferred",
+      "start": 33.2,
+      "end": 33.68
+    },
+    {
+      "text": "body",
+      "start": 33.68,
+      "end": 34
+    },
+    {
+      "text": "fat",
+      "start": 34,
+      "end": 34.32
+    },
+    {
+      "text": "went",
+      "start": 34.32,
+      "end": 34.48
+    },
+    {
+      "text": "down",
+      "start": 34.48,
+      "end": 34.64
+    },
+    {
+      "text": "from",
+      "start": 34.64,
+      "end": 34.8
+    },
+    {
+      "text": "26",
+      "start": 34.8,
+      "end": 35.28
+    },
+    {
+      "text": "to",
+      "start": 35.28,
+      "end": 35.36
+    },
+    {
+      "text": "20.",
+      "start": 35.36,
+      "end": 35.84
+    },
+    {
+      "text": "How",
+      "start": 35.84,
+      "end": 36
+    },
+    {
+      "text": "do",
+      "start": 36,
+      "end": 36.08
+    },
+    {
+      "text": "you",
+      "start": 36.08,
+      "end": 36.16
+    },
+    {
+      "text": "feel,",
+      "start": 36.16,
+      "end": 36.32
+    },
+    {
+      "text": "man?",
+      "start": 36.32,
+      "end": 36.64
+    },
+    {
+      "text": "Feel",
+      "start": 36.64,
+      "end": 36.8
+    },
+    {
+      "text": "great,",
+      "start": 36.88,
+      "end": 37.12
+    },
+    {
+      "text": "man.",
+      "start": 37.12,
+      "end": 37.44
+    },
+    {
+      "text": "Happy",
+      "start": 37.44,
+      "end": 37.68
+    },
+    {
+      "text": "to",
+      "start": 37.68,
+      "end": 37.76
+    },
+    {
+      "text": "be",
+      "start": 37.76,
+      "end": 37.92
+    },
+    {
+      "text": "here.",
+      "start": 37.92,
+      "end": 38.24
+    },
+    {
+      "text": "Feel",
+      "start": 38.24,
+      "end": 38.48
+    },
+    {
+      "text": "great.",
+      "start": 38.48,
+      "end": 38.8
+    },
+    {
+      "text": "Keep",
+      "start": 38.8,
+      "end": 39.04
+    },
+    {
+      "text": "going",
+      "start": 39.04,
+      "end": 39.28
+    },
+    {
+      "text": "towards",
+      "start": 39.36,
+      "end": 39.68
+    },
+    {
+      "text": "the",
+      "start": 39.68,
+      "end": 39.76
+    },
+    {
+      "text": "right",
+      "start": 39.76,
+      "end": 39.92
+    },
+    {
+      "text": "number.",
+      "start": 39.92,
+      "end": 40.16
+    },
+    {
+      "text": "That's",
+      "start": 40.16,
+      "end": 40.4
+    },
+    {
+      "text": "it.",
+      "start": 40.4,
+      "end": 40.64
+    }
+  ]
+}

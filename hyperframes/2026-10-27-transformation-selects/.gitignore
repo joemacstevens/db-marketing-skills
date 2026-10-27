@@ -1,0 +1,8 @@
+node_modules/
+renders/
+assets/footage/
+assets/audio/
+assets/windows/*.wav
+.hyperframes/
+snapshots/
+previews/

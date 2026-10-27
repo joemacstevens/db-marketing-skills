@@ -1,0 +1,60 @@
+{
+  "text": "KG came back perfect. So thank you, different breed. Lion King.",
+  "words": [
+    {
+      "text": "KG",
+      "start": 0.08,
+      "end": 0.56
+    },
+    {
+      "text": "came",
+      "start": 0.56,
+      "end": 0.72
+    },
+    {
+      "text": "back",
+      "start": 0.72,
+      "end": 0.96
+    },
+    {
+      "text": "perfect.",
+      "start": 0.96,
+      "end": 1.68
+    },
+    {
+      "text": "So",
+      "start": 2.16,
+      "end": 2.48
+    },
+    {
+      "text": "thank",
+      "start": 3.12,
+      "end": 3.52
+    },
+    {
+      "text": "you,",
+      "start": 3.52,
+      "end": 4
+    },
+    {
+      "text": "different",
+      "start": 4,
+      "end": 4.24
+    },
+    {
+      "text": "breed.",
+      "start": 4.32,
+      "end": 4.8
+    },
+    {
+      "text": "Lion",
+      "start": 5.12,
+      "end": 5.44
+    },
+    {
+      "text": "King.",
+      "start": 5.6,
+      "end": 6.16
+    }
+  ]
+}

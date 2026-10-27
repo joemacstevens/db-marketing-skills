@@ -1,0 +1,192 @@
+[
+  {
+    "id": "b01a",
+    "row": "1",
+    "who": "James Lyons",
+    "what": "Heart attack, Dec 2021",
+    "file": "IMG_5576.mov",
+    "in": 11.26,
+    "dur": 10.466666666666667,
+    "hdr": false
+  },
+  {
+    "id": "b01b",
+    "row": "1",
+    "who": "James Lyons",
+    "what": "Recovered because of boxing",
+    "file": "IMG_5576.mov",
+    "in": 97.76,
+    "dur": 18.733333333333334,
+    "hdr": false
+  },
+  {
+    "id": "b02a",
+    "row": "2",
+    "who": "Stacy Smith (voice, Don on cam)",
+    "what": "A1C down",
+    "file": "IMG_8761.mov",
+    "in": 4.74,
+    "dur": 6.966666666666667,
+    "hdr": true
+  },
+  {
+    "id": "b02b",
+    "row": "2",
+    "who": "Stacy Smith (voice, Don on cam)",
+    "what": "Heart looks good",
+    "file": "IMG_8761.mov",
+    "in": 22.26,
+    "dur": 7.933333333333334,
+    "hdr": true
+  },
+  {
+    "id": "b03",
+    "row": "3",
+    "who": "Unnamed · Iron Tiger tee",
+    "what": "22 lbs · cholesterol · EKG",
+    "file": "IMG_7904.mov",
+    "in": 2.78,
+    "dur": 14.133333333333333,
+    "hdr": true
+  },
+  {
+    "id": "b04",
+    "row": "4",
+    "who": "\"King\"",
+    "what": "LDL 118 → 99",
+    "file": "IMG_1962.mov",
+    "in": 11.76,
+    "dur": 20.666666666666668,
+    "hdr": true
+  },
+  {
+    "id": "b05",
+    "row": "5",
+    "who": "Unnamed · blue tank",
+    "what": "224 → 184",
+    "file": "IMG_4955.mov",
+    "in": 32.04,
+    "dur": 10.166666666666666,
+    "hdr": true
+  },
+  {
+    "id": "b06",
+    "row": "6",
+    "who": "Unnamed · FloWater",
+    "what": "40 lbs in a year",
+    "file": "IMG_1571.mov",
+    "in": 7.12,
+    "dur": 8.7,
+    "hdr": true
+  },
+  {
+    "id": "b07",
+    "row": "7",
+    "who": "Unnamed · grey tee",
+    "what": "30 lbs in 1.5 years",
+    "file": "IMG_5702.mov",
+    "in": 8.23,
+    "dur": 11.966666666666667,
+    "hdr": true
+  },
+  {
+    "id": "b08",
+    "row": "8",
+    "who": "Unnamed · red hoodie",
+    "what": "25 lbs since November",
+    "file": "IMG_5637.mov",
+    "in": 6.14,
+    "dur": 6.333333333333333,
+    "hdr": true
+  },
+  {
+    "id": "b09",
+    "row": "9",
+    "who": "Gene",
+    "what": "185 → 160 at 54",
+    "file": "IMG_5559.mov",
+    "in": 67.86,
+    "dur": 10.9,
+    "hdr": false
+  },
+  {
+    "id": "b10",
+    "row": "10",
+    "who": "Gabriel Gonzalez",
+    "what": "15 lbs on doctor's orders",
+    "file": "IMG_5778.mov",
+    "in": 3.88,
+    "dur": 14.333333333333334,
+    "hdr": false
+  },
+  {
+    "id": "b11",
+    "row": "11",
+    "who": "The couple (produced edit)",
+    "what": "Chronic pain · depression",
+    "file": "0502 (1).mp4",
+    "in": 2.63,
+    "dur": 34.2,
+    "hdr": false
+  },
+  {
+    "id": "b12a",
+    "row": "12",
+    "who": "Veronica Young",
+    "what": "Last year's jeans",
+    "file": "IMG_0313_veronica-jeans_2026-08-22.mov",
+    "in": 0.0,
+    "dur": 19.3,
+    "hdr": true
+  },
+  {
+    "id": "b12b",
+    "row": "12",
+    "who": "Veronica Young (confirm)",
+    "what": "60, about to die",
+    "file": "veronica-one-year-60-about-to-die_2026-08-24.mp4",
+    "in": 20.15,
+    "dur": 20.866666666666667,
+    "hdr": false
+  },
+  {
+    "id": "b12c",
+    "row": "12",
+    "who": "Veronica Young (confirm)",
+    "what": "Lost 14 lbs",
+    "file": "veronica-one-year-60-about-to-die_2026-08-24.mp4",
+    "in": 47.3,
+    "dur": 4.7,
+    "hdr": false
+  },
+  {
+    "id": "b12d",
+    "row": "12b",
+    "who": "Marjan + Coach Danny",
+    "what": "3 InBody scans",
+    "file": "marjan-inbody-changed-my-life_2026-01-11.mp4",
+    "in": 12.36,
+    "dur": 24.366666666666667,
+    "hdr": false
+  },
+  {
+    "id": "b13",
+    "row": "13",
+    "who": "Unnamed · photo on phone",
+    "what": "Before / after photo",
+    "file": "IMG_3466.mov",
+    "in": 11.71,
+    "dur": 10.2,
+    "hdr": true
+  },
+  {
+    "id": "b14",
+    "row": "14",
+    "who": "Dave",
+    "what": "InBody 75 → 82",
+    "file": "IMG_2104_dave-inbody_2025-12-19.mov",
+    "in": 4.26,
+    "dur": 36.86666666666667,
+    "hdr": true
+  }
+]

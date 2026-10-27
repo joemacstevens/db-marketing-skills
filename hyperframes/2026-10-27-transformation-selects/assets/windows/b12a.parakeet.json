@@ -1,0 +1,275 @@
+{
+  "text": "These are the jeans you had on a year ago. And they was tight. So when you first walked in to different breed, they had those look at that. And they were tight. I still got work to do, but look at that. I'm losing inches. I'm losing inches. Legitimately. At different breeding leads.",
+  "words": [
+    {
+      "text": "These",
+      "start": 0.08,
+      "end": 0.24
+    },
+    {
+      "text": "are",
+      "start": 0.24,
+      "end": 0.32
+    },
+    {
+      "text": "the",
+      "start": 0.32,
+      "end": 0.4
+    },
+    {
+      "text": "jeans",
+      "start": 0.4,
+      "end": 0.64
+    },
+    {
+      "text": "you",
+      "start": 0.8,
+      "end": 0.96
+    },
+    {
+      "text": "had",
+      "start": 0.96,
+      "end": 1.12
+    },
+    {
+      "text": "on",
+      "start": 1.12,
+      "end": 1.36
+    },
+    {
+      "text": "a",
+      "start": 1.36,
+      "end": 1.52
+    },
+    {
+      "text": "year",
+      "start": 1.52,
+      "end": 1.84
+    },
+    {
+      "text": "ago.",
+      "start": 1.84,
+      "end": 2.56
+    },
+    {
+      "text": "And",
+      "start": 2.56,
+      "end": 2.8
+    },
+    {
+      "text": "they",
+      "start": 2.8,
+      "end": 3.04
+    },
+    {
+      "text": "was",
+      "start": 3.04,
+      "end": 3.28
+    },
+    {
+      "text": "tight.",
+      "start": 3.28,
+      "end": 4.08
+    },
+    {
+      "text": "So",
+      "start": 4.4,
+      "end": 4.56
+    },
+    {
+      "text": "when",
+      "start": 4.72,
+      "end": 4.88
+    },
+    {
+      "text": "you",
+      "start": 4.88,
+      "end": 5.04
+    },
+    {
+      "text": "first",
+      "start": 5.04,
+      "end": 5.2
+    },
+    {
+      "text": "walked",
+      "start": 5.2,
+      "end": 5.6
+    },
+    {
+      "text": "in",
+      "start": 5.6,
+      "end": 5.76
+    },
+    {
+      "text": "to",
+      "start": 5.76,
+      "end": 5.92
+    },
+    {
+      "text": "different",
+      "start": 5.92,
+      "end": 6.16
+    },
+    {
+      "text": "breed,",
+      "start": 6.24,
+      "end": 6.64
+    },
+    {
+      "text": "they",
+      "start": 6.64,
+      "end": 6.72
+    },
+    {
+      "text": "had",
+      "start": 6.72,
+      "end": 6.88
+    },
+    {
+      "text": "those",
+      "start": 6.88,
+      "end": 7.04
+    },
+    {
+      "text": "look",
+      "start": 7.28,
+      "end": 7.44
+    },
+    {
+      "text": "at",
+      "start": 7.44,
+      "end": 7.76
+    },
+    {
+      "text": "that.",
+      "start": 7.76,
+      "end": 8.32
+    },
+    {
+      "text": "And",
+      "start": 8.32,
+      "end": 8.64
+    },
+    {
+      "text": "they",
+      "start": 8.64,
+      "end": 8.8
+    },
+    {
+      "text": "were",
+      "start": 8.8,
+      "end": 8.96
+    },
+    {
+      "text": "tight.",
+      "start": 8.96,
+      "end": 9.44
+    },
+    {
+      "text": "I",
+      "start": 9.44,
+      "end": 9.6
+    },
+    {
+      "text": "still",
+      "start": 9.6,
+      "end": 9.92
+    },
+    {
+      "text": "got",
+      "start": 9.92,
+      "end": 10.08
+    },
+    {
+      "text": "work",
+      "start": 10.08,
+      "end": 10.24
+    },
+    {
+      "text": "to",
+      "start": 10.24,
+      "end": 10.4
+    },
+    {
+      "text": "do,",
+      "start": 10.4,
+      "end": 10.64
+    },
+    {
+      "text": "but",
+      "start": 10.64,
+      "end": 10.88
+    },
+    {
+      "text": "look",
+      "start": 10.88,
+      "end": 11.12
+    },
+    {
+      "text": "at",
+      "start": 11.12,
+      "end": 11.44
+    },
+    {
+      "text": "that.",
+      "start": 11.44,
+      "end": 13.6
+    },
+    {
+      "text": "I'm",
+      "start": 13.84,
+      "end": 14.08
+    },
+    {
+      "text": "losing",
+      "start": 14.08,
+      "end": 14.4
+    },
+    {
+      "text": "inches.",
+      "start": 14.4,
+      "end": 14.72
+    },
+    {
+      "text": "I'm",
+      "start": 16.4,
+      "end": 16.8
+    },
+    {
+      "text": "losing",
+      "start": 16.8,
+      "end": 17.36
+    },
+    {
+      "text": "inches.",
+      "start": 17.36,
+      "end": 18.4
+    },
+    {
+      "text": "Legitimately.",
+      "start": 18.48,
+      "end": 19.12
+    },
+    {
+      "text": "At",
+      "start": 19.36,
+      "end": 19.52
+    },
+    {
+      "text": "different",
+      "start": 19.52,
+      "end": 19.76
+    },
+    {
+      "text": "breeding",
+      "start": 19.84,
+      "end": 20.16
+    },
+    {
+      "text": "leads.",
+      "start": 20.24,
+      "end": 20.4
+    }
+  ]
+}
