@@ -71,3 +71,7 @@ hyperframes/*/assets/audio/*-instrumental*
 campaigns/motivational-monday/clips/thumbs/
 campaigns/motivational-monday/clips/*.jpg
 campaigns/motivational-monday/script/*.mp3
+
+# Transformation montage research: unpublished member health details and faces (repo is public)
+campaigns/transformation-montage/SOURCE-CLIPS.md
+campaigns/transformation-montage/face-sheet-*.jpg
