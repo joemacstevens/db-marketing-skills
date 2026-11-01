@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* DB Kinetic Type Kit v1.0: exactly three fonts, bundled. Archivo is the VARIABLE file (wdth 62-125). */
+      @font-face { font-family: "DB Archivo"; src: url("assets/fonts/kit/Archivo-Variable.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; }
+      @font-face { font-family: "DB Archivo"; src: url("assets/fonts/kit/Archivo-Variable-Italic.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: italic; }
+      @font-face { font-family: "DB Instrument Serif"; src: url("assets/fonts/kit/InstrumentSerif-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; }
+      @font-face { font-family: "DB DM Mono"; src: url("assets/fonts/kit/DMMono-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; }
+      :root { --accent: #E3202B; --white: #FFFFFF; --ink: #0B0B0C; --endbg: #090909; --tag: rgba(255,255,255,0.85); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); }
+
+      .shot { position: absolute; inset: 0; overflow: hidden; }
+      .shot .push { position: absolute; inset: 0; will-change: transform; }
+      .shot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .shot.wide .push { inset: auto; left: 0; top: 656px; width: 1080px; height: 608px; }  /* letterboxed on ink */
+      .layer { position: absolute; inset: 0; }
+      .cut { position: absolute; inset: 0; pointer-events: none; }
+      .cut video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+      .abs { position: absolute; }
+      .rel { position: relative; }
+      .col { position: absolute; display: flex; flex-direction: column; align-items: flex-start; }
+      .row { position: absolute; display: flex; flex-direction: row; }
+      .col .row, .row .row, .col .rel { position: relative; }
+      .center { position: absolute; left: 0; width: 1080px; display: flex; justify-content: center; }
+      .scrim { position: absolute; left: 0; right: 0; bottom: 0; }
+
+      /* PUNCH: Archivo 900, uppercase, tight leading, width via font-stretch only */
+      .pw { font-family: "DB Archivo"; font-weight: 900; font-style: normal; text-transform: uppercase; white-space: nowrap; color: var(--white); display: inline-block; }
+      .pw.it { font-style: italic; }
+      .pw.outline { font-weight: 800; color: transparent; -webkit-text-stroke: 4px var(--white); }
+      .pw.outline5 { color: transparent; -webkit-text-stroke: 5px var(--white); }
+      .pw.vclimb { writing-mode: vertical-rl; transform: rotate(180deg); text-align: left; }
+      /* CONNECTOR: Instrument Serif Italic, lowercase as spoken */
+      .cn { font-family: "DB Instrument Serif"; font-style: italic; font-weight: 400; line-height: 0.95; color: var(--white); white-space: nowrap; display: inline-block; }
+      /* TAG: DM Mono 500 25px 0.22em uppercase */
+      .tag { font-family: "DB DM Mono"; font-weight: 500; font-size: 25px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tag); white-space: nowrap; }
+      .tagrow { position: absolute; display: flex; align-items: center; gap: 25px; }
+      .sq { display: inline-block; width: 20px; height: 20px; background: var(--accent); }
+      .rl { display: inline-block; background: var(--white); }
+      .red { color: var(--accent); }
+      .chip { display: inline-block; background: var(--accent); padding: 16px 26px 12px; }
+      .rl.red { background: var(--accent); }
+
+      .endcard > .row, .endcard > .col { position: relative; }
+      .endcard { position: absolute; inset: 0; background: var(--endbg); padding: 100px 70px; display: flex; flex-direction: column; justify-content: space-between; }
+    
+      /* end tag v2 (hyperframes/_end-tag-v2/endtag_v2.py) */
+      .et2-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 90% 62% at 50% 46%, #131313 0%, #0b0b0b 58%, #040404 100%); }
+      .et2-flash { position: absolute; inset: 0; background: var(--accent); opacity: 0; }
+      .et2-grain { position: absolute; left: -512px; top: -512px; width: 2104px; height: 2944px; background-image: url("assets/brand/et2-grain.png"); background-size: 512px 512px; opacity: 0.10; }
+      .et2-zone { position: absolute; left: 0; width: 1080px; top: 250px; height: 1330px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .et2-stack { display: flex; flex-direction: column; align-items: center; }
+      .et2-w { display: inline-block; opacity: 0; }
+      .et2-h { position: absolute; left: 0; width: 1080px; top: 1500px; display: flex; justify-content: center; align-items: center; gap: 20px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="5.7" data-width="1080" data-height="1920">
+
+
+
+      <!-- type frames (kit §7), each timed to its shot -->
+      <div id="t-et2-bg" class="clip layer" data-start="0.700" data-duration="5.000" data-track-index="10"><div class="et2-bg"></div><div class="et2-flash" id="et2-flash"></div></div>
+      <div id="t-et2-words" class="clip layer" data-start="0.700" data-duration="3.000" data-track-index="11"><div class="et2-zone"><div class="et2-stack" id="et2-stack" data-layout-allow-overflow="">
+          <div class="pw fit" id="et2-l1" data-size="220" data-max="840" style="font-stretch:125%;letter-spacing:-0.01em;line-height:0.86;" data-layout-allow-overflow=""><span class="et2-w" id="et2-we" data-layout-allow-overflow="">WE</span> <span class="et2-w" id="et2-are" data-layout-allow-overflow="">ARE</span></div>
+          <div class="pw fit" id="et2-l2" data-size="340" data-max="980" style="font-stretch:62%;letter-spacing:-0.02em;line-height:0.84;margin-top:22px" data-layout-allow-overflow=""><span class="et2-w" id="et2-dif" data-layout-allow-overflow="">DIFFERENT</span></div>
+          <div class="pw fit red" id="et2-l3" data-size="320" data-max="980" style="font-stretch:96%;letter-spacing:-0.015em;line-height:0.86;margin-top:22px" data-layout-allow-overflow=""><span class="et2-w" id="et2-breed" data-layout-allow-overflow="">BREED.</span></div>
+        </div></div></div>
+      <div id="t-et2-logo" class="clip layer" data-start="3.700" data-duration="2.000" data-track-index="12"><div class="et2-zone" style="justify-content:flex-start;padding-top:170px"><div class="et2-stack" id="et2-p2s" data-layout-allow-overflow="">
+          <img id="et2-logo" src="assets/brand/db-logo.png" alt="Different Breed Elite Fitness" style="width:620px;height:620px;object-fit:contain">
+          <span class="cn" id="et2-tl1" style="font-size:118px;margin-top:44px;opacity:0">What we do is</span>
+          <div class="pw fit" id="et2-tl2" data-size="140" data-max="900" style="font-stretch:62%;letter-spacing:-0.02em;line-height:0.86;margin-top:16px;opacity:0" data-layout-allow-overflow="">ABSOLUTELY DIFFERENT.</div>
+        </div></div>
+        <div class="et2-h" id="et2-h"><span class="rl" style="width:64px;height:4px"></span><span class="tag" style="font-size:30px;letter-spacing:0.14em;text-transform:none;color:rgba(255,255,255,0.85)">@dbelitefitness</span></div></div>
+      <div id="t-et2-grain" class="clip layer" data-start="0.700" data-duration="5.000" data-track-index="13"><div class="et2-grain" id="et2-grain" data-layout-allow-overflow=""></div></div>
+
+
+      <!-- music: see build/build.py docstring -->
+      <audio id="a-hook" src="assets/audio/song-different-breed.mp3" data-start="0.070" data-duration="3.570" data-media-start="48.25" data-track-index="31" data-volume="1" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.44,&quot;v&quot;:0.6},{&quot;t&quot;:0.55,&quot;v&quot;:1.0},{&quot;t&quot;:3.49,&quot;v&quot;:1.0},{&quot;t&quot;:3.57,&quot;v&quot;:0}]}]}"></audio>
+      <audio id="a-hook-tail" src="assets/audio/song-endtag-v2-tail.wav" data-start="3.560" data-duration="2.140" data-media-start="0.240" data-track-index="32" data-volume="1" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.08,&quot;v&quot;:1.0},{&quot;t&quot;:0.86,&quot;v&quot;:1.0},{&quot;t&quot;:2.12,&quot;v&quot;:0},{&quot;t&quot;:2.14,&quot;v&quot;:0}]}]}"></audio>
+    </div>
+
+    <script>
+      // generated by build/build.py (DB Kinetic Type Kit), do not hand-edit
+      const SLOTS = [];
+      const ANIMS = [{"sel": "#et2-we", "kind": "kf", "t": 0.7, "d": 0.06667, "kf": {"opacity": [0.35, 0.6, 1], "scale": [1.5, 1.375, 1], "filter": ["blur(9.0px)", "blur(4.5px)", "blur(0px)"]}}, {"sel": "#et2-are", "kind": "kf", "t": 0.7, "d": 0.4, "kf": {"opacity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0.35, 0.517, 0.683, 1], "scale": [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.4444, 1.2778, 1], "filter": ["blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(9.0px)", "blur(6.0px)", "blur(3.0px)", "blur(0px)"]}}, {"sel": "#et2-dif", "kind": "kf", "t": 0.7, "d": 0.83333, "kf": {"opacity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.35, 0.475, 0.6, 0.725, 1], "scale": [1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.5625, 1.45, 1.2625, 1], "filter": ["blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(12.0px)", "blur(9.0px)", "blur(6.0px)", "blur(3.0px)", "blur(0px)"]}}, {"sel": "#et2-breed", "kind": "kf", "t": 0.7, "d": 1.66667, "kf": {"opacity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.35, 0.475, 0.6, 0.725, 1], "scale": [1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.5625, 1.45, 1.2625, 1], "filter": ["blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(12.0px)", "blur(9.0px)", "blur(6.0px)", "blur(3.0px)", "blur(0px)"]}}, {"sel": "#et2-stack", "kind": "kf", "t": 0.7, "d": 1.8, "kf": {"x": [0, 0, 10, -7.5, 4.0, -1.5, 0, 0, 0, 0, 0, 0, 12, -9.0, 4.8, -1.8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9.0, -7.2, 3.6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5.5, -4.4, 2.2, 0, 0], "y": [0, 0, -7.0, 5.5, -3.0, 1.0, 0, 0, 0, 0, 0, 0, -8.4, 6.6, -3.6, 1.2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, -25.2, 12.6, -4.32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, -15.4, 7.7, -2.64, 0], "scale": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.06, 1.033, 1.015, 1.0048, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.035, 1.0192, 1.0088, 1.0028, 1]}}, {"sel": "#et2-flash", "kind": "kf", "t": 0.7, "d": 0.96667, "kf": {"opacity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.85, 0.5, 0.22, 0.08, 0]}}, {"sel": "#et2-p2s", "kind": "kf", "t": 0.7, "d": 3.13333, "kf": {"x": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, -18.0, 9.6, -3.6, 0], "y": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -16.8, 13.2, -7.2, 2.4, 0], "scale": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.1, 1.055, 1.025, 1.008, 1]}}, {"sel": "#et2-tl1", "kind": "kf", "t": 0.7, "d": 3.4, "kf": {"opacity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0.234, 0.438, 0.609, 0.75, 0.859, 0.938, 0.984, 1.0], "y": [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30.0, 22.97, 16.88, 11.72, 7.5, 4.22, 1.88, 0.47, 0.0]}}, {"sel": "#et2-tl2", "kind": "kf", "t": 0.7, "d": 3.53333, "kf": {"opacity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0.234, 0.438, 0.609, 0.75, 0.859, 0.938, 0.984, 1.0], "y": [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30.0, 22.97, 16.88, 11.72, 7.5, 4.22, 1.88, 0.47, 0.0]}}, {"sel": "#et2-h", "kind": "kf", "t": 0.7, "d": 3.66667, "kf": {"opacity": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0.167, 0.333, 0.5, 0.667, 0.833, 1.0]}}, {"sel": "#et2-grain", "kind": "kf", "t": 0.7, "d": 4.96667, "kf": {"x": [473, 258, 477, 394, 25, 115, 222, 78, 321, 177, 438, 147, 127, 393, 182, 36, 91, 149, 138, 186, 479, 374, 113, 411, 103, 311, 218, 254, 455, 130, 175, 129, 97, 65, 118, 81, 68, 70, 25, 145, 351, 321, 145, 168, 367, 180, 246, 253, 169, 6, 292, 79, 511, 346, 107, 21, 499, 384, 501, 159, 120, 164, 318, 340, 63, 33, 252, 278, 70, 80, 264, 66, 490, 102, 280, 17, 358, 147, 428, 304, 276, 314, 458, 451, 220, 149, 256, 173, 220, 108, 508, 7, 415, 179, 100, 46, 0, 38, 24, 486, 42, 39, 492, 140, 496, 229, 437, 420, 460, 315, 448, 251, 275, 38, 236, 169, 193, 336, 149, 127, 167, 440, 94, 440, 389, 494, 188, 280, 3, 363, 205, 438, 250, 264, 495, 65, 295, 161, 445, 388, 251, 108, 191, 256, 204, 411, 196, 155, 335, 73], "y": [403, 201, 353, 203, 26, 86, 76, 108, 57, 360, 232, 306, 345, 120, 467, 274, 442, 278, 491, 54, 111, 20, 104, 207, 273, 492, 77, 251, 124, 316, 359, 442, 417, 338, 33, 149, 458, 174, 344, 402, 350, 340, 274, 245, 472, 224, 324, 459, 280, 70, 443, 140, 135, 19, 260, 199, 23, 460, 240, 62, 318, 287, 44, 435, 341, 204, 109, 162, 331, 62, 115, 491, 156, 65, 100, 500, 423, 502, 151, 165, 331, 306, 490, 424, 342, 477, 22, 120, 119, 80, 34, 121, 50, 149, 52, 358, 210, 263, 156, 335, 137, 58, 387, 113, 62, 225, 239, 315, 186, 261, 74, 471, 258, 138, 248, 370, 455, 77, 384, 72, 144, 141, 251, 507, 159, 320, 303, 145, 349, 359, 0, 267, 504, 255, 61, 180, 485, 215, 309, 39, 1, 471, 201, 97, 58, 69, 399, 94, 375, 390]}}];
+      const F = 1 / 30;
+
+      async function build() {
+        // fonts: block on all three; a fallback render is a failed render
+        const specs = ['900 100px "DB Archivo"', 'italic 900 100px "DB Archivo"', 'italic 400 100px "DB Instrument Serif"', '500 100px "DB DM Mono"'];
+        await Promise.all(specs.map((s) => document.fonts.load(s)));
+        for (const s of specs) {
+          if (!document.fonts.check(s)) throw new Error("[DB Kinetic Type] font failed to load, aborting: " + s);
+        }
+
+        // fit-to-width (kit §4): measure each PUNCH word at 100px with its exact settings, then size it
+        const fits = {};
+        document.querySelectorAll(".pw.fit").forEach((el) => {
+          const probe = el.cloneNode(true);
+          probe.removeAttribute("id");
+          probe.style.position = "absolute"; probe.style.left = "-99999px"; probe.style.top = "0";
+          probe.style.right = "auto"; probe.style.bottom = "auto"; probe.style.width = "auto";
+          probe.style.transform = "none"; probe.style.writingMode = "horizontal-tb"; probe.style.height = "auto";
+          probe.style.fontSize = "100px"; probe.style.margin = "0"; probe.style.textShadow = "none";
+          document.body.appendChild(probe);
+          const measured = probe.getBoundingClientRect().width;
+          probe.remove();
+          let size;
+          if (el.dataset.fit) size = (100 * Number(el.dataset.fit)) / measured;
+          else size = Math.min(Number(el.dataset.size), (100 * Number(el.dataset.max)) / measured);
+          el.style.fontSize = size.toFixed(2) + "px";
+          fits[el.id] = { size: Math.round(size), width: Math.round((measured * size) / 100) };
+        });
+        window.__dbFits = fits;
+
+        const tl = gsap.timeline({ paused: true });
+        // slow push on every shot; a slot can carry its own zoom (z0 -> z1) around an origin (ox, oy in %)
+        SLOTS.forEach((s) => {
+          const o = (s.ox ?? 50) + "% " + (s.oy ?? 50) + "%";
+          tl.fromTo("#w" + s.i + " .push", { scale: s.z0 ?? 1.0, transformOrigin: o }, { scale: s.z1 ?? 1.025, transformOrigin: o, duration: s.b - s.a, ease: "none" }, s.a);
+        });
+
+        // motion (kit §8): connectors fade + rise 30px over 8 frames; punch cuts on / settles from 1.08 over 6
+        // frames; no bounce, no per-letter spin. Visibility always in the to-vars.
+        ANIMS.forEach((m) => {
+          const el = m.sel;
+          if (m.kind === "kf") {
+            // end tag v2: per-frame keyframes (values evenly spaced at 1/30 s, linear between), see _end-tag-v2
+            tl.to(el, { keyframes: Object.assign({ easeEach: "none" }, m.kf), duration: m.d, ease: "none" }, m.t);
+            return;
+          }
+          if (m.kind === "conn") {
+            tl.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 8 * F, ease: "power2.out" }, m.t);
+          } else if (m.kind === "punch") {
+            tl.fromTo(el, { opacity: 0, scale: 1.08, transformOrigin: m.origin || "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: m.origin || "50% 50%", duration: 6 * F, ease: "power3.out" }, m.t);
+          } else if (m.kind === "fade" || m.kind === "fadeonly") {
+            tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 6 * F, ease: "none" }, m.t);
+          } else if (m.kind === "bleed") {
+            tl.fromTo(el, { opacity: 0, scale: 1.08, x: 0, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, x: 0, transformOrigin: "0% 50%", duration: 6 * F, ease: "power3.out" }, m.t);
+            tl.fromTo(el, { x: 0 }, { x: -40, opacity: 1, duration: m.until - m.t, ease: "none", immediateRender: false }, m.t);
+          } else if (m.kind === "climb") {
+            // wipes in bottom -> top over 10 frames (the element is rotated 180, so its local top is the visual bottom)
+            tl.fromTo(el, { clipPath: "inset(0% 0% 100% 0%)", opacity: 1 }, { clipPath: "inset(0% 0% 0% 0%)", opacity: 1, duration: 10 * F, ease: "power2.out" }, m.t);
+          } else if (m.kind === "slam") {
+            // slams in from 1.5x over 4 frames, the shot jolts on impact (Joey 10/28: "slam his name in")
+            tl.fromTo(el, { opacity: 0, scale: 1.5, transformOrigin: m.origin || "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: m.origin || "50% 50%", duration: 4 * F, ease: "power3.in" }, m.t);
+            if (m.shake) {
+              const hit = m.t + 4 * F;
+              tl.fromTo(m.shake, { x: 0, y: 0 }, { x: 14, y: -10, duration: F, ease: "none", immediateRender: false }, hit);
+              tl.to(m.shake, { x: -10, y: 8, duration: F, ease: "none" }, hit + F);
+              tl.to(m.shake, { x: 5, y: -3, duration: F, ease: "none" }, hit + 2 * F);
+              tl.to(m.shake, { x: 0, y: 0, duration: F, ease: "none" }, hit + 3 * F);
+            }
+          } else if (m.kind === "pop") {
+            tl.fromTo(el, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, m.t);
+          } else if (m.kind === "pop3d") {
+            tl.fromTo(el, { opacity: 0, scale: 0.85, rotationX: 40, transformPerspective: 1500 }, { opacity: 1, scale: 1, rotationX: 0, transformPerspective: 1500, duration: 8 * F, ease: "power3.out" }, m.t);
+          }
+        });
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["main"] = tl;
+      }
+      build();
+    </script>
+  </body>
+</html>

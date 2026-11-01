@@ -1,0 +1,5 @@
+assets/audio/song-*
+build/stem-*
+renders/
+.hyperframes/
+__pycache__/

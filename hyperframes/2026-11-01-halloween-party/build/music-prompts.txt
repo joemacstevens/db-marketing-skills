@@ -1,0 +1,5 @@
+ElevenLabs music_v1 via scripts/generate-music.mjs --ms 30000 (2026-11-01). Take B is used (full beat from 0, 120 BPM, Gemini: no vocals, kid-safe, quality 9).
+
+A (unused, ~9 s quiet organ intro, 108 BPM): Playful upbeat Halloween party groove for a family costume party, 118 BPM, instrumental, no vocals. Bouncy funky slap bass, crisp handclaps and snappy drums, spooky but fun haunted-house organ riff, a little theremin wobble, xylophone skeleton-bone plinks, cheerful and kid-friendly, not scary. Starts with one short bar of organ then the full beat drops immediately at about 2 seconds and keeps steady energy the whole way, no breakdown.
+
+B (used): Fun Halloween dance party beat, 120 BPM, instrumental, no vocals. Retro funk and disco groove with a walking spooky bassline, four on the floor kick, handclaps, playful harpsichord and church organ stabs, wobbly theremin melody, sleigh of creepy-cute sound effects like a cartoon, bright and joyful for kids in costumes. Beat drops in within the first 2 seconds and stays high energy throughout.

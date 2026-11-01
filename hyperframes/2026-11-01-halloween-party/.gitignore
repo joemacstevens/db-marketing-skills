@@ -1,0 +1,9 @@
+renders/
+.hyperframes/
+__pycache__/
+assets/footage/
+assets/photo/
+assets/audio/nat-*
+assets/audio/song-*
+assets/brand/
+build/*.log

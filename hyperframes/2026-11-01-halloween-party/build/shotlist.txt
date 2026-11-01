@@ -1,0 +1,19 @@
+  0.00-  1.50  IMG_2809.mov     in   3.00 out   4.50    HOOK: T-rex costume + little Spider-Man with his pumpkin at the candy
+  1.50-  3.01  IMG_2791.mov     in   0.30 out   1.81    TITLE: witch at the Pulse door, kids in costume (yellow tutu, Pink Ladies jacket)
+  3.01-  4.00  IMG_2791.mov     in  13.50 out  14.49    through the doors into the decorated Pulse room
+  4.00-  5.02  IMG_2791.mov     in  27.00 out  28.02    long tables of kids doing crafts
+  5.02-  6.00  IMG_2803.mov     in   3.40 out   4.39    girl in the yellow jacket at the table, pizza
+  6.00-  6.99  IMG_2800.mov     in  13.00 out  13.99    Beetlejuice tutu at the table
+  6.99-  8.27  IMG_2803.mov     in   6.60 out   7.88    pink cowgirl hat
+  8.27-  9.26  IMG_2800.mov     in  25.20 out  26.20    Ninja Turtle + fairy at the table
+  9.26- 10.25  IMG_2803.mov     in  12.20 out  13.18    balloons and webs across the ceiling, room full
+ 10.25- 11.75  IMG_2807.mov     in   4.60 out   6.10    TRICK-OR-TREAT: candy into the red costume's bag out front of Pulse
+ 11.75- 12.75  IMG_2808.mov     in   4.00 out   5.00    Cat in the Hat handing out
+ 12.75- 13.76  IMG_2809.mov     in  38.60 out  39.61    yellow hat + Curious George toddler
+ 13.76- 15.26  IMG_2809.mov     in  22.80 out  24.30    toddlers (purple suit, Spider-Man) at the candy
+ 15.26- 16.25  IMG_2807.mov     in   8.20 out   9.18    little Wonder Woman with her bag on the sidewalk
+ 16.25- 17.25  share1614_a.mov  in  13.40 out  14.41    DANCE: Woody + cowgirl on the Pulse floor
+ 17.25- 18.26  share1614_a.mov  in   9.00 out  10.00    yellow costume with the black balloon
+ 18.26- 19.24  IMG_2791.mov     in  41.50 out  42.48    crafts table, red hair + yellow top painting pumpkins
+ 19.24- 21.80  share1614_b.mov  in  25.30 out  27.86    CLOSER: Jessie dancing; 'more than fitness, we are the community'
+ 21.80- 26.80  (end tag v2)                             slam tag + 'We are Different Breed' hook
